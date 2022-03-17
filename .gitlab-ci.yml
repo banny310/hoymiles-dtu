@@ -3,7 +3,7 @@ variables:
   APPLICATION_NAME: "hoymiles-solar"
   ARTIFACT_NAME: "hoymiles-solar"
   DOCKER_REGISTRY_URL: "hub.docker.com/banny310"
-  HUBDOCKER_USERNAME: "banny310"
+  DOCKER_REGISTRY_USERNAME: "banny310"
   MAVEN_LOCAL_REPO: "/projects-cache/.m2/"
   MAVEN_OPTS: '-DXmx1024m -DXX:MaxPermSize=256m'
   MAVEN_CLI_OPTS: "--batch-mode --update-snapshots --errors --fail-at-end"
@@ -31,7 +31,7 @@ build-artifact:
       - tags
 
 build-docker:
-  image: docker:19.03.12
+  image: docker:20.10.12
   stage: deploy
   dependencies:
     - build-artifact
@@ -41,7 +41,7 @@ build-docker:
     - docker build --build-arg JAR_FILE=artifacts/${APPLICATION_NAME}-${BUILD_VERSION}.jar --build-arg BUILD_FROM=${BUILD_FROM_ARMV7} --build-arg BUILD_ARCH=armv7 --platform linux/armv7 --tag banny310/hoymiles-solar-armv7:latest --tag banny310/hoymiles-solar-armv7:${BUILD_VERSION} --file docker/Dockerfile .
     - docker build --build-arg JAR_FILE=artifacts/${APPLICATION_NAME}-${BUILD_VERSION}.jar --build-arg BUILD_FROM=${BUILD_FROM_AMD64} --build-arg BUILD_ARCH=amd64 --platform linux/amd64 --tag banny310/hoymiles-solar-amd64:latest --tag banny310/hoymiles-solar-amd64:${BUILD_VERSION} --file docker/Dockerfile .
     - docker build --build-arg JAR_FILE=artifacts/${APPLICATION_NAME}-${BUILD_VERSION}.jar --build-arg BUILD_FROM=${BUILD_FROM_AARCH64} --build-arg BUILD_ARCH=aarch64 --platform linux/aarch64 --tag banny310/hoymiles-solar-aarch64:latest --tag banny310/hoymiles-solar-aarch64:${BUILD_VERSION} --file docker/Dockerfile .
-    - docker login -u ${HUBDOCKER_USERNAME} -p ${HUBDOCKER_PASSWORD}
+    - docker login -u ${DOCKER_REGISTRY_USERNAME} -p ${HUBDOCKER_PASSWORD}
     - docker push banny310/hoymiles-solar-armv7:${BUILD_VERSION} banny310/hoymiles-solar-amd64:${BUILD_VERSION} banny310/hoymiles-solar-aarch64:${BUILD_VERSION}
   tags:
     - docker
