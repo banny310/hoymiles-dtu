@@ -81,7 +81,7 @@ public class App {
         options.setAutomaticReconnect(true);
         options.setCleanSession(true);
         options.setConnectionTimeout(10);
-        options.setWill("hoymiles-solar/bridge/state", "offline".getBytes(), 1, true);
+        options.setWill("hoymiles-dtu/bridge/state", "offline".getBytes(), 1, true);
 
         String mqttUri = String.format("tcp://%s:%d", config.getString("mqtt.host"), config.getInt("mqtt.port"));
         log.info("Connecting to MQTT: " + mqttUri);

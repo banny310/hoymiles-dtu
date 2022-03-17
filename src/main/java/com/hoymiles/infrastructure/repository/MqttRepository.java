@@ -27,7 +27,7 @@ public class MqttRepository implements IMqttRepository {
     @Override
     public void sendOnlineState() {
         try {
-            mqttClient.publish("hoymiles-solar/bridge/state", "online".getBytes(), 1, true);
+            mqttClient.publish("hoymiles-dtu/bridge/state", "online".getBytes(), 1, true);
         } catch (MqttException e) {
             throw new InfrastructureException("Mqtt exception", e);
         }
@@ -35,7 +35,7 @@ public class MqttRepository implements IMqttRepository {
 
     public void sendHomeAssistantConfig(String key, byte[] payload) {
         try {
-            String topic = String.format("homeassistant/sensor/hoymiles-solar/%s/config", key);
+            String topic = String.format("homeassistant/sensor/hoymiles-dtu/%s/config", key);
             mqttClient.publish(topic, payload, 0, true);
         } catch (MqttException e) {
             throw new InfrastructureException("Mqtt exception", e);
@@ -47,7 +47,7 @@ public class MqttRepository implements IMqttRepository {
         try {
             String dtuId = String.format("dtu_%s", realData.getDtuSn());
             RealDataDTO dto = modelMapper.map(realData, RealDataDTO.class);
-            mqttClient.publish("hoymiles-solar/" + dtuId, gson.toJson(dto).getBytes(), 0, false);
+            mqttClient.publish("hoymiles-dtu/" + dtuId, gson.toJson(dto).getBytes(), 0, false);
         } catch (MqttException e) {
             throw new InfrastructureException("Mqtt exception", e);
         }
