@@ -28,14 +28,14 @@ build-artifact:
   only:
     refs:
       - tags
-      - master
 
 build-docker:
-  image: docker:19.03.0
+  image: docker:19.03.12
   stage: deploy
   dependencies:
     - build-artifact
   script:
+    - apk update && apk add git
     - BUILD_VERSION=`git describe --abbrev=0 --tags 2>/dev/null || echo "0.1.0"`
     - docker build --build-arg JAR_FILE=artifacts/${APPLICATION_NAME}-${BUILD_VERSION}.jar --build-arg BUILD_FROM=${BUILD_FROM_ARMV7} --build-arg BUILD_ARCH=armv7 --platform linux/armv7 --tag banny310/hoymiles-solar-armv7:latest --file docker/Dockerfile .
     - docker build --build-arg JAR_FILE=artifacts/${APPLICATION_NAME}-${BUILD_VERSION}.jar --build-arg BUILD_FROM=${BUILD_FROM_AMD64} --build-arg BUILD_ARCH=amd64 --platform linux/amd64 --tag banny310/hoymiles-solar-amd64:latest --file docker/Dockerfile .
