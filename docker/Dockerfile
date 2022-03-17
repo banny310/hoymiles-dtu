@@ -25,7 +25,7 @@ ENV BASHIO_VERSION="0.14.3" \
 WORKDIR /usr/src
 
 ARG BUILD_ARCH
-RUN printenv
+
 RUN \
     set -x \
     && apt-get update && apt-get install -y --no-install-recommends \

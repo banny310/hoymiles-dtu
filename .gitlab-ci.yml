@@ -29,7 +29,6 @@ build-artifact:
   only:
     refs:
       - tags
-      - master
 
 build-docker:
   image: docker:20.10.12
@@ -43,10 +42,14 @@ build-docker:
     - docker build --build-arg JAR_FILE=artifacts/${APPLICATION_NAME}-${BUILD_VERSION}.jar --build-arg BUILD_FROM=${BUILD_FROM_AMD64} --build-arg BUILD_ARCH=amd64 --platform linux/amd64 --tag banny310/hoymiles-solar-amd64:latest --tag banny310/hoymiles-solar-amd64:${BUILD_VERSION} --file docker/Dockerfile .
     - docker build --build-arg JAR_FILE=artifacts/${APPLICATION_NAME}-${BUILD_VERSION}.jar --build-arg BUILD_FROM=${BUILD_FROM_AARCH64} --build-arg BUILD_ARCH=aarch64 --platform linux/aarch64 --tag banny310/hoymiles-solar-aarch64:latest --tag banny310/hoymiles-solar-aarch64:${BUILD_VERSION} --file docker/Dockerfile .
     - docker login -u ${DOCKER_REGISTRY_USERNAME} -p ${HUBDOCKER_PASSWORD}
-    - docker push banny310/hoymiles-solar-armv7:${BUILD_VERSION} banny310/hoymiles-solar-amd64:${BUILD_VERSION} banny310/hoymiles-solar-aarch64:${BUILD_VERSION}
+    - docker push banny310/hoymiles-solar-armv7:${BUILD_VERSION}
+    - docker push banny310/hoymiles-solar-armv7:latest
+    - docker push banny310/hoymiles-solar-amd64:${BUILD_VERSION}
+    - docker push banny310/hoymiles-solar-amd64:latest
+    - docker push banny310/hoymiles-solar-aarch64:${BUILD_VERSION}
+    - docker push banny310/hoymiles-solar-aarch64:latest
   tags:
     - docker
   only:
     refs:
       - tags
-      - master
