@@ -1,5 +1,6 @@
 # https://github.com/home-assistant/docker-base/blob/master/ubuntu/Dockerfile
 
+ARG BUILD_ARCH
 ARG BUILD_FROM
 # amd64: adoptopenjdk/openjdk11:x86_64-ubuntu-jdk-11.0.14.1_1-slim
 # aarch64: adoptopenjdk/openjdk11:aarch64-ubuntu-jdk-11.0.14.1_1-slim
