@@ -1,0 +1,624 @@
+2022-03-10 16:17:03.358 19781-19781/com.hm.hemaiInstall2 W/com.hoymiles.fragment.ToolsFragment: UserAPI.putLdIsExit === false
+2022-03-10 16:17:03.363 19781-19781/com.hm.hemaiInstall2 I/Timeline: Timeline: Activity_launch_request time:317518286
+2022-03-10 16:17:03.388 19781-19781/com.hm.hemaiInstall2 D/CrashReport: >>> com.hoymiles.MainActivity onPaused <<<
+2022-03-10 16:17:03.389 19781-19781/com.hm.hemaiInstall2 I/CrashReport-Native: Set native info: isAppForeground(false)
+2022-03-10 16:17:03.398 19781-19781/com.hm.hemaiInstall2 W/System.err: java.net.UnknownHostException: Unable to resolve host "neapi.hoymiles.com": No address associated with hostname
+2022-03-10 16:17:03.398 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.net.Inet6AddressImpl.lookupHostByName(Inet6AddressImpl.java:156)
+2022-03-10 16:17:03.398 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.net.Inet6AddressImpl.lookupAllHostAddr(Inet6AddressImpl.java:103)
+2022-03-10 16:17:03.398 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.net.InetAddress.getAllByName(InetAddress.java:1152)
+2022-03-10 16:17:03.398 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.Dns$Companion$SYSTEM$1.lookup(Dns.kt:48)
+2022-03-10 16:17:03.398 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.RouteSelector.resetNextInetSocketAddress(RouteSelector.kt:160)
+2022-03-10 16:17:03.398 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.RouteSelector.nextProxy(RouteSelector.kt:125)
+2022-03-10 16:17:03.398 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.RouteSelector.next(RouteSelector.kt:71)
+2022-03-10 16:17:03.398 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.ExchangeFinder.findConnection(ExchangeFinder.kt:199)
+2022-03-10 16:17:03.398 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.ExchangeFinder.findHealthyConnection(ExchangeFinder.kt:109)
+2022-03-10 16:17:03.398 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.ExchangeFinder.find(ExchangeFinder.kt:77)
+2022-03-10 16:17:03.398 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.Transmitter.newExchange$okhttp(Transmitter.kt:162)
+2022-03-10 16:17:03.398 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.kt:35)
+2022-03-10 16:17:03.398 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:112)
+2022-03-10 16:17:03.398 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:87)
+2022-03-10 16:17:03.398 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.kt:82)
+2022-03-10 16:17:03.398 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:112)
+2022-03-10 16:17:03.398 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:87)
+2022-03-10 16:17:03.398 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.kt:84)
+2022-03-10 16:17:03.398 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:112)
+2022-03-10 16:17:03.398 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.kt:71)
+2022-03-10 16:17:03.398 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:112)
+2022-03-10 16:17:03.398 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:87)
+2022-03-10 16:17:03.398 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.kt:184)
+2022-03-10 16:17:03.398 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.RealCall$AsyncCall.run(RealCall.kt:136)
+2022-03-10 16:17:03.398 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+2022-03-10 16:17:03.398 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+2022-03-10 16:17:03.398 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.lang.Thread.run(Thread.java:919)
+2022-03-10 16:17:03.399 19781-19781/com.hm.hemaiInstall2 W/System.err: Caused by: android.system.GaiException: android_getaddrinfo failed: EAI_NODATA (No address associated with hostname)
+2022-03-10 16:17:03.399 19781-19781/com.hm.hemaiInstall2 W/System.err:     at libcore.io.Linux.android_getaddrinfo(Native Method)
+2022-03-10 16:17:03.399 19781-19781/com.hm.hemaiInstall2 W/System.err:     at libcore.io.ForwardingOs.android_getaddrinfo(ForwardingOs.java:74)
+2022-03-10 16:17:03.399 19781-19781/com.hm.hemaiInstall2 W/System.err:     at libcore.io.BlockGuardOs.android_getaddrinfo(BlockGuardOs.java:200)
+2022-03-10 16:17:03.399 19781-19781/com.hm.hemaiInstall2 W/System.err:     at libcore.io.ForwardingOs.android_getaddrinfo(ForwardingOs.java:74)
+2022-03-10 16:17:03.399 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.net.Inet6AddressImpl.lookupHostByName(Inet6AddressImpl.java:135)
+2022-03-10 16:17:03.399 19781-19781/com.hm.hemaiInstall2 W/System.err: 	... 26 more
+2022-03-10 16:17:03.399 19781-19781/com.hm.hemaiInstall2 W/ActivityThread: handleWindowVisibility: no activity for token android.os.BinderProxy@c64541f
+2022-03-10 16:17:03.404 19781-19781/com.hm.hemaiInstall2 D/CrashReport: >>> com.hoymiles.activity.net.LDEquipmentMain2Activity onCreated <<<
+2022-03-10 16:17:03.407 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.407 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.409 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.412 19781-19781/com.hm.hemaiInstall2 I/chatty: uid=10446(com.hm.hemaiInstall2) identical 5 lines
+2022-03-10 16:17:03.412 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.413 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === app_name
+2022-03-10 16:17:03.414 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.415 19781-19781/com.hm.hemaiInstall2 I/chatty: uid=10446(com.hm.hemaiInstall2) identical 7 lines
+2022-03-10 16:17:03.415 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.417 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_cn_Home
+2022-03-10 16:17:03.418 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.420 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_cn_Data_Control
+2022-03-10 16:17:03.420 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.422 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_cn_Comm
+2022-03-10 16:17:03.423 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.424 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === cn_Working_state
+2022-03-10 16:17:03.425 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.426 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_cn_Cloud
+2022-03-10 16:17:03.427 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.427 19781-19781/com.hm.hemaiInstall2 I/chatty: uid=10446(com.hm.hemaiInstall2) identical 1 line
+2022-03-10 16:17:03.428 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.428 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_cn_Home
+2022-03-10 16:17:03.429 19781-19781/com.hm.hemaiInstall2 W/com.hoymiles.activity.net.LDEquipmentMain2Activity: UserAPI.putLdIsExit === false
+2022-03-10 16:17:03.433 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_cn_Home
+2022-03-10 16:17:03.436 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.438 19781-19781/com.hm.hemaiInstall2 I/chatty: uid=10446(com.hm.hemaiInstall2) identical 3 lines
+2022-03-10 16:17:03.438 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.438 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_cn_Cloud
+2022-03-10 16:17:03.439 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.439 19781-19781/com.hm.hemaiInstall2 I/chatty: uid=10446(com.hm.hemaiInstall2) identical 1 line
+2022-03-10 16:17:03.439 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.440 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_cn_Last_Communication_Hoymiles_Server
+2022-03-10 16:17:03.440 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.441 19781-19781/com.hm.hemaiInstall2 I/chatty: uid=10446(com.hm.hemaiInstall2) identical 2 lines
+2022-03-10 16:17:03.441 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.441 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_cn_Last_Communication_Status
+2022-03-10 16:17:03.442 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.442 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.443 19781-19781/com.hm.hemaiInstall2 I/chatty: uid=10446(com.hm.hemaiInstall2) identical 1 line
+2022-03-10 16:17:03.443 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.443 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_cn_Last_Communication_Time
+2022-03-10 16:17:03.444 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.444 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.444 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.445 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.445 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_cn_Data_Control
+2022-03-10 16:17:03.445 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.446 19781-19781/com.hm.hemaiInstall2 I/chatty: uid=10446(com.hm.hemaiInstall2) identical 1 line
+2022-03-10 16:17:03.446 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.446 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_cn_Total_Producing_Power
+2022-03-10 16:17:03.446 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.447 19781-19781/com.hm.hemaiInstall2 I/chatty: uid=10446(com.hm.hemaiInstall2) identical 2 lines
+2022-03-10 16:17:03.447 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.448 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_cn_Update_Time
+2022-03-10 16:17:03.448 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.449 19781-19781/com.hm.hemaiInstall2 I/chatty: uid=10446(com.hm.hemaiInstall2) identical 2 lines
+2022-03-10 16:17:03.449 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.449 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_cn_inverse_state
+2022-03-10 16:17:03.450 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.450 19781-19781/com.hm.hemaiInstall2 I/chatty: uid=10446(com.hm.hemaiInstall2) identical 1 line
+2022-03-10 16:17:03.450 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.450 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_Connect_the_inverse_number
+2022-03-10 16:17:03.451 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.451 19781-19781/com.hm.hemaiInstall2 I/chatty: uid=10446(com.hm.hemaiInstall2) identical 2 lines
+2022-03-10 16:17:03.451 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.452 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_cn_Communicating
+2022-03-10 16:17:03.452 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.453 19781-19781/com.hm.hemaiInstall2 I/chatty: uid=10446(com.hm.hemaiInstall2) identical 2 lines
+2022-03-10 16:17:03.453 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.453 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_offline
+2022-03-10 16:17:03.454 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.455 19781-19781/com.hm.hemaiInstall2 I/chatty: uid=10446(com.hm.hemaiInstall2) identical 3 lines
+2022-03-10 16:17:03.456 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.456 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_cn_Normal
+2022-03-10 16:17:03.456 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.458 19781-19781/com.hm.hemaiInstall2 I/chatty: uid=10446(com.hm.hemaiInstall2) identical 2 lines
+2022-03-10 16:17:03.458 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.458 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_cn_Abnormal
+2022-03-10 16:17:03.459 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.460 19781-19781/com.hm.hemaiInstall2 I/chatty: uid=10446(com.hm.hemaiInstall2) identical 2 lines
+2022-03-10 16:17:03.460 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.461 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_The_current_alarm
+2022-03-10 16:17:03.462 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.462 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.462 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_cn_DTU_Information
+2022-03-10 16:17:03.463 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.463 19781-19781/com.hm.hemaiInstall2 I/chatty: uid=10446(com.hm.hemaiInstall2) identical 1 line
+2022-03-10 16:17:03.463 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.464 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === DTU_SN
+2022-03-10 16:17:03.464 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.465 19781-19781/com.hm.hemaiInstall2 I/chatty: uid=10446(com.hm.hemaiInstall2) identical 2 lines
+2022-03-10 16:17:03.465 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.465 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === model
+2022-03-10 16:17:03.466 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.467 19781-19781/com.hm.hemaiInstall2 I/chatty: uid=10446(com.hm.hemaiInstall2) identical 1 line
+2022-03-10 16:17:03.468 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.468 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === ld_dtu_model_update
+2022-03-10 16:17:03.469 19781-19800/com.hm.hemaiInstall2 W/m.hemaiInstall: Reducing the number of considered missed Gc histogram windows from 255 to 100
+2022-03-10 16:17:03.469 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.469 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === Electric_meter_information
+2022-03-10 16:17:03.470 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_The_current_alarm
+2022-03-10 16:17:03.471 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === Support_three_generations_only
+2022-03-10 16:17:03.475 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.475 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.476 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.476 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.477 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_In_command_issued_please_wait_moment
+2022-03-10 16:17:03.477 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.478 19781-19781/com.hm.hemaiInstall2 I/chatty: uid=10446(com.hm.hemaiInstall2) identical 2 lines
+2022-03-10 16:17:03.478 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.478 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_retry
+2022-03-10 16:17:03.478 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.479 19781-19781/com.hm.hemaiInstall2 I/chatty: uid=10446(com.hm.hemaiInstall2) identical 1 line
+2022-03-10 16:17:03.479 19781-19781/com.hm.hemaiInstall2 D/ForceDarkHelper: updateByCheckExcludeList: pkg: com.hm.hemaiInstall2 activity: com.hoymiles.activity.net.LDEquipmentMain2Activity@add65ca
+2022-03-10 16:17:03.494 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === mine_alert_cancel
+2022-03-10 16:17:03.495 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_cn_Communication_established
+2022-03-10 16:17:03.495 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === mine_alert_cancel
+2022-03-10 16:17:03.497 19781-19781/com.hm.hemaiInstall2 D/CrashReport: >>> com.hoymiles.activity.net.LDEquipmentMain2Activity onResumed <<<
+2022-03-10 16:17:03.498 19781-19781/com.hm.hemaiInstall2 I/CrashReport-Native: Set native info: isAppForeground(true)
+2022-03-10 16:17:03.498 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: onHiddenChanged === show
+2022-03-10 16:17:03.500 19781-19781/com.hm.hemaiInstall2 I/ClientTest: try connect 10.10.100.254 10081 .
+2022-03-10 16:17:03.501 19781-19781/com.hm.hemaiInstall2 D/ClientTest: start success 10.10.100.254:10081
+2022-03-10 16:17:03.501 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: onResume
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err: java.net.UnknownHostException: Unable to resolve host "neapi.hoymiles.com": No address associated with hostname
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.net.Inet6AddressImpl.lookupHostByName(Inet6AddressImpl.java:156)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.net.Inet6AddressImpl.lookupAllHostAddr(Inet6AddressImpl.java:103)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.net.InetAddress.getAllByName(InetAddress.java:1152)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.Dns$Companion$SYSTEM$1.lookup(Dns.kt:48)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.RouteSelector.resetNextInetSocketAddress(RouteSelector.kt:160)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.RouteSelector.nextProxy(RouteSelector.kt:125)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.RouteSelector.next(RouteSelector.kt:71)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.ExchangeFinder.findConnection(ExchangeFinder.kt:199)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.ExchangeFinder.findHealthyConnection(ExchangeFinder.kt:109)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.ExchangeFinder.find(ExchangeFinder.kt:77)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.Transmitter.newExchange$okhttp(Transmitter.kt:162)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.kt:35)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:112)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:87)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.kt:82)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:112)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:87)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.kt:84)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:112)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.kt:71)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:112)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:87)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.kt:184)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.RealCall$AsyncCall.run(RealCall.kt:136)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.lang.Thread.run(Thread.java:919)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err: Caused by: android.system.GaiException: android_getaddrinfo failed: EAI_NODATA (No address associated with hostname)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err:     at libcore.io.Linux.android_getaddrinfo(Native Method)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err:     at libcore.io.ForwardingOs.android_getaddrinfo(ForwardingOs.java:74)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err:     at libcore.io.BlockGuardOs.android_getaddrinfo(BlockGuardOs.java:200)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err:     at libcore.io.ForwardingOs.android_getaddrinfo(ForwardingOs.java:74)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.net.Inet6AddressImpl.lookupHostByName(Inet6AddressImpl.java:135)
+2022-03-10 16:17:03.507 19781-19781/com.hm.hemaiInstall2 W/System.err: 	... 26 more
+2022-03-10 16:17:03.534 19781-21197/com.hm.hemaiInstall2 W/ClientTest: 连接成功! 10.10.100.254:10081
+2022-03-10 16:17:03.535 19781-21198/com.hm.hemaiInstall2 D/yyy: 发送 = 0
+2022-03-10 16:17:03.535 19781-21198/com.hm.hemaiInstall2 I/GenerateData: 【发送】： TAG_AppConfigCommandRes  === ClientTest$MyInboundHandler#0 === ChannelHandlerContext(ClientTest$MyInboundHandler#0, [id: 0x76187f71, L:/10.10.100.1:48070 - R:/10.10.100.254:10081]) === false
+2022-03-10 16:17:03.535 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: time: 1646925423,action: 33,package_nub: 1,tid: 1646925423,
+2022-03-10 16:17:03.535 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: ------------------------------------------------------------------
+2022-03-10 16:17:03.535 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: {"time":1646925423,"action":33,"devKind":0,"packageNub":1,"packageNow":0,"tid":"1646925423","data":"","esToSn":[],"miToSn":[],"systemTotalA":0,"systemTotalB":0,"systemTotalC":0,"miSnItemA":[],"miSnItemB":[],"miSnItemC":[]}
+2022-03-10 16:17:03.536 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+2022-03-10 16:17:03.536 19781-21198/com.hm.hemaiInstall2 I/CRC16Util: crc16 === 60447
+2022-03-10 16:17:03.536 19781-21198/com.hm.hemaiInstall2 I/GenerateData: 484da3050001ec1f001a08efaca891061021200130efaca89106
+    ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+    ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err: java.net.UnknownHostException: Unable to resolve host "neapi.hoymiles.com": No address associated with hostname
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.net.Inet6AddressImpl.lookupHostByName(Inet6AddressImpl.java:156)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.net.Inet6AddressImpl.lookupAllHostAddr(Inet6AddressImpl.java:103)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.net.InetAddress.getAllByName(InetAddress.java:1152)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.Dns$Companion$SYSTEM$1.lookup(Dns.kt:48)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.RouteSelector.resetNextInetSocketAddress(RouteSelector.kt:160)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.RouteSelector.nextProxy(RouteSelector.kt:125)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.RouteSelector.next(RouteSelector.kt:71)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.ExchangeFinder.findConnection(ExchangeFinder.kt:199)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.ExchangeFinder.findHealthyConnection(ExchangeFinder.kt:109)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.ExchangeFinder.find(ExchangeFinder.kt:77)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.Transmitter.newExchange$okhttp(Transmitter.kt:162)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.kt:35)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:112)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:87)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.kt:82)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:112)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:87)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.kt:84)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:112)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.kt:71)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:112)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:87)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.kt:184)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.RealCall$AsyncCall.run(RealCall.kt:136)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.lang.Thread.run(Thread.java:919)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err: Caused by: android.system.GaiException: android_getaddrinfo failed: EAI_NODATA (No address associated with hostname)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err:     at libcore.io.Linux.android_getaddrinfo(Native Method)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err:     at libcore.io.ForwardingOs.android_getaddrinfo(ForwardingOs.java:74)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err:     at libcore.io.BlockGuardOs.android_getaddrinfo(BlockGuardOs.java:200)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err:     at libcore.io.ForwardingOs.android_getaddrinfo(ForwardingOs.java:74)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.net.Inet6AddressImpl.lookupHostByName(Inet6AddressImpl.java:135)
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err: 	... 26 more
+2022-03-10 16:17:03.552 19781-19781/com.hm.hemaiInstall2 W/System.err: java.net.UnknownHostException: Unable to resolve host "neapi.hoymiles.com": No address associated with hostname
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.net.Inet6AddressImpl.lookupHostByName(Inet6AddressImpl.java:156)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.net.Inet6AddressImpl.lookupAllHostAddr(Inet6AddressImpl.java:103)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.net.InetAddress.getAllByName(InetAddress.java:1152)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.Dns$Companion$SYSTEM$1.lookup(Dns.kt:48)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.RouteSelector.resetNextInetSocketAddress(RouteSelector.kt:160)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.RouteSelector.nextProxy(RouteSelector.kt:125)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.RouteSelector.next(RouteSelector.kt:71)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.ExchangeFinder.findConnection(ExchangeFinder.kt:199)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.ExchangeFinder.findHealthyConnection(ExchangeFinder.kt:109)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.ExchangeFinder.find(ExchangeFinder.kt:77)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.Transmitter.newExchange$okhttp(Transmitter.kt:162)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.kt:35)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:112)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:87)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.kt:82)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:112)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:87)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.kt:84)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:112)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.kt:71)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:112)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:87)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.kt:184)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.RealCall$AsyncCall.run(RealCall.kt:136)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.lang.Thread.run(Thread.java:919)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err: Caused by: android.system.GaiException: android_getaddrinfo failed: EAI_NODATA (No address associated with hostname)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err:     at libcore.io.Linux.android_getaddrinfo(Native Method)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err:     at libcore.io.ForwardingOs.android_getaddrinfo(ForwardingOs.java:74)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err:     at libcore.io.BlockGuardOs.android_getaddrinfo(BlockGuardOs.java:200)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err:     at libcore.io.ForwardingOs.android_getaddrinfo(ForwardingOs.java:74)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.net.Inet6AddressImpl.lookupHostByName(Inet6AddressImpl.java:135)
+2022-03-10 16:17:03.553 19781-19781/com.hm.hemaiInstall2 W/System.err: 	... 26 more
+2022-03-10 16:17:03.563 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === hud_network_out
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err: java.net.UnknownHostException: Unable to resolve host "neapi.hoymiles.com": No address associated with hostname
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.net.Inet6AddressImpl.lookupHostByName(Inet6AddressImpl.java:156)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.net.Inet6AddressImpl.lookupAllHostAddr(Inet6AddressImpl.java:103)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.net.InetAddress.getAllByName(InetAddress.java:1152)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.Dns$Companion$SYSTEM$1.lookup(Dns.kt:48)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.RouteSelector.resetNextInetSocketAddress(RouteSelector.kt:160)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.RouteSelector.nextProxy(RouteSelector.kt:125)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.RouteSelector.next(RouteSelector.kt:71)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.ExchangeFinder.findConnection(ExchangeFinder.kt:199)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.ExchangeFinder.findHealthyConnection(ExchangeFinder.kt:109)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.ExchangeFinder.find(ExchangeFinder.kt:77)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.Transmitter.newExchange$okhttp(Transmitter.kt:162)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.kt:35)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:112)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:87)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.kt:82)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:112)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:87)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.kt:84)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:112)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.kt:71)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:112)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.kt:87)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.kt:184)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err:     at okhttp3.RealCall$AsyncCall.run(RealCall.kt:136)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.lang.Thread.run(Thread.java:919)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err: Caused by: android.system.GaiException: android_getaddrinfo failed: EAI_NODATA (No address associated with hostname)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err:     at libcore.io.Linux.android_getaddrinfo(Native Method)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err:     at libcore.io.ForwardingOs.android_getaddrinfo(ForwardingOs.java:74)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err:     at libcore.io.BlockGuardOs.android_getaddrinfo(BlockGuardOs.java:200)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err:     at libcore.io.ForwardingOs.android_getaddrinfo(ForwardingOs.java:74)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err:     at java.net.Inet6AddressImpl.lookupHostByName(Inet6AddressImpl.java:135)
+2022-03-10 16:17:03.566 19781-19781/com.hm.hemaiInstall2 W/System.err: 	... 26 more
+2022-03-10 16:17:03.570 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: CommandTimeCount onTick === 9
+2022-03-10 16:17:03.570 19781-19781/com.hm.hemaiInstall2 D/ClientTest: TimeCount onTick === 86399
+2022-03-10 16:17:03.581 19781-19781/com.hm.hemaiInstall2 I/Toast: Show toast from OpPackageName:com.hm.hemaiInstall2, PackageName:com.hm.hemaiInstall2
+2022-03-10 16:17:04.536 19781-21198/com.hm.hemaiInstall2 D/yyy: 发送 = 0
+2022-03-10 16:17:04.538 19781-21198/com.hm.hemaiInstall2 I/GenerateData: 【发送】： TAG_AppConfigCommandRes  === ClientTest$MyInboundHandler#0 === ChannelHandlerContext(ClientTest$MyInboundHandler#0, [id: 0x76187f71, L:/10.10.100.1:48070 - R:/10.10.100.254:10081]) === false
+2022-03-10 16:17:04.540 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: time: 1646925424,action: 33,package_nub: 1,tid: 1646925424,
+2022-03-10 16:17:04.540 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: ------------------------------------------------------------------
+2022-03-10 16:17:04.541 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: {"time":1646925424,"action":33,"devKind":0,"packageNub":1,"packageNow":0,"tid":"1646925424","data":"","esToSn":[],"miToSn":[],"systemTotalA":0,"systemTotalB":0,"systemTotalC":0,"miSnItemA":[],"miSnItemB":[],"miSnItemC":[]}
+2022-03-10 16:17:04.542 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+2022-03-10 16:17:04.543 19781-21198/com.hm.hemaiInstall2 I/CRC16Util: crc16 === 9941
+2022-03-10 16:17:04.543 19781-21198/com.hm.hemaiInstall2 I/GenerateData: 484da305000126d5001a08f0aca891061021200130f0aca89106
+    ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+    ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+2022-03-10 16:17:04.590 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: CommandTimeCount onTick === 8
+2022-03-10 16:17:04.590 19781-19781/com.hm.hemaiInstall2 D/ClientTest: TimeCount onTick === 86398
+2022-03-10 16:17:04.809 19781-21197/com.hm.hemaiInstall2 D/ClientTest: 【应答】：
+2022-03-10 16:17:04.809 19781-21197/com.hm.hemaiInstall2 D/ClientTest: hm_short ====18509
+2022-03-10 16:17:04.809 19781-21197/com.hm.hemaiInstall2 D/ClientTest: lenData ====28
+2022-03-10 16:17:04.809 19781-21197/com.hm.hemaiInstall2 D/ClientTest: 484da20500016d7a00260a0c31304638373232323637393710f8aba89106182130f0aca89106
+2022-03-10 16:17:04.809 19781-21197/com.hm.hemaiInstall2 I/ClientTest:  TAG_AppConfigCommandReq
+2022-03-10 16:17:04.812 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: dtu_sn: "10F872226797",time: 1646925304,action: 33,tid: 1646925424,
+2022-03-10 16:17:04.812 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: ------------------------------------------------------------------
+2022-03-10 16:17:04.813 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: {"dtuSn":"10F872226797","time":1646925304,"action":33,"packageNow":0,"errCode":0,"tid":"1646925424"}
+2022-03-10 16:17:04.813 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+2022-03-10 16:17:04.827 19781-21197/com.hm.hemaiInstall2 I/ClientTest: ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+2022-03-10 16:17:05.552 19781-21198/com.hm.hemaiInstall2 I/GenerateData: 1包 控制命令数据数据 已获取完毕 ■■■■■■■■■■■■■■■■■■■■
+2022-03-10 16:17:05.610 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: CommandTimeCount onTick === 7
+2022-03-10 16:17:05.611 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_cn_Issue_control_command
+2022-03-10 16:17:05.635 19781-19781/com.hm.hemaiInstall2 D/ClientTest: TimeCount onTick === 86397
+2022-03-10 16:17:05.638 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: InfoTimeCount onTick === 29
+2022-03-10 16:17:06.537 19781-21198/com.hm.hemaiInstall2 I/GenerateData: 【发送】： AppInfoRes  === ClientTest$MyInboundHandler#0 === ChannelHandlerContext(ClientTest$MyInboundHandler#0, [id: 0x76187f71, L:/10.10.100.1:48070 - R:/10.10.100.254:10081]) === false
+2022-03-10 16:17:06.539 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: ymd_hms: "2022-03-10 16:17:06",offset: 28800,time: 1646925426,
+2022-03-10 16:17:06.539 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: ------------------------------------------------------------------
+2022-03-10 16:17:06.540 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: {"ymdHms":"2022-03-10 16:17:06","offset":28800,"packageNow":0,"errCode":0,"time":1646925426}
+2022-03-10 16:17:06.540 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+2022-03-10 16:17:06.541 19781-21198/com.hm.hemaiInstall2 I/CRC16Util: crc16 === 3961
+2022-03-10 16:17:06.541 19781-21198/com.hm.hemaiInstall2 I/GenerateData: 484da30100010f7900290a13323032322d30332d31302031363a31373a30361080e10128f2aca89106
+    ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+    ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+2022-03-10 16:17:06.650 19781-19781/com.hm.hemaiInstall2 D/ClientTest: TimeCount onTick === 86396
+2022-03-10 16:17:06.651 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: InfoTimeCount onTick === 28
+2022-03-10 16:17:06.869 19781-21197/com.hm.hemaiInstall2 D/ClientTest: 【应答】：
+2022-03-10 16:17:06.870 19781-21197/com.hm.hemaiInstall2 D/ClientTest: hm_short ====18509
+2022-03-10 16:17:06.870 19781-21197/com.hm.hemaiInstall2 D/ClientTest: lenData ====142
+2022-03-10 16:17:06.870 19781-21197/com.hm.hemaiInstall2 D/ClientTest: 484da2010387b0c700980a0c31304638373232323637393710faaba891061803200c28013801421c1088041882a202380140f7aba89106483e52005a0062006815b201005a1a1081e5819197ac04209c4e2888e0c880013080023880144081405a1a1090d2819197ac04209c4e2888e0c880013080023880144081405a1a10a6e2819197ac04209c4e2888e0c88001308002388014408140
+2022-03-10 16:17:06.870 19781-21197/com.hm.hemaiInstall2 I/ClientTest:  TAG_AppInfoReq
+2022-03-10 16:17:06.876 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: dtu_sn: "10F872226797",time: 1646925306,device_nub: 3,pv_nub: 12,package_nub: 1,channel: 1,mAPPDtuInfo {,  dtu_sw: 520,  dtu_hw: 37122,  access_model: 1,  communication_time: 1646925303,  signal_strength: 62,  dtu_rule_id: 21,},mAPPpvInfo {,  pv_sn: 19110224228993,  pv_sw: 10012,  pv_hw_pn: 269627400,  pv_hw: 256,  pv_gpf_code: 2560,  pv_gpf: 8193,},mAPPpvInfo {,  pv_sn: 19110224226576,  pv_sw: 10012,  pv_hw_pn: 269627400,  pv_hw: 256,  pv_gpf_code: 2560,  pv_gpf: 8193,},mAPPpvInfo {,  pv_sn: 19110224228646,  pv_sw: 10012,  pv_hw_pn: 269627400,  pv_hw: 256,  pv_gpf_code: 2560,  pv_gpf: 8193,},
+2022-03-10 16:17:06.879 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: ------------------------------------------------------------------
+2022-03-10 16:17:06.884 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: {"dtuSn":"10F872226797","time":1646925306,"deviceNub":3,"pvNub":12,"packageNub":1,"packageNow":0,"channel":1,"mAPPDtuInfo":{"deviceKind":0,"dtuSw":520,"dtuHw":37122,"dtuStepTime":0,"dtuRfHw":0,"dtuRfSw":0,"accessModel":1,"communicationTime":1646925303,"signalStrength":62,"gprsVsn":"","wifiVsn":"","kaNub":"","dtuRuleId":21,"dtuErrorCode":0,"dtu485Mode":0,"dtu485Addr":0,"sub1gFqband":0,"sub1gChtnum":0,"sub1gChnum":0,"sub1gRp":0,"sub1gChtotal":0,"gprsImei":""},"mAPPMeterInfo":[],"mAPPRpInfo":[],"mAPPpvInfo":[{"deviceKind":0,"pvSn":"19110224228993","pvUsfw":0,"pvSw":10012,"pvHwPn":269627400,"pvHw":256,"pvGpfCode":2560,"pvGpf":8193,"pvRfHw":0,"pvRfSw":0,"miRuleId":0},{"deviceKind":0,"pvSn":"19110224226576","pvUsfw":0,"pvSw":10012,"pvHwPn":269627400,"pvHw":256,"pvGpfCode":2560,"pvGpf":8193,"pvRfHw":0,"pvRfSw":0,"miRuleId":0},{"deviceKind":0,"pvSn":"19110224228646","pvUsfw":0,"pvSw":10012,"pvHwPn":269627400,"pvHw":256,"pvGpfCode":2560,"pvGpf":8193,"pvRfHw":0,"pvRfSw":0,"miRuleId":0}]}
+2022-03-10 16:17:06.885 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+2022-03-10 16:17:06.885 19781-21197/com.hm.hemaiInstall2 D/ClientTest: 正在加载设备信息1/1
+2022-03-10 16:17:06.911 19781-21197/com.hm.hemaiInstall2 I/ClientTest: ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+2022-03-10 16:17:07.535 19781-21198/com.hm.hemaiInstall2 I/GenerateData: 1包 设备信息数据 已获取完毕 ■■■■■■■■■■■■■■■■■■■■
+2022-03-10 16:17:07.653 19781-19781/com.hm.hemaiInstall2 D/ClientTest: TimeCount onTick === 86395
+2022-03-10 16:17:07.653 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: InfoTimeCount onTick === 27
+2022-03-10 16:17:07.672 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: InfoTimeCount 信息帧接受完毕
+2022-03-10 16:17:07.689 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: InfoTimeCount switch
+2022-03-10 16:17:07.689 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: getRealDataFromNet
+2022-03-10 16:17:07.689 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_cn_DTU_uploading_data
+2022-03-10 16:17:07.690 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: getRealDataFromNet !GenerateData.mLdHomeRequestSuspend
+2022-03-10 16:17:07.710 19781-19781/com.hm.hemaiInstall2 I/LdHomeFragment: RealDataTimeCount onTick === 29
+2022-03-10 16:17:08.541 19781-21198/com.hm.hemaiInstall2 I/GenerateData: 【发送】： AppRealDataRes  === ClientTest$MyInboundHandler#0 === ChannelHandlerContext(ClientTest$MyInboundHandler#0, [id: 0x76187f71, L:/10.10.100.1:48070 - R:/10.10.100.254:10081]) === false
+2022-03-10 16:17:08.546 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: ymd_hms: "2022-03-10 16:17:08",oft: 28800,time: 1646925428,
+2022-03-10 16:17:08.547 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: ------------------------------------------------------------------
+2022-03-10 16:17:08.548 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: {"ymdHms":"2022-03-10 16:17:08","cp":0,"errCode":0,"oft":28800,"time":1646925428}
+2022-03-10 16:17:08.548 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+2022-03-10 16:17:08.549 19781-21198/com.hm.hemaiInstall2 I/CRC16Util: crc16 === 6341
+2022-03-10 16:17:08.550 19781-21198/com.hm.hemaiInstall2 I/GenerateData: 484da311000118c500290a13323032322d30332d31302031363a31373a30382080e10128f4aca89106
+    ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+    ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+2022-03-10 16:17:08.656 19781-19781/com.hm.hemaiInstall2 D/ClientTest: TimeCount onTick === 86394
+2022-03-10 16:17:08.722 19781-19781/com.hm.hemaiInstall2 I/LdHomeFragment: RealDataTimeCount onTick === 28
+2022-03-10 16:17:09.111 19781-21197/com.hm.hemaiInstall2 D/ClientTest: 【应答】：
+2022-03-10 16:17:09.112 19781-21197/com.hm.hemaiInstall2 D/ClientTest: hm_short ====18509
+2022-03-10 16:17:09.112 19781-21197/com.hm.hemaiInstall2 D/ClientTest: lenData ====543
+2022-03-10 16:17:09.112 19781-21197/com.hm.hemaiInstall2 E/ClientTest: 484da2110001d96002290a0c31304638373232323637393710fcaba89106180128014a2b0881e5819197ac04100118e61220882728e20530e101381f40bc074856500258c0e1016001a001998cf4304a2b0890d2819197ac04100118e31220882728b60830e101382d40d3074862500258a5bb026001a001978c98334a2b08a6e2819197ac04100118e51220882728890830e201382b40d107487650025889a7026001a001968c80315a1e0881e5819197ac04100118e402202e28a40130bff20238b50e40808080185a1e0881e5819197ac04100218e402202c289b0130e4e80238b70e40808080185a1e0881e5819197ac04100318e202205628b202308e9e0238a00d40808080185a1e0881e5819197ac04100418e202202b28970130ace90238cc0e40808080185a1e0890d2819197ac04100118e502204a288902308eb80238ff0d40808080185a1e0890d2819197ac04100218e502204928860230b0bd0238a50e40808080185a1e0890d2819197ac04100318e802205628b70230a79e0238c00d40808080185a1e0890d2819197ac04100418e802205328aa0230e4a00238ec0d40808080185a1e08a6e2819197ac04100118e402203a28ce0130daaf0238e90d40808080185a1e08a6e2819197ac04100218e402204528f4013090b40238860e40808080185a1e08a6e2819197ac04100318f002205328b20230dcbe
+2022-03-10 16:17:09.112 19781-21197/com.hm.hemaiInstall2 E/ClientTest: channelRead0 lenTotal * 2 != msg_total.length()1086 1024
+2022-03-10 16:17:09.113 19781-21197/com.hm.hemaiInstall2 D/ClientTest: 【应答】：
+2022-03-10 16:17:09.113 19781-21197/com.hm.hemaiInstall2 D/ClientTest: hm_short ====568
+2022-03-10 16:17:09.114 19781-21197/com.hm.hemaiInstall2 D/ClientTest: lenData ====6224
+2022-03-10 16:17:09.114 19781-21197/com.hm.hemaiInstall2 E/ClientTest: 0238810e40808080185a1e08a6e2819197ac04100418f002205a28cb023093b20238870e4080808018
+2022-03-10 16:17:09.114 19781-21197/com.hm.hemaiInstall2 E/ClientTest: hm校验失败 hm != 18509，hm = 56812448 82
+2022-03-10 16:17:09.539 19781-21198/com.hm.hemaiInstall2 I/GenerateData: 【发送】： AppRealDataRes  === ClientTest$MyInboundHandler#0 === ChannelHandlerContext(ClientTest$MyInboundHandler#0, [id: 0x76187f71, L:/10.10.100.1:48070 - R:/10.10.100.254:10081]) === false
+2022-03-10 16:17:09.542 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: ymd_hms: "2022-03-10 16:17:09",oft: 28800,time: 1646925429,
+2022-03-10 16:17:09.542 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: ------------------------------------------------------------------
+2022-03-10 16:17:09.543 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: {"ymdHms":"2022-03-10 16:17:09","cp":0,"errCode":0,"oft":28800,"time":1646925429}
+2022-03-10 16:17:09.543 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+2022-03-10 16:17:09.544 19781-21198/com.hm.hemaiInstall2 I/CRC16Util: crc16 === 9468
+2022-03-10 16:17:09.544 19781-21198/com.hm.hemaiInstall2 I/GenerateData: 484da311000124fc00290a13323032322d30332d31302031363a31373a30392080e10128f5aca89106
+    ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+    ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+2022-03-10 16:17:09.659 19781-19781/com.hm.hemaiInstall2 D/ClientTest: TimeCount onTick === 86393
+2022-03-10 16:17:09.725 19781-19781/com.hm.hemaiInstall2 I/LdHomeFragment: RealDataTimeCount onTick === 27
+2022-03-10 16:17:09.927 19781-21197/com.hm.hemaiInstall2 D/ClientTest: 【应答】：
+2022-03-10 16:17:09.927 19781-21197/com.hm.hemaiInstall2 D/ClientTest: hm_short ====18509
+2022-03-10 16:17:09.928 19781-21197/com.hm.hemaiInstall2 D/ClientTest: lenData ====543
+2022-03-10 16:17:09.928 19781-21197/com.hm.hemaiInstall2 D/ClientTest: 484da2110001802802290a0c31304638373232323637393710fdaba89106180128014a2b0881e5819197ac04100118e61220882728e20530e101381f40bc074856500258c0e1016001a001998cf4304a2b0890d2819197ac04100118e31220882728b60830e101382d40d3074862500258c0e1016001a001978c9c334a2b08a6e2819197ac04100118e51220882728890830e201382b40d107487650025889a7026001a001968c80315a1e0881e5819197ac04100118e402202e28a40130bff20238b50e40808080185a1e0881e5819197ac04100218e402202c289b0130e4e80238b70e40808080185a1e0881e5819197ac04100318e202205628b202308e9e0238a00d40808080185a1e0881e5819197ac04100418e202202b28970130ace90238cc0e40808080185a1e0890d2819197ac04100118e502204a288902308eb80238ff0d40808080185a1e0890d2819197ac04100218e502204928860230b0bd0238a50e40808080185a1e0890d2819197ac04100318e802205628b70230a79e0238c00d40808080185a1e0890d2819197ac04100418e802205328aa0230e4a00238ec0d40808080185a1e08a6e2819197ac04100118e402203a28ce0130daaf0238e90d40808080185a1e08a6e2819197ac04100218e402204528f4013090b40238860e40808080185a1e08a6e2819197ac04100318f002205328b20230dcbe0238810e40808080185a1e08a6e2819197ac04100418f002205a28cb023093b20238870e4080808018
+2022-03-10 16:17:09.928 19781-21197/com.hm.hemaiInstall2 I/ClientTest:  TAG_AppRealDataReq
+2022-03-10 16:17:09.938 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: sn: "10F872226797",time: 1646925309,ap: 1,ver: 1,sgs_datas {,  sn: 19110224228993,  ver: 1,  v: 2406,  freq: 5000,  p: 738,  q: 225,  i: 31,  pf: 956,  temp: 86,  wnum: 2,  crc: 28864,  link: 1,  mi_signal: 102565401,},sgs_datas {,  sn: 19110224226576,  ver: 1,  v: 2403,  freq: 5000,  p: 1078,  q: 225,  i: 45,  pf: 979,  temp: 98,  wnum: 2,  crc: 28864,  link: 1,  mi_signal: 107415063,},sgs_datas {,  sn: 19110224228646,  ver: 1,  v: 2405,  freq: 5000,  p: 1033,  q: 226,  i: 43,  pf: 977,  temp: 118,  wnum: 2,  crc: 37769,  link: 1,  mi_signal: 102762006,},pv_datas {,  sn: 19110224228993,  pi: 1,  v: 356,  i: 46,  p: 164,  et: 47423,  ed: 1845,  code: 50331648,},pv_datas {,  sn: 19110224228993,  pi: 2,  v: 356,  i: 44,  p: 155,  et: 46180,  ed: 1847,  code: 50331648,},pv_datas {,  sn: 19110224228993,  pi: 3,  v: 354,  i: 86,  p: 306,  et: 36622,  ed: 1696,  code: 50331648,},pv_datas {,  sn: 19110224228993,  pi: 4,  v: 354,  i: 43,  p: 151,  et: 46252,  ed: 1868,  code: 50331648,},pv_datas {,  sn: 19110224226576,  pi: 1,  v: 357,  i: 74,  p: 265,  et: 39950,  ed: 1791,  code: 50331648,},pv_datas {,  sn: 19110224226576,  pi: 2,  v: 357,  i: 73,  p: 262,  et: 40624,  ed: 1829,  code: 50331648,},pv_datas {,  sn: 19110224226576,  pi: 3,  v: 360,  i: 86,  p: 311,  et: 36647,  ed: 1728,  code: 50331648,},pv_datas {,  sn: 19110224226576,  pi: 4,  v: 360,  i: 83,  p: 298,  et: 36964,  ed: 1772,  code: 50331648,},pv_datas {,  sn: 19110224228646,  pi: 1,  v: 356,  i: 58,  p: 206,  et: 38874,  ed: 1769,  code: 50331648,},pv_datas {,  sn: 19110224228646,  pi: 2,  v: 356,  i: 69,  p: 244,  et: 39440,  ed: 1798,  code: 50331648,},pv_datas {,  sn: 19110224228646,  pi: 3,  v: 368,  i: 83,  p: 306,  et: 40796,  ed: 1793,  code: 50331648,},pv_datas {,  sn: 19110224228646,  pi: 4,  v: 368,  i: 90,  p: 331,  et: 39187,  ed: 1799,  code: 50331648,},
+2022-03-10 16:17:09.938 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: ------------------------------------------------------------------
+2022-03-10 16:17:09.945 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: {"sn":"10F872226797","time":1646925309,"ap":1,"cp":0,"ver":1,"meterDatas":[],"rpDatas":[],"rsdDatas":[],"sgsDatas":[{"sn":"19110224228993","ver":1,"v":2406,"freq":5000,"p":738,"q":225,"i":31,"pf":956,"temp":86,"wnum":2,"crc":28864,"link":1,"pLim":0,"miSignal":102565401},{"sn":"19110224226576","ver":1,"v":2403,"freq":5000,"p":1078,"q":225,"i":45,"pf":979,"temp":98,"wnum":2,"crc":28864,"link":1,"pLim":0,"miSignal":107415063},{"sn":"19110224228646","ver":1,"v":2405,"freq":5000,"p":1033,"q":226,"i":43,"pf":977,"temp":118,"wnum":2,"crc":37769,"link":1,"pLim":0,"miSignal":102762006}],"tgsDatas":[],"pvDatas":[{"sn":"19110224228993","pi":1,"v":356,"i":46,"p":164,"et":47423,"ed":1845,"code":50331648},{"sn":"19110224228993","pi":2,"v":356,"i":44,"p":155,"et":46180,"ed":1847,"code":50331648},{"sn":"19110224228993","pi":3,"v":354,"i":86,"p":306,"et":36622,"ed":1696,"code":50331648},{"sn":"19110224228993","pi":4,"v":354,"i":43,"p":151,"et":46252,"ed":1868,"code":50331648},{"sn":"19110224226576","pi":1,"v":357,"i":74,"p":265,"et":39950,"ed":1791,"code":50331648},{"sn":"19110224226576","pi":2,"v":357,"i":73,"p":262,"et":40624,"ed":1829,"code":50331648},{"sn":"19110224226576","pi":3,"v":360,"i":86,"p":311,"et":36647,"ed":1728,"code":50331648},{"sn":"19110224226576","pi":4,"v":360,"i":83,"p":298,"et":36964,"ed":1772,"code":50331648},{"sn":"19110224228646","pi":1,"v":356,"i":58,"p":206,"et":38874,"ed":1769,"code":50331648},{"sn":"19110224228646","pi":2,"v":356,"i":69,"p":244,"et":39440,"ed":1798,"code":50331648},{"sn":"19110224228646","pi":3,"v":368,"i":83,"p":306,"et":40796,"ed":1793,"code":50331648},{"sn":"19110224228646","pi":4,"v":368,"i":90,"p":331,"et":39187,"ed":1799,"code":50331648}]}
+2022-03-10 16:17:09.945 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+2022-03-10 16:17:09.964 19781-21197/com.hm.hemaiInstall2 D/ClientTest: 正在加载实时数据_新协议1/1
+2022-03-10 16:17:09.970 19781-21197/com.hm.hemaiInstall2 I/ClientTest: ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+2022-03-10 16:17:10.536 19781-21198/com.hm.hemaiInstall2 I/GenerateData: 1包 实时数据 已获取完毕 ■■■■■■■■■■■■■■■■■■■■
+2022-03-10 16:17:10.661 19781-19781/com.hm.hemaiInstall2 D/ClientTest: TimeCount onTick === 86392
+2022-03-10 16:17:10.728 19781-19781/com.hm.hemaiInstall2 I/LdHomeFragment: RealDataTimeCount onTick === 26
+2022-03-10 16:17:10.729 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: RealDataTimeCount 数据帧采集完毕
+2022-03-10 16:17:10.770 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: getRealDataFromNet
+2022-03-10 16:17:10.771 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_cn_DTU_uploading_data
+2022-03-10 16:17:10.774 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: getRealDataFromNet !GenerateData.mLdHomeRequestSuspend
+2022-03-10 16:17:10.802 19781-19781/com.hm.hemaiInstall2 I/LdHomeFragment: RealDataTimeCount onTick === 29
+2022-03-10 16:17:11.538 19781-21198/com.hm.hemaiInstall2 I/GenerateData: 【发送】： AppRealDataRes  === ClientTest$MyInboundHandler#0 === ChannelHandlerContext(ClientTest$MyInboundHandler#0, [id: 0x76187f71, L:/10.10.100.1:48070 - R:/10.10.100.254:10081]) === false
+2022-03-10 16:17:11.541 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: ymd_hms: "2022-03-10 16:17:11",oft: 28800,time: 1646925431,
+2022-03-10 16:17:11.541 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: ------------------------------------------------------------------
+2022-03-10 16:17:11.542 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: {"ymdHms":"2022-03-10 16:17:11","cp":0,"errCode":0,"oft":28800,"time":1646925431}
+2022-03-10 16:17:11.542 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+2022-03-10 16:17:11.543 19781-21198/com.hm.hemaiInstall2 I/CRC16Util: crc16 === 18258
+2022-03-10 16:17:11.544 19781-21198/com.hm.hemaiInstall2 I/GenerateData: 484da3110001475200290a13323032322d30332d31302031363a31373a31312080e10128f7aca89106
+    ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+    ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+2022-03-10 16:17:11.663 19781-19781/com.hm.hemaiInstall2 D/ClientTest: TimeCount onTick === 86391
+2022-03-10 16:17:11.730 19781-19781/com.hm.hemaiInstall2 I/LdHomeFragment: RealDataTimeCount onTick === 29
+2022-03-10 16:17:11.803 19781-19781/com.hm.hemaiInstall2 I/LdHomeFragment: RealDataTimeCount onTick === 28
+2022-03-10 16:17:12.181 19781-21197/com.hm.hemaiInstall2 D/ClientTest: 【应答】：
+2022-03-10 16:17:12.182 19781-21197/com.hm.hemaiInstall2 D/ClientTest: hm_short ====18509
+2022-03-10 16:17:12.182 19781-21197/com.hm.hemaiInstall2 D/ClientTest: lenData ====543
+2022-03-10 16:17:12.182 19781-21197/com.hm.hemaiInstall2 D/ClientTest: 484da2110001409b02290a0c31304638373232323637393710ffaba89106180128014a2b0881e5819197ac04100118e61220882728e20530e101381f40bc074856500258c0e1016001a001998cf8304a2b0890d2819197ac04100118e31220882728b60830e101382d40d3074862500258c0e1016001a001978c9c334a2b08a6e2819197ac04100118e712208827288b0830e201382b40d1074877500258c0e1016001a001978c88315a1e0881e5819197ac04100118e402202e28a40130bff20238b50e40808080185a1e0881e5819197ac04100218e402202c289b0130e4e80238b70e40808080185a1e0881e5819197ac04100318e202205628b202308e9e0238a00d40808080185a1e0881e5819197ac04100418e202202b28970130ace90238cc0e40808080185a1e0890d2819197ac04100118e502204a288902308eb80238ff0d40808080185a1e0890d2819197ac04100218e502204928860230b0bd0238a50e40808080185a1e0890d2819197ac04100318e802205628b70230a79e0238c00d40808080185a1e0890d2819197ac04100418e802205328aa0230e4a00238ec0d40808080185a1e08a6e2819197ac04100118e202203b28d20130daaf0238e90d40808080185a1e08a6e2819197ac04100218e202204328ed013090b40238860e40808080185a1e08a6e2819197ac04100318ef02205b28cc0230ddbe0238820e40808080185a1e08a6e2819197ac04100418ef02205528b6023093b20238870e4080808018
+2022-03-10 16:17:12.182 19781-21197/com.hm.hemaiInstall2 I/ClientTest:  TAG_AppRealDataReq
+2022-03-10 16:17:12.192 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: sn: "10F872226797",time: 1646925311,ap: 1,ver: 1,sgs_datas {,  sn: 19110224228993,  ver: 1,  v: 2406,  freq: 5000,  p: 738,  q: 225,  i: 31,  pf: 956,  temp: 86,  wnum: 2,  crc: 28864,  link: 1,  mi_signal: 102630937,},sgs_datas {,  sn: 19110224226576,  ver: 1,  v: 2403,  freq: 5000,  p: 1078,  q: 225,  i: 45,  pf: 979,  temp: 98,  wnum: 2,  crc: 28864,  link: 1,  mi_signal: 107415063,},sgs_datas {,  sn: 19110224228646,  ver: 1,  v: 2407,  freq: 5000,  p: 1035,  q: 226,  i: 43,  pf: 977,  temp: 119,  wnum: 2,  crc: 28864,  link: 1,  mi_signal: 102893079,},pv_datas {,  sn: 19110224228993,  pi: 1,  v: 356,  i: 46,  p: 164,  et: 47423,  ed: 1845,  code: 50331648,},pv_datas {,  sn: 19110224228993,  pi: 2,  v: 356,  i: 44,  p: 155,  et: 46180,  ed: 1847,  code: 50331648,},pv_datas {,  sn: 19110224228993,  pi: 3,  v: 354,  i: 86,  p: 306,  et: 36622,  ed: 1696,  code: 50331648,},pv_datas {,  sn: 19110224228993,  pi: 4,  v: 354,  i: 43,  p: 151,  et: 46252,  ed: 1868,  code: 50331648,},pv_datas {,  sn: 19110224226576,  pi: 1,  v: 357,  i: 74,  p: 265,  et: 39950,  ed: 1791,  code: 50331648,},pv_datas {,  sn: 19110224226576,  pi: 2,  v: 357,  i: 73,  p: 262,  et: 40624,  ed: 1829,  code: 50331648,},pv_datas {,  sn: 19110224226576,  pi: 3,  v: 360,  i: 86,  p: 311,  et: 36647,  ed: 1728,  code: 50331648,},pv_datas {,  sn: 19110224226576,  pi: 4,  v: 360,  i: 83,  p: 298,  et: 36964,  ed: 1772,  code: 50331648,},pv_datas {,  sn: 19110224228646,  pi: 1,  v: 354,  i: 59,  p: 210,  et: 38874,  ed: 1769,  code: 50331648,},pv_datas {,  sn: 19110224228646,  pi: 2,  v: 354,  i: 67,  p: 237,  et: 39440,  ed: 1798,  code: 50331648,},pv_datas {,  sn: 19110224228646,  pi: 3,  v: 367,  i: 91,  p: 332,  et: 40797,  ed: 1794,  code: 50331648,},pv_datas {,  sn: 19110224228646,  pi: 4,  v: 367,  i: 85,  p: 310,  et: 39187,  ed: 1799,  code: 50331648,},
+2022-03-10 16:17:12.192 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: ------------------------------------------------------------------
+2022-03-10 16:17:12.199 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: {"sn":"10F872226797","time":1646925311,"ap":1,"cp":0,"ver":1,"meterDatas":[],"rpDatas":[],"rsdDatas":[],"sgsDatas":[{"sn":"19110224228993","ver":1,"v":2406,"freq":5000,"p":738,"q":225,"i":31,"pf":956,"temp":86,"wnum":2,"crc":28864,"link":1,"pLim":0,"miSignal":102630937},{"sn":"19110224226576","ver":1,"v":2403,"freq":5000,"p":1078,"q":225,"i":45,"pf":979,"temp":98,"wnum":2,"crc":28864,"link":1,"pLim":0,"miSignal":107415063},{"sn":"19110224228646","ver":1,"v":2407,"freq":5000,"p":1035,"q":226,"i":43,"pf":977,"temp":119,"wnum":2,"crc":28864,"link":1,"pLim":0,"miSignal":102893079}],"tgsDatas":[],"pvDatas":[{"sn":"19110224228993","pi":1,"v":356,"i":46,"p":164,"et":47423,"ed":1845,"code":50331648},{"sn":"19110224228993","pi":2,"v":356,"i":44,"p":155,"et":46180,"ed":1847,"code":50331648},{"sn":"19110224228993","pi":3,"v":354,"i":86,"p":306,"et":36622,"ed":1696,"code":50331648},{"sn":"19110224228993","pi":4,"v":354,"i":43,"p":151,"et":46252,"ed":1868,"code":50331648},{"sn":"19110224226576","pi":1,"v":357,"i":74,"p":265,"et":39950,"ed":1791,"code":50331648},{"sn":"19110224226576","pi":2,"v":357,"i":73,"p":262,"et":40624,"ed":1829,"code":50331648},{"sn":"19110224226576","pi":3,"v":360,"i":86,"p":311,"et":36647,"ed":1728,"code":50331648},{"sn":"19110224226576","pi":4,"v":360,"i":83,"p":298,"et":36964,"ed":1772,"code":50331648},{"sn":"19110224228646","pi":1,"v":354,"i":59,"p":210,"et":38874,"ed":1769,"code":50331648},{"sn":"19110224228646","pi":2,"v":354,"i":67,"p":237,"et":39440,"ed":1798,"code":50331648},{"sn":"19110224228646","pi":3,"v":367,"i":91,"p":332,"et":40797,"ed":1794,"code":50331648},{"sn":"19110224228646","pi":4,"v":367,"i":85,"p":310,"et":39187,"ed":1799,"code":50331648}]}
+2022-03-10 16:17:12.199 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+2022-03-10 16:17:12.215 19781-21197/com.hm.hemaiInstall2 D/ClientTest: 正在加载实时数据_新协议1/1
+2022-03-10 16:17:12.220 19781-21197/com.hm.hemaiInstall2 I/ClientTest: ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+2022-03-10 16:17:12.535 19781-21198/com.hm.hemaiInstall2 I/GenerateData: 1包 实时数据 已获取完毕 ■■■■■■■■■■■■■■■■■■■■
+2022-03-10 16:17:12.663 19781-19781/com.hm.hemaiInstall2 D/ClientTest: TimeCount onTick === 86390
+2022-03-10 16:17:12.731 19781-19781/com.hm.hemaiInstall2 I/LdHomeFragment: RealDataTimeCount onTick === 28
+2022-03-10 16:17:12.731 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: RealDataTimeCount 数据帧采集完毕
+2022-03-10 16:17:12.741 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: getRealDataFromNet
+2022-03-10 16:17:12.742 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_cn_DTU_uploading_data
+2022-03-10 16:17:12.746 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: getRealDataFromNet !GenerateData.mLdHomeRequestSuspend
+2022-03-10 16:17:12.776 19781-19781/com.hm.hemaiInstall2 I/LdHomeFragment: RealDataTimeCount onTick === 29
+2022-03-10 16:17:13.538 19781-21198/com.hm.hemaiInstall2 I/GenerateData: 【发送】： AppRealDataRes  === ClientTest$MyInboundHandler#0 === ChannelHandlerContext(ClientTest$MyInboundHandler#0, [id: 0x76187f71, L:/10.10.100.1:48070 - R:/10.10.100.254:10081]) === false
+2022-03-10 16:17:13.541 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: ymd_hms: "2022-03-10 16:17:13",oft: 28800,time: 1646925433,
+2022-03-10 16:17:13.541 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: ------------------------------------------------------------------
+2022-03-10 16:17:13.542 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: {"ymdHms":"2022-03-10 16:17:13","cp":0,"errCode":0,"oft":28800,"time":1646925433}
+2022-03-10 16:17:13.542 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+2022-03-10 16:17:13.543 19781-21198/com.hm.hemaiInstall2 I/CRC16Util: crc16 === 15920
+2022-03-10 16:17:13.544 19781-21198/com.hm.hemaiInstall2 I/GenerateData: 484da31100013e3000290a13323032322d30332d31302031363a31373a31332080e10128f9aca89106
+    ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+    ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+2022-03-10 16:17:13.664 19781-19781/com.hm.hemaiInstall2 D/ClientTest: TimeCount onTick === 86389
+2022-03-10 16:17:13.731 19781-19781/com.hm.hemaiInstall2 I/LdHomeFragment: RealDataTimeCount onTick === 29
+2022-03-10 16:17:13.777 19781-19781/com.hm.hemaiInstall2 I/LdHomeFragment: RealDataTimeCount onTick === 28
+2022-03-10 16:17:14.125 19781-21197/com.hm.hemaiInstall2 D/ClientTest: 【应答】：
+2022-03-10 16:17:14.126 19781-21197/com.hm.hemaiInstall2 D/ClientTest: hm_short ====18509
+2022-03-10 16:17:14.126 19781-21197/com.hm.hemaiInstall2 D/ClientTest: lenData ====543
+2022-03-10 16:17:14.126 19781-21197/com.hm.hemaiInstall2 D/ClientTest: 484da2110001b88a02290a0c3130463837323232363739371081aca89106180128014a2b0881e5819197ac04100118ea1220892728cb0530e201381e40b9074856500258c0e1016001a0019a8cfc304a2b0890d2819197ac04100118e31220882728b60830e101382d40d3074862500258c0e1016001a001978ca0334a2b08a6e2819197ac04100118e712208827288b0830e201382b40d1074877500258c0e1016001a001978c88315a1e0881e5819197ac04100118e302202e28a20130bff20238b50e40808080185a1e0881e5819197ac04100218e302202b28980130e4e80238b70e40808080185a1e0881e5819197ac04100318e302205128a002308e9e0238a00d40808080185a1e0881e5819197ac04100418e302202a28960130ace90238cc0e40808080185a1e0890d2819197ac04100118e502204a288902308eb80238ff0d40808080185a1e0890d2819197ac04100218e502204928860230b0bd0238a50e40808080185a1e0890d2819197ac04100318e802205628b70230a79e0238c00d40808080185a1e0890d2819197ac04100418e802205328aa0230e4a00238ec0d40808080185a1e08a6e2819197ac04100118e202203b28d20130daaf0238e90d40808080185a1e08a6e2819197ac04100218e202204328ed013090b40238860e40808080185a1e08a6e2819197ac04100318ef02205b28cc0230ddbe0238820e40808080185a1e08a6e2819197ac04100418ef02205528b6023093b20238870e4080808018
+2022-03-10 16:17:14.127 19781-21197/com.hm.hemaiInstall2 I/ClientTest:  TAG_AppRealDataReq
+2022-03-10 16:17:14.137 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: sn: "10F872226797",time: 1646925313,ap: 1,ver: 1,sgs_datas {,  sn: 19110224228993,  ver: 1,  v: 2410,  freq: 5001,  p: 715,  q: 226,  i: 30,  pf: 953,  temp: 86,  wnum: 2,  crc: 28864,  link: 1,  mi_signal: 102696474,},sgs_datas {,  sn: 19110224226576,  ver: 1,  v: 2403,  freq: 5000,  p: 1078,  q: 225,  i: 45,  pf: 979,  temp: 98,  wnum: 2,  crc: 28864,  link: 1,  mi_signal: 107480599,},sgs_datas {,  sn: 19110224228646,  ver: 1,  v: 2407,  freq: 5000,  p: 1035,  q: 226,  i: 43,  pf: 977,  temp: 119,  wnum: 2,  crc: 28864,  link: 1,  mi_signal: 102893079,},pv_datas {,  sn: 19110224228993,  pi: 1,  v: 355,  i: 46,  p: 162,  et: 47423,  ed: 1845,  code: 50331648,},pv_datas {,  sn: 19110224228993,  pi: 2,  v: 355,  i: 43,  p: 152,  et: 46180,  ed: 1847,  code: 50331648,},pv_datas {,  sn: 19110224228993,  pi: 3,  v: 355,  i: 81,  p: 288,  et: 36622,  ed: 1696,  code: 50331648,},pv_datas {,  sn: 19110224228993,  pi: 4,  v: 355,  i: 42,  p: 150,  et: 46252,  ed: 1868,  code: 50331648,},pv_datas {,  sn: 19110224226576,  pi: 1,  v: 357,  i: 74,  p: 265,  et: 39950,  ed: 1791,  code: 50331648,},pv_datas {,  sn: 19110224226576,  pi: 2,  v: 357,  i: 73,  p: 262,  et: 40624,  ed: 1829,  code: 50331648,},pv_datas {,  sn: 19110224226576,  pi: 3,  v: 360,  i: 86,  p: 311,  et: 36647,  ed: 1728,  code: 50331648,},pv_datas {,  sn: 19110224226576,  pi: 4,  v: 360,  i: 83,  p: 298,  et: 36964,  ed: 1772,  code: 50331648,},pv_datas {,  sn: 19110224228646,  pi: 1,  v: 354,  i: 59,  p: 210,  et: 38874,  ed: 1769,  code: 50331648,},pv_datas {,  sn: 19110224228646,  pi: 2,  v: 354,  i: 67,  p: 237,  et: 39440,  ed: 1798,  code: 50331648,},pv_datas {,  sn: 19110224228646,  pi: 3,  v: 367,  i: 91,  p: 332,  et: 40797,  ed: 1794,  code: 50331648,},pv_datas {,  sn: 19110224228646,  pi: 4,  v: 367,  i: 85,  p: 310,  et: 39187,  ed: 1799,  code: 50331648,},
+2022-03-10 16:17:14.137 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: ------------------------------------------------------------------
+2022-03-10 16:17:14.143 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: {"sn":"10F872226797","time":1646925313,"ap":1,"cp":0,"ver":1,"meterDatas":[],"rpDatas":[],"rsdDatas":[],"sgsDatas":[{"sn":"19110224228993","ver":1,"v":2410,"freq":5001,"p":715,"q":226,"i":30,"pf":953,"temp":86,"wnum":2,"crc":28864,"link":1,"pLim":0,"miSignal":102696474},{"sn":"19110224226576","ver":1,"v":2403,"freq":5000,"p":1078,"q":225,"i":45,"pf":979,"temp":98,"wnum":2,"crc":28864,"link":1,"pLim":0,"miSignal":107480599},{"sn":"19110224228646","ver":1,"v":2407,"freq":5000,"p":1035,"q":226,"i":43,"pf":977,"temp":119,"wnum":2,"crc":28864,"link":1,"pLim":0,"miSignal":102893079}],"tgsDatas":[],"pvDatas":[{"sn":"19110224228993","pi":1,"v":355,"i":46,"p":162,"et":47423,"ed":1845,"code":50331648},{"sn":"19110224228993","pi":2,"v":355,"i":43,"p":152,"et":46180,"ed":1847,"code":50331648},{"sn":"19110224228993","pi":3,"v":355,"i":81,"p":288,"et":36622,"ed":1696,"code":50331648},{"sn":"19110224228993","pi":4,"v":355,"i":42,"p":150,"et":46252,"ed":1868,"code":50331648},{"sn":"19110224226576","pi":1,"v":357,"i":74,"p":265,"et":39950,"ed":1791,"code":50331648},{"sn":"19110224226576","pi":2,"v":357,"i":73,"p":262,"et":40624,"ed":1829,"code":50331648},{"sn":"19110224226576","pi":3,"v":360,"i":86,"p":311,"et":36647,"ed":1728,"code":50331648},{"sn":"19110224226576","pi":4,"v":360,"i":83,"p":298,"et":36964,"ed":1772,"code":50331648},{"sn":"19110224228646","pi":1,"v":354,"i":59,"p":210,"et":38874,"ed":1769,"code":50331648},{"sn":"19110224228646","pi":2,"v":354,"i":67,"p":237,"et":39440,"ed":1798,"code":50331648},{"sn":"19110224228646","pi":3,"v":367,"i":91,"p":332,"et":40797,"ed":1794,"code":50331648},{"sn":"19110224228646","pi":4,"v":367,"i":85,"p":310,"et":39187,"ed":1799,"code":50331648}]}
+2022-03-10 16:17:14.143 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+2022-03-10 16:17:14.165 19781-21197/com.hm.hemaiInstall2 D/ClientTest: 正在加载实时数据_新协议1/1
+2022-03-10 16:17:14.171 19781-21197/com.hm.hemaiInstall2 I/ClientTest: ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+2022-03-10 16:17:14.537 19781-21198/com.hm.hemaiInstall2 I/GenerateData: 1包 实时数据 已获取完毕 ■■■■■■■■■■■■■■■■■■■■
+2022-03-10 16:17:14.664 19781-19781/com.hm.hemaiInstall2 D/ClientTest: TimeCount onTick === 86388
+2022-03-10 16:17:14.734 19781-19781/com.hm.hemaiInstall2 I/LdHomeFragment: RealDataTimeCount onTick === 28
+2022-03-10 16:17:14.734 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: RealDataTimeCount 数据帧采集完毕
+2022-03-10 16:17:14.739 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: getRealDataFromNet
+2022-03-10 16:17:14.739 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_cn_DTU_uploading_data
+2022-03-10 16:17:14.742 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: getRealDataFromNet !GenerateData.mLdHomeRequestSuspend
+2022-03-10 16:17:14.768 19781-19781/com.hm.hemaiInstall2 I/LdHomeFragment: RealDataTimeCount onTick === 29
+2022-03-10 16:17:15.539 19781-21198/com.hm.hemaiInstall2 I/GenerateData: 【发送】： AppRealDataRes  === ClientTest$MyInboundHandler#0 === ChannelHandlerContext(ClientTest$MyInboundHandler#0, [id: 0x76187f71, L:/10.10.100.1:48070 - R:/10.10.100.254:10081]) === false
+2022-03-10 16:17:15.542 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: ymd_hms: "2022-03-10 16:17:15",oft: 28800,time: 1646925435,
+2022-03-10 16:17:15.542 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: ------------------------------------------------------------------
+2022-03-10 16:17:15.543 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: {"ymdHms":"2022-03-10 16:17:15","cp":0,"errCode":0,"oft":28800,"time":1646925435}
+2022-03-10 16:17:15.543 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+2022-03-10 16:17:15.544 19781-21198/com.hm.hemaiInstall2 I/CRC16Util: crc16 === 30295
+2022-03-10 16:17:15.545 19781-21198/com.hm.hemaiInstall2 I/GenerateData: 484da3110001765700290a13323032322d30332d31302031363a31373a31352080e10128fbaca89106
+    ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+    ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+2022-03-10 16:17:15.664 19781-19781/com.hm.hemaiInstall2 D/ClientTest: TimeCount onTick === 86387
+2022-03-10 16:17:15.735 19781-19781/com.hm.hemaiInstall2 I/LdHomeFragment: RealDataTimeCount onTick === 29
+2022-03-10 16:17:15.769 19781-19781/com.hm.hemaiInstall2 I/LdHomeFragment: RealDataTimeCount onTick === 28
+2022-03-10 16:17:15.916 19781-21197/com.hm.hemaiInstall2 D/ClientTest: 【应答】：
+2022-03-10 16:17:15.917 19781-21197/com.hm.hemaiInstall2 D/ClientTest: hm_short ====18509
+2022-03-10 16:17:15.917 19781-21197/com.hm.hemaiInstall2 D/ClientTest: lenData ====543
+2022-03-10 16:17:15.917 19781-21197/com.hm.hemaiInstall2 D/ClientTest: 484da2110001ef2c02290a0c3130463837323232363739371083aca89106180128014a2b0881e5819197ac04100118ea1220892728cb0530e201381e40b9074856500258c0e1016001a0019a8cfc304a2b0890d2819197ac04100118d31220892728da0830de01382f40d5074861500258de98036001a001988cac334a2b08a6e2819197ac04100118e712208827288b0830e201382b40d1074877500258c0e1016001a001978c88315a1e0881e5819197ac04100118e302202e28a20130bff20238b50e40808080185a1e0881e5819197ac04100218e302202b28980130e4e80238b70e40808080185a1e0881e5819197ac04100318e302205128a002308e9e0238a00d40808080185a1e0881e5819197ac04100418e302202a28960130ace90238cc0e40808080185a1e0890d2819197ac04100118e902204d289402308eb80238ff0d40808080185a1e0890d2819197ac04100218e902204728ff0130b0bd0238a50e40808080185a1e0890d2819197ac04100318e802205a28c50230a79e0238c00d40808080185a1e0890d2819197ac04100418e802205828bd0230e4a00238ec0d40808080185a1e08a6e2819197ac04100118e202203b28d20130daaf0238e90d40808080185a1e08a6e2819197ac04100218e202204328ed013090b40238860e40808080185a1e08a6e2819197ac04100318ef02205b28cc0230ddbe0238820e40808080185a1e08a6e2819197ac04100418ef02205528b6023093b20238870e4080808018
+2022-03-10 16:17:15.917 19781-21197/com.hm.hemaiInstall2 I/ClientTest:  TAG_AppRealDataReq
+2022-03-10 16:17:15.927 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: sn: "10F872226797",time: 1646925315,ap: 1,ver: 1,sgs_datas {,  sn: 19110224228993,  ver: 1,  v: 2410,  freq: 5001,  p: 715,  q: 226,  i: 30,  pf: 953,  temp: 86,  wnum: 2,  crc: 28864,  link: 1,  mi_signal: 102696474,},sgs_datas {,  sn: 19110224226576,  ver: 1,  v: 2387,  freq: 5001,  p: 1114,  q: 222,  i: 47,  pf: 981,  temp: 97,  wnum: 2,  crc: 52318,  link: 1,  mi_signal: 107677208,},sgs_datas {,  sn: 19110224228646,  ver: 1,  v: 2407,  freq: 5000,  p: 1035,  q: 226,  i: 43,  pf: 977,  temp: 119,  wnum: 2,  crc: 28864,  link: 1,  mi_signal: 102893079,},pv_datas {,  sn: 19110224228993,  pi: 1,  v: 355,  i: 46,  p: 162,  et: 47423,  ed: 1845,  code: 50331648,},pv_datas {,  sn: 19110224228993,  pi: 2,  v: 355,  i: 43,  p: 152,  et: 46180,  ed: 1847,  code: 50331648,},pv_datas {,  sn: 19110224228993,  pi: 3,  v: 355,  i: 81,  p: 288,  et: 36622,  ed: 1696,  code: 50331648,},pv_datas {,  sn: 19110224228993,  pi: 4,  v: 355,  i: 42,  p: 150,  et: 46252,  ed: 1868,  code: 50331648,},pv_datas {,  sn: 19110224226576,  pi: 1,  v: 361,  i: 77,  p: 276,  et: 39950,  ed: 1791,  code: 50331648,},pv_datas {,  sn: 19110224226576,  pi: 2,  v: 361,  i: 71,  p: 255,  et: 40624,  ed: 1829,  code: 50331648,},pv_datas {,  sn: 19110224226576,  pi: 3,  v: 360,  i: 90,  p: 325,  et: 36647,  ed: 1728,  code: 50331648,},pv_datas {,  sn: 19110224226576,  pi: 4,  v: 360,  i: 88,  p: 317,  et: 36964,  ed: 1772,  code: 50331648,},pv_datas {,  sn: 19110224228646,  pi: 1,  v: 354,  i: 59,  p: 210,  et: 38874,  ed: 1769,  code: 50331648,},pv_datas {,  sn: 19110224228646,  pi: 2,  v: 354,  i: 67,  p: 237,  et: 39440,  ed: 1798,  code: 50331648,},pv_datas {,  sn: 19110224228646,  pi: 3,  v: 367,  i: 91,  p: 332,  et: 40797,  ed: 1794,  code: 50331648,},pv_datas {,  sn: 19110224228646,  pi: 4,  v: 367,  i: 85,  p: 310,  et: 39187,  ed: 1799,  code: 50331648,},
+2022-03-10 16:17:15.927 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: ------------------------------------------------------------------
+2022-03-10 16:17:15.933 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: {"sn":"10F872226797","time":1646925315,"ap":1,"cp":0,"ver":1,"meterDatas":[],"rpDatas":[],"rsdDatas":[],"sgsDatas":[{"sn":"19110224228993","ver":1,"v":2410,"freq":5001,"p":715,"q":226,"i":30,"pf":953,"temp":86,"wnum":2,"crc":28864,"link":1,"pLim":0,"miSignal":102696474},{"sn":"19110224226576","ver":1,"v":2387,"freq":5001,"p":1114,"q":222,"i":47,"pf":981,"temp":97,"wnum":2,"crc":52318,"link":1,"pLim":0,"miSignal":107677208},{"sn":"19110224228646","ver":1,"v":2407,"freq":5000,"p":1035,"q":226,"i":43,"pf":977,"temp":119,"wnum":2,"crc":28864,"link":1,"pLim":0,"miSignal":102893079}],"tgsDatas":[],"pvDatas":[{"sn":"19110224228993","pi":1,"v":355,"i":46,"p":162,"et":47423,"ed":1845,"code":50331648},{"sn":"19110224228993","pi":2,"v":355,"i":43,"p":152,"et":46180,"ed":1847,"code":50331648},{"sn":"19110224228993","pi":3,"v":355,"i":81,"p":288,"et":36622,"ed":1696,"code":50331648},{"sn":"19110224228993","pi":4,"v":355,"i":42,"p":150,"et":46252,"ed":1868,"code":50331648},{"sn":"19110224226576","pi":1,"v":361,"i":77,"p":276,"et":39950,"ed":1791,"code":50331648},{"sn":"19110224226576","pi":2,"v":361,"i":71,"p":255,"et":40624,"ed":1829,"code":50331648},{"sn":"19110224226576","pi":3,"v":360,"i":90,"p":325,"et":36647,"ed":1728,"code":50331648},{"sn":"19110224226576","pi":4,"v":360,"i":88,"p":317,"et":36964,"ed":1772,"code":50331648},{"sn":"19110224228646","pi":1,"v":354,"i":59,"p":210,"et":38874,"ed":1769,"code":50331648},{"sn":"19110224228646","pi":2,"v":354,"i":67,"p":237,"et":39440,"ed":1798,"code":50331648},{"sn":"19110224228646","pi":3,"v":367,"i":91,"p":332,"et":40797,"ed":1794,"code":50331648},{"sn":"19110224228646","pi":4,"v":367,"i":85,"p":310,"et":39187,"ed":1799,"code":50331648}]}
+2022-03-10 16:17:15.933 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+2022-03-10 16:17:15.948 19781-21197/com.hm.hemaiInstall2 D/ClientTest: 正在加载实时数据_新协议1/1
+2022-03-10 16:17:15.953 19781-21197/com.hm.hemaiInstall2 I/ClientTest: ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+2022-03-10 16:17:16.536 19781-21198/com.hm.hemaiInstall2 I/GenerateData: 1包 实时数据 已获取完毕 ■■■■■■■■■■■■■■■■■■■■
+2022-03-10 16:17:16.665 19781-19781/com.hm.hemaiInstall2 D/ClientTest: TimeCount onTick === 86386
+2022-03-10 16:17:16.736 19781-19781/com.hm.hemaiInstall2 I/LdHomeFragment: RealDataTimeCount onTick === 28
+2022-03-10 16:17:16.737 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: RealDataTimeCount 数据帧采集完毕
+2022-03-10 16:17:16.746 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: getRealDataFromNet
+2022-03-10 16:17:16.748 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_cn_DTU_uploading_data
+2022-03-10 16:17:16.752 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: getRealDataFromNet !GenerateData.mLdHomeRequestSuspend
+2022-03-10 16:17:16.779 19781-19781/com.hm.hemaiInstall2 I/LdHomeFragment: RealDataTimeCount onTick === 29
+2022-03-10 16:17:17.539 19781-21198/com.hm.hemaiInstall2 I/GenerateData: 【发送】： AppRealDataRes  === ClientTest$MyInboundHandler#0 === ChannelHandlerContext(ClientTest$MyInboundHandler#0, [id: 0x76187f71, L:/10.10.100.1:48070 - R:/10.10.100.254:10081]) === false
+2022-03-10 16:17:17.542 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: ymd_hms: "2022-03-10 16:17:17",oft: 28800,time: 1646925437,
+2022-03-10 16:17:17.542 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: ------------------------------------------------------------------
+2022-03-10 16:17:17.543 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: {"ymdHms":"2022-03-10 16:17:17","cp":0,"errCode":0,"oft":28800,"time":1646925437}
+2022-03-10 16:17:17.543 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+2022-03-10 16:17:17.544 19781-21198/com.hm.hemaiInstall2 I/CRC16Util: crc16 === 52948
+2022-03-10 16:17:17.544 19781-21198/com.hm.hemaiInstall2 I/GenerateData: 484da3110001ced400290a13323032322d30332d31302031363a31373a31372080e10128fdaca89106
+    ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+    ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+2022-03-10 16:17:17.665 19781-19781/com.hm.hemaiInstall2 D/ClientTest: TimeCount onTick === 86385
+2022-03-10 16:17:17.737 19781-19781/com.hm.hemaiInstall2 I/LdHomeFragment: RealDataTimeCount onTick === 29
+2022-03-10 16:17:17.780 19781-19781/com.hm.hemaiInstall2 I/LdHomeFragment: RealDataTimeCount onTick === 28
+2022-03-10 16:17:18.219 19781-21197/com.hm.hemaiInstall2 D/ClientTest: 【应答】：
+2022-03-10 16:17:18.220 19781-21197/com.hm.hemaiInstall2 D/ClientTest: hm_short ====18509
+2022-03-10 16:17:18.220 19781-21197/com.hm.hemaiInstall2 D/ClientTest: lenData ====543
+2022-03-10 16:17:18.221 19781-21197/com.hm.hemaiInstall2 D/ClientTest: 484da2110001f70202290a0c3130463837323232363739371085aca89106180128014a2b0881e5819197ac04100118ea1220892728cb0530e201381e40b9074856500258c0e1016001a0019a8cfc304a2b0890d2819197ac04100118d31220892728da0830de01382f40d5074861500258de98036001a001988cb8334a2b08a6e2819197ac04100118e712208827288b0830e201382b40d1074877500258c0e1016001a001978c88315a1e0881e5819197ac04100118e302202e28a20130bff20238b50e40808080185a1e0881e5819197ac04100218e302202b28980130e4e80238b70e40808080185a1e0881e5819197ac04100318e302205128a002308e9e0238a00d40808080185a1e0881e5819197ac04100418e302202a28960130ace90238cc0e40808080185a1e0890d2819197ac04100118e902204d289402308eb80238ff0d40808080185a1e0890d2819197ac04100218e902204728ff0130b0bd0238a50e40808080185a1e0890d2819197ac04100318e802205a28c50230a79e0238c00d40808080185a1e0890d2819197ac04100418e802205828bd0230e4a00238ec0d40808080185a1e08a6e2819197ac04100118e202203b28d20130daaf0238e90d40808080185a1e08a6e2819197ac04100218e202204328ed013090b40238860e40808080185a1e08a6e2819197ac04100318ef02205b28cc0230ddbe0238820e40808080185a1e08a6e2819197ac04100418ef02205528b6023093b20238870e4080808018
+2022-03-10 16:17:18.221 19781-21197/com.hm.hemaiInstall2 I/ClientTest:  TAG_AppRealDataReq
+2022-03-10 16:17:18.230 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: sn: "10F872226797",time: 1646925317,ap: 1,ver: 1,sgs_datas {,  sn: 19110224228993,  ver: 1,  v: 2410,  freq: 5001,  p: 715,  q: 226,  i: 30,  pf: 953,  temp: 86,  wnum: 2,  crc: 28864,  link: 1,  mi_signal: 102696474,},sgs_datas {,  sn: 19110224226576,  ver: 1,  v: 2387,  freq: 5001,  p: 1114,  q: 222,  i: 47,  pf: 981,  temp: 97,  wnum: 2,  crc: 52318,  link: 1,  mi_signal: 107873816,},sgs_datas {,  sn: 19110224228646,  ver: 1,  v: 2407,  freq: 5000,  p: 1035,  q: 226,  i: 43,  pf: 977,  temp: 119,  wnum: 2,  crc: 28864,  link: 1,  mi_signal: 102893079,},pv_datas {,  sn: 19110224228993,  pi: 1,  v: 355,  i: 46,  p: 162,  et: 47423,  ed: 1845,  code: 50331648,},pv_datas {,  sn: 19110224228993,  pi: 2,  v: 355,  i: 43,  p: 152,  et: 46180,  ed: 1847,  code: 50331648,},pv_datas {,  sn: 19110224228993,  pi: 3,  v: 355,  i: 81,  p: 288,  et: 36622,  ed: 1696,  code: 50331648,},pv_datas {,  sn: 19110224228993,  pi: 4,  v: 355,  i: 42,  p: 150,  et: 46252,  ed: 1868,  code: 50331648,},pv_datas {,  sn: 19110224226576,  pi: 1,  v: 361,  i: 77,  p: 276,  et: 39950,  ed: 1791,  code: 50331648,},pv_datas {,  sn: 19110224226576,  pi: 2,  v: 361,  i: 71,  p: 255,  et: 40624,  ed: 1829,  code: 50331648,},pv_datas {,  sn: 19110224226576,  pi: 3,  v: 360,  i: 90,  p: 325,  et: 36647,  ed: 1728,  code: 50331648,},pv_datas {,  sn: 19110224226576,  pi: 4,  v: 360,  i: 88,  p: 317,  et: 36964,  ed: 1772,  code: 50331648,},pv_datas {,  sn: 19110224228646,  pi: 1,  v: 354,  i: 59,  p: 210,  et: 38874,  ed: 1769,  code: 50331648,},pv_datas {,  sn: 19110224228646,  pi: 2,  v: 354,  i: 67,  p: 237,  et: 39440,  ed: 1798,  code: 50331648,},pv_datas {,  sn: 19110224228646,  pi: 3,  v: 367,  i: 91,  p: 332,  et: 40797,  ed: 1794,  code: 50331648,},pv_datas {,  sn: 19110224228646,  pi: 4,  v: 367,  i: 85,  p: 310,  et: 39187,  ed: 1799,  code: 50331648,},
+2022-03-10 16:17:18.231 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: ------------------------------------------------------------------
+2022-03-10 16:17:18.236 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: {"sn":"10F872226797","time":1646925317,"ap":1,"cp":0,"ver":1,"meterDatas":[],"rpDatas":[],"rsdDatas":[],"sgsDatas":[{"sn":"19110224228993","ver":1,"v":2410,"freq":5001,"p":715,"q":226,"i":30,"pf":953,"temp":86,"wnum":2,"crc":28864,"link":1,"pLim":0,"miSignal":102696474},{"sn":"19110224226576","ver":1,"v":2387,"freq":5001,"p":1114,"q":222,"i":47,"pf":981,"temp":97,"wnum":2,"crc":52318,"link":1,"pLim":0,"miSignal":107873816},{"sn":"19110224228646","ver":1,"v":2407,"freq":5000,"p":1035,"q":226,"i":43,"pf":977,"temp":119,"wnum":2,"crc":28864,"link":1,"pLim":0,"miSignal":102893079}],"tgsDatas":[],"pvDatas":[{"sn":"19110224228993","pi":1,"v":355,"i":46,"p":162,"et":47423,"ed":1845,"code":50331648},{"sn":"19110224228993","pi":2,"v":355,"i":43,"p":152,"et":46180,"ed":1847,"code":50331648},{"sn":"19110224228993","pi":3,"v":355,"i":81,"p":288,"et":36622,"ed":1696,"code":50331648},{"sn":"19110224228993","pi":4,"v":355,"i":42,"p":150,"et":46252,"ed":1868,"code":50331648},{"sn":"19110224226576","pi":1,"v":361,"i":77,"p":276,"et":39950,"ed":1791,"code":50331648},{"sn":"19110224226576","pi":2,"v":361,"i":71,"p":255,"et":40624,"ed":1829,"code":50331648},{"sn":"19110224226576","pi":3,"v":360,"i":90,"p":325,"et":36647,"ed":1728,"code":50331648},{"sn":"19110224226576","pi":4,"v":360,"i":88,"p":317,"et":36964,"ed":1772,"code":50331648},{"sn":"19110224228646","pi":1,"v":354,"i":59,"p":210,"et":38874,"ed":1769,"code":50331648},{"sn":"19110224228646","pi":2,"v":354,"i":67,"p":237,"et":39440,"ed":1798,"code":50331648},{"sn":"19110224228646","pi":3,"v":367,"i":91,"p":332,"et":40797,"ed":1794,"code":50331648},{"sn":"19110224228646","pi":4,"v":367,"i":85,"p":310,"et":39187,"ed":1799,"code":50331648}]}
+2022-03-10 16:17:18.237 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+2022-03-10 16:17:18.252 19781-21197/com.hm.hemaiInstall2 D/ClientTest: 正在加载实时数据_新协议1/1
+2022-03-10 16:17:18.257 19781-21197/com.hm.hemaiInstall2 I/ClientTest: ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+2022-03-10 16:17:18.536 19781-21198/com.hm.hemaiInstall2 I/GenerateData: 1包 实时数据 已获取完毕 ■■■■■■■■■■■■■■■■■■■■
+2022-03-10 16:17:18.665 19781-19781/com.hm.hemaiInstall2 D/ClientTest: TimeCount onTick === 86384
+2022-03-10 16:17:18.738 19781-19781/com.hm.hemaiInstall2 I/LdHomeFragment: RealDataTimeCount onTick === 28
+2022-03-10 16:17:18.738 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: RealDataTimeCount 数据帧采集完毕
+2022-03-10 16:17:18.749 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: getRealDataFromNet
+2022-03-10 16:17:18.750 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_cn_DTU_uploading_data
+2022-03-10 16:17:18.753 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: getRealDataFromNet !GenerateData.mLdHomeRequestSuspend
+2022-03-10 16:17:18.780 19781-19781/com.hm.hemaiInstall2 I/LdHomeFragment: RealDataTimeCount onTick === 29
+2022-03-10 16:17:19.538 19781-21198/com.hm.hemaiInstall2 I/GenerateData: 【发送】： AppRealDataRes  === ClientTest$MyInboundHandler#0 === ChannelHandlerContext(ClientTest$MyInboundHandler#0, [id: 0x76187f71, L:/10.10.100.1:48070 - R:/10.10.100.254:10081]) === false
+2022-03-10 16:17:19.541 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: ymd_hms: "2022-03-10 16:17:19",oft: 28800,time: 1646925439,
+2022-03-10 16:17:19.541 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: ------------------------------------------------------------------
+2022-03-10 16:17:19.542 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: {"ymdHms":"2022-03-10 16:17:19","cp":0,"errCode":0,"oft":28800,"time":1646925439}
+2022-03-10 16:17:19.542 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+2022-03-10 16:17:19.543 19781-21198/com.hm.hemaiInstall2 I/CRC16Util: crc16 === 59033
+2022-03-10 16:17:19.543 19781-21198/com.hm.hemaiInstall2 I/GenerateData: 484da3110001e69900290a13323032322d30332d31302031363a31373a31392080e10128ffaca89106
+    ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+    ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+2022-03-10 16:17:19.664 19781-19781/com.hm.hemaiInstall2 D/ClientTest: TimeCount onTick === 86383
+2022-03-10 16:17:19.738 19781-19781/com.hm.hemaiInstall2 I/LdHomeFragment: RealDataTimeCount onTick === 29
+2022-03-10 16:17:19.781 19781-19781/com.hm.hemaiInstall2 I/LdHomeFragment: RealDataTimeCount onTick === 28
+2022-03-10 16:17:19.938 19781-21197/com.hm.hemaiInstall2 D/ClientTest: 【应答】：
+2022-03-10 16:17:19.938 19781-21197/com.hm.hemaiInstall2 D/ClientTest: hm_short ====18509
+2022-03-10 16:17:19.939 19781-21197/com.hm.hemaiInstall2 D/ClientTest: lenData ====543
+2022-03-10 16:17:19.939 19781-21197/com.hm.hemaiInstall2 D/ClientTest: 484da2110001010502290a0c3130463837323232363739371087aca89106180128014a2b0881e5819197ac04100118ea1220892728cb0530e201381e40b9074856500258c0e1016001a0019a8cfc304a2b0890d2819197ac04100118d31220892728da0830de01382f40d5074861500258de98036001a001988cc0334a2b08a6e2819197ac04100118e712208827288b0830e201382b40d1074877500258c0e1016001a001978c88315a1e0881e5819197ac04100118e302202e28a20130bff20238b50e40808080185a1e0881e5819197ac04100218e302202b28980130e4e80238b70e40808080185a1e0881e5819197ac04100318e302205128a002308e9e0238a00d40808080185a1e0881e5819197ac04100418e302202a28960130ace90238cc0e40808080185a1e0890d2819197ac04100118e902204d289402308eb80238ff0d40808080185a1e0890d2819197ac04100218e902204728ff0130b0bd0238a50e40808080185a1e0890d2819197ac04100318e802205a28c50230a79e0238c00d40808080185a1e0890d2819197ac04100418e802205828bd0230e4a00238ec0d40808080185a1e08a6e2819197ac04100118e202203b28d20130daaf0238e90d40808080185a1e08a6e2819197ac04100218e202204328ed013090b40238860e40808080185a1e08a6e2819197ac04100318ef02205b28cc0230ddbe0238820e40808080185a1e08a6e2819197ac04100418ef02205528b6023093b20238870e4080808018
+2022-03-10 16:17:19.939 19781-21197/com.hm.hemaiInstall2 I/ClientTest:  TAG_AppRealDataReq
+2022-03-10 16:17:19.949 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: sn: "10F872226797",time: 1646925319,ap: 1,ver: 1,sgs_datas {,  sn: 19110224228993,  ver: 1,  v: 2410,  freq: 5001,  p: 715,  q: 226,  i: 30,  pf: 953,  temp: 86,  wnum: 2,  crc: 28864,  link: 1,  mi_signal: 102696474,},sgs_datas {,  sn: 19110224226576,  ver: 1,  v: 2387,  freq: 5001,  p: 1114,  q: 222,  i: 47,  pf: 981,  temp: 97,  wnum: 2,  crc: 52318,  link: 1,  mi_signal: 108004888,},sgs_datas {,  sn: 19110224228646,  ver: 1,  v: 2407,  freq: 5000,  p: 1035,  q: 226,  i: 43,  pf: 977,  temp: 119,  wnum: 2,  crc: 28864,  link: 1,  mi_signal: 102893079,},pv_datas {,  sn: 19110224228993,  pi: 1,  v: 355,  i: 46,  p: 162,  et: 47423,  ed: 1845,  code: 50331648,},pv_datas {,  sn: 19110224228993,  pi: 2,  v: 355,  i: 43,  p: 152,  et: 46180,  ed: 1847,  code: 50331648,},pv_datas {,  sn: 19110224228993,  pi: 3,  v: 355,  i: 81,  p: 288,  et: 36622,  ed: 1696,  code: 50331648,},pv_datas {,  sn: 19110224228993,  pi: 4,  v: 355,  i: 42,  p: 150,  et: 46252,  ed: 1868,  code: 50331648,},pv_datas {,  sn: 19110224226576,  pi: 1,  v: 361,  i: 77,  p: 276,  et: 39950,  ed: 1791,  code: 50331648,},pv_datas {,  sn: 19110224226576,  pi: 2,  v: 361,  i: 71,  p: 255,  et: 40624,  ed: 1829,  code: 50331648,},pv_datas {,  sn: 19110224226576,  pi: 3,  v: 360,  i: 90,  p: 325,  et: 36647,  ed: 1728,  code: 50331648,},pv_datas {,  sn: 19110224226576,  pi: 4,  v: 360,  i: 88,  p: 317,  et: 36964,  ed: 1772,  code: 50331648,},pv_datas {,  sn: 19110224228646,  pi: 1,  v: 354,  i: 59,  p: 210,  et: 38874,  ed: 1769,  code: 50331648,},pv_datas {,  sn: 19110224228646,  pi: 2,  v: 354,  i: 67,  p: 237,  et: 39440,  ed: 1798,  code: 50331648,},pv_datas {,  sn: 19110224228646,  pi: 3,  v: 367,  i: 91,  p: 332,  et: 40797,  ed: 1794,  code: 50331648,},pv_datas {,  sn: 19110224228646,  pi: 4,  v: 367,  i: 85,  p: 310,  et: 39187,  ed: 1799,  code: 50331648,},
+2022-03-10 16:17:19.949 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: ------------------------------------------------------------------
+2022-03-10 16:17:19.955 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: {"sn":"10F872226797","time":1646925319,"ap":1,"cp":0,"ver":1,"meterDatas":[],"rpDatas":[],"rsdDatas":[],"sgsDatas":[{"sn":"19110224228993","ver":1,"v":2410,"freq":5001,"p":715,"q":226,"i":30,"pf":953,"temp":86,"wnum":2,"crc":28864,"link":1,"pLim":0,"miSignal":102696474},{"sn":"19110224226576","ver":1,"v":2387,"freq":5001,"p":1114,"q":222,"i":47,"pf":981,"temp":97,"wnum":2,"crc":52318,"link":1,"pLim":0,"miSignal":108004888},{"sn":"19110224228646","ver":1,"v":2407,"freq":5000,"p":1035,"q":226,"i":43,"pf":977,"temp":119,"wnum":2,"crc":28864,"link":1,"pLim":0,"miSignal":102893079}],"tgsDatas":[],"pvDatas":[{"sn":"19110224228993","pi":1,"v":355,"i":46,"p":162,"et":47423,"ed":1845,"code":50331648},{"sn":"19110224228993","pi":2,"v":355,"i":43,"p":152,"et":46180,"ed":1847,"code":50331648},{"sn":"19110224228993","pi":3,"v":355,"i":81,"p":288,"et":36622,"ed":1696,"code":50331648},{"sn":"19110224228993","pi":4,"v":355,"i":42,"p":150,"et":46252,"ed":1868,"code":50331648},{"sn":"19110224226576","pi":1,"v":361,"i":77,"p":276,"et":39950,"ed":1791,"code":50331648},{"sn":"19110224226576","pi":2,"v":361,"i":71,"p":255,"et":40624,"ed":1829,"code":50331648},{"sn":"19110224226576","pi":3,"v":360,"i":90,"p":325,"et":36647,"ed":1728,"code":50331648},{"sn":"19110224226576","pi":4,"v":360,"i":88,"p":317,"et":36964,"ed":1772,"code":50331648},{"sn":"19110224228646","pi":1,"v":354,"i":59,"p":210,"et":38874,"ed":1769,"code":50331648},{"sn":"19110224228646","pi":2,"v":354,"i":67,"p":237,"et":39440,"ed":1798,"code":50331648},{"sn":"19110224228646","pi":3,"v":367,"i":91,"p":332,"et":40797,"ed":1794,"code":50331648},{"sn":"19110224228646","pi":4,"v":367,"i":85,"p":310,"et":39187,"ed":1799,"code":50331648}]}
+2022-03-10 16:17:19.955 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+2022-03-10 16:17:19.970 19781-21197/com.hm.hemaiInstall2 D/ClientTest: 正在加载实时数据_新协议1/1
+2022-03-10 16:17:19.974 19781-21197/com.hm.hemaiInstall2 I/ClientTest: ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+2022-03-10 16:17:20.537 19781-21198/com.hm.hemaiInstall2 I/GenerateData: 1包 实时数据 已获取完毕 ■■■■■■■■■■■■■■■■■■■■
+2022-03-10 16:17:20.664 19781-19781/com.hm.hemaiInstall2 D/ClientTest: TimeCount onTick === 86382
+2022-03-10 16:17:20.739 19781-19781/com.hm.hemaiInstall2 I/LdHomeFragment: RealDataTimeCount onTick === 28
+2022-03-10 16:17:20.739 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: RealDataTimeCount 数据帧采集完毕
+2022-03-10 16:17:20.748 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: getRealDataFromNet
+2022-03-10 16:17:20.749 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_cn_DTU_uploading_data
+2022-03-10 16:17:20.752 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: getRealDataFromNet !GenerateData.mLdHomeRequestSuspend
+2022-03-10 16:17:20.782 19781-19781/com.hm.hemaiInstall2 I/LdHomeFragment: RealDataTimeCount onTick === 29
+2022-03-10 16:17:21.043 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_cn_shifoutuichuanzhuangtiaoshizhushou
+2022-03-10 16:17:21.045 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === mine_alert_sure
+2022-03-10 16:17:21.046 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === mine_alert_cancel
+2022-03-10 16:17:21.539 19781-21198/com.hm.hemaiInstall2 I/GenerateData: 【发送】： AppRealDataRes  === ClientTest$MyInboundHandler#0 === ChannelHandlerContext(ClientTest$MyInboundHandler#0, [id: 0x76187f71, L:/10.10.100.1:48070 - R:/10.10.100.254:10081]) === false
+2022-03-10 16:17:21.542 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: ymd_hms: "2022-03-10 16:17:21",oft: 28800,time: 1646925441,
+2022-03-10 16:17:21.542 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: ------------------------------------------------------------------
+2022-03-10 16:17:21.543 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: {"ymdHms":"2022-03-10 16:17:21","cp":0,"errCode":0,"oft":28800,"time":1646925441}
+2022-03-10 16:17:21.543 19781-21198/com.hm.hemaiInstall2 I/DeviceUtils: ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+2022-03-10 16:17:21.544 19781-21198/com.hm.hemaiInstall2 I/CRC16Util: crc16 === 29854
+2022-03-10 16:17:21.545 19781-21198/com.hm.hemaiInstall2 I/GenerateData: 484da3110001749e00290a13323032322d30332d31302031363a31373a32312080e1012881ada89106
+    ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+    ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+2022-03-10 16:17:21.665 19781-19781/com.hm.hemaiInstall2 D/ClientTest: TimeCount onTick === 86381
+2022-03-10 16:17:21.739 19781-19781/com.hm.hemaiInstall2 I/LdHomeFragment: RealDataTimeCount onTick === 29
+2022-03-10 16:17:21.782 19781-19781/com.hm.hemaiInstall2 I/LdHomeFragment: RealDataTimeCount onTick === 28
+2022-03-10 16:17:22.105 19781-21197/com.hm.hemaiInstall2 D/ClientTest: 【应答】：
+2022-03-10 16:17:22.105 19781-21197/com.hm.hemaiInstall2 D/ClientTest: hm_short ====18509
+2022-03-10 16:17:22.106 19781-21197/com.hm.hemaiInstall2 D/ClientTest: lenData ====543
+2022-03-10 16:17:22.106 19781-21197/com.hm.hemaiInstall2 D/ClientTest: 484da2110001bafe02290a0c3130463837323232363739371089aca89106180128014a2b0881e5819197ac04100118ea1220892728cb0530e201381e40b9074856500258c0e1016001a0019a8cfc304a2b0890d2819197ac04100118d31220892728da0830de01382f40d5074861500258de98036001a001988cc8334a2b08a6e2819197ac04100118e112208927289a0830e101382c40d2074875500258eb92036001a001988c8c315a1e0881e5819197ac04100118e302202e28a20130bff20238b50e40808080185a1e0881e5819197ac04100218e302202b28980130e4e80238b70e40808080185a1e0881e5819197ac04100318e302205128a002308e9e0238a00d40808080185a1e0881e5819197ac04100418e302202a28960130ace90238cc0e40808080185a1e0890d2819197ac04100118e902204d289402308eb80238ff0d40808080185a1e0890d2819197ac04100218e902204728ff0130b0bd0238a50e40808080185a1e0890d2819197ac04100318e802205a28c50230a79e0238c00d40808080185a1e0890d2819197ac04100418e802205828bd0230e4a00238ec0d40808080185a1e08a6e2819197ac04100118e002203c28d20130daaf0238e90d40808080185a1e08a6e2819197ac04100218e002204028e1013090b40238860e40808080185a1e08a6e2819197ac04100318ef02206a28860330ddbe0238820e40808080185a1e08a6e2819197ac04100418ef02204c2898023093b20238870e4080808018
+2022-03-10 16:17:22.106 19781-21197/com.hm.hemaiInstall2 I/ClientTest:  TAG_AppRealDataReq
+2022-03-10 16:17:22.116 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: sn: "10F872226797",time: 1646925321,ap: 1,ver: 1,sgs_datas {,  sn: 19110224228993,  ver: 1,  v: 2410,  freq: 5001,  p: 715,  q: 226,  i: 30,  pf: 953,  temp: 86,  wnum: 2,  crc: 28864,  link: 1,  mi_signal: 102696474,},sgs_datas {,  sn: 19110224226576,  ver: 1,  v: 2387,  freq: 5001,  p: 1114,  q: 222,  i: 47,  pf: 981,  temp: 97,  wnum: 2,  crc: 52318,  link: 1,  mi_signal: 108135960,},sgs_datas {,  sn: 19110224228646,  ver: 1,  v: 2401,  freq: 5001,  p: 1050,  q: 225,  i: 44,  pf: 978,  temp: 117,  wnum: 2,  crc: 51563,  link: 1,  mi_signal: 102958616,},pv_datas {,  sn: 19110224228993,  pi: 1,  v: 355,  i: 46,  p: 162,  et: 47423,  ed: 1845,  code: 50331648,},pv_datas {,  sn: 19110224228993,  pi: 2,  v: 355,  i: 43,  p: 152,  et: 46180,  ed: 1847,  code: 50331648,},pv_datas {,  sn: 19110224228993,  pi: 3,  v: 355,  i: 81,  p: 288,  et: 36622,  ed: 1696,  code: 50331648,},pv_datas {,  sn: 19110224228993,  pi: 4,  v: 355,  i: 42,  p: 150,  et: 46252,  ed: 1868,  code: 50331648,},pv_datas {,  sn: 19110224226576,  pi: 1,  v: 361,  i: 77,  p: 276,  et: 39950,  ed: 1791,  code: 50331648,},pv_datas {,  sn: 19110224226576,  pi: 2,  v: 361,  i: 71,  p: 255,  et: 40624,  ed: 1829,  code: 50331648,},pv_datas {,  sn: 19110224226576,  pi: 3,  v: 360,  i: 90,  p: 325,  et: 36647,  ed: 1728,  code: 50331648,},pv_datas {,  sn: 19110224226576,  pi: 4,  v: 360,  i: 88,  p: 317,  et: 36964,  ed: 1772,  code: 50331648,},pv_datas {,  sn: 19110224228646,  pi: 1,  v: 352,  i: 60,  p: 210,  et: 38874,  ed: 1769,  code: 50331648,},pv_datas {,  sn: 19110224228646,  pi: 2,  v: 352,  i: 64,  p: 225,  et: 39440,  ed: 1798,  code: 50331648,},pv_datas {,  sn: 19110224228646,  pi: 3,  v: 367,  i: 106,  p: 390,  et: 40797,  ed: 1794,  code: 50331648,},pv_datas {,  sn: 19110224228646,  pi: 4,  v: 367,  i: 76,  p: 280,  et: 39187,  ed: 1799,  code: 50331648,},
+2022-03-10 16:17:22.116 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: ------------------------------------------------------------------
+2022-03-10 16:17:22.123 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: {"sn":"10F872226797","time":1646925321,"ap":1,"cp":0,"ver":1,"meterDatas":[],"rpDatas":[],"rsdDatas":[],"sgsDatas":[{"sn":"19110224228993","ver":1,"v":2410,"freq":5001,"p":715,"q":226,"i":30,"pf":953,"temp":86,"wnum":2,"crc":28864,"link":1,"pLim":0,"miSignal":102696474},{"sn":"19110224226576","ver":1,"v":2387,"freq":5001,"p":1114,"q":222,"i":47,"pf":981,"temp":97,"wnum":2,"crc":52318,"link":1,"pLim":0,"miSignal":108135960},{"sn":"19110224228646","ver":1,"v":2401,"freq":5001,"p":1050,"q":225,"i":44,"pf":978,"temp":117,"wnum":2,"crc":51563,"link":1,"pLim":0,"miSignal":102958616}],"tgsDatas":[],"pvDatas":[{"sn":"19110224228993","pi":1,"v":355,"i":46,"p":162,"et":47423,"ed":1845,"code":50331648},{"sn":"19110224228993","pi":2,"v":355,"i":43,"p":152,"et":46180,"ed":1847,"code":50331648},{"sn":"19110224228993","pi":3,"v":355,"i":81,"p":288,"et":36622,"ed":1696,"code":50331648},{"sn":"19110224228993","pi":4,"v":355,"i":42,"p":150,"et":46252,"ed":1868,"code":50331648},{"sn":"19110224226576","pi":1,"v":361,"i":77,"p":276,"et":39950,"ed":1791,"code":50331648},{"sn":"19110224226576","pi":2,"v":361,"i":71,"p":255,"et":40624,"ed":1829,"code":50331648},{"sn":"19110224226576","pi":3,"v":360,"i":90,"p":325,"et":36647,"ed":1728,"code":50331648},{"sn":"19110224226576","pi":4,"v":360,"i":88,"p":317,"et":36964,"ed":1772,"code":50331648},{"sn":"19110224228646","pi":1,"v":352,"i":60,"p":210,"et":38874,"ed":1769,"code":50331648},{"sn":"19110224228646","pi":2,"v":352,"i":64,"p":225,"et":39440,"ed":1798,"code":50331648},{"sn":"19110224228646","pi":3,"v":367,"i":106,"p":390,"et":40797,"ed":1794,"code":50331648},{"sn":"19110224228646","pi":4,"v":367,"i":76,"p":280,"et":39187,"ed":1799,"code":50331648}]}
+2022-03-10 16:17:22.123 19781-21197/com.hm.hemaiInstall2 I/DeviceUtils: ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+2022-03-10 16:17:22.142 19781-21197/com.hm.hemaiInstall2 D/ClientTest: 正在加载实时数据_新协议1/1
+2022-03-10 16:17:22.147 19781-21197/com.hm.hemaiInstall2 I/ClientTest: ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+2022-03-10 16:17:22.421 19781-19891/com.hm.hemaiInstall2 D/OpenGLRenderer: endAllActiveAnimators on 0x7430c3f800 (RippleDrawable) with handle 0x7444db3ec0
+2022-03-10 16:17:22.433 19781-19781/com.hm.hemaiInstall2 D/CrashReport: >>> com.hoymiles.activity.net.LDEquipmentMain2Activity onPaused <<<
+2022-03-10 16:17:22.436 19781-19781/com.hm.hemaiInstall2 I/CrashReport-Native: Set native info: isAppForeground(false)
+2022-03-10 16:17:22.447 19781-19781/com.hm.hemaiInstall2 D/CrashReport: >>> com.hoymiles.MainActivity onResumed <<<
+2022-03-10 16:17:22.448 19781-19781/com.hm.hemaiInstall2 I/CrashReport-Native: Set native info: isAppForeground(true)
+2022-03-10 16:17:22.448 19781-19781/com.hm.hemaiInstall2 D/com.hoymiles.MainActivity: onResume   ============================
+2022-03-10 16:17:22.452 19781-19781/com.hm.hemaiInstall2 W/com.hoymiles.MainActivity: UserAPI.putLdIsExit === true
+2022-03-10 16:17:22.740 19781-19781/com.hm.hemaiInstall2 I/LdHomeFragment: RealDataTimeCount onTick === 28
+2022-03-10 16:17:22.740 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: RealDataTimeCount 数据帧采集完毕
+2022-03-10 16:17:22.740 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: getRealDataFromNet
+2022-03-10 16:17:22.740 19781-19781/com.hm.hemaiInstall2 I/LanguageUtils: 服务器无该翻译 === add_cn_DTU_uploading_data
+2022-03-10 16:17:22.741 19781-19781/com.hm.hemaiInstall2 D/LdHomeFragment: getRealDataFromNet !GenerateData.mLdHomeRequestSuspend
+2022-03-10 16:17:22.746 19781-19781/com.hm.hemaiInstall2 I/LdHomeFragment: RealDataTimeCount onTick === 30
+2022-03-10 16:17:22.810 19781-19781/com.hm.hemaiInstall2 D/CrashReport: >>> com.hoymiles.activity.net.LDEquipmentMain2Activity onDestroyed <<<
+2022-03-10 16:17:22.811 19781-19781/com.hm.hemaiInstall2 E/LdHomeFragment: onDestroy mHandler.removeMessages

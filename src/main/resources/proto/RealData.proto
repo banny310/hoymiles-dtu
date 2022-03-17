@@ -1,0 +1,83 @@
+syntax = "proto2";
+
+package hoymiles;
+
+option java_multiple_files = false;
+option java_package = "com.hoymiles.infrastructure.protos";
+option java_outer_classname = "RealData";
+
+message RealDataResDTO {
+  required bytes ymdHms = 1;
+  optional int32 packageNow = 2;
+  optional int32 errCode = 3;
+  required int32 offset = 4;
+  required int32 time = 5;
+}
+
+message RealDataReqDTO {
+  required bytes dtuSn = 1;
+  required int32 time = 2;
+  required int32 deviceNub = 3;
+  optional int32 pvNub = 4 [default = 0];
+  required int32 packageNub = 5;
+  optional int32 packageNow = 6 [default = 0];
+  optional int32 cqs = 7 [default = 0];
+  repeated MeterDataMO mMeterData = 8;
+  repeated RpDataMO mRpDatas = 9;
+  repeated PvDataMO mpvDatas = 10;
+  optional int32 version = 11 [default = 0];
+}
+
+message MeterDataMO {
+  required int32 deviceKind = 1;
+  required int64 meterSn = 2;
+  required int32 meterPTotal = 3;
+  required int32 meterPTta = 4;
+  required int32 meterPTtb = 5;
+  required int32 meterPTtc = 6;
+  required int32 meterFactor = 7;
+  required int32 meterEpTotal = 8;
+  required int32 meterEpTta = 9;
+  required int32 meterEpTtb = 10;
+  required int32 meterEpTtc = 11;
+  required int32 meterEnTotal = 12;
+  required int32 meterEnTta = 13;
+  required int32 meterEnTtb = 14;
+  required int32 meterEnTtc = 15;
+  required int32 meterFault = 16;
+}
+
+message RpDataMO {
+  required int64 rpSn = 1;
+  optional int32 rpSignal = 2 [default = 0];
+  optional int32 rpChannel = 3 [default = 0];
+  optional int32 rpLinkNub = 4 [default = 0];
+  optional int32 rpLinkStatus = 5 [default = 0];
+}
+
+message PvDataMO {
+  required int64 pvSn = 1;
+  required int32 pvPort = 2;
+  required int32 pvVol = 3;
+  required int32 pvCur = 4;
+  required int32 pvPower = 5;
+  required int32 pvEnergyTotal = 6;
+  required int32 gridVol = 7;
+  required int32 gridVolMax = 8;
+  required int32 gridFreq = 9;
+  required int32 gridP = 10;
+  required int32 gridQ = 11;
+  required int32 gridI = 12;
+  required int32 gridPf = 13;
+  required int32 pvTemp = 14;
+  required int32 pvRunStatus = 15;
+  required int32 pvFaultNum = 16;
+  repeated int32 pvFaultCnt = 17;
+  required int32 pvWarningCnt = 18;
+  required int32 pvLinkStatus = 19;
+  required int32 pvSendP = 20;
+  required int32 pvRevP = 21;
+  required int32 pvTime = 22;
+  required int32 pvEnergy = 23;
+  required int32 miSignal = 24;
+}

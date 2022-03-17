@@ -1,0 +1,38 @@
+syntax = "proto2";
+
+package hoymiles;
+
+option java_multiple_files = false;
+option java_package = "com.hoymiles.infrastructure.protos";
+option java_outer_classname = "GenericCommand";
+
+/**
+484d230b01fd77b100280a13323032322d30332d31322031363a31373a313620901c288caeb19106
+request, msgId=8971, 8972
+
+payload: 0A13323032322D30332D31322031363A31373A313620901C288CAEB19106
+Field #1: 0A String Length = 19, Hex = 13, UTF8 = "2022-03-12 16:17:16"
+Field #4: 20 Varint Value = 3600, Hex = 90-1C
+Field #5: 28 Varint Value = 1647073036, Hex = 8C-AE-B1-91-06
+ */
+message GenericCommandResDTO {
+  required bytes ymdHms = 1;
+  optional int32 packageNow = 2;
+  optional int32 errCode = 3;
+  required int32 offset = 4;
+  required int32 time = 5;
+}
+
+/**
+484d23020326fa57002808901c10ebffbc91061a13323032322d30332d31342032313a31353a3233
+request, msgId=8962
+
+Field #1: 08 Varint Value = 3600, Hex = 90-1C
+Field #2: 10 Varint Value = 1647263723, Hex = EB-FF-BC-91-06
+Field #3: 1A String Length = 19, Hex = 13, UTF8 = "2022-03-14 21:15:23"
+ */
+message GenericCommandResDTO2 {
+  required int32 offset = 1;
+  required int32 time = 2;
+  required bytes ymdHms = 3;
+}

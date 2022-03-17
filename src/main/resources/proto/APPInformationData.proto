@@ -1,0 +1,87 @@
+syntax = "proto2";
+
+package hoymiles;
+
+option java_multiple_files = false;
+option java_package = "com.hoymiles.infrastructure.protos";
+option java_outer_classname = "APPInformationData";
+
+message APPInfoDataResDTO {
+  required bytes ymdHms = 1;
+  required int32 offset = 2;
+  optional int32 packageNow = 3;
+  optional int32 errCode = 4;
+  required int32 time = 5;
+}
+
+message APPInfoDataReqDTO {
+  required bytes dtuSn = 1;
+  required int32 time = 2;
+  required int32 deviceNub = 3;
+  required int32 pvNub = 4;
+  required int32 packageNub = 5;
+  optional int32 packageNow = 6 [default = 0];
+  required int32 channel = 7;
+  required APPDtuInfoMO mAPPDtuInfo = 8;
+  repeated APPMeterInfoMO mAPPMeterInfo = 9;
+  repeated APPRpInfoMO mAPPRpInfo = 10;
+  repeated APPPvInfoMO mAPPpvInfo = 11;
+}
+
+message APPDtuInfoMO {
+  optional int32 deviceKind = 1 [default = 0];
+  required int32 dtuSw = 2;
+  required int32 dtuHw = 3;
+  optional int32 dtuStepTime = 4 [default = 0];
+  optional int32 dtuRfHw = 5 [default = 0];
+  optional int32 dtuRfSw = 6 [default = 0];
+  required int32 accessModel = 7;
+  required int32 communicationTime = 8;
+  optional int32 signalStrength = 9 [default = 0];
+  required bytes gprsVsn = 10;
+  required bytes wifiVsn = 11;
+  required bytes kaNub = 12;
+  required int32 dtuRuleId = 13;
+  optional int32 dtuErrorCode = 14 [default = 0];
+  optional int32 dtu485Mode = 15 [default = 0];
+  optional int32 dtu485Addr = 16 [default = 0];
+  optional int32 sub1GFqband = 17 [default = 0];
+  optional int32 sub1GChtnum = 18 [default = 0];
+  optional int32 sub1GChnum = 19 [default = 0];
+  optional int32 sub1GRp = 20 [default = 0];
+  optional int32 sub1GChtotal = 21 [default = 0];
+  required bytes gprsImei = 22;
+}
+
+message APPMeterInfoMO {
+  required int32 deviceKind = 1;
+  required int64 meterSn = 2;
+  required int32 meterModel = 3;
+  required int32 meterCt = 4;
+  required int32 comWay = 5;
+  required int32 accessMode = 6;
+  required int32 swVsn = 7;
+  required bytes meterVal = 8;
+}
+
+message APPRpInfoMO {
+  required int32 deviceKind = 1;
+  required int64 rpSn = 2;
+  required int32 rpSw = 3;
+  required int32 rpHw = 4;
+  required int32 rpRuleId = 5;
+}
+
+message APPPvInfoMO {
+  optional int32 deviceKind = 1 [default = 0];
+  required int64 pvSn = 2;
+  optional int32 pvUsfw = 3 [default = 0];
+  required int32 pvSw = 4;
+  required int32 pvHwPn = 5;
+  required int32 pvHw = 6;
+  required int32 pvGpfCode = 7;
+  required int32 pvGpf = 8;
+  optional int32 pvRfHw = 9 [default = 0];
+  optional int32 pvRfSw = 10 [default = 0];
+  optional int32 miRuleId = 11 [default = 0];
+}

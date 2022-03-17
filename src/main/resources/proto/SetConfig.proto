@@ -1,0 +1,63 @@
+syntax = "proto2";
+
+package hoymiles;
+
+option java_multiple_files = false;
+option java_package = "com.hoymiles.infrastructure.protos";
+option java_outer_classname = "SetConfig";
+
+message SetConfigRes {
+  optional int32 accessModel = 20;
+  optional bytes apnName = 38;
+  optional bytes apnPassword = 39;
+  optional bytes apnSet = 12;
+  optional int32 cableDns0 = 42;
+  optional int32 cableDns1 = 43;
+  optional int32 cableDns2 = 44;
+  optional int32 cableDns3 = 45;
+  optional int32 channelSelect = 9;
+  optional int32 defaultGateway0 = 34;
+  optional int32 defaultGateway1 = 35;
+  optional int32 defaultGateway2 = 36;
+  optional int32 defaultGateway3 = 37;
+  optional int32 dhcpSwitch = 25;
+  required bytes dtuSn = 19;
+  optional int32 invType = 18;
+  optional int32 ipAddr0 = 26;
+  optional int32 ipAddr1 = 27;
+  optional int32 ipAddr2 = 28;
+  optional int32 ipAddr3 = 29;
+  optional int32 limitPowerMyPower = 5;
+  optional int32 lockPassword = 3;
+  optional int32 lockTime = 4;
+  optional int32 mac0 = 21;
+  optional int32 mac1 = 22;
+  optional int32 mac2 = 23;
+  optional int32 mac3 = 24;
+  optional int32 mac4 = 46;
+  optional int32 mac5 = 47;
+  optional bytes meterInterface = 14;
+  optional bytes meterKind = 13;
+  optional int32 netmodeSelect = 8;
+  required int32 offset = 1;
+  optional bytes serverDomainName = 17;
+  optional int32 serverSendTime = 10;
+  optional int32 serverPort = 11;
+  optional int32 sub1GSweepSwitch = 40;
+  optional int32 sub1GWorkChannel = 41;
+  optional int32 subnetMask0 = 30;
+  optional int32 subnetMask1 = 31;
+  optional int32 subnetMask2 = 32;
+  optional int32 subnetMask3 = 33;
+  required int32 time = 2;
+  optional bytes wifiPassword = 16;
+  optional bytes wifiSsid = 15;
+  optional int32 zeroExport433Addr = 6;
+  optional int32 zeroExportEnable = 7;
+}
+
+message SetConfigReq {
+  optional int32 offset = 1;
+  optional int32 time = 2;
+  optional int32 errCode = 3;
+}

@@ -1,0 +1,88 @@
+/Library/Java/JavaVirtualMachines/openjdk-11.jdk/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA CE.app/Contents/lib/idea_rt.jar=64237:/Applications/IntelliJ IDEA CE.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Users/sbanas/git/app/_sbanas/hoymiles-dtu/target/classes:/Users/sbanas/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/Users/sbanas/.m2/repository/io/netty/netty-all/4.1.74.Final/netty-all-4.1.74.Final.jar:/Users/sbanas/.m2/repository/io/netty/netty-buffer/4.1.74.Final/netty-buffer-4.1.74.Final.jar:/Users/sbanas/.m2/repository/io/netty/netty-codec/4.1.74.Final/netty-codec-4.1.74.Final.jar:/Users/sbanas/.m2/repository/io/netty/netty-codec-dns/4.1.74.Final/netty-codec-dns-4.1.74.Final.jar:/Users/sbanas/.m2/repository/io/netty/netty-codec-haproxy/4.1.74.Final/netty-codec-haproxy-4.1.74.Final.jar:/Users/sbanas/.m2/repository/io/netty/netty-codec-http/4.1.74.Final/netty-codec-http-4.1.74.Final.jar:/Users/sbanas/.m2/repository/io/netty/netty-codec-http2/4.1.74.Final/netty-codec-http2-4.1.74.Final.jar:/Users/sbanas/.m2/repository/io/netty/netty-codec-memcache/4.1.74.Final/netty-codec-memcache-4.1.74.Final.jar:/Users/sbanas/.m2/repository/io/netty/netty-codec-mqtt/4.1.74.Final/netty-codec-mqtt-4.1.74.Final.jar:/Users/sbanas/.m2/repository/io/netty/netty-codec-redis/4.1.74.Final/netty-codec-redis-4.1.74.Final.jar:/Users/sbanas/.m2/repository/io/netty/netty-codec-smtp/4.1.74.Final/netty-codec-smtp-4.1.74.Final.jar:/Users/sbanas/.m2/repository/io/netty/netty-codec-socks/4.1.74.Final/netty-codec-socks-4.1.74.Final.jar:/Users/sbanas/.m2/repository/io/netty/netty-codec-stomp/4.1.74.Final/netty-codec-stomp-4.1.74.Final.jar:/Users/sbanas/.m2/repository/io/netty/netty-codec-xml/4.1.74.Final/netty-codec-xml-4.1.74.Final.jar:/Users/sbanas/.m2/repository/io/netty/netty-common/4.1.74.Final/netty-common-4.1.74.Final.jar:/Users/sbanas/.m2/repository/io/netty/netty-handler/4.1.74.Final/netty-handler-4.1.74.Final.jar:/Users/sbanas/.m2/repository/io/netty/netty-tcnative-classes/2.0.48.Final/netty-tcnative-classes-2.0.48.Final.jar:/Users/sbanas/.m2/repository/io/netty/netty-handler-proxy/4.1.74.Final/netty-handler-proxy-4.1.74.Final.jar:/Users/sbanas/.m2/repository/io/netty/netty-resolver/4.1.74.Final/netty-resolver-4.1.74.Final.jar:/Users/sbanas/.m2/repository/io/netty/netty-resolver-dns/4.1.74.Final/netty-resolver-dns-4.1.74.Final.jar:/Users/sbanas/.m2/repository/io/netty/netty-transport/4.1.74.Final/netty-transport-4.1.74.Final.jar:/Users/sbanas/.m2/repository/io/netty/netty-transport-rxtx/4.1.74.Final/netty-transport-rxtx-4.1.74.Final.jar:/Users/sbanas/.m2/repository/io/netty/netty-transport-sctp/4.1.74.Final/netty-transport-sctp-4.1.74.Final.jar:/Users/sbanas/.m2/repository/io/netty/netty-transport-udt/4.1.74.Final/netty-transport-udt-4.1.74.Final.jar:/Users/sbanas/.m2/repository/io/netty/netty-transport-classes-epoll/4.1.74.Final/netty-transport-classes-epoll-4.1.74.Final.jar:/Users/sbanas/.m2/repository/io/netty/netty-transport-native-unix-common/4.1.74.Final/netty-transport-native-unix-common-4.1.74.Final.jar:/Users/sbanas/.m2/repository/io/netty/netty-transport-classes-kqueue/4.1.74.Final/netty-transport-classes-kqueue-4.1.74.Final.jar:/Users/sbanas/.m2/repository/io/netty/netty-resolver-dns-classes-macos/4.1.74.Final/netty-resolver-dns-classes-macos-4.1.74.Final.jar:/Users/sbanas/.m2/repository/io/netty/netty-transport-native-epoll/4.1.74.Final/netty-transport-native-epoll-4.1.74.Final-linux-x86_64.jar:/Users/sbanas/.m2/repository/io/netty/netty-transport-native-epoll/4.1.74.Final/netty-transport-native-epoll-4.1.74.Final-linux-aarch_64.jar:/Users/sbanas/.m2/repository/io/netty/netty-transport-native-kqueue/4.1.74.Final/netty-transport-native-kqueue-4.1.74.Final-osx-x86_64.jar:/Users/sbanas/.m2/repository/io/netty/netty-transport-native-kqueue/4.1.74.Final/netty-transport-native-kqueue-4.1.74.Final-osx-aarch_64.jar:/Users/sbanas/.m2/repository/io/netty/netty-resolver-dns-native-macos/4.1.74.Final/netty-resolver-dns-native-macos-4.1.74.Final-osx-x86_64.jar:/Users/sbanas/.m2/repository/io/netty/netty-resolver-dns-native-macos/4.1.74.Final/netty-resolver-dns-native-macos-4.1.74.Final-osx-aarch_64.jar:/Users/sbanas/.m2/repository/com/google/protobuf/protobuf-java/3.19.4/protobuf-java-3.19.4.jar:/Users/sbanas/.m2/repository/org/apache/logging/log4j/log4j-core/2.17.2/log4j-core-2.17.2.jar:/Users/sbanas/.m2/repository/org/apache/logging/log4j/log4j-api/2.17.2/log4j-api-2.17.2.jar:/Users/sbanas/.m2/repository/com/google/code/gson/gson/2.9.0/gson-2.9.0.jar:/Users/sbanas/.m2/repository/org/jetbrains/annotations/23.0.0/annotations-23.0.0.jar com.hoymiles.Entrypoint
+INFO  | 2022-03-12 12:20:15 | [main] client.Client (Client.java:68) - Trying connect to 192.168.88.129:10081
+INFO  | 2022-03-12 12:20:15 | [main] client.Client (Client.java:73) - Connect success to 192.168.88.129:10081
+INFO  | 2022-03-12 12:20:15 | [nioEventLoopGroup-2-1] client.Client$InboundHandler (Client.java:139) - channelActive
+INFO  | 2022-03-12 12:21:02 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:94) - decode: incoming message, length=38
+DEBUG | 2022-03-12 12:21:02 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:97) - <-- 484d2202027856f4002608901c10a184b291061846220c313046383732323236373937308302
+DEBUG | 2022-03-12 12:21:02 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:115) - header=HM, msgId=8706, counter=632, crc=22260, msgLen=38, dataLen=28
+DEBUG | 2022-03-12 12:21:02 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:120) - protobuf: 08901c10a184b291061846220c313046383732323236373937308302
+WARN  | 2022-03-12 12:21:02 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:125) - No handler found for code 8706
+DEBUG | 2022-03-12 12:21:02 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:129) -
+
+INFO  | 2022-03-12 12:21:03 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:94) - decode: incoming message, length=145
+DEBUG | 2022-03-12 12:21:03 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:97) - <-- 484d220102794c3900910a0c31304638373232323637393710a184b291061803200c280138ff0142141088041882a202380142004a0052005815da01005a1a1081e5819197ac04209c4e2888e0c880013080023880144081405a1a1090d2819197ac04209c4e2888e0c880013080023880144081405a1a10a6e2819197ac04209c4e2888e0c88001308002388014408140
+DEBUG | 2022-03-12 12:21:03 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:115) - header=HM, msgId=8705, counter=633, crc=19513, msgLen=145, dataLen=135
+DEBUG | 2022-03-12 12:21:03 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:120) - protobuf: 0a0c31304638373232323637393710a184b291061803200c280138ff0142141088041882a202380142004a0052005815da01005a1a1081e5819197ac04209c4e2888e0c880013080023880144081405a1a1090d2819197ac04209c4e2888e0c880013080023880144081405a1a10a6e2819197ac04209c4e2888e0c88001308002388014408140
+WARN  | 2022-03-12 12:21:03 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:125) - No handler found for code 8705
+DEBUG | 2022-03-12 12:21:03 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:129) -
+
+INFO  | 2022-03-12 12:21:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:94) - decode: incoming message, length=91
+DEBUG | 2022-03-12 12:21:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:97) - <-- 484d220b027a1da0005b0a0c31304638373232323637393710cd84b291061801280132110881e5819197ac04108201209084b2910632110890d2819197ac04108201209084b29106321108a6e2819197ac04108201209084b29106
+DEBUG | 2022-03-12 12:21:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:115) - header=HM, msgId=8715, counter=634, crc=7584, msgLen=91, dataLen=81
+DEBUG | 2022-03-12 12:21:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:120) - protobuf: 0a0c31304638373232323637393710cd84b291061801280132110881e5819197ac04108201209084b2910632110890d2819197ac04108201209084b29106321108a6e2819197ac04108201209084b29106
+WARN  | 2022-03-12 12:21:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:125) - No handler found for code 8715
+DEBUG | 2022-03-12 12:21:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:129) -
+
+INFO  | 2022-03-12 12:21:47 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:94) - decode: incoming message, length=38
+DEBUG | 2022-03-12 12:21:47 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:97) - <-- 484d2202027b2b57002608901c10ce84b291061846220c31304638373232323637393730df01
+DEBUG | 2022-03-12 12:21:47 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:115) - header=HM, msgId=8706, counter=635, crc=11095, msgLen=38, dataLen=28
+DEBUG | 2022-03-12 12:21:47 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:120) - protobuf: 08901c10ce84b291061846220c31304638373232323637393730df01
+WARN  | 2022-03-12 12:21:47 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:125) - No handler found for code 8706
+DEBUG | 2022-03-12 12:21:47 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:129) -
+
+INFO  | 2022-03-12 12:22:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:94) - decode: incoming message, length=60
+DEBUG | 2022-03-12 12:22:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:97) - <-- 484d220b027c71ac003c0a0c313046383732323236373937108885b291061801321a0897cf8991879f041004184320f283b2910628a184b29106302f
+DEBUG | 2022-03-12 12:22:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:115) - header=HM, msgId=8715, counter=636, crc=29100, msgLen=60, dataLen=50
+DEBUG | 2022-03-12 12:22:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:120) - protobuf: 0a0c313046383732323236373937108885b291061801321a0897cf8991879f041004184320f283b2910628a184b29106302f
+WARN  | 2022-03-12 12:22:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:125) - No handler found for code 8715
+DEBUG | 2022-03-12 12:22:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:129) -
+
+INFO  | 2022-03-12 12:22:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:94) - decode: incoming message, length=38
+DEBUG | 2022-03-12 12:22:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:97) - <-- 484d2202027de9d0002608901c108985b291061846220c31304638373232323637393730b504
+DEBUG | 2022-03-12 12:22:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:115) - header=HM, msgId=8706, counter=637, crc=-5680, msgLen=38, dataLen=28
+DEBUG | 2022-03-12 12:22:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:120) - protobuf: 08901c108985b291061846220c31304638373232323637393730b504
+WARN  | 2022-03-12 12:22:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:125) - No handler found for code 8706
+DEBUG | 2022-03-12 12:22:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:129) -
+
+INFO  | 2022-03-12 12:23:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:94) - decode: incoming message, length=38
+DEBUG | 2022-03-12 12:23:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:97) - <-- 484d2202027e97d6002608901c10c485b291061846220c31304638373232323637393730e501
+DEBUG | 2022-03-12 12:23:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:115) - header=HM, msgId=8706, counter=638, crc=-26666, msgLen=38, dataLen=28
+DEBUG | 2022-03-12 12:23:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:120) - protobuf: 08901c10c485b291061846220c31304638373232323637393730e501
+WARN  | 2022-03-12 12:23:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:125) - No handler found for code 8706
+DEBUG | 2022-03-12 12:23:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:129) -
+
+INFO  | 2022-03-12 12:24:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:94) - decode: incoming message, length=38
+DEBUG | 2022-03-12 12:24:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:97) - <-- 484d2202027fd0c1002608901c108086b291061846220c31304638373232323637393730e301
+DEBUG | 2022-03-12 12:24:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:115) - header=HM, msgId=8706, counter=639, crc=-12095, msgLen=38, dataLen=28
+DEBUG | 2022-03-12 12:24:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:120) - protobuf: 08901c108086b291061846220c31304638373232323637393730e301
+WARN  | 2022-03-12 12:24:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:125) - No handler found for code 8706
+DEBUG | 2022-03-12 12:24:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:129) -
+
+INFO  | 2022-03-12 12:25:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:94) - decode: incoming message, length=38
+DEBUG | 2022-03-12 12:25:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:97) - <-- 484d220202807101002608901c10bc86b291061846220c31304638373232323637393730e101
+DEBUG | 2022-03-12 12:25:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:115) - header=HM, msgId=8706, counter=640, crc=28929, msgLen=38, dataLen=28
+DEBUG | 2022-03-12 12:25:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:120) - protobuf: 08901c10bc86b291061846220c31304638373232323637393730e101
+WARN  | 2022-03-12 12:25:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:125) - No handler found for code 8706
+DEBUG | 2022-03-12 12:25:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:129) -
+
+INFO  | 2022-03-12 12:26:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:94) - decode: incoming message, length=38
+DEBUG | 2022-03-12 12:26:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:97) - <-- 484d22020281434c002608901c10f886b291061846220c31304638373232323637393730f201
+DEBUG | 2022-03-12 12:26:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:115) - header=HM, msgId=8706, counter=641, crc=17228, msgLen=38, dataLen=28
+DEBUG | 2022-03-12 12:26:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:120) - protobuf: 08901c10f886b291061846220c31304638373232323637393730f201
+WARN  | 2022-03-12 12:26:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:125) - No handler found for code 8706
+DEBUG | 2022-03-12 12:26:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:129) -
+
+INFO  | 2022-03-12 12:27:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:94) - decode: incoming message, length=38
+DEBUG | 2022-03-12 12:27:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:97) - <-- 484d22020282c27f002608901c10b587b291061846220c31304638373232323637393730fc01
+DEBUG | 2022-03-12 12:27:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:115) - header=HM, msgId=8706, counter=642, crc=-15745, msgLen=38, dataLen=28
+DEBUG | 2022-03-12 12:27:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:120) - protobuf: 08901c10b587b291061846220c31304638373232323637393730fc01
+WARN  | 2022-03-12 12:27:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:125) - No handler found for code 8706
+DEBUG | 2022-03-12 12:27:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:129) -
+
+INFO  | 2022-03-12 12:28:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:94) - decode: incoming message, length=38
+DEBUG | 2022-03-12 12:28:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:97) - <-- 484d220202832a52002608901c10f187b291061846220c313046383732323236373937309326
+DEBUG | 2022-03-12 12:28:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:115) - header=HM, msgId=8706, counter=643, crc=10834, msgLen=38, dataLen=28
+DEBUG | 2022-03-12 12:28:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:120) - protobuf: 08901c10f187b291061846220c313046383732323236373937309326
+WARN  | 2022-03-12 12:28:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:125) - No handler found for code 8706
+DEBUG | 2022-03-12 12:28:46 | [nioEventLoopGroup-2-1] client.Client$InboundDecoder (Client.java:129) -
+

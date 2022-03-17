@@ -1,0 +1,101 @@
+syntax = "proto2";
+
+package hoymiles;
+
+option java_multiple_files = false;
+option java_package = "com.hoymiles.infrastructure.protos";
+option java_outer_classname = "CommandPB";
+
+message CommandResDTO {
+  required int32 time = 1;
+  required int32 action = 2;
+  required int32 devKind = 3;
+  required int32 packageNub = 4;
+  required int32 packageNow = 5;
+  required int64 tid = 6;
+  required bytes data = 7;
+  repeated bytes esToSn = 8;
+  repeated int64 miToSn = 9;
+  optional int32 systemTotalA = 10 [default = 0];
+  optional int32 systemTotalB = 11 [default = 0];
+  optional int32 systemTotalC = 12 [default = 0];
+  repeated int64 miSnItemA = 13;
+  repeated int64 miSnItemB = 14;
+  repeated int64 miSnItemC = 15;
+}
+
+message CommandReqDTO {
+  required bytes dtuSn = 1;
+  required int32 time = 2;
+  required int32 action = 3;
+  optional int32 packageNow = 4 [default = 0];
+  optional int32 errCode = 5 [default = 0];
+  required int64 tid = 6;
+}
+
+message CommandStatusReqDTO {
+  required bytes dtuSn = 1;
+  required int32 time = 2;
+  required int32 action = 3;
+  required int32 packageNub = 4;
+  required int32 packageNow = 5;
+  required int64 tid = 6;
+  repeated bytes esSnsSucs = 7;
+  repeated bytes miSnsSucs = 8;
+  required int32 esSnsFailds = 9;
+  required int32 miSnsFailds = 10;
+  repeated ESOperatingStatusMO esMOperatingStatus = 11;
+  repeated MIOperatingStatusMO miMOperatingStatus = 12;
+  repeated MIErrorStatusMO miMErrorStatus = 13;
+  repeated ESSucStatusMO esMSucStatus = 14;
+  repeated ESErrorStatusMO esMErrorStatus = 15;
+
+  message ESOperatingStatusMO {
+    required bytes esSn = 1;
+    repeated int32 progressRate = 2;
+  }
+
+  message MIOperatingStatusMO {
+    required int64 miSn = 1;
+    repeated int32 progressRate = 2;
+  }
+
+  message MIErrorStatusMO {
+    required int64 miSn = 1;
+    required int64 errorCode = 2;
+  }
+
+  message ESSucStatusMO {
+    required bytes esSn = 1;
+  }
+
+  message ESErrorStatusMO {
+    required bytes esSn = 1;
+    required int64 errorCode = 2;
+  }
+}
+
+
+
+//message Person {
+//  optional string name = 1;
+//  optional int32 id = 2;
+//  optional string email = 3;
+//
+//  enum PhoneType {
+//    MOBILE = 0;
+//    HOME = 1;
+//    WORK = 2;
+//  }
+//
+//  message PhoneNumber {
+//    optional string number = 1;
+//    optional PhoneType type = 2 [default = HOME];
+//  }
+//
+//  repeated PhoneNumber phones = 4;
+//}
+//
+//message AddressBook {
+//  repeated Person people = 1;
+//}

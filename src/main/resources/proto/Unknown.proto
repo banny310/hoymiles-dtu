@@ -1,0 +1,161 @@
+syntax = "proto2";
+
+package hoymiles;
+
+option java_multiple_files = false;
+option java_package = "com.hoymiles.infrastructure.protos";
+option java_outer_classname = "Unknown";
+
+/**
+484d220201fea5570026 08901c108eaeb19106184c220c31304638373232323637393730d601
+response, msgId=8706
+
+payload: 08901c108eaeb19106184c220c31304638373232323637393730d601
+Field #1: 08 Varint Value = 3600, Hex = 90-1C
+Field #2: 10 Varint Value = 1647073038, Hex = 8E-AE-B1-91-06
+Field #3: 18 Varint Value = 76, Hex = 4C
+Field #4: 22 String Length = 12, Hex = 0C, UTF8 = "10F872226797"
+Field #6: 30 Varint Value = 214, Hex = D6-01
+ */
+message Msg8706 {
+  required uint32 offset = 1;  // probably some interval offset 3600
+  required uint32 time = 2;    // timestamp
+  required uint32 val3 = 3;
+  required bytes dtuSn = 4;   // DTU sn
+  // missing 5
+  required uint32 val6 = 6;
+  optional uint32 val7 = 7;
+}
+
+/**
+Some status message
+
+484d220b01fca95b005e
+response, msgId=8715
+
+payload: 0a0c313046383732323236373937108caeb191061801280132120881e5819197ac041082810128cfadb1910632120890d2819197ac041082810128cfadb19106321208a6e2819197ac041082810128cfadb19106
+Field #1: 0A String Length = 12, Hex = 0C, UTF8 = "10F872226797"
+Field #2: 10 Varint Value = 1647197501, Hex = BD-FA-B8-91-06
+Field #3: 18 Varint Value = 1, Hex = 01
+Field #5: 28 Varint Value = 1, Hex = 01
+Field #6: 32 String Length = 17, Hex = 11, UTF8 = "�偑��� ����"
+As sub-object :
+  Field #1: 0A Varint Value = 19110224228993, Hex = 0C-31-30-46-38-37-32
+  Field #2: 32 Varint Value = 130, Hex = 32-36
+  Field #4: 37 Varint Value = 1647197439, Hex = 39-37-10-BD-FA
+Field #6: 32 String Length = 17, Hex = 11, UTF8 = "�ҁ���� ����"
+As sub-object :
+  Field #1: 0A Varint Value = 19110224226576, Hex = 0C-31-30-46-38-37-32
+  Field #2: 32 Varint Value = 130, Hex = 32-36
+  Field #4: 37 Varint Value = 1647197439, Hex = 39-37-10-BD-FA
+Field #6: 32 String Length = 17, Hex = 11, UTF8 = "�⁑��� ����"
+As sub-object :
+  Field #1: 0A Varint Value = 19110224228646, Hex = 0C-31-30-46-38-37-32
+  Field #2: 32 Varint Value = 130, Hex = 32-36
+  Field #4: 37 Varint Value = 1647197439, Hex = 39-37-10-BD-FA
+ */
+message Msg8715 {
+  required bytes dtuSn = 1;   // DTU sn
+  required uint32 time = 2;   // timestamp
+  required uint32 val3 = 3;
+  // missing 4
+  optional uint32 val5 = 5;
+  repeated Msg8715_6 invs = 6;
+
+  message Msg8715_6 {
+    required uint32 pvSn = 1; // inverter sn
+    required uint32 val2 = 2; // ex.: 4
+    optional uint32 val3 = 3; // ex.: 38
+    optional uint32 time = 4; // timestamp
+    optional uint32 time5 = 5; // other timestamp
+    optional uint32 val6 = 6; // ex.: 48
+  }
+}
+
+/**
+484d220102794c390091
+response, msgId=8705
+
+payload: 0a0c31304638373232323637393710a184b291061803200c280138ff0142141088041882a202380142004a0052005815da01005a1a1081e5819197ac04209c4e2888e0c880013080023880144081405a1a1090d2819197ac04209c4e2888e0c880013080023880144081405a1a10a6e2819197ac04209c4e2888e0c88001308002388014408140
+Field #1: 0A String Length = 12, Hex = 0C, UTF8 = "10F872226797"
+Field #2: 10 Varint Value = 1647084065, Hex = A1-84-B2-91-06
+Field #3: 18 Varint Value = 3, Hex = 03
+Field #4: 20 Varint Value = 12, Hex = 0C
+Field #5: 28 Varint Value = 1, Hex = 01
+Field #7: 38 Varint Value = 255, Hex = FF-01
+Field #8: 42 String Length = 20, Hex = 14, UTF8 = "���8BJRX�"
+As sub-object :
+  Field #2: 0A Varint Value = 520, Hex = 0C-31
+  Field #3: 30 Varint Value = 37122, Hex = 46-38-37
+  Field #7: 32 Varint Value = 1, Hex = 32
+  Field #8: 32 String Length = 0, Hex = 36, UTF8 = ""
+  Field #9: 37 String Length = 0, Hex = 39, UTF8 = ""
+  Field #10: 37 String Length = 0, Hex = 10, UTF8 = ""
+  Field #11: A1 Varint Value = 21, Hex = 84
+  Field #27: B2-91 String Length = 0, Hex = 06, UTF8 = ""
+Field #11: 5A String Length = 26, Hex = 1A, UTF8 = "�偑�� �N(��Ȁ0�8�@�@"
+As sub-object :
+  Field #2: 0A Varint Value = 19110224228993, Hex = 0C-31-30-46-38-37-32
+  Field #4: 32 Varint Value = 10012, Hex = 32-36
+  Field #5: 37 Varint Value = 269627400, Hex = 39-37-10-A1-84
+  Field #6: B2 Varint Value = 256, Hex = 91-06
+  Field #7: 18 Varint Value = 2560, Hex = 03-20
+  Field #8: 0C Varint Value = 8193, Hex = 28-01
+Field #11: 5A String Length = 26, Hex = 1A, UTF8 = "�ҁ��� �N(��Ȁ0�8�@�@"
+As sub-object :
+  Field #2: 0A Varint Value = 19110224226576, Hex = 0C-31-30-46-38-37-32
+  Field #4: 32 Varint Value = 10012, Hex = 32-36
+  Field #5: 37 Varint Value = 269627400, Hex = 39-37-10-A1-84
+  Field #6: B2 Varint Value = 256, Hex = 91-06
+  Field #7: 18 Varint Value = 2560, Hex = 03-20
+  Field #8: 0C Varint Value = 8193, Hex = 28-01
+Field #11: 5A String Length = 26, Hex = 1A, UTF8 = "�⁑�� �N(��Ȁ0�8�@�@"
+As sub-object :
+  Field #2: 0A Varint Value = 19110224228646, Hex = 0C-31-30-46-38-37-32
+  Field #4: 32 Varint Value = 10012, Hex = 32-36
+  Field #5: 37 Varint Value = 269627400, Hex = 39-37-10-A1-84
+  Field #6: B2 Varint Value = 256, Hex = 91-06
+  Field #7: 18 Varint Value = 2560, Hex = 03-20
+  Field #8: 0C Varint Value = 8193, Hex = 28-01
+ */
+message Msg8705 {
+  required bytes dtuSn = 1;   // DTU sn
+  required uint32 time = 2;   // timestamp
+  required uint32 val3 = 3;
+  required uint32 val4 = 4;
+  required uint32 val5 = 5;
+  // missing 6
+  required uint32 val7 = 7;
+  repeated Msg8705_8 val8 = 8;
+  // missing 7
+  repeated Msg8705_11 val11 = 11;
+
+  // dtu info
+  message Msg8705_8 {
+    // missing 1
+    optional uint32 dtuSw = 2; // dtu sw ver
+    required uint32 dtHw = 3;  // dtu hw ver
+    // missing 4
+    optional uint32 val5 = 5;
+    optional uint32 val6 = 6;
+    required uint32 val7 = 7;
+    required bytes val8 = 8;
+    required bytes val9 = 9;
+    required bytes val10 = 10;
+    required uint32 val11 = 11;
+    // missing...
+    required bytes val27 = 27;
+  }
+
+  // inverter info
+  message Msg8705_11 {
+    // missing 1
+    required uint32 pvSn = 2; // inverter sn
+    // missing 3
+    required uint32 val4 = 4;
+    required uint32 val5 = 5;
+    required uint32 val6 = 6;
+    required uint32 val7 = 7;
+    required uint32 val8 = 8;
+  }
+}

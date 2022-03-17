@@ -1,0 +1,76 @@
+syntax = "proto2";
+
+package hoymiles;
+
+option java_multiple_files = false;
+option java_package = "com.hoymiles.infrastructure.protos";
+option java_outer_classname = "GetConfig";
+
+// TAG_AppGetConfigRes = 41737
+message GetConfigRes {
+  required int32 offset = 1;
+  required int32 time = 2;
+}
+
+// TAG_AppGetConfigReq = 41481
+message GetConfigReq {
+  optional int32 accessModel = 21;
+  optional bytes apnName = 40;
+  optional bytes apnPassword = 41;
+  optional bytes apnSet = 13;
+  optional int32 cableDns0 = 44;
+  optional int32 cableDns1 = 45;
+  optional int32 cableDns2 = 46;
+  optional int32 cableDns3 = 47;
+  optional int32 channelSelect = 9;
+  optional int32 defaultGateway0 = 35;
+  optional int32 defaultGateway1 = 36;
+  optional int32 defaultGateway2 = 37;
+  optional int32 defaultGateway3 = 38;
+  optional int32 dhcpSwitch = 26;
+  optional bytes dtuSn = 20;
+  optional int32 invType = 19;
+  optional int32 ipAddr0 = 27;
+  optional int32 ipAddr1 = 28;
+  optional int32 ipAddr2 = 29;
+  optional int32 ipAddr3 = 30;
+  optional bytes kaNub = 39;
+  optional int32 limitPowerMyPower = 5;
+  optional int32 lockPassword = 3;
+  optional int32 lockTime = 4;
+  optional int32 mac0 = 22;
+  optional int32 mac1 = 23;
+  optional int32 mac2 = 24;
+  optional int32 mac3 = 25;
+  optional int32 mac4 = 52;
+  optional int32 mac5 = 53;
+  optional bytes meterInterface = 15;
+  optional bytes meterKind = 14;
+  optional int32 netmodeSelect = 8;
+  optional int32 offset = 1;
+  optional bytes serverDomainName = 18;
+  optional int32 serverSendTime = 10;
+  optional int32 serverPort = 12;
+  optional int32 sub1GSweepSwitch = 42;
+  optional int32 sub1GWorkChannel = 43;
+  optional int32 subnetMask0 = 31;
+  optional int32 subnetMask1 = 32;
+  optional int32 subnetMask2 = 33;
+  optional int32 subnetMask3 = 34;
+  optional int32 time = 2;
+  optional int32 wifiIpAddr0 = 48;
+  optional int32 wifiIpAddr1 = 49;
+  optional int32 wifiIpAddr2 = 50;
+  optional int32 wifiIpAddr3 = 51;
+  optional int32 wifiMac0 = 54;
+  optional int32 wifiMac1 = 55;
+  optional int32 wifiMac2 = 56;
+  optional int32 wifiMac3 = 57;
+  optional int32 wifiMac4 = 58;
+  optional int32 wifiMac5 = 59;
+  optional bytes wifiPassword = 17;
+  optional int32 wifiRssi = 11;
+  optional bytes wifiSsid = 16;
+  optional int32 zeroExport433Addr = 6;
+  optional int32 zeroExportEnable = 7;
+}
