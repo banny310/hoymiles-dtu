@@ -17,6 +17,8 @@ build-artifact:
     - mvn clean compile assembly:single ${MAVEN_CLI_OPTS}
     - BUILD_VERSION=`git describe --abbrev=0 --tags 2>/dev/null || echo "0.1.0"`
     - cp target/hoymiles-dtu-1.0-SNAPSHOT-jar-with-dependencies.jar artifacts/${ARTIFACT_NAME}-${BUILD_VERSION}.jar -v || exit $?
+  tags:
+    - docker
   artifacts:
     paths:
       - artifacts
@@ -37,6 +39,8 @@ build-docker:
     - docker build --build-arg JAR_FILE=artifacts/${APPLICATION_NAME}-${BUILD_VERSION}.jar --build-arg BUILD_FROM=${BUILD_FROM_ARMV7} --build-arg BUILD_ARCH=armv7 --platform linux/armv7 --tag banny310/hoymiles-solar-armv7:latest --file docker/Dockerfile .
     - docker build --build-arg JAR_FILE=artifacts/${APPLICATION_NAME}-${BUILD_VERSION}.jar --build-arg BUILD_FROM=${BUILD_FROM_AMD64} --build-arg BUILD_ARCH=amd64 --platform linux/amd64 --tag banny310/hoymiles-solar-amd64:latest --file docker/Dockerfile .
     - docker build --build-arg JAR_FILE=artifacts/${APPLICATION_NAME}-${BUILD_VERSION}.jar --build-arg BUILD_FROM=${BUILD_FROM_AARCH64} --build-arg BUILD_ARCH=aarch64 --platform linux/aarch64 --tag banny310/hoymiles-solar-aarch64:latest --file docker/Dockerfile .
+  tags:
+    - docker
   only:
     refs:
       - tags
