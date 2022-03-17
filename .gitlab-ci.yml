@@ -31,7 +31,7 @@ build-artifact:
 
 build-docker:
   image: docker:19.03.0
-  stage: release
+  stage: deploy
   dependencies:
     - build-artifact
   script:
