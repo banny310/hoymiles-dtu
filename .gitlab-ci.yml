@@ -16,7 +16,7 @@ build-artifact:
   script:
     - mvn clean compile assembly:single ${MAVEN_CLI_OPTS}
     - BUILD_VERSION=`git describe --abbrev=0 --tags 2>/dev/null || echo "0.1.0"`
-    - cp target/hoymiles-dtu-1.0-SNAPSHOT-jar-with-dependencies.jar artifacts/${ARTIFACT_NAME}-${BUILD_VERSION}.jar -v || exit $?
+    - cp target/hoymiles-solar-1.0-SNAPSHOT-jar-with-dependencies.jar artifacts/${ARTIFACT_NAME}-${BUILD_VERSION}.jar -v || exit $?
   tags:
     - docker
   artifacts:
