@@ -25,14 +25,15 @@ public class RealData implements Serializable {
     public static class SGSMO implements Serializable {
         private String sn;
         private int version;
-        private float gridVoltage;          // grid voltage (x10V)
-        private float gridFreq;             // grid frequency (x100Hz)
-        private float gridPower;            // grid power (x10W)
-        private float gridReactivePower;    // grid reactive power (moc bierna) (x10VA)
-        private float gridCurrent;          // grid current (x100A)
-        private float powerFactor;          // power factor (x100)
-        private float temp;                 // inverter temp (x10C)
+        private float gridVoltage;          // grid voltage
+        private float gridFreq;             // grid frequency
+        private float gridPower;            // grid power
+        private float gridReactivePower;    // grid reactive power (moc bierna VA (var))
+        private float gridCurrent;          // grid current
+        private float powerFactor;          // power factor (0.0 - 1.0)
+        private float temp;                 // inverter temp
         private int link;                   // link status
+        private int time;                   // timestamp
     }
 
     @Getter
@@ -46,5 +47,6 @@ public class RealData implements Serializable {
         private float power;        // power (x10W)
         private int energyTotal;    // energy total (Wh)
         private int energyToday;    // energy daily (Wh)
+        private int time;           // timestamp
     }
 }

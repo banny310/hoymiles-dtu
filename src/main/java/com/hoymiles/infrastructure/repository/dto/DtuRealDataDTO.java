@@ -8,7 +8,10 @@ import java.util.Date;
 
 @Getter
 @Setter
-public class RealDataDTO {
+public class DtuRealDataDTO {
+    @SerializedName("dtu_sn")
+    private String dtuSn;
+
     @SerializedName("power_total_w")
     private float powerTotalW;
 

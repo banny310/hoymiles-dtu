@@ -12,6 +12,8 @@ import java.util.Date;
 
 @Dependent
 public class DtuCommandBuilder {
+
+
     public CommandPB.CommandResDTO.Builder commandBuilder() {
         int time = DeviceUtils.getCurrentTime();
         CommandPB.CommandResDTO.Builder newBuilder = CommandPB.CommandResDTO.newBuilder();
@@ -82,7 +84,7 @@ public class DtuCommandBuilder {
         return SetConfig.SetConfigRes.newBuilder()
                 .setTime(DeviceUtils.getCurrentTime())
                 .setDtuSn(ByteString.copyFrom(dtuSn, StandardCharsets.ISO_8859_1))
-                .setOffset(3600);
+                .setOffset(28800);
     }
 
     public SetConfig.SetConfigRes.Builder setConfigBuilder(GetConfig.GetConfigReq config) {

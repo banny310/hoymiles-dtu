@@ -92,9 +92,4 @@ public class DtuRepository implements IDtuRepository {
             throw new NotImplementedException("Device with sw_version < 512 is currently not supported");
         }
     }
-
-    @Override
-    public <T extends Message> Observable<T> command(Message message, Class<T> responseClazz) {
-        return dtuClient.command(message, responseClazz);
-    }
 }

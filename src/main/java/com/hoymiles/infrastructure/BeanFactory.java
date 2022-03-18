@@ -6,9 +6,12 @@ import com.hoymiles.domain.model.RealData;
 import com.hoymiles.infrastructure.dtu.DtuClient;
 import com.hoymiles.infrastructure.dtu.utils.DateUtil;
 import com.hoymiles.infrastructure.gson.DateAdapter;
-import com.hoymiles.infrastructure.repository.dto.RealDataDTO;
+import com.hoymiles.infrastructure.repository.dto.DtuRealDataDTO;
+import com.hoymiles.infrastructure.repository.dto.InvRealDataDTO;
+import com.hoymiles.infrastructure.repository.dto.PvRealDataDTO;
 import com.hoymiles.infrastructure.repository.mapper.NumberFormatter;
 import com.typesafe.config.Config;
+import com.typesafe.config.ConfigFactory;
 import jakarta.enterprise.inject.Produces;
 import jakarta.enterprise.inject.spi.BeanManager;
 import jakarta.inject.Named;
@@ -22,15 +25,22 @@ import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
 
 import java.util.Date;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.*;
 
 @Log4j2
 public class BeanFactory {
     @Produces
     @Singleton
-    public Config getConfig() {
-        return com.typesafe.config.ConfigFactory.load();
+    @Named("mainQueue")
+    public BlockingQueue<Runnable> getMainQueue() {
+        return new LinkedBlockingQueue<>();
+    }
+
+    @Produces
+    @Singleton
+    @Named("mainExecutor")
+    public ScheduledExecutorService getExecutor() {
+        return Executors.newSingleThreadScheduledExecutor();
     }
 
     @Produces
@@ -39,6 +49,12 @@ public class BeanFactory {
         return new GsonBuilder()
                 .registerTypeAdapter(Date.class, new DateAdapter<>(DateUtil.ISO8601TimeZone))
                 .create();
+    }
+
+    @Produces
+    @Singleton
+    public Config getConfig() {
+        return ConfigFactory.load();
     }
 
     @Produces
@@ -59,28 +75,34 @@ public class BeanFactory {
 
     @Produces
     @Singleton
-    @Named("main")
-    public BlockingQueue<Runnable> getMainQueue() {
-        return new LinkedBlockingQueue<>();
-    }
-
-    @Produces
-    @Singleton
     public ModelMapper getModelMapper(@NotNull NumberFormatter formatter) {
         ModelMapper modelMapper = new ModelMapper();
         Converter<Float, Float> format0fc = ctx -> formatter.format1fd(ctx.getSource());
         Converter<Float, Float> divide1000f = ctx -> formatter.format3fd(ctx.getSource() / 1000f);
         Converter<Integer, Float> divide1000fInt = ctx -> formatter.format3fd(Float.valueOf(ctx.getSource()) / 1000f);
         Converter<Integer, Date> timestamp2Date = ctx -> new Date(ctx.getSource() * 1000L);
-        modelMapper.typeMap(RealData.class, RealDataDTO.class)
+        modelMapper.typeMap(RealData.class, DtuRealDataDTO.class)
                 .addMappings(mapper -> {
-                    mapper.using(format0fc).map(RealData::getPowerTotal, RealDataDTO::setPowerTotalW);
-                    mapper.using(divide1000f).map(RealData::getPowerTotal, RealDataDTO::setPowerTotalKW);
-                    mapper.map(RealData::getEnergyToday, RealDataDTO::setEnergyTodayWh);
-                    mapper.using(divide1000fInt).map(RealData::getEnergyToday, RealDataDTO::setEnergyTodayKWh);
-                    mapper.using(divide1000fInt).map(RealData::getEnergyTotal, RealDataDTO::setEnergyTotalKWh);
-                    mapper.map(RealData::getEnergyTotal, RealDataDTO::setEnergyTotalWh);
-                    mapper.using(timestamp2Date).map(RealData::getTime, RealDataDTO::setLastSeen);
+                    mapper.using(format0fc).map(RealData::getPowerTotal, DtuRealDataDTO::setPowerTotalW);
+                    mapper.using(divide1000f).map(RealData::getPowerTotal, DtuRealDataDTO::setPowerTotalKW);
+                    mapper.map(RealData::getEnergyToday, DtuRealDataDTO::setEnergyTodayWh);
+                    mapper.using(divide1000fInt).map(RealData::getEnergyToday, DtuRealDataDTO::setEnergyTodayKWh);
+                    mapper.using(divide1000fInt).map(RealData::getEnergyTotal, DtuRealDataDTO::setEnergyTotalKWh);
+                    mapper.map(RealData::getEnergyTotal, DtuRealDataDTO::setEnergyTotalWh);
+                    mapper.using(timestamp2Date).map(RealData::getTime, DtuRealDataDTO::setLastSeen);
+                });
+
+
+        Converter<Float, Float> multiply100 = ctx -> ctx.getSource() * 100f;
+        modelMapper.typeMap(RealData.SGSMO.class, InvRealDataDTO.class)
+                .addMappings(mapper -> {
+                    mapper.using(multiply100).map(RealData.SGSMO::getPowerFactor, InvRealDataDTO::setPowerFactor);
+                    mapper.using(timestamp2Date).map(RealData.SGSMO::getTime, InvRealDataDTO::setLastSeen);
+                });
+
+        modelMapper.typeMap(RealData.PvMO.class, PvRealDataDTO.class)
+                .addMappings(mapper -> {
+                    mapper.using(timestamp2Date).map(RealData.PvMO::getTime, PvRealDataDTO::setLastSeen);
                 });
 
         modelMapper.validate();

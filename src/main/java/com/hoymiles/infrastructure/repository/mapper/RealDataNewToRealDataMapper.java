@@ -22,12 +22,13 @@ public class RealDataNewToRealDataMapper implements GenericMapper<RealDataNew.Re
                 .inverters(src.getSgsDatasList().stream().map(
                         src1 -> RealData.SGSMO.builder()
                                 .sn(DeviceUtils.decToHex(String.valueOf(src1.getSn())))
+                                .time(src.getTime())
                                 .gridVoltage((float) src1.getV() / 10f)
                                 .gridFreq((float) src1.getFreq() / 100f)
                                 .gridPower((float) src1.getP() / 10f)
                                 .gridReactivePower((float) src1.getQ() / 10f)
                                 .gridCurrent((float) src1.getI() / 100f)
-                                .powerFactor((float) src1.getPf() / 100f)
+                                .powerFactor((float) src1.getPf() / 1000f)
                                 .temp((float) src1.getTemp() / 10f)
                                 .link(src1.getLink())
                                 .build()
@@ -35,6 +36,7 @@ public class RealDataNewToRealDataMapper implements GenericMapper<RealDataNew.Re
                 .panels(src.getPvDatasList().stream().map(
                         src2 -> RealData.PvMO.builder()
                                 .sn(DeviceUtils.decToHex(String.valueOf(src2.getSn())))
+                                .time(src.getTime())
                                 .position(src2.getPi())
                                 .voltage((float) src2.getV() / 10f)
                                 .current((float) src2.getI() / 100f)

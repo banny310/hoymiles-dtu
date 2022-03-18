@@ -15,47 +15,32 @@ import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
 
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 @Dependent
 @Log4j2
 @RequiredArgsConstructor(onConstructor_ = {@Inject})
 public class App {
+    private final ScheduledExecutorService executor;
     private final Config config;
-    private final BlockingQueue<Runnable> queue;
     private final DtuClient dtuClient;
     private final IMqttClient mqttClient;
     private final AppController appController;
-    private boolean run = false;
 
     public void run() throws InterruptedException, MqttException {
-        run = true;
         initDtuConnection();
         initMqttConnection();
 
-        queue.put(appController::start);
+        appController.start();
 
-        while (true) {
-            if (!run) {
-                dtuClient.close();
-                mqttClient.close();
-                return;
-            }
-
-            try {
-                queue.take().run();
-            } catch (InterruptedException e) {
-                log.error(e.getMessage(), e);
-            }
-        }
+        dtuClient.close();
+        mqttClient.close();
     }
 
-    public void halt() {
-        run = false;
-    }
-
-    public boolean isRunning() {
-        return run;
+    public void halt() throws InterruptedException {
+        executor.shutdownNow();
+        executor.awaitTermination(10, TimeUnit.SECONDS);
     }
 
     private void initDtuConnection() {

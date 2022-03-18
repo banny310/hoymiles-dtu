@@ -4,8 +4,8 @@ import com.hoymiles.domain.model.AppInfo;
 import com.hoymiles.infrastructure.GenericMapper;
 import com.hoymiles.infrastructure.dtu.utils.DeviceUtils;
 import com.hoymiles.infrastructure.protos.APPInformationData;
-
 import jakarta.enterprise.context.Dependent;
+
 import java.nio.charset.StandardCharsets;
 import java.util.stream.Collectors;
 
@@ -19,10 +19,12 @@ public class APPInformationData2AppInfoMapper implements GenericMapper<APPInform
                         .dtuSw(src.getMAPPDtuInfo().getDtuSw())
                         .dtuHw(src.getMAPPDtuInfo().getDtuHw())
                         .build())
-                .sgsInfo(src.getMAPPpvInfoList().stream().map(src1 -> AppInfo.SgsInfo.builder()
-                        .sn(DeviceUtils.decToHex(String.valueOf(src1.getPvSn())))
-                        .build()
-                ).collect(Collectors.toList()))
+                .sgsInfo(
+                        src.getMAPPpvInfoList().stream().map(src1 ->
+                                AppInfo.SgsInfo.builder()
+                                        .sn(DeviceUtils.decToHex(String.valueOf(src1.getPvSn())))
+                                        .build()
+                        ).collect(Collectors.toList()))
                 .build();
     }
 }

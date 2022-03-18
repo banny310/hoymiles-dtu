@@ -69,4 +69,4 @@ ENTRYPOINT ["/init"]
 VOLUME /tmp
 ARG JAR_FILE
 ADD ${JAR_FILE} app.jar
-CMD ["java", "-jar", "/app.jar"]
+CMD ["java", "-Dconfig.override_with_env_vars=true", "-jar", "/app.jar"]
