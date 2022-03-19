@@ -36,7 +36,8 @@ public class MetricsService {
             return realData;
         } else {
             // inverters are offline
-            return null;
+            realData = readRealData();
+            return (realData != null) ? zeroData(realData) : null;
         }
     }
 
@@ -62,5 +63,23 @@ public class MetricsService {
             log.error(e.getMessage(), e);
             return null;
         }
+    }
+
+    private RealData zeroData(RealData realData) {
+        realData.setPowerTotal(0);
+        realData.getInverters().forEach(sgs -> {
+            sgs.setGridPower(0);
+            sgs.setGridVoltage(0);
+            sgs.setGridFreq(0);
+            sgs.setGridCurrent(0);
+            sgs.setGridReactivePower(0);
+            sgs.setLink(0);
+            sgs.setTemp(0);
+        });
+        realData.getPanels().forEach(pv -> {
+            pv.setPower(0);
+            pv.setVoltage(0);
+        });
+        return realData;
     }
 }

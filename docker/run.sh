@@ -1,7 +1,7 @@
 #!/usr/bin/with-contenv bashio
 set +u
 
-if [ -e "/data/config.json" ]; then
+if [ -e "/data/config.json" || -e "/data/config.yaml" ]; then
   bashio::log.info "/data/config.json exists!"
 
   export CONFIG_FORCE_mqtt_host=$(bashio::services mqtt "host")
