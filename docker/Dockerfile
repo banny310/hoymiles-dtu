@@ -65,8 +65,13 @@ RUN \
 WORKDIR /
 ENTRYPOINT ["/init"]
 
-
+# Copy application jar
 VOLUME /tmp
 ARG JAR_FILE
 ADD ${JAR_FILE} app.jar
-CMD ["java", "-Dconfig.override_with_env_vars=true", "-jar", "/app.jar"]
+
+# Copy data for add-on
+COPY run.sh /
+RUN chmod a+x /run.sh
+
+CMD [ "/run.sh" ]
