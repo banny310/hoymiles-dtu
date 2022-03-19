@@ -13,8 +13,11 @@ if [ -e "/data/config.json" ]; then
   export CONFIG_FORCE_dtu_host=$(bashio::config 'dtu_host')
   export CONFIG_FORCE_dtu_port=$(bashio::config 'dtu_port')
   bashio::log.info "DTU: host=${CONFIG_FORCE_dtu_host}, port=${CONFIG_FORCE_dtu_port}"
+else
+  bashio::log.info "/data/config.json NOT exists!"
 fi
 
-bashio::log.blue "banny310 - Home Assistant Hoymiles DTU Solar Data Gateway Add-on"
+bashio::log.info "banny310 - Home Assistant Hoymiles DTU Solar Data Gateway Add-on"
+bashio::log.info "Starting..."
 
 java -Dconfig.override_with_env_vars=true -jar /app.jar

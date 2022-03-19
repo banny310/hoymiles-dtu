@@ -24,6 +24,10 @@ ENV BASHIO_VERSION="0.14.3" \
 # Base system
 WORKDIR /usr/src
 
+# Copy data for add-on
+COPY docker/run.sh /
+RUN chmod a+x /run.sh
+
 ARG BUILD_ARCH
 
 RUN \
@@ -61,6 +65,8 @@ RUN \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /usr/src/*
 
+#SHELL ["/bin/sh", "-c"]
+
 # S6-Overlay
 WORKDIR /
 ENTRYPOINT ["/init"]
@@ -68,10 +74,6 @@ ENTRYPOINT ["/init"]
 # Copy application jar
 VOLUME /tmp
 ARG JAR_FILE
-ADD ${JAR_FILE} app.jar
+ADD ${JAR_FILE} /app.jar
 
-# Copy data for add-on
-COPY docker/run.sh /
-RUN chmod a+x /run.sh
-
-CMD [ "/run.sh" ]
+CMD ["/run.sh"]
