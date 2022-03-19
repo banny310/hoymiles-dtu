@@ -71,7 +71,7 @@ ARG JAR_FILE
 ADD ${JAR_FILE} app.jar
 
 # Copy data for add-on
-COPY run.sh /
-RUN chmod a+x /run.sh
+COPY docker/run.sh /
+RUN chmod a+x docker/run.sh
 
 CMD [ "/run.sh" ]
