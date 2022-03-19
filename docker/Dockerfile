@@ -72,6 +72,6 @@ ADD ${JAR_FILE} app.jar
 
 # Copy data for add-on
 COPY docker/run.sh /
-RUN chmod a+x docker/run.sh
+RUN chmod a+x /run.sh
 
 CMD [ "/run.sh" ]
