@@ -4,7 +4,9 @@
     ],
     "device":{{ device }},
     "enabled_by_default":true,
+{% if icon is not empty %}
     "icon":"{{ icon }}",
+{% endif %}
     "json_attributes_topic":"{{ json_attributes_topic }}",
     "name":"{{ name }}",
     "state_class":"{{ state_class }}",
