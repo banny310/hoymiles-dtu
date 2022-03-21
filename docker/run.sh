@@ -10,8 +10,8 @@ if [ -e "/data/options.json" ]; then
   export CONFIG_FORCE_mqtt_password=$(bashio::services mqtt "password")
   bashio::log.info "MQTT: host=${CONFIG_FORCE_mqtt_host}, port=${CONFIG_FORCE_mqtt_port}, username=${CONFIG_FORCE_mqtt_username}, password=${CONFIG_FORCE_mqtt_password}"
 
-  export CONFIG_FORCE_dtu_host=$(bashio::config 'dtu_host')
-  export CONFIG_FORCE_dtu_port=$(bashio::config 'dtu_port')
+  export CONFIG_FORCE_dtu_host=$(bashio::config 'dtu.host')
+  export CONFIG_FORCE_dtu_port=$(bashio::config 'dtu.port')
   bashio::log.info "DTU: host=${CONFIG_FORCE_dtu_host}, port=${CONFIG_FORCE_dtu_port}"
 else
   bashio::log.info "/data/options.json NOT exists!"
