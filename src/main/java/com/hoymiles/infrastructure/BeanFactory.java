@@ -20,11 +20,13 @@ import lombok.extern.log4j.Log4j2;
 import org.eclipse.paho.client.mqttv3.IMqttClient;
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttException;
+import org.eclipse.paho.client.mqttv3.persist.MqttDefaultFilePersistence;
 import org.jetbrains.annotations.NotNull;
 import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
 
 import java.util.Date;
+import java.util.UUID;
 import java.util.concurrent.*;
 
 @Log4j2
@@ -60,9 +62,9 @@ public class BeanFactory {
     @Produces
     @Singleton
     public IMqttClient getMqttClient(@NotNull Config config) throws MqttException {
-        String publisherId = "hoymiles_solar";
+        String publisherId = "mqtt_hoymiles_solar_" + UUID.randomUUID().toString().substring(0, 7);
         String mqttUri = String.format("tcp://%s:%d", config.getString("mqtt.host"), config.getInt("mqtt.port"));
-        IMqttClient mqttClient = new MqttClient(mqttUri, publisherId);
+        IMqttClient mqttClient = new MqttClient(mqttUri, publisherId, new MqttDefaultFilePersistence(System.getProperty("user.dir") + "/data"));
         return mqttClient;
     }
 

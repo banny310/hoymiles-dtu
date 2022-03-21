@@ -73,6 +73,7 @@ public class MetricsService {
             sgs.setGridFreq(0);
             sgs.setGridCurrent(0);
             sgs.setGridReactivePower(0);
+            sgs.setPowerFactor(0);
             sgs.setLink(0);
             sgs.setTemp(0);
         });

@@ -12,16 +12,11 @@ import java.nio.ByteBuffer;
 public class DeviceUtils {
     private static final Logger logger = LogManager.getLogger(DeviceUtils.class);
 
-
-    public static void printSeparator() {
-    }
-
     public static void linePbObj(GeneratedMessageV3 generatedMessageV3) {
-        logger.info(generatedMessageV3.toString().replaceAll("\t|\r|\n", ","));
-        logger.info("------------------------------------------------------------------");
-        logger.info(MyJsonFormat.printToString(generatedMessageV3));
-        logger.info("▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲");
-        printSeparator();
+        logger.debug(generatedMessageV3.toString().replaceAll("\t|\r|\n", ","));
+        logger.debug("------------------------------------------------------------------");
+        logger.debug(MyJsonFormat.printToString(generatedMessageV3));
+        logger.debug("▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲");
     }
 
     public static ByteString toByteString(String str) {

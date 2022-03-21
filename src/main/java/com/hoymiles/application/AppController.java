@@ -83,12 +83,14 @@ public class AppController {
                 if (setServerSendTime) {
                     int serverSendTime = config.getInt("app.mode_passive.server_send_time");
                     assert serverSendTime > 0;
+                    log.info("serverSendTime: expected={}, current={}", serverSendTime, dtuConfig.getServerSendTime());
                     if (serverSendTime != dtuConfig.getServerSendTime()) {
                         SetConfig.SetConfigRes confCmd = dtuCommand
                                 .setConfigBuilder(dtuConfig.getDtuSn().toString(StandardCharsets.ISO_8859_1))
                                 .setServerSendTime(serverSendTime)
                                 .build();
 
+                        log.info("changing 'serverSendTime' to {}", serverSendTime);
                         SetConfig.SetConfigReq confReq = dtuClient.command(confCmd, SetConfig.SetConfigReq.class).blockingFirst();
                     }
                 }

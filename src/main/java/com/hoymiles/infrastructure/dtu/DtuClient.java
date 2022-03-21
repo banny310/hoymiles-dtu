@@ -17,11 +17,13 @@ import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.ObservableEmitter;
 import jakarta.enterprise.inject.se.SeContainer;
 import jakarta.enterprise.inject.spi.BeanManager;
+import lombok.SneakyThrows;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 import org.jetbrains.annotations.NotNull;
 
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +38,8 @@ public class DtuClient {
     private final List<Pair<Integer, ObservableEmitter<? extends Message>>> emitters = new ArrayList<>();
 
     private ChannelFuture connectionFuture;
+    private String host;
+    private int port;
 
     public DtuClient(BeanManager beanManager) {
         this.beanManager = beanManager;
@@ -45,6 +49,7 @@ public class DtuClient {
         bootstrap.group(group);
         bootstrap.channel(NioSocketChannel.class);
         bootstrap.option(ChannelOption.SO_KEEPALIVE, true);
+        bootstrap.option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 5000);
         bootstrap.handler(new ChannelInitializer<SocketChannel>() {
             public void initChannel(SocketChannel channel) {
                 channel.pipeline().addLast(new IdleStateHandler(10L, 10L, 10L, TimeUnit.SECONDS));
@@ -53,7 +58,9 @@ public class DtuClient {
         });
     }
 
-    public void connect(String host, int port) throws Exception {
+    public void connect(String host, int port) throws InterruptedException {
+        this.host = host;
+        this.port = port;
         log.info(String.format("Trying connect to %s:%d", host, port));
         connectionFuture = bootstrap.connect(host, port).sync();
         if (connectionFuture.isSuccess()) {
@@ -61,6 +68,10 @@ public class DtuClient {
         } else {
             log.warn("Connect error!");
         }
+    }
+
+    private void reconnect() throws InterruptedException {
+        connect(host, port);
     }
 
     public void close() {
@@ -93,10 +104,10 @@ public class DtuClient {
         @Override
         protected void decode(ChannelHandlerContext channelHandlerContext, @NotNull ByteBuf byteBuf, @NotNull List<Object> list) throws Exception {
             int len = byteBuf.readableBytes();
-            log.info(String.format("decode: incoming message, length=%d", len));
+            log.info("<-- decode: incoming message, length={}", len);
 
             String hexDump = ByteBufUtil.hexDump(byteBuf);
-            log.debug("<-- " + hexDump);
+            log.info(hexDump.substring(0, 20) + " " + hexDump.substring(21));
 
             try {
                 assert byteBuf.readableBytes() >= 10;
@@ -104,8 +115,8 @@ public class DtuClient {
                 byteBuf.resetReaderIndex();
                 String hmHeader = byteBuf.readCharSequence(2, StandardCharsets.ISO_8859_1).toString();
                 final int msgId = byteBuf.readUnsignedShort();
-                final short counter = byteBuf.readShort(); //???
-                final short crc = byteBuf.readShort(); //??? crc
+                final short counter = byteBuf.readShort();      // ???
+                final short crc = byteBuf.readShort();          // ??? crc
                 final short msgLen = byteBuf.readShort();
                 final int dataLength = msgLen - 10;
 
@@ -114,12 +125,10 @@ public class DtuClient {
                 assert dataLength > 0;
                 assert dataLength <= len;
 
-                log.debug(String.format("header=%s, msgId=%d, counter=%d, crc=%d, msgLen=%d, dataLen=%d", hmHeader, msgId, counter, crc, msgLen, dataLength));
+                log.info(String.format("header=%s, msgId=%d, counter=%d, crc=%d, msgLen=%d, dataLen=%d", hmHeader, msgId, counter, crc, msgLen, dataLength));
 
                 final byte[] bArr = new byte[dataLength];
                 byteBuf.readBytes(bArr, 0, dataLength);
-
-                log.debug("protobuf: " + ByteBufUtil.hexDump(bArr));
 
                 DtuMessageHandler handler = DtuMessageHandler.findHandler(msgId);
                 Message msg = handler.fromByte(bArr);
@@ -138,8 +147,6 @@ public class DtuClient {
         @Override
         public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
             super.channelRead(ctx, msg);
-            log.info("channelRead: incoming message, type=" + msg.getClass().getName());
-
             try {
                 if (msg instanceof DtuMessage) {
                     DtuMessage dtuMsg = (DtuMessage) msg;
@@ -158,5 +165,14 @@ public class DtuClient {
             }
         }
 
+        @Override
+        @SneakyThrows
+        public void exceptionCaught(@NotNull ChannelHandlerContext ctx, Throwable cause) {
+            ctx.close();
+            log.warn("exceptionCaught: " + cause.getMessage());
+            if (cause instanceof IOException) {
+                reconnect();
+            }
+        }
     }
 }

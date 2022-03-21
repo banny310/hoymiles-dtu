@@ -1,8 +1,8 @@
 #!/usr/bin/with-contenv bashio
 set +u
 
-if [ -e "/data/config.json" || -e "/data/config.yaml" ]; then
-  bashio::log.info "/data/config.json exists!"
+if [ -e "/data/options.json" ]; then
+  bashio::log.info "/data/options.json exists!"
 
   export CONFIG_FORCE_mqtt_host=$(bashio::services mqtt "host")
   export CONFIG_FORCE_mqtt_port=$(bashio::services mqtt "port")
@@ -14,7 +14,7 @@ if [ -e "/data/config.json" || -e "/data/config.yaml" ]; then
   export CONFIG_FORCE_dtu_port=$(bashio::config 'dtu_port')
   bashio::log.info "DTU: host=${CONFIG_FORCE_dtu_host}, port=${CONFIG_FORCE_dtu_port}"
 else
-  bashio::log.info "/data/config.json NOT exists!"
+  bashio::log.info "/data/options.json NOT exists!"
 fi
 
 bashio::log.info "banny310 - Home Assistant Hoymiles DTU Solar Data Gateway Add-on"
