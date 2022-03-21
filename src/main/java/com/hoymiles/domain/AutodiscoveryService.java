@@ -213,9 +213,11 @@ public class AutodiscoveryService {
         return newSensorBuilder()
                 .device(
                         Sensor.Device.builder()
+                                .identifiers(List.of(pvId))
                                 .name("Solar Panel")
                                 .model("")
                                 .build())
+                .name(name)
                 .jsonAttributesTopic("hoymiles-dtu/" + pvId)
                 .stateTopic("hoymiles-dtu/" + pvId);
     }
@@ -225,9 +227,11 @@ public class AutodiscoveryService {
         return newSensorBuilder()
                 .device(
                         Sensor.Device.builder()
+                                .identifiers(List.of(invId))
                                 .name("Hoymiles Solar Inverter")
                                 .model("HM-1500")
                                 .build())
+                .name(name)
                 .jsonAttributesTopic("hoymiles-dtu/" + invId)
                 .stateTopic("hoymiles-dtu/" + invId);
     }
@@ -237,10 +241,12 @@ public class AutodiscoveryService {
         return newSensorBuilder()
                 .device(
                         Sensor.Device.builder()
+                                .identifiers(List.of(dtuId))
                                 .name("Hoymiles Solar Gateway")
                                 .model("DTU-Pro")
                                 .swVersion(String.valueOf(info.getDtuInfo().getDtuSw()))
                                 .build())
+                .name(name)
                 .jsonAttributesTopic("hoymiles-dtu/" + dtuId)
                 .stateTopic("hoymiles-dtu/" + dtuId);
     }
