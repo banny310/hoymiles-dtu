@@ -107,7 +107,7 @@ public class DtuClient {
             log.info("<-- decode: incoming message, length={}", len);
 
             String hexDump = ByteBufUtil.hexDump(byteBuf);
-            log.info(hexDump.substring(0, 20) + " " + hexDump.substring(21));
+            log.info(hexDump.substring(0, 20) + "|" + hexDump.substring(20));
 
             try {
                 assert byteBuf.readableBytes() >= 10;
@@ -125,7 +125,7 @@ public class DtuClient {
                 assert dataLength > 0;
                 assert dataLength <= len;
 
-                log.info(String.format("header=%s, msgId=%d, counter=%d, crc=%d, msgLen=%d, dataLen=%d", hmHeader, msgId, counter, crc, msgLen, dataLength));
+                log.info(String.format("header=%s, msgId=%d, counter=%d, crc=%d, msgLen=%d", hmHeader, msgId, counter, crc, msgLen));
 
                 final byte[] bArr = new byte[dataLength];
                 byteBuf.readBytes(bArr, 0, dataLength);
