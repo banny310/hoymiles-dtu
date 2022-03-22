@@ -18,7 +18,11 @@ public final class AppInfo {
     @Setter
     @Builder
     public static final class DtuInfo {
+        // 520 -> V00.02.08
+        // 522 -> V00.02.10
         private int dtuSw;
+
+        // 37122 -> H09.01.02
         private int dtuHw;
     }
 
@@ -26,7 +30,9 @@ public final class AppInfo {
     @Setter
     @Builder
     public static final class SgsInfo {
-        private String sn;
+        private String invSn;
+        private int invSw;
+        private int invHw;
         private int link;
 
         public boolean isConnected() {

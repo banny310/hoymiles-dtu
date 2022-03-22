@@ -41,7 +41,7 @@ public class RealData implements Serializable {
     @Builder
     public static class PvMO implements Serializable {
         private String sn;          // inverter serial number
-        private int position;       // inverter port number
+        private int port;           // inverter port number
         private float voltage;      // voltage (x10V)
         private float current;      // current (x100A)
         private float power;        // power (x10W)

@@ -25,15 +25,12 @@ public class AutodiscoveryService {
 
     public void registerPvAutodiscovery(@NotNull List<RealData.PvMO> pvInfos) {
         pvInfos.forEach(pv -> {
-            String pvId = String.format("pv_%s_%d", pv.getSn(), pv.getPosition());
+            String pvId = String.format("pv_%s_%d", pv.getSn(), pv.getPort());
 
-            Sensor position = newPvModelBuilder(key(pvId, "position"), pv)
-                    .stateClass("")
-                    .stateTopic("")
-                    .unitOfMeasurement("")
-                    .valueTemplate("{{ value_json.position }}")
+            Sensor position = newPvModelBuilder(key(pvId, "port"), pv)
+                    .valueTemplate("{{ value_json.port }}")
                     .build();
-            mqttService.sendHomeAssistantConfig(key(pvId, "position"), gson.toJson(position).getBytes());
+            mqttService.sendHomeAssistantConfig(key(pvId, "port"), gson.toJson(position).getBytes());
 
             Sensor voltage = newPvModelBuilder(key(pvId, "voltage"), pv)
                     .stateClass("measurement")
@@ -56,7 +53,7 @@ public class AutodiscoveryService {
                     .stateClass("measurement")
                     .deviceClass("power")
                     .unitOfMeasurement("W")
-                    .valueTemplate("{{ value_json.frequency }}")
+                    .valueTemplate("{{ value_json.power }}")
                     .build();
             mqttService.sendHomeAssistantConfig(key(pvId, "power"), gson.toJson(power).getBytes());
 
@@ -86,7 +83,7 @@ public class AutodiscoveryService {
     private void registerDtuAutodiscovery(@NotNull AppInfo info) {
         String dtuId = String.format("dtu_%s", info.getDtuSn());
 
-        Sensor modelPowerTotalW = newDtuModelBuilder(key(dtuId, "power_total_w"), info)
+        Sensor modelPowerTotalW = newDtuModelBuilder("Total power (W)", info)
                 .icon("mdi:solar-power")
                 .stateClass("measurement")
                 .deviceClass("power")
@@ -95,7 +92,7 @@ public class AutodiscoveryService {
                 .build();
         mqttService.sendHomeAssistantConfig("power_total_w", gson.toJson(modelPowerTotalW).getBytes());
 
-        Sensor modelPowerTotalKW = newDtuModelBuilder(key(dtuId, "power_total_kw"), info)
+        Sensor modelPowerTotalKW = newDtuModelBuilder("Total power (kW)", info)
                 .icon("mdi:solar-power")
                 .stateClass("measurement")
                 .deviceClass("power")
@@ -105,7 +102,7 @@ public class AutodiscoveryService {
         mqttService.sendHomeAssistantConfig("power_total_kw", gson.toJson(modelPowerTotalKW).getBytes());
 
         // energy today
-        Sensor modelEnergyTodayWh = newDtuModelBuilder(key(dtuId, "energy_today_wh"), info)
+        Sensor modelEnergyTodayWh = newDtuModelBuilder("Energy today (Wh)", info)
                 .stateClass("total_increasing")
                 .deviceClass("energy")
                 .unitOfMeasurement("Wh")
@@ -113,7 +110,7 @@ public class AutodiscoveryService {
                 .build();
         mqttService.sendHomeAssistantConfig("energy_today_wh", gson.toJson(modelEnergyTodayWh).getBytes());
 
-        Sensor modelEnergyTodayKWh = newDtuModelBuilder(key(dtuId, "energy_today_kwh"), info)
+        Sensor modelEnergyTodayKWh = newDtuModelBuilder("Energy today (kWh)", info)
                 .stateClass("total_increasing")
                 .deviceClass("energy")
                 .unitOfMeasurement("kWh")
@@ -122,7 +119,7 @@ public class AutodiscoveryService {
         mqttService.sendHomeAssistantConfig("energy_today_kwh", gson.toJson(modelEnergyTodayKWh).getBytes());
 
         // energy total
-        Sensor modelEnergyTotalWh = newDtuModelBuilder(key(dtuId, "energy_total_wh"), info)
+        Sensor modelEnergyTotalWh = newDtuModelBuilder("Energy total (Wh)", info)
                 .stateClass("total_increasing")
                 .deviceClass("energy")
                 .unitOfMeasurement("Wh")
@@ -130,13 +127,20 @@ public class AutodiscoveryService {
                 .build();
         mqttService.sendHomeAssistantConfig("energy_total_wh", gson.toJson(modelEnergyTotalWh).getBytes());
 
-        Sensor modelEnergyTotalKWh = newDtuModelBuilder(key(dtuId, "energy_total_kwh"), info)
+        Sensor modelEnergyTotalKWh = newDtuModelBuilder("Energy total (kWh)", info)
                 .stateClass("total_increasing")
                 .deviceClass("energy")
                 .unitOfMeasurement("kWh")
                 .valueTemplate("{{ value_json.energy_total_kwh }}")
                 .build();
         mqttService.sendHomeAssistantConfig("energy_total_kwh", gson.toJson(modelEnergyTotalKWh).getBytes());
+
+        Sensor position = newDtuModelBuilder("Last seen", info)
+                .icon("mdi:clock")
+                .deviceClass("timestamp")
+                .valueTemplate("{{ value_json.last_seen }}")
+                .build();
+        mqttService.sendHomeAssistantConfig("last_seen", gson.toJson(position).getBytes());
     }
 
     /**
@@ -147,7 +151,7 @@ public class AutodiscoveryService {
     private void registerInvAutodiscovery(@NotNull List<AppInfo.SgsInfo> sgsInfos) {
         // INVERTERS
         sgsInfos.forEach(sgsInfo -> {
-            String invId = String.format("inv_%s", sgsInfo.getSn());
+            String invId = String.format("inv_%s", sgsInfo.getInvSn());
 
             Sensor gridVoltage = newInvModelBuilder(key(invId, "grid_voltage"), sgsInfo)
                     .stateClass("measurement")
@@ -209,13 +213,15 @@ public class AutodiscoveryService {
     }
 
     private Sensor.SensorBuilder newPvModelBuilder(String name, @NotNull RealData.PvMO pv) {
-        String pvId = String.format("pv_%s_%d", pv.getSn(), pv.getPosition());
+        String pvId = String.format("pv_%s_%d", pv.getSn(), pv.getPort());
         return newSensorBuilder()
                 .device(
                         Sensor.Device.builder()
                                 .identifiers(List.of(pvId))
+                                .manufacturer("Unknown")
                                 .name("Solar Panel")
                                 .model("")
+                                .viaDevice(String.format("Inverter (sn: %s)", pv.getSn()))
                                 .build())
                 .name(name)
                 .jsonAttributesTopic("hoymiles-dtu/" + pvId)
@@ -223,13 +229,15 @@ public class AutodiscoveryService {
     }
 
     private Sensor.SensorBuilder newInvModelBuilder(String name, @NotNull AppInfo.SgsInfo info) {
-        String invId = String.format("inv_%s", info.getSn());
+        String invId = String.format("inv_%s", info.getInvSn());
         return newSensorBuilder()
                 .device(
                         Sensor.Device.builder()
                                 .identifiers(List.of(invId))
-                                .name("Hoymiles Solar Inverter")
-                                .model("HM-1500")
+                                .manufacturer("Hoymiles")
+                                .name(String.format("Hoymiles Solar Inverter (sn: %s)", info.getInvSn()))
+                                .model(String.format("Inverter Hoymiles (hw: %d)", info.getInvHw()))
+                                .swVersion(String.valueOf(info.getInvSw()))
                                 .build())
                 .name(name)
                 .jsonAttributesTopic("hoymiles-dtu/" + invId)
@@ -242,8 +250,9 @@ public class AutodiscoveryService {
                 .device(
                         Sensor.Device.builder()
                                 .identifiers(List.of(dtuId))
+                                .manufacturer("Hoymiles")
                                 .name("Hoymiles Solar Gateway")
-                                .model("DTU-Pro")
+                                .model(String.format("Hoymiles DTU (hw: %d)", info.getDtuInfo().getDtuHw()))
                                 .swVersion(String.valueOf(info.getDtuInfo().getDtuSw()))
                                 .build())
                 .name(name)
@@ -257,7 +266,8 @@ public class AutodiscoveryService {
                         List.of(
                                 Sensor.Availability.builder()
                                         .topic("hoymiles-dtu/bridge/state")
-                                        .build()));
+                                        .build()))
+                .enabledByDefault(true);
     }
 
     private static String key(String device, String name) {

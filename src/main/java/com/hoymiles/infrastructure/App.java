@@ -3,6 +3,7 @@ package com.hoymiles.infrastructure;
 import com.hoymiles.application.AppController;
 import com.hoymiles.infrastructure.dtu.DtuClient;
 import com.hoymiles.infrastructure.dtu.utils.RxUtils;
+import com.hoymiles.infrastructure.mqtt.MqttConnectionConfigProvider;
 import com.typesafe.config.Config;
 import io.netty.channel.ConnectTimeoutException;
 import io.reactivex.rxjava3.core.Observable;
@@ -24,6 +25,7 @@ public class App {
     private final DtuClient dtuClient;
     private final IMqttClient mqttClient;
     private final AppController appController;
+    private final MqttConnectionConfigProvider connectionConfigProvider;
 
     public void run() throws InterruptedException, MqttException {
         initDtuConnection();
@@ -60,12 +62,6 @@ public class App {
     }
 
     private void initMqttConnection() {
-        MqttConnectOptions options = new MqttConnectOptions();
-        options.setAutomaticReconnect(true);
-        options.setCleanSession(true);
-        options.setConnectionTimeout(5);
-        options.setWill("hoymiles-dtu/bridge/state", "offline" .getBytes(), 1, true);
-
         mqttClient.setCallback(new MqttCallback() {
             @Override
             public void connectionLost(Throwable cause) {
@@ -82,11 +78,10 @@ public class App {
             }
         });
 
-        String mqttUri = String.format("tcp://%s:%d", config.getString("mqtt.host"), config.getInt("mqtt.port"));
-        log.info("Connecting to MQTT: " + mqttUri);
+        log.info("Connecting to MQTT: " + connectionConfigProvider.getConnectionUri());
 
         Observable.create(emitter -> {
-                    mqttClient.connect(options);
+                    mqttClient.connect(connectionConfigProvider.getConnectionOptions());
                     emitter.onNext(1);
                 })
                 .retry(3, e -> {

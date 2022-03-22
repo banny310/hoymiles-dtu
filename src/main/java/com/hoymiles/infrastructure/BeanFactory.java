@@ -6,6 +6,7 @@ import com.hoymiles.domain.model.RealData;
 import com.hoymiles.infrastructure.dtu.DtuClient;
 import com.hoymiles.infrastructure.dtu.utils.DateUtil;
 import com.hoymiles.infrastructure.gson.DateAdapter;
+import com.hoymiles.infrastructure.mqtt.MqttConnectionConfigProvider;
 import com.hoymiles.infrastructure.repository.dto.DtuRealDataDTO;
 import com.hoymiles.infrastructure.repository.dto.InvRealDataDTO;
 import com.hoymiles.infrastructure.repository.dto.PvRealDataDTO;
@@ -20,7 +21,7 @@ import lombok.extern.log4j.Log4j2;
 import org.eclipse.paho.client.mqttv3.IMqttClient;
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttException;
-import org.eclipse.paho.client.mqttv3.persist.MqttDefaultFilePersistence;
+import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 import org.jetbrains.annotations.NotNull;
 import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
@@ -61,10 +62,9 @@ public class BeanFactory {
 
     @Produces
     @Singleton
-    public IMqttClient getMqttClient(@NotNull Config config) throws MqttException {
-        String publisherId = "mqtt_hoymiles_solar_" + UUID.randomUUID().toString().substring(0, 7);
-        String mqttUri = String.format("tcp://%s:%d", config.getString("mqtt.host"), config.getInt("mqtt.port"));
-        IMqttClient mqttClient = new MqttClient(mqttUri, publisherId, new MqttDefaultFilePersistence(System.getProperty("user.dir") + "/data"));
+    public IMqttClient getMqttClient(@NotNull MqttConnectionConfigProvider connectionUriProvider) throws MqttException {
+        String publisherId = "mqtt_hoymiles_dtu_" + UUID.randomUUID();
+        IMqttClient mqttClient = new MqttClient(connectionUriProvider.getConnectionUri(), publisherId, new MemoryPersistence());
         return mqttClient;
     }
 
@@ -95,10 +95,10 @@ public class BeanFactory {
                 });
 
 
-        Converter<Float, Float> multiply100 = ctx -> ctx.getSource() * 100f;
+        Converter<Float, Float> multiply10 = ctx -> ctx.getSource() * 10f;
         modelMapper.typeMap(RealData.SGSMO.class, InvRealDataDTO.class)
                 .addMappings(mapper -> {
-                    mapper.using(multiply100).map(RealData.SGSMO::getPowerFactor, InvRealDataDTO::setPowerFactor);
+                    mapper.using(multiply10).map(RealData.SGSMO::getPowerFactor, InvRealDataDTO::setPowerFactor);
                     mapper.using(timestamp2Date).map(RealData.SGSMO::getTime, InvRealDataDTO::setLastSeen);
                 });
 

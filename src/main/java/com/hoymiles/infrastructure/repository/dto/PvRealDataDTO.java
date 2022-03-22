@@ -12,8 +12,8 @@ public class PvRealDataDTO {
     @SerializedName("inverter_sn")
     private String sn;
 
-    @SerializedName("inverter_port")
-    private int position;       // inverter port number
+    @SerializedName("port")
+    private int port;           // inverter port number
 
     @SerializedName("voltage")
     private float voltage;      // voltage (x10V)

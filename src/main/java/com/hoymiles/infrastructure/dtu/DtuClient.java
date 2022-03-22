@@ -86,10 +86,20 @@ public class DtuClient {
             throw new IllegalStateException("Not connected");
         }
 
-        DeviceUtils.linePbObj((GeneratedMessageV3) message);
-        ByteBuf buffer = Unpooled.buffer();
-        buffer.writeBytes(DtuMessageHandler.findHandler(message.getClass()).toByte(message));
-        connectionFuture.channel().writeAndFlush(buffer);
+        try {
+            DtuMessageHandler messageHandler = DtuMessageHandler.findHandler(message.getClass());
+            log.info("--> sending: msgId={}", messageHandler.getCode());
+            log.info(message.toString().replaceAll("\t|\r|\n", ", "));
+            ByteBuf buffer = Unpooled.buffer();
+            buffer.writeBytes(messageHandler.toByte(message));
+            connectionFuture.channel().writeAndFlush(buffer);
+        } catch (NoHandlerException e) {
+            log.info("--> sending: msgId={}", "unknown");
+            log.info(message.toString().replaceAll("\t|\r|\n", ", "));
+            throw e;
+        } finally {
+            log.info("--> end");
+        }
     }
 
     public <T extends Message> Observable<T> command(Message message, Class<T> responseClazz) {
@@ -133,12 +143,14 @@ public class DtuClient {
                 DtuMessageHandler handler = DtuMessageHandler.findHandler(msgId);
                 Message msg = handler.fromByte(bArr);
                 list.add(new DtuMessage(msgId, msg));
+
+                log.info(msg.toString().replaceAll("\t|\r|\n", ", "));
             } catch (NoHandlerException e) {
                 log.warn(e.getMessage());
             } catch (Throwable e) {
                 log.error(e);
             } finally {
-                //log.debug(StringUtils.LF);
+                log.info("<-- end");
             }
         }
     }

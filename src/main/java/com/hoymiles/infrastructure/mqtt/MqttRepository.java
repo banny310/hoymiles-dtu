@@ -1,4 +1,4 @@
-package com.hoymiles.infrastructure.repository;
+package com.hoymiles.infrastructure.mqtt;
 
 import com.google.gson.Gson;
 import com.hoymiles.domain.IMqttRepository;
@@ -51,18 +51,18 @@ public class MqttRepository implements IMqttRepository {
         try {
             String dtuId = String.format("dtu_%s", realData.getDtuSn());
             DtuRealDataDTO dto = modelMapper.map(realData, DtuRealDataDTO.class);
-            mqttClient.publish("hoymiles-dtu/" + dtuId, gson.toJson(dto).getBytes(), 0, false);
+            mqttClient.publish("hoymiles-dtu/" + dtuId, gson.toJson(dto).getBytes(), 1, false);
 
             for (RealData.SGSMO sgsmo: realData.getInverters()) {
                 String invId = String.format("inv_%s", sgsmo.getSn());
                 InvRealDataDTO invDto = modelMapper.map(sgsmo, InvRealDataDTO.class);
-                mqttClient.publish("hoymiles-dtu/" + invId, gson.toJson(invDto).getBytes(), 0, false);
+                mqttClient.publish("hoymiles-dtu/" + invId, gson.toJson(invDto).getBytes(), 1, false);
             }
 
             for (RealData.PvMO pvmo: realData.getPanels()) {
-                String pvId = String.format("pv_%s_%d", pvmo.getSn(), pvmo.getPosition());
+                String pvId = String.format("pv_%s_%d", pvmo.getSn(), pvmo.getPort());
                 PvRealDataDTO pvDto = modelMapper.map(pvmo, PvRealDataDTO.class);
-                mqttClient.publish("hoymiles-dtu/" + pvId, gson.toJson(pvDto).getBytes(), 0, false);
+                mqttClient.publish("hoymiles-dtu/" + pvId, gson.toJson(pvDto).getBytes(), 1, false);
             }
 
         } catch (MqttException e) {

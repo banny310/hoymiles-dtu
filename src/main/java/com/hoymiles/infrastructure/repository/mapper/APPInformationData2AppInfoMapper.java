@@ -22,7 +22,9 @@ public class APPInformationData2AppInfoMapper implements GenericMapper<APPInform
                 .sgsInfo(
                         src.getMAPPpvInfoList().stream().map(src1 ->
                                 AppInfo.SgsInfo.builder()
-                                        .sn(DeviceUtils.decToHex(String.valueOf(src1.getPvSn())))
+                                        .invSn(DeviceUtils.decToHex(String.valueOf(src1.getPvSn())))
+                                        .invSw(src1.getPvSw())
+                                        .invHw(src1.getPvHw())
                                         .build()
                         ).collect(Collectors.toList()))
                 .build();

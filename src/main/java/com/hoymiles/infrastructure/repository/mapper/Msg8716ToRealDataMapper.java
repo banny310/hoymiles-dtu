@@ -22,6 +22,7 @@ public class Msg8716ToRealDataMapper implements GenericMapper<RealDataNew.Msg871
                 .inverters(src.getSgsDatasList().stream().map(
                         src1 -> RealData.SGSMO.builder()
                                 .sn(DeviceUtils.decToHex(String.valueOf(src1.getSn())))
+                                .time(src.getTime())
                                 .gridVoltage((float) src1.getV() / 10f)
                                 .gridFreq((float) src1.getFreq() / 100f)
                                 .gridPower((float) src1.getP() / 10f)
@@ -35,7 +36,8 @@ public class Msg8716ToRealDataMapper implements GenericMapper<RealDataNew.Msg871
                 .panels(src.getPvDatasList().stream().map(
                         src2 -> RealData.PvMO.builder()
                                 .sn(DeviceUtils.decToHex(String.valueOf(src2.getSn())))
-                                .position(src2.getPi())
+                                .time(src.getTime())
+                                .port(src2.getPi())
                                 .voltage((float) src2.getV() / 10f)
                                 .current((float) src2.getI() / 100f)
                                 .power((float) src2.getP() / 10f)

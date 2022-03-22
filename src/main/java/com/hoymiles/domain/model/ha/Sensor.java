@@ -46,12 +46,14 @@ public class Sensor {
         @SerializedName("identifiers")
         private List<String> identifiers;
         @SerializedName("manufacturer")
-        private String manufacturer = "Hoymiles";
+        private String manufacturer;
         @SerializedName("model")
         private String model;
         @SerializedName("name")
         private String name;
         @SerializedName("sw_version")
         private String swVersion;
+        @SerializedName("via_device")
+        private String viaDevice;
     }
 }

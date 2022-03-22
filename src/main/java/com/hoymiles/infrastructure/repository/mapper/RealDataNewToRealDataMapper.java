@@ -37,7 +37,7 @@ public class RealDataNewToRealDataMapper implements GenericMapper<RealDataNew.Re
                         src2 -> RealData.PvMO.builder()
                                 .sn(DeviceUtils.decToHex(String.valueOf(src2.getSn())))
                                 .time(src.getTime())
-                                .position(src2.getPi())
+                                .port(src2.getPi())
                                 .voltage((float) src2.getV() / 10f)
                                 .current((float) src2.getI() / 100f)
                                 .power((float) src2.getP() / 10f)

@@ -48,11 +48,13 @@ public class AppController {
     }
 
     public void start() throws InterruptedException {
-        log.debug("Sending online state...");
+        log.info("Sending online state...");
         mqttRepository.sendOnlineState();
 
-        log.debug("Getting AppInfo from DTU...");
+        log.info("Getting AppInfo from DTU...");
         AppInfo appInfo = dtuRepository.getAppInfo();
+
+        log.info("DTU info: hw={}, sw={}", appInfo.getDtuInfo().getDtuHw(), appInfo.getDtuInfo().getDtuSw());
 
         log.info("Sending autodiscovery...");
         autodiscoveryService.registerHomeAssistantAutodiscovery(appInfo);
