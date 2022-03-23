@@ -17733,6 +17733,2006 @@ public final class RealDataNew {
 
   }
 
+  public interface Msg8717OrBuilder extends
+      // @@protoc_insertion_point(interface_extends:hoymiles.Msg8717)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>required bytes dtuSn = 1;</code>
+     * @return Whether the dtuSn field is set.
+     */
+    boolean hasDtuSn();
+    /**
+     * <code>required bytes dtuSn = 1;</code>
+     * @return The dtuSn.
+     */
+    com.google.protobuf.ByteString getDtuSn();
+
+    /**
+     * <code>required uint32 time = 2;</code>
+     * @return Whether the time field is set.
+     */
+    boolean hasTime();
+    /**
+     * <code>required uint32 time = 2;</code>
+     * @return The time.
+     */
+    int getTime();
+
+    /**
+     * <code>required uint32 val3 = 3;</code>
+     * @return Whether the val3 field is set.
+     */
+    boolean hasVal3();
+    /**
+     * <code>required uint32 val3 = 3;</code>
+     * @return The val3.
+     */
+    int getVal3();
+
+    /**
+     * <pre>
+     * missing 4
+     * </pre>
+     *
+     * <code>required uint32 val5 = 5;</code>
+     * @return Whether the val5 field is set.
+     */
+    boolean hasVal5();
+    /**
+     * <pre>
+     * missing 4
+     * </pre>
+     *
+     * <code>required uint32 val5 = 5;</code>
+     * @return The val5.
+     */
+    int getVal5();
+
+    /**
+     * <code>repeated .hoymiles.SGSMO sgsDatas = 9;</code>
+     */
+    java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.SGSMO> 
+        getSgsDatasList();
+    /**
+     * <code>repeated .hoymiles.SGSMO sgsDatas = 9;</code>
+     */
+    com.hoymiles.infrastructure.protos.RealDataNew.SGSMO getSgsDatas(int index);
+    /**
+     * <code>repeated .hoymiles.SGSMO sgsDatas = 9;</code>
+     */
+    int getSgsDatasCount();
+    /**
+     * <code>repeated .hoymiles.SGSMO sgsDatas = 9;</code>
+     */
+    java.util.List<? extends com.hoymiles.infrastructure.protos.RealDataNew.SGSMOOrBuilder> 
+        getSgsDatasOrBuilderList();
+    /**
+     * <code>repeated .hoymiles.SGSMO sgsDatas = 9;</code>
+     */
+    com.hoymiles.infrastructure.protos.RealDataNew.SGSMOOrBuilder getSgsDatasOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .hoymiles.PvMO pvDatas = 11;</code>
+     */
+    java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.PvMO> 
+        getPvDatasList();
+    /**
+     * <code>repeated .hoymiles.PvMO pvDatas = 11;</code>
+     */
+    com.hoymiles.infrastructure.protos.RealDataNew.PvMO getPvDatas(int index);
+    /**
+     * <code>repeated .hoymiles.PvMO pvDatas = 11;</code>
+     */
+    int getPvDatasCount();
+    /**
+     * <code>repeated .hoymiles.PvMO pvDatas = 11;</code>
+     */
+    java.util.List<? extends com.hoymiles.infrastructure.protos.RealDataNew.PvMOOrBuilder> 
+        getPvDatasOrBuilderList();
+    /**
+     * <code>repeated .hoymiles.PvMO pvDatas = 11;</code>
+     */
+    com.hoymiles.infrastructure.protos.RealDataNew.PvMOOrBuilder getPvDatasOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   **
+   *response, msgId=8717
+   *0a0c31304638373232323637393710a2ebe69106180128014a2c0881e5819197ac04100118c11320892728b65330f80138ac0340e80748c504500358a6476001a001b580d8014a2d0890d2819197ac04100118b413208927288e5130f00138a20340e80748a204500158bfb7026001a001b680e0014a2d08a6e2819197ac04100118aa1320892728e05130f50138a70340e80748cc04500158dbae036001a001b580d8015a1f0881e5819197ac04100118cc0220e00628b31630989304388c0a40808080185a1f0881e5819197ac04100218cc0220cb0628ee1530c4870438ee0940808080185a1f0881e5819197ac04100318cb0220c70628d01530a3b50338b30940808080185a1f0881e5819197ac04100418cb0220d30628f8153099890438f30940808080185a1f0890d2819197ac04100118cc0220b50628a2153085d20338bd0940808080185a1f0890d2819197ac04100218cc0220c00628c71530c6da0338dd0940808080185a1f0890d2819197ac04100318cb0220b306289515308fb50338a90940808080185a1f0890d2819197ac04100418cb0220bc0628b21530e9ba0338cd0940808080185a1f08a6e2819197ac04100118cb0220be0628b81530e4c80338bb0940808080185a1f08a6e2819197ac04100218cb0220c50628cf153095cf0338c80940808080185a1f08a6e2819197ac04100318ca0220c40628c61530f2d90338c90940808080185a1f08a6e2819197ac04100418ca0220c00628ba15309acd0338d2094080808018
+   *Field #1: 0A String Length = 12, Hex = 0C, UTF8 = "10F872226797"
+   *Field #2: 10 Varint Value = 1647949218, Hex = A2-EB-E6-91-06
+   *Field #3: 18 Varint Value = 1, Hex = 01
+   *Field #5: 28 Varint Value = 1, Hex = 01
+   *Field #9: 4A String Length = 44, Hex = 2C, UTF8 = "�偑��� �'(�S0�8�&#64;�H�PX�G`����"
+   *As sub-object :
+   *Field #1: 0A Varint Value = 19110224228993, Hex = 0C-31-30-46-38-37-32
+   *Field #2: 32 Varint Value = 1, Hex = 32
+   *Field #3: 36 Varint Value = 2497, Hex = 37-39
+   *Field #4: 37 Varint Value = 5001, Hex = 10-A2
+   *Field #5: EB Varint Value = 10678, Hex = E6-91
+   *Field #6: 06 Varint Value = 248, Hex = 18-01
+   *Field #7: 28 Varint Value = 428, Hex = 01-4A
+   *Field #8: 2C Varint Value = 1000, Hex = 08-81
+   *Field #9: E5 Varint Value = 581, Hex = 81-91
+   *Field #10: 97 Varint Value = 3, Hex = AC
+   *Field #11: 04 Varint Value = 9126, Hex = 10-01
+   *Field #12: 18 Varint Value = 1, Hex = C1
+   *Field #20: 13-20 Varint Value = 3538997, Hex = 89-27-28-B6
+   *Field #9: 4A String Length = 45, Hex = 2D, UTF8 = "�ҁ���� �'(�Q0�8�&#64;�H�PX��`����"
+   *As sub-object :
+   *Field #1: 0A Varint Value = 19110224226576, Hex = 0C-31-30-46-38-37-32
+   *Field #2: 32 Varint Value = 1, Hex = 32
+   *Field #3: 36 Varint Value = 2484, Hex = 37-39
+   *Field #4: 37 Varint Value = 5001, Hex = 10-A2
+   *Field #5: EB Varint Value = 10382, Hex = E6-91
+   *Field #6: 06 Varint Value = 240, Hex = 18-01
+   *Field #7: 28 Varint Value = 418, Hex = 01-4A
+   *Field #8: 2C Varint Value = 1000, Hex = 08-81
+   *Field #9: E5 Varint Value = 546, Hex = 81-91
+   *Field #10: 97 Varint Value = 1, Hex = AC
+   *Field #11: 04 Varint Value = 39871, Hex = 10-01-18
+   *Field #12: C1 Varint Value = 1, Hex = 13
+   *Field #20: 20-89 Varint Value = 3670070, Hex = 27-28-B6-53
+   *Field #9: 4A String Length = 45, Hex = 2D, UTF8 = "�⁑��� �'(�Q0�8�&#64;�H�PXۮ`����"
+   *As sub-object :
+   *Field #1: 0A Varint Value = 19110224228646, Hex = 0C-31-30-46-38-37-32
+   *Field #2: 32 Varint Value = 1, Hex = 32
+   *Field #3: 36 Varint Value = 2474, Hex = 37-39
+   *Field #4: 37 Varint Value = 5001, Hex = 10-A2
+   *Field #5: EB Varint Value = 10464, Hex = E6-91
+   *Field #6: 06 Varint Value = 245, Hex = 18-01
+   *Field #7: 28 Varint Value = 423, Hex = 01-4A
+   *Field #8: 2C Varint Value = 1000, Hex = 08-81
+   *Field #9: E5 Varint Value = 588, Hex = 81-91
+   *Field #10: 97 Varint Value = 1, Hex = AC
+   *Field #11: 04 Varint Value = 55131, Hex = 10-01-18
+   *Field #12: C1 Varint Value = 1, Hex = 13
+   *Field #20: 20-89 Varint Value = 3538997, Hex = 27-28-B6-53
+   *Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�偑��� �(�0��8� &#64;���"
+   *As sub-object :
+   *Field #1: 0A Varint Value = 19110224228993, Hex = 0C-31-30-46-38-37-32
+   *Field #2: 32 Varint Value = 1, Hex = 32
+   *Field #3: 36 Varint Value = 332, Hex = 37-39
+   *Field #4: 37 Varint Value = 864, Hex = 10-A2
+   *Field #5: EB Varint Value = 2867, Hex = E6-91
+   *Field #6: 06 Varint Value = 67992, Hex = 18-01-28
+   *Field #7: 01 Varint Value = 1292, Hex = 4A-2C
+   *Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+   *Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�偑��� �(�0ć8� &#64;���"
+   *As sub-object :
+   *Field #1: 0A Varint Value = 19110224228993, Hex = 0C-31-30-46-38-37-32
+   *Field #2: 32 Varint Value = 2, Hex = 32
+   *Field #3: 36 Varint Value = 332, Hex = 37-39
+   *Field #4: 37 Varint Value = 843, Hex = 10-A2
+   *Field #5: EB Varint Value = 2798, Hex = E6-91
+   *Field #6: 06 Varint Value = 66500, Hex = 18-01-28
+   *Field #7: 01 Varint Value = 1262, Hex = 4A-2C
+   *Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+   *Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�偑��� �(�0��8� &#64;���"
+   *As sub-object :
+   *Field #1: 0A Varint Value = 19110224228993, Hex = 0C-31-30-46-38-37-32
+   *Field #2: 32 Varint Value = 3, Hex = 32
+   *Field #3: 36 Varint Value = 331, Hex = 37-39
+   *Field #4: 37 Varint Value = 839, Hex = 10-A2
+   *Field #5: EB Varint Value = 2768, Hex = E6-91
+   *Field #6: 06 Varint Value = 55971, Hex = 18-01-28
+   *Field #7: 01 Varint Value = 1203, Hex = 4A-2C
+   *Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+   *Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�偑��� �(�0��8� &#64;���"
+   *As sub-object :
+   *Field #1: 0A Varint Value = 19110224228993, Hex = 0C-31-30-46-38-37-32
+   *Field #2: 32 Varint Value = 4, Hex = 32
+   *Field #3: 36 Varint Value = 331, Hex = 37-39
+   *Field #4: 37 Varint Value = 851, Hex = 10-A2
+   *Field #5: EB Varint Value = 2808, Hex = E6-91
+   *Field #6: 06 Varint Value = 66713, Hex = 18-01-28
+   *Field #7: 01 Varint Value = 1267, Hex = 4A-2C
+   *Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+   *Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�ҁ���� �(�0��8� &#64;���"
+   *As sub-object :
+   *Field #1: 0A Varint Value = 19110224226576, Hex = 0C-31-30-46-38-37-32
+   *Field #2: 32 Varint Value = 1, Hex = 32
+   *Field #3: 36 Varint Value = 332, Hex = 37-39
+   *Field #4: 37 Varint Value = 821, Hex = 10-A2
+   *Field #5: EB Varint Value = 2722, Hex = E6-91
+   *Field #6: 06 Varint Value = 59653, Hex = 18-01-28
+   *Field #7: 01 Varint Value = 1213, Hex = 4A-2C
+   *Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+   *Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�ҁ���� �(�0��8� &#64;���"
+   *As sub-object :
+   *Field #1: 0A Varint Value = 19110224226576, Hex = 0C-31-30-46-38-37-32
+   *Field #2: 32 Varint Value = 2, Hex = 32
+   *Field #3: 36 Varint Value = 332, Hex = 37-39
+   *Field #4: 37 Varint Value = 832, Hex = 10-A2
+   *Field #5: EB Varint Value = 2759, Hex = E6-91
+   *Field #6: 06 Varint Value = 60742, Hex = 18-01-28
+   *Field #7: 01 Varint Value = 1245, Hex = 4A-2C
+   *Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+   *Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�ҁ���� �(�0��8� &#64;���"
+   *As sub-object :
+   *Field #1: 0A Varint Value = 19110224226576, Hex = 0C-31-30-46-38-37-32
+   *Field #2: 32 Varint Value = 3, Hex = 32
+   *Field #3: 36 Varint Value = 331, Hex = 37-39
+   *Field #4: 37 Varint Value = 819, Hex = 10-A2
+   *Field #5: EB Varint Value = 2709, Hex = E6-91
+   *Field #6: 06 Varint Value = 55951, Hex = 18-01-28
+   *Field #7: 01 Varint Value = 1193, Hex = 4A-2C
+   *Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+   *Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�ҁ���� �(�0�8� &#64;���"
+   *As sub-object :
+   *Field #1: 0A Varint Value = 19110224226576, Hex = 0C-31-30-46-38-37-32
+   *Field #2: 32 Varint Value = 4, Hex = 32
+   *Field #3: 36 Varint Value = 331, Hex = 37-39
+   *Field #4: 37 Varint Value = 828, Hex = 10-A2
+   *Field #5: EB Varint Value = 2738, Hex = E6-91
+   *Field #6: 06 Varint Value = 56681, Hex = 18-01-28
+   *Field #7: 01 Varint Value = 1229, Hex = 4A-2C
+   *Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+   *Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�⁑��� �(�0��8� &#64;���"
+   *As sub-object :
+   *Field #1: 0A Varint Value = 19110224228646, Hex = 0C-31-30-46-38-37-32
+   *Field #2: 32 Varint Value = 1, Hex = 32
+   *Field #3: 36 Varint Value = 331, Hex = 37-39
+   *Field #4: 37 Varint Value = 830, Hex = 10-A2
+   *Field #5: EB Varint Value = 2744, Hex = E6-91
+   *Field #6: 06 Varint Value = 58468, Hex = 18-01-28
+   *Field #7: 01 Varint Value = 1211, Hex = 4A-2C
+   *Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+   *Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�⁑��� �(�0��8� &#64;���"
+   *As sub-object :
+   *Field #1: 0A Varint Value = 19110224228646, Hex = 0C-31-30-46-38-37-32
+   *Field #2: 32 Varint Value = 2, Hex = 32
+   *Field #3: 36 Varint Value = 331, Hex = 37-39
+   *Field #4: 37 Varint Value = 837, Hex = 10-A2
+   *Field #5: EB Varint Value = 2767, Hex = E6-91
+   *Field #6: 06 Varint Value = 59285, Hex = 18-01-28
+   *Field #7: 01 Varint Value = 1224, Hex = 4A-2C
+   *Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+   *Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�⁑��� �(�0��8� &#64;���"
+   *As sub-object :
+   *Field #1: 0A Varint Value = 19110224228646, Hex = 0C-31-30-46-38-37-32
+   *Field #2: 32 Varint Value = 3, Hex = 32
+   *Field #3: 36 Varint Value = 330, Hex = 37-39
+   *Field #4: 37 Varint Value = 836, Hex = 10-A2
+   *Field #5: EB Varint Value = 2758, Hex = E6-91
+   *Field #6: 06 Varint Value = 60658, Hex = 18-01-28
+   *Field #7: 01 Varint Value = 1225, Hex = 4A-2C
+   *Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+   *Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�⁑��� �(�0��8� &#64;���"
+   *As sub-object :
+   *Field #1: 0A Varint Value = 19110224228646, Hex = 0C-31-30-46-38-37-32
+   *Field #2: 32 Varint Value = 4, Hex = 32
+   *Field #3: 36 Varint Value = 330, Hex = 37-39
+   *Field #4: 37 Varint Value = 832, Hex = 10-A2
+   *Field #5: EB Varint Value = 2746, Hex = E6-91
+   *Field #6: 06 Varint Value = 59034, Hex = 18-01-28
+   *Field #7: 01 Varint Value = 1234, Hex = 4A-2C
+   *Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+   * </pre>
+   *
+   * Protobuf type {@code hoymiles.Msg8717}
+   */
+  public static final class Msg8717 extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:hoymiles.Msg8717)
+      Msg8717OrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Msg8717.newBuilder() to construct.
+    private Msg8717(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Msg8717() {
+      dtuSn_ = com.google.protobuf.ByteString.EMPTY;
+      sgsDatas_ = java.util.Collections.emptyList();
+      pvDatas_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Msg8717();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Msg8717(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              bitField0_ |= 0x00000001;
+              dtuSn_ = input.readBytes();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              time_ = input.readUInt32();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              val3_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+              bitField0_ |= 0x00000008;
+              val5_ = input.readUInt32();
+              break;
+            }
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+                sgsDatas_ = new java.util.ArrayList<com.hoymiles.infrastructure.protos.RealDataNew.SGSMO>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              sgsDatas_.add(
+                  input.readMessage(com.hoymiles.infrastructure.protos.RealDataNew.SGSMO.PARSER, extensionRegistry));
+              break;
+            }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                pvDatas_ = new java.util.ArrayList<com.hoymiles.infrastructure.protos.RealDataNew.PvMO>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              pvDatas_.add(
+                  input.readMessage(com.hoymiles.infrastructure.protos.RealDataNew.PvMO.PARSER, extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+          sgsDatas_ = java.util.Collections.unmodifiableList(sgsDatas_);
+        }
+        if (((mutable_bitField0_ & 0x00000020) != 0)) {
+          pvDatas_ = java.util.Collections.unmodifiableList(pvDatas_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.hoymiles.infrastructure.protos.RealDataNew.internal_static_hoymiles_Msg8717_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.hoymiles.infrastructure.protos.RealDataNew.internal_static_hoymiles_Msg8717_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.hoymiles.infrastructure.protos.RealDataNew.Msg8717.class, com.hoymiles.infrastructure.protos.RealDataNew.Msg8717.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int DTUSN_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString dtuSn_;
+    /**
+     * <code>required bytes dtuSn = 1;</code>
+     * @return Whether the dtuSn field is set.
+     */
+    @java.lang.Override
+    public boolean hasDtuSn() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>required bytes dtuSn = 1;</code>
+     * @return The dtuSn.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDtuSn() {
+      return dtuSn_;
+    }
+
+    public static final int TIME_FIELD_NUMBER = 2;
+    private int time_;
+    /**
+     * <code>required uint32 time = 2;</code>
+     * @return Whether the time field is set.
+     */
+    @java.lang.Override
+    public boolean hasTime() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>required uint32 time = 2;</code>
+     * @return The time.
+     */
+    @java.lang.Override
+    public int getTime() {
+      return time_;
+    }
+
+    public static final int VAL3_FIELD_NUMBER = 3;
+    private int val3_;
+    /**
+     * <code>required uint32 val3 = 3;</code>
+     * @return Whether the val3 field is set.
+     */
+    @java.lang.Override
+    public boolean hasVal3() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <code>required uint32 val3 = 3;</code>
+     * @return The val3.
+     */
+    @java.lang.Override
+    public int getVal3() {
+      return val3_;
+    }
+
+    public static final int VAL5_FIELD_NUMBER = 5;
+    private int val5_;
+    /**
+     * <pre>
+     * missing 4
+     * </pre>
+     *
+     * <code>required uint32 val5 = 5;</code>
+     * @return Whether the val5 field is set.
+     */
+    @java.lang.Override
+    public boolean hasVal5() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <pre>
+     * missing 4
+     * </pre>
+     *
+     * <code>required uint32 val5 = 5;</code>
+     * @return The val5.
+     */
+    @java.lang.Override
+    public int getVal5() {
+      return val5_;
+    }
+
+    public static final int SGSDATAS_FIELD_NUMBER = 9;
+    private java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.SGSMO> sgsDatas_;
+    /**
+     * <code>repeated .hoymiles.SGSMO sgsDatas = 9;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.SGSMO> getSgsDatasList() {
+      return sgsDatas_;
+    }
+    /**
+     * <code>repeated .hoymiles.SGSMO sgsDatas = 9;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.hoymiles.infrastructure.protos.RealDataNew.SGSMOOrBuilder> 
+        getSgsDatasOrBuilderList() {
+      return sgsDatas_;
+    }
+    /**
+     * <code>repeated .hoymiles.SGSMO sgsDatas = 9;</code>
+     */
+    @java.lang.Override
+    public int getSgsDatasCount() {
+      return sgsDatas_.size();
+    }
+    /**
+     * <code>repeated .hoymiles.SGSMO sgsDatas = 9;</code>
+     */
+    @java.lang.Override
+    public com.hoymiles.infrastructure.protos.RealDataNew.SGSMO getSgsDatas(int index) {
+      return sgsDatas_.get(index);
+    }
+    /**
+     * <code>repeated .hoymiles.SGSMO sgsDatas = 9;</code>
+     */
+    @java.lang.Override
+    public com.hoymiles.infrastructure.protos.RealDataNew.SGSMOOrBuilder getSgsDatasOrBuilder(
+        int index) {
+      return sgsDatas_.get(index);
+    }
+
+    public static final int PVDATAS_FIELD_NUMBER = 11;
+    private java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.PvMO> pvDatas_;
+    /**
+     * <code>repeated .hoymiles.PvMO pvDatas = 11;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.PvMO> getPvDatasList() {
+      return pvDatas_;
+    }
+    /**
+     * <code>repeated .hoymiles.PvMO pvDatas = 11;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.hoymiles.infrastructure.protos.RealDataNew.PvMOOrBuilder> 
+        getPvDatasOrBuilderList() {
+      return pvDatas_;
+    }
+    /**
+     * <code>repeated .hoymiles.PvMO pvDatas = 11;</code>
+     */
+    @java.lang.Override
+    public int getPvDatasCount() {
+      return pvDatas_.size();
+    }
+    /**
+     * <code>repeated .hoymiles.PvMO pvDatas = 11;</code>
+     */
+    @java.lang.Override
+    public com.hoymiles.infrastructure.protos.RealDataNew.PvMO getPvDatas(int index) {
+      return pvDatas_.get(index);
+    }
+    /**
+     * <code>repeated .hoymiles.PvMO pvDatas = 11;</code>
+     */
+    @java.lang.Override
+    public com.hoymiles.infrastructure.protos.RealDataNew.PvMOOrBuilder getPvDatasOrBuilder(
+        int index) {
+      return pvDatas_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      if (!hasDtuSn()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasTime()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasVal3()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasVal5()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      for (int i = 0; i < getSgsDatasCount(); i++) {
+        if (!getSgsDatas(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getPvDatasCount(); i++) {
+        if (!getPvDatas(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeBytes(1, dtuSn_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeUInt32(2, time_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeUInt32(3, val3_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        output.writeUInt32(5, val5_);
+      }
+      for (int i = 0; i < sgsDatas_.size(); i++) {
+        output.writeMessage(9, sgsDatas_.get(i));
+      }
+      for (int i = 0; i < pvDatas_.size(); i++) {
+        output.writeMessage(11, pvDatas_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, dtuSn_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(2, time_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(3, val3_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, val5_);
+      }
+      for (int i = 0; i < sgsDatas_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, sgsDatas_.get(i));
+      }
+      for (int i = 0; i < pvDatas_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(11, pvDatas_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.hoymiles.infrastructure.protos.RealDataNew.Msg8717)) {
+        return super.equals(obj);
+      }
+      com.hoymiles.infrastructure.protos.RealDataNew.Msg8717 other = (com.hoymiles.infrastructure.protos.RealDataNew.Msg8717) obj;
+
+      if (hasDtuSn() != other.hasDtuSn()) return false;
+      if (hasDtuSn()) {
+        if (!getDtuSn()
+            .equals(other.getDtuSn())) return false;
+      }
+      if (hasTime() != other.hasTime()) return false;
+      if (hasTime()) {
+        if (getTime()
+            != other.getTime()) return false;
+      }
+      if (hasVal3() != other.hasVal3()) return false;
+      if (hasVal3()) {
+        if (getVal3()
+            != other.getVal3()) return false;
+      }
+      if (hasVal5() != other.hasVal5()) return false;
+      if (hasVal5()) {
+        if (getVal5()
+            != other.getVal5()) return false;
+      }
+      if (!getSgsDatasList()
+          .equals(other.getSgsDatasList())) return false;
+      if (!getPvDatasList()
+          .equals(other.getPvDatasList())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasDtuSn()) {
+        hash = (37 * hash) + DTUSN_FIELD_NUMBER;
+        hash = (53 * hash) + getDtuSn().hashCode();
+      }
+      if (hasTime()) {
+        hash = (37 * hash) + TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getTime();
+      }
+      if (hasVal3()) {
+        hash = (37 * hash) + VAL3_FIELD_NUMBER;
+        hash = (53 * hash) + getVal3();
+      }
+      if (hasVal5()) {
+        hash = (37 * hash) + VAL5_FIELD_NUMBER;
+        hash = (53 * hash) + getVal5();
+      }
+      if (getSgsDatasCount() > 0) {
+        hash = (37 * hash) + SGSDATAS_FIELD_NUMBER;
+        hash = (53 * hash) + getSgsDatasList().hashCode();
+      }
+      if (getPvDatasCount() > 0) {
+        hash = (37 * hash) + PVDATAS_FIELD_NUMBER;
+        hash = (53 * hash) + getPvDatasList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.hoymiles.infrastructure.protos.RealDataNew.Msg8717 parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.hoymiles.infrastructure.protos.RealDataNew.Msg8717 parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.hoymiles.infrastructure.protos.RealDataNew.Msg8717 parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.hoymiles.infrastructure.protos.RealDataNew.Msg8717 parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.hoymiles.infrastructure.protos.RealDataNew.Msg8717 parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.hoymiles.infrastructure.protos.RealDataNew.Msg8717 parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.hoymiles.infrastructure.protos.RealDataNew.Msg8717 parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.hoymiles.infrastructure.protos.RealDataNew.Msg8717 parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.hoymiles.infrastructure.protos.RealDataNew.Msg8717 parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.hoymiles.infrastructure.protos.RealDataNew.Msg8717 parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.hoymiles.infrastructure.protos.RealDataNew.Msg8717 parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.hoymiles.infrastructure.protos.RealDataNew.Msg8717 parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.hoymiles.infrastructure.protos.RealDataNew.Msg8717 prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     **
+     *response, msgId=8717
+     *0a0c31304638373232323637393710a2ebe69106180128014a2c0881e5819197ac04100118c11320892728b65330f80138ac0340e80748c504500358a6476001a001b580d8014a2d0890d2819197ac04100118b413208927288e5130f00138a20340e80748a204500158bfb7026001a001b680e0014a2d08a6e2819197ac04100118aa1320892728e05130f50138a70340e80748cc04500158dbae036001a001b580d8015a1f0881e5819197ac04100118cc0220e00628b31630989304388c0a40808080185a1f0881e5819197ac04100218cc0220cb0628ee1530c4870438ee0940808080185a1f0881e5819197ac04100318cb0220c70628d01530a3b50338b30940808080185a1f0881e5819197ac04100418cb0220d30628f8153099890438f30940808080185a1f0890d2819197ac04100118cc0220b50628a2153085d20338bd0940808080185a1f0890d2819197ac04100218cc0220c00628c71530c6da0338dd0940808080185a1f0890d2819197ac04100318cb0220b306289515308fb50338a90940808080185a1f0890d2819197ac04100418cb0220bc0628b21530e9ba0338cd0940808080185a1f08a6e2819197ac04100118cb0220be0628b81530e4c80338bb0940808080185a1f08a6e2819197ac04100218cb0220c50628cf153095cf0338c80940808080185a1f08a6e2819197ac04100318ca0220c40628c61530f2d90338c90940808080185a1f08a6e2819197ac04100418ca0220c00628ba15309acd0338d2094080808018
+     *Field #1: 0A String Length = 12, Hex = 0C, UTF8 = "10F872226797"
+     *Field #2: 10 Varint Value = 1647949218, Hex = A2-EB-E6-91-06
+     *Field #3: 18 Varint Value = 1, Hex = 01
+     *Field #5: 28 Varint Value = 1, Hex = 01
+     *Field #9: 4A String Length = 44, Hex = 2C, UTF8 = "�偑��� �'(�S0�8�&#64;�H�PX�G`����"
+     *As sub-object :
+     *Field #1: 0A Varint Value = 19110224228993, Hex = 0C-31-30-46-38-37-32
+     *Field #2: 32 Varint Value = 1, Hex = 32
+     *Field #3: 36 Varint Value = 2497, Hex = 37-39
+     *Field #4: 37 Varint Value = 5001, Hex = 10-A2
+     *Field #5: EB Varint Value = 10678, Hex = E6-91
+     *Field #6: 06 Varint Value = 248, Hex = 18-01
+     *Field #7: 28 Varint Value = 428, Hex = 01-4A
+     *Field #8: 2C Varint Value = 1000, Hex = 08-81
+     *Field #9: E5 Varint Value = 581, Hex = 81-91
+     *Field #10: 97 Varint Value = 3, Hex = AC
+     *Field #11: 04 Varint Value = 9126, Hex = 10-01
+     *Field #12: 18 Varint Value = 1, Hex = C1
+     *Field #20: 13-20 Varint Value = 3538997, Hex = 89-27-28-B6
+     *Field #9: 4A String Length = 45, Hex = 2D, UTF8 = "�ҁ���� �'(�Q0�8�&#64;�H�PX��`����"
+     *As sub-object :
+     *Field #1: 0A Varint Value = 19110224226576, Hex = 0C-31-30-46-38-37-32
+     *Field #2: 32 Varint Value = 1, Hex = 32
+     *Field #3: 36 Varint Value = 2484, Hex = 37-39
+     *Field #4: 37 Varint Value = 5001, Hex = 10-A2
+     *Field #5: EB Varint Value = 10382, Hex = E6-91
+     *Field #6: 06 Varint Value = 240, Hex = 18-01
+     *Field #7: 28 Varint Value = 418, Hex = 01-4A
+     *Field #8: 2C Varint Value = 1000, Hex = 08-81
+     *Field #9: E5 Varint Value = 546, Hex = 81-91
+     *Field #10: 97 Varint Value = 1, Hex = AC
+     *Field #11: 04 Varint Value = 39871, Hex = 10-01-18
+     *Field #12: C1 Varint Value = 1, Hex = 13
+     *Field #20: 20-89 Varint Value = 3670070, Hex = 27-28-B6-53
+     *Field #9: 4A String Length = 45, Hex = 2D, UTF8 = "�⁑��� �'(�Q0�8�&#64;�H�PXۮ`����"
+     *As sub-object :
+     *Field #1: 0A Varint Value = 19110224228646, Hex = 0C-31-30-46-38-37-32
+     *Field #2: 32 Varint Value = 1, Hex = 32
+     *Field #3: 36 Varint Value = 2474, Hex = 37-39
+     *Field #4: 37 Varint Value = 5001, Hex = 10-A2
+     *Field #5: EB Varint Value = 10464, Hex = E6-91
+     *Field #6: 06 Varint Value = 245, Hex = 18-01
+     *Field #7: 28 Varint Value = 423, Hex = 01-4A
+     *Field #8: 2C Varint Value = 1000, Hex = 08-81
+     *Field #9: E5 Varint Value = 588, Hex = 81-91
+     *Field #10: 97 Varint Value = 1, Hex = AC
+     *Field #11: 04 Varint Value = 55131, Hex = 10-01-18
+     *Field #12: C1 Varint Value = 1, Hex = 13
+     *Field #20: 20-89 Varint Value = 3538997, Hex = 27-28-B6-53
+     *Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�偑��� �(�0��8� &#64;���"
+     *As sub-object :
+     *Field #1: 0A Varint Value = 19110224228993, Hex = 0C-31-30-46-38-37-32
+     *Field #2: 32 Varint Value = 1, Hex = 32
+     *Field #3: 36 Varint Value = 332, Hex = 37-39
+     *Field #4: 37 Varint Value = 864, Hex = 10-A2
+     *Field #5: EB Varint Value = 2867, Hex = E6-91
+     *Field #6: 06 Varint Value = 67992, Hex = 18-01-28
+     *Field #7: 01 Varint Value = 1292, Hex = 4A-2C
+     *Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+     *Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�偑��� �(�0ć8� &#64;���"
+     *As sub-object :
+     *Field #1: 0A Varint Value = 19110224228993, Hex = 0C-31-30-46-38-37-32
+     *Field #2: 32 Varint Value = 2, Hex = 32
+     *Field #3: 36 Varint Value = 332, Hex = 37-39
+     *Field #4: 37 Varint Value = 843, Hex = 10-A2
+     *Field #5: EB Varint Value = 2798, Hex = E6-91
+     *Field #6: 06 Varint Value = 66500, Hex = 18-01-28
+     *Field #7: 01 Varint Value = 1262, Hex = 4A-2C
+     *Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+     *Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�偑��� �(�0��8� &#64;���"
+     *As sub-object :
+     *Field #1: 0A Varint Value = 19110224228993, Hex = 0C-31-30-46-38-37-32
+     *Field #2: 32 Varint Value = 3, Hex = 32
+     *Field #3: 36 Varint Value = 331, Hex = 37-39
+     *Field #4: 37 Varint Value = 839, Hex = 10-A2
+     *Field #5: EB Varint Value = 2768, Hex = E6-91
+     *Field #6: 06 Varint Value = 55971, Hex = 18-01-28
+     *Field #7: 01 Varint Value = 1203, Hex = 4A-2C
+     *Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+     *Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�偑��� �(�0��8� &#64;���"
+     *As sub-object :
+     *Field #1: 0A Varint Value = 19110224228993, Hex = 0C-31-30-46-38-37-32
+     *Field #2: 32 Varint Value = 4, Hex = 32
+     *Field #3: 36 Varint Value = 331, Hex = 37-39
+     *Field #4: 37 Varint Value = 851, Hex = 10-A2
+     *Field #5: EB Varint Value = 2808, Hex = E6-91
+     *Field #6: 06 Varint Value = 66713, Hex = 18-01-28
+     *Field #7: 01 Varint Value = 1267, Hex = 4A-2C
+     *Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+     *Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�ҁ���� �(�0��8� &#64;���"
+     *As sub-object :
+     *Field #1: 0A Varint Value = 19110224226576, Hex = 0C-31-30-46-38-37-32
+     *Field #2: 32 Varint Value = 1, Hex = 32
+     *Field #3: 36 Varint Value = 332, Hex = 37-39
+     *Field #4: 37 Varint Value = 821, Hex = 10-A2
+     *Field #5: EB Varint Value = 2722, Hex = E6-91
+     *Field #6: 06 Varint Value = 59653, Hex = 18-01-28
+     *Field #7: 01 Varint Value = 1213, Hex = 4A-2C
+     *Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+     *Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�ҁ���� �(�0��8� &#64;���"
+     *As sub-object :
+     *Field #1: 0A Varint Value = 19110224226576, Hex = 0C-31-30-46-38-37-32
+     *Field #2: 32 Varint Value = 2, Hex = 32
+     *Field #3: 36 Varint Value = 332, Hex = 37-39
+     *Field #4: 37 Varint Value = 832, Hex = 10-A2
+     *Field #5: EB Varint Value = 2759, Hex = E6-91
+     *Field #6: 06 Varint Value = 60742, Hex = 18-01-28
+     *Field #7: 01 Varint Value = 1245, Hex = 4A-2C
+     *Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+     *Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�ҁ���� �(�0��8� &#64;���"
+     *As sub-object :
+     *Field #1: 0A Varint Value = 19110224226576, Hex = 0C-31-30-46-38-37-32
+     *Field #2: 32 Varint Value = 3, Hex = 32
+     *Field #3: 36 Varint Value = 331, Hex = 37-39
+     *Field #4: 37 Varint Value = 819, Hex = 10-A2
+     *Field #5: EB Varint Value = 2709, Hex = E6-91
+     *Field #6: 06 Varint Value = 55951, Hex = 18-01-28
+     *Field #7: 01 Varint Value = 1193, Hex = 4A-2C
+     *Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+     *Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�ҁ���� �(�0�8� &#64;���"
+     *As sub-object :
+     *Field #1: 0A Varint Value = 19110224226576, Hex = 0C-31-30-46-38-37-32
+     *Field #2: 32 Varint Value = 4, Hex = 32
+     *Field #3: 36 Varint Value = 331, Hex = 37-39
+     *Field #4: 37 Varint Value = 828, Hex = 10-A2
+     *Field #5: EB Varint Value = 2738, Hex = E6-91
+     *Field #6: 06 Varint Value = 56681, Hex = 18-01-28
+     *Field #7: 01 Varint Value = 1229, Hex = 4A-2C
+     *Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+     *Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�⁑��� �(�0��8� &#64;���"
+     *As sub-object :
+     *Field #1: 0A Varint Value = 19110224228646, Hex = 0C-31-30-46-38-37-32
+     *Field #2: 32 Varint Value = 1, Hex = 32
+     *Field #3: 36 Varint Value = 331, Hex = 37-39
+     *Field #4: 37 Varint Value = 830, Hex = 10-A2
+     *Field #5: EB Varint Value = 2744, Hex = E6-91
+     *Field #6: 06 Varint Value = 58468, Hex = 18-01-28
+     *Field #7: 01 Varint Value = 1211, Hex = 4A-2C
+     *Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+     *Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�⁑��� �(�0��8� &#64;���"
+     *As sub-object :
+     *Field #1: 0A Varint Value = 19110224228646, Hex = 0C-31-30-46-38-37-32
+     *Field #2: 32 Varint Value = 2, Hex = 32
+     *Field #3: 36 Varint Value = 331, Hex = 37-39
+     *Field #4: 37 Varint Value = 837, Hex = 10-A2
+     *Field #5: EB Varint Value = 2767, Hex = E6-91
+     *Field #6: 06 Varint Value = 59285, Hex = 18-01-28
+     *Field #7: 01 Varint Value = 1224, Hex = 4A-2C
+     *Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+     *Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�⁑��� �(�0��8� &#64;���"
+     *As sub-object :
+     *Field #1: 0A Varint Value = 19110224228646, Hex = 0C-31-30-46-38-37-32
+     *Field #2: 32 Varint Value = 3, Hex = 32
+     *Field #3: 36 Varint Value = 330, Hex = 37-39
+     *Field #4: 37 Varint Value = 836, Hex = 10-A2
+     *Field #5: EB Varint Value = 2758, Hex = E6-91
+     *Field #6: 06 Varint Value = 60658, Hex = 18-01-28
+     *Field #7: 01 Varint Value = 1225, Hex = 4A-2C
+     *Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+     *Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�⁑��� �(�0��8� &#64;���"
+     *As sub-object :
+     *Field #1: 0A Varint Value = 19110224228646, Hex = 0C-31-30-46-38-37-32
+     *Field #2: 32 Varint Value = 4, Hex = 32
+     *Field #3: 36 Varint Value = 330, Hex = 37-39
+     *Field #4: 37 Varint Value = 832, Hex = 10-A2
+     *Field #5: EB Varint Value = 2746, Hex = E6-91
+     *Field #6: 06 Varint Value = 59034, Hex = 18-01-28
+     *Field #7: 01 Varint Value = 1234, Hex = 4A-2C
+     *Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+     * </pre>
+     *
+     * Protobuf type {@code hoymiles.Msg8717}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:hoymiles.Msg8717)
+        com.hoymiles.infrastructure.protos.RealDataNew.Msg8717OrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.hoymiles.infrastructure.protos.RealDataNew.internal_static_hoymiles_Msg8717_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.hoymiles.infrastructure.protos.RealDataNew.internal_static_hoymiles_Msg8717_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.hoymiles.infrastructure.protos.RealDataNew.Msg8717.class, com.hoymiles.infrastructure.protos.RealDataNew.Msg8717.Builder.class);
+      }
+
+      // Construct using com.hoymiles.infrastructure.protos.RealDataNew.Msg8717.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getSgsDatasFieldBuilder();
+          getPvDatasFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        dtuSn_ = com.google.protobuf.ByteString.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        time_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        val3_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        val5_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        if (sgsDatasBuilder_ == null) {
+          sgsDatas_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        } else {
+          sgsDatasBuilder_.clear();
+        }
+        if (pvDatasBuilder_ == null) {
+          pvDatas_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+        } else {
+          pvDatasBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.hoymiles.infrastructure.protos.RealDataNew.internal_static_hoymiles_Msg8717_descriptor;
+      }
+
+      @java.lang.Override
+      public com.hoymiles.infrastructure.protos.RealDataNew.Msg8717 getDefaultInstanceForType() {
+        return com.hoymiles.infrastructure.protos.RealDataNew.Msg8717.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.hoymiles.infrastructure.protos.RealDataNew.Msg8717 build() {
+        com.hoymiles.infrastructure.protos.RealDataNew.Msg8717 result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.hoymiles.infrastructure.protos.RealDataNew.Msg8717 buildPartial() {
+        com.hoymiles.infrastructure.protos.RealDataNew.Msg8717 result = new com.hoymiles.infrastructure.protos.RealDataNew.Msg8717(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.dtuSn_ = dtuSn_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.time_ = time_;
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.val3_ = val3_;
+          to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.val5_ = val5_;
+          to_bitField0_ |= 0x00000008;
+        }
+        if (sgsDatasBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)) {
+            sgsDatas_ = java.util.Collections.unmodifiableList(sgsDatas_);
+            bitField0_ = (bitField0_ & ~0x00000010);
+          }
+          result.sgsDatas_ = sgsDatas_;
+        } else {
+          result.sgsDatas_ = sgsDatasBuilder_.build();
+        }
+        if (pvDatasBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) != 0)) {
+            pvDatas_ = java.util.Collections.unmodifiableList(pvDatas_);
+            bitField0_ = (bitField0_ & ~0x00000020);
+          }
+          result.pvDatas_ = pvDatas_;
+        } else {
+          result.pvDatas_ = pvDatasBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.hoymiles.infrastructure.protos.RealDataNew.Msg8717) {
+          return mergeFrom((com.hoymiles.infrastructure.protos.RealDataNew.Msg8717)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.hoymiles.infrastructure.protos.RealDataNew.Msg8717 other) {
+        if (other == com.hoymiles.infrastructure.protos.RealDataNew.Msg8717.getDefaultInstance()) return this;
+        if (other.hasDtuSn()) {
+          setDtuSn(other.getDtuSn());
+        }
+        if (other.hasTime()) {
+          setTime(other.getTime());
+        }
+        if (other.hasVal3()) {
+          setVal3(other.getVal3());
+        }
+        if (other.hasVal5()) {
+          setVal5(other.getVal5());
+        }
+        if (sgsDatasBuilder_ == null) {
+          if (!other.sgsDatas_.isEmpty()) {
+            if (sgsDatas_.isEmpty()) {
+              sgsDatas_ = other.sgsDatas_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+            } else {
+              ensureSgsDatasIsMutable();
+              sgsDatas_.addAll(other.sgsDatas_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.sgsDatas_.isEmpty()) {
+            if (sgsDatasBuilder_.isEmpty()) {
+              sgsDatasBuilder_.dispose();
+              sgsDatasBuilder_ = null;
+              sgsDatas_ = other.sgsDatas_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+              sgsDatasBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getSgsDatasFieldBuilder() : null;
+            } else {
+              sgsDatasBuilder_.addAllMessages(other.sgsDatas_);
+            }
+          }
+        }
+        if (pvDatasBuilder_ == null) {
+          if (!other.pvDatas_.isEmpty()) {
+            if (pvDatas_.isEmpty()) {
+              pvDatas_ = other.pvDatas_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+            } else {
+              ensurePvDatasIsMutable();
+              pvDatas_.addAll(other.pvDatas_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.pvDatas_.isEmpty()) {
+            if (pvDatasBuilder_.isEmpty()) {
+              pvDatasBuilder_.dispose();
+              pvDatasBuilder_ = null;
+              pvDatas_ = other.pvDatas_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+              pvDatasBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getPvDatasFieldBuilder() : null;
+            } else {
+              pvDatasBuilder_.addAllMessages(other.pvDatas_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        if (!hasDtuSn()) {
+          return false;
+        }
+        if (!hasTime()) {
+          return false;
+        }
+        if (!hasVal3()) {
+          return false;
+        }
+        if (!hasVal5()) {
+          return false;
+        }
+        for (int i = 0; i < getSgsDatasCount(); i++) {
+          if (!getSgsDatas(i).isInitialized()) {
+            return false;
+          }
+        }
+        for (int i = 0; i < getPvDatasCount(); i++) {
+          if (!getPvDatas(i).isInitialized()) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.hoymiles.infrastructure.protos.RealDataNew.Msg8717 parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.hoymiles.infrastructure.protos.RealDataNew.Msg8717) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.ByteString dtuSn_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>required bytes dtuSn = 1;</code>
+       * @return Whether the dtuSn field is set.
+       */
+      @java.lang.Override
+      public boolean hasDtuSn() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <code>required bytes dtuSn = 1;</code>
+       * @return The dtuSn.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getDtuSn() {
+        return dtuSn_;
+      }
+      /**
+       * <code>required bytes dtuSn = 1;</code>
+       * @param value The dtuSn to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDtuSn(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        dtuSn_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required bytes dtuSn = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDtuSn() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        dtuSn_ = getDefaultInstance().getDtuSn();
+        onChanged();
+        return this;
+      }
+
+      private int time_ ;
+      /**
+       * <code>required uint32 time = 2;</code>
+       * @return Whether the time field is set.
+       */
+      @java.lang.Override
+      public boolean hasTime() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       * <code>required uint32 time = 2;</code>
+       * @return The time.
+       */
+      @java.lang.Override
+      public int getTime() {
+        return time_;
+      }
+      /**
+       * <code>required uint32 time = 2;</code>
+       * @param value The time to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTime(int value) {
+        bitField0_ |= 0x00000002;
+        time_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required uint32 time = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTime() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        time_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int val3_ ;
+      /**
+       * <code>required uint32 val3 = 3;</code>
+       * @return Whether the val3 field is set.
+       */
+      @java.lang.Override
+      public boolean hasVal3() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       * <code>required uint32 val3 = 3;</code>
+       * @return The val3.
+       */
+      @java.lang.Override
+      public int getVal3() {
+        return val3_;
+      }
+      /**
+       * <code>required uint32 val3 = 3;</code>
+       * @param value The val3 to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVal3(int value) {
+        bitField0_ |= 0x00000004;
+        val3_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required uint32 val3 = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVal3() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        val3_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int val5_ ;
+      /**
+       * <pre>
+       * missing 4
+       * </pre>
+       *
+       * <code>required uint32 val5 = 5;</code>
+       * @return Whether the val5 field is set.
+       */
+      @java.lang.Override
+      public boolean hasVal5() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       * <pre>
+       * missing 4
+       * </pre>
+       *
+       * <code>required uint32 val5 = 5;</code>
+       * @return The val5.
+       */
+      @java.lang.Override
+      public int getVal5() {
+        return val5_;
+      }
+      /**
+       * <pre>
+       * missing 4
+       * </pre>
+       *
+       * <code>required uint32 val5 = 5;</code>
+       * @param value The val5 to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVal5(int value) {
+        bitField0_ |= 0x00000008;
+        val5_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * missing 4
+       * </pre>
+       *
+       * <code>required uint32 val5 = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVal5() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        val5_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.SGSMO> sgsDatas_ =
+        java.util.Collections.emptyList();
+      private void ensureSgsDatasIsMutable() {
+        if (!((bitField0_ & 0x00000010) != 0)) {
+          sgsDatas_ = new java.util.ArrayList<com.hoymiles.infrastructure.protos.RealDataNew.SGSMO>(sgsDatas_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.hoymiles.infrastructure.protos.RealDataNew.SGSMO, com.hoymiles.infrastructure.protos.RealDataNew.SGSMO.Builder, com.hoymiles.infrastructure.protos.RealDataNew.SGSMOOrBuilder> sgsDatasBuilder_;
+
+      /**
+       * <code>repeated .hoymiles.SGSMO sgsDatas = 9;</code>
+       */
+      public java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.SGSMO> getSgsDatasList() {
+        if (sgsDatasBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(sgsDatas_);
+        } else {
+          return sgsDatasBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .hoymiles.SGSMO sgsDatas = 9;</code>
+       */
+      public int getSgsDatasCount() {
+        if (sgsDatasBuilder_ == null) {
+          return sgsDatas_.size();
+        } else {
+          return sgsDatasBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .hoymiles.SGSMO sgsDatas = 9;</code>
+       */
+      public com.hoymiles.infrastructure.protos.RealDataNew.SGSMO getSgsDatas(int index) {
+        if (sgsDatasBuilder_ == null) {
+          return sgsDatas_.get(index);
+        } else {
+          return sgsDatasBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .hoymiles.SGSMO sgsDatas = 9;</code>
+       */
+      public Builder setSgsDatas(
+          int index, com.hoymiles.infrastructure.protos.RealDataNew.SGSMO value) {
+        if (sgsDatasBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSgsDatasIsMutable();
+          sgsDatas_.set(index, value);
+          onChanged();
+        } else {
+          sgsDatasBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.SGSMO sgsDatas = 9;</code>
+       */
+      public Builder setSgsDatas(
+          int index, com.hoymiles.infrastructure.protos.RealDataNew.SGSMO.Builder builderForValue) {
+        if (sgsDatasBuilder_ == null) {
+          ensureSgsDatasIsMutable();
+          sgsDatas_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          sgsDatasBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.SGSMO sgsDatas = 9;</code>
+       */
+      public Builder addSgsDatas(com.hoymiles.infrastructure.protos.RealDataNew.SGSMO value) {
+        if (sgsDatasBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSgsDatasIsMutable();
+          sgsDatas_.add(value);
+          onChanged();
+        } else {
+          sgsDatasBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.SGSMO sgsDatas = 9;</code>
+       */
+      public Builder addSgsDatas(
+          int index, com.hoymiles.infrastructure.protos.RealDataNew.SGSMO value) {
+        if (sgsDatasBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSgsDatasIsMutable();
+          sgsDatas_.add(index, value);
+          onChanged();
+        } else {
+          sgsDatasBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.SGSMO sgsDatas = 9;</code>
+       */
+      public Builder addSgsDatas(
+          com.hoymiles.infrastructure.protos.RealDataNew.SGSMO.Builder builderForValue) {
+        if (sgsDatasBuilder_ == null) {
+          ensureSgsDatasIsMutable();
+          sgsDatas_.add(builderForValue.build());
+          onChanged();
+        } else {
+          sgsDatasBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.SGSMO sgsDatas = 9;</code>
+       */
+      public Builder addSgsDatas(
+          int index, com.hoymiles.infrastructure.protos.RealDataNew.SGSMO.Builder builderForValue) {
+        if (sgsDatasBuilder_ == null) {
+          ensureSgsDatasIsMutable();
+          sgsDatas_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          sgsDatasBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.SGSMO sgsDatas = 9;</code>
+       */
+      public Builder addAllSgsDatas(
+          java.lang.Iterable<? extends com.hoymiles.infrastructure.protos.RealDataNew.SGSMO> values) {
+        if (sgsDatasBuilder_ == null) {
+          ensureSgsDatasIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, sgsDatas_);
+          onChanged();
+        } else {
+          sgsDatasBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.SGSMO sgsDatas = 9;</code>
+       */
+      public Builder clearSgsDatas() {
+        if (sgsDatasBuilder_ == null) {
+          sgsDatas_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+        } else {
+          sgsDatasBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.SGSMO sgsDatas = 9;</code>
+       */
+      public Builder removeSgsDatas(int index) {
+        if (sgsDatasBuilder_ == null) {
+          ensureSgsDatasIsMutable();
+          sgsDatas_.remove(index);
+          onChanged();
+        } else {
+          sgsDatasBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.SGSMO sgsDatas = 9;</code>
+       */
+      public com.hoymiles.infrastructure.protos.RealDataNew.SGSMO.Builder getSgsDatasBuilder(
+          int index) {
+        return getSgsDatasFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .hoymiles.SGSMO sgsDatas = 9;</code>
+       */
+      public com.hoymiles.infrastructure.protos.RealDataNew.SGSMOOrBuilder getSgsDatasOrBuilder(
+          int index) {
+        if (sgsDatasBuilder_ == null) {
+          return sgsDatas_.get(index);  } else {
+          return sgsDatasBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .hoymiles.SGSMO sgsDatas = 9;</code>
+       */
+      public java.util.List<? extends com.hoymiles.infrastructure.protos.RealDataNew.SGSMOOrBuilder> 
+           getSgsDatasOrBuilderList() {
+        if (sgsDatasBuilder_ != null) {
+          return sgsDatasBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(sgsDatas_);
+        }
+      }
+      /**
+       * <code>repeated .hoymiles.SGSMO sgsDatas = 9;</code>
+       */
+      public com.hoymiles.infrastructure.protos.RealDataNew.SGSMO.Builder addSgsDatasBuilder() {
+        return getSgsDatasFieldBuilder().addBuilder(
+            com.hoymiles.infrastructure.protos.RealDataNew.SGSMO.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .hoymiles.SGSMO sgsDatas = 9;</code>
+       */
+      public com.hoymiles.infrastructure.protos.RealDataNew.SGSMO.Builder addSgsDatasBuilder(
+          int index) {
+        return getSgsDatasFieldBuilder().addBuilder(
+            index, com.hoymiles.infrastructure.protos.RealDataNew.SGSMO.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .hoymiles.SGSMO sgsDatas = 9;</code>
+       */
+      public java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.SGSMO.Builder> 
+           getSgsDatasBuilderList() {
+        return getSgsDatasFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.hoymiles.infrastructure.protos.RealDataNew.SGSMO, com.hoymiles.infrastructure.protos.RealDataNew.SGSMO.Builder, com.hoymiles.infrastructure.protos.RealDataNew.SGSMOOrBuilder> 
+          getSgsDatasFieldBuilder() {
+        if (sgsDatasBuilder_ == null) {
+          sgsDatasBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.hoymiles.infrastructure.protos.RealDataNew.SGSMO, com.hoymiles.infrastructure.protos.RealDataNew.SGSMO.Builder, com.hoymiles.infrastructure.protos.RealDataNew.SGSMOOrBuilder>(
+                  sgsDatas_,
+                  ((bitField0_ & 0x00000010) != 0),
+                  getParentForChildren(),
+                  isClean());
+          sgsDatas_ = null;
+        }
+        return sgsDatasBuilder_;
+      }
+
+      private java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.PvMO> pvDatas_ =
+        java.util.Collections.emptyList();
+      private void ensurePvDatasIsMutable() {
+        if (!((bitField0_ & 0x00000020) != 0)) {
+          pvDatas_ = new java.util.ArrayList<com.hoymiles.infrastructure.protos.RealDataNew.PvMO>(pvDatas_);
+          bitField0_ |= 0x00000020;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.hoymiles.infrastructure.protos.RealDataNew.PvMO, com.hoymiles.infrastructure.protos.RealDataNew.PvMO.Builder, com.hoymiles.infrastructure.protos.RealDataNew.PvMOOrBuilder> pvDatasBuilder_;
+
+      /**
+       * <code>repeated .hoymiles.PvMO pvDatas = 11;</code>
+       */
+      public java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.PvMO> getPvDatasList() {
+        if (pvDatasBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(pvDatas_);
+        } else {
+          return pvDatasBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .hoymiles.PvMO pvDatas = 11;</code>
+       */
+      public int getPvDatasCount() {
+        if (pvDatasBuilder_ == null) {
+          return pvDatas_.size();
+        } else {
+          return pvDatasBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .hoymiles.PvMO pvDatas = 11;</code>
+       */
+      public com.hoymiles.infrastructure.protos.RealDataNew.PvMO getPvDatas(int index) {
+        if (pvDatasBuilder_ == null) {
+          return pvDatas_.get(index);
+        } else {
+          return pvDatasBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .hoymiles.PvMO pvDatas = 11;</code>
+       */
+      public Builder setPvDatas(
+          int index, com.hoymiles.infrastructure.protos.RealDataNew.PvMO value) {
+        if (pvDatasBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePvDatasIsMutable();
+          pvDatas_.set(index, value);
+          onChanged();
+        } else {
+          pvDatasBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.PvMO pvDatas = 11;</code>
+       */
+      public Builder setPvDatas(
+          int index, com.hoymiles.infrastructure.protos.RealDataNew.PvMO.Builder builderForValue) {
+        if (pvDatasBuilder_ == null) {
+          ensurePvDatasIsMutable();
+          pvDatas_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          pvDatasBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.PvMO pvDatas = 11;</code>
+       */
+      public Builder addPvDatas(com.hoymiles.infrastructure.protos.RealDataNew.PvMO value) {
+        if (pvDatasBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePvDatasIsMutable();
+          pvDatas_.add(value);
+          onChanged();
+        } else {
+          pvDatasBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.PvMO pvDatas = 11;</code>
+       */
+      public Builder addPvDatas(
+          int index, com.hoymiles.infrastructure.protos.RealDataNew.PvMO value) {
+        if (pvDatasBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensurePvDatasIsMutable();
+          pvDatas_.add(index, value);
+          onChanged();
+        } else {
+          pvDatasBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.PvMO pvDatas = 11;</code>
+       */
+      public Builder addPvDatas(
+          com.hoymiles.infrastructure.protos.RealDataNew.PvMO.Builder builderForValue) {
+        if (pvDatasBuilder_ == null) {
+          ensurePvDatasIsMutable();
+          pvDatas_.add(builderForValue.build());
+          onChanged();
+        } else {
+          pvDatasBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.PvMO pvDatas = 11;</code>
+       */
+      public Builder addPvDatas(
+          int index, com.hoymiles.infrastructure.protos.RealDataNew.PvMO.Builder builderForValue) {
+        if (pvDatasBuilder_ == null) {
+          ensurePvDatasIsMutable();
+          pvDatas_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          pvDatasBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.PvMO pvDatas = 11;</code>
+       */
+      public Builder addAllPvDatas(
+          java.lang.Iterable<? extends com.hoymiles.infrastructure.protos.RealDataNew.PvMO> values) {
+        if (pvDatasBuilder_ == null) {
+          ensurePvDatasIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, pvDatas_);
+          onChanged();
+        } else {
+          pvDatasBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.PvMO pvDatas = 11;</code>
+       */
+      public Builder clearPvDatas() {
+        if (pvDatasBuilder_ == null) {
+          pvDatas_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+          onChanged();
+        } else {
+          pvDatasBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.PvMO pvDatas = 11;</code>
+       */
+      public Builder removePvDatas(int index) {
+        if (pvDatasBuilder_ == null) {
+          ensurePvDatasIsMutable();
+          pvDatas_.remove(index);
+          onChanged();
+        } else {
+          pvDatasBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.PvMO pvDatas = 11;</code>
+       */
+      public com.hoymiles.infrastructure.protos.RealDataNew.PvMO.Builder getPvDatasBuilder(
+          int index) {
+        return getPvDatasFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .hoymiles.PvMO pvDatas = 11;</code>
+       */
+      public com.hoymiles.infrastructure.protos.RealDataNew.PvMOOrBuilder getPvDatasOrBuilder(
+          int index) {
+        if (pvDatasBuilder_ == null) {
+          return pvDatas_.get(index);  } else {
+          return pvDatasBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .hoymiles.PvMO pvDatas = 11;</code>
+       */
+      public java.util.List<? extends com.hoymiles.infrastructure.protos.RealDataNew.PvMOOrBuilder> 
+           getPvDatasOrBuilderList() {
+        if (pvDatasBuilder_ != null) {
+          return pvDatasBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(pvDatas_);
+        }
+      }
+      /**
+       * <code>repeated .hoymiles.PvMO pvDatas = 11;</code>
+       */
+      public com.hoymiles.infrastructure.protos.RealDataNew.PvMO.Builder addPvDatasBuilder() {
+        return getPvDatasFieldBuilder().addBuilder(
+            com.hoymiles.infrastructure.protos.RealDataNew.PvMO.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .hoymiles.PvMO pvDatas = 11;</code>
+       */
+      public com.hoymiles.infrastructure.protos.RealDataNew.PvMO.Builder addPvDatasBuilder(
+          int index) {
+        return getPvDatasFieldBuilder().addBuilder(
+            index, com.hoymiles.infrastructure.protos.RealDataNew.PvMO.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .hoymiles.PvMO pvDatas = 11;</code>
+       */
+      public java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.PvMO.Builder> 
+           getPvDatasBuilderList() {
+        return getPvDatasFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.hoymiles.infrastructure.protos.RealDataNew.PvMO, com.hoymiles.infrastructure.protos.RealDataNew.PvMO.Builder, com.hoymiles.infrastructure.protos.RealDataNew.PvMOOrBuilder> 
+          getPvDatasFieldBuilder() {
+        if (pvDatasBuilder_ == null) {
+          pvDatasBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.hoymiles.infrastructure.protos.RealDataNew.PvMO, com.hoymiles.infrastructure.protos.RealDataNew.PvMO.Builder, com.hoymiles.infrastructure.protos.RealDataNew.PvMOOrBuilder>(
+                  pvDatas_,
+                  ((bitField0_ & 0x00000020) != 0),
+                  getParentForChildren(),
+                  isClean());
+          pvDatas_ = null;
+        }
+        return pvDatasBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:hoymiles.Msg8717)
+    }
+
+    // @@protoc_insertion_point(class_scope:hoymiles.Msg8717)
+    private static final com.hoymiles.infrastructure.protos.RealDataNew.Msg8717 DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.hoymiles.infrastructure.protos.RealDataNew.Msg8717();
+    }
+
+    public static com.hoymiles.infrastructure.protos.RealDataNew.Msg8717 getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    @java.lang.Deprecated public static final com.google.protobuf.Parser<Msg8717>
+        PARSER = new com.google.protobuf.AbstractParser<Msg8717>() {
+      @java.lang.Override
+      public Msg8717 parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Msg8717(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Msg8717> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Msg8717> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.hoymiles.infrastructure.protos.RealDataNew.Msg8717 getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_hoymiles_RealResDTO_descriptor;
   private static final 
@@ -17778,6 +19778,11 @@ public final class RealDataNew {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_hoymiles_Msg8716_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_hoymiles_Msg8717_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_hoymiles_Msg8717_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -17830,8 +19835,11 @@ public final class RealDataNew {
       "6\022\r\n\005dtuSn\030\001 \002(\014\022\014\n\004time\030\002 \002(\r\022\014\n\004val3\030\003" +
       " \002(\r\022\014\n\004val5\030\005 \002(\r\022!\n\010sgsDatas\030\t \003(\0132\017.h" +
       "oymiles.SGSMO\022\037\n\007pvDatas\030\013 \003(\0132\016.hoymile" +
-      "s.PvMOB3\n\"com.hoymiles.infrastructure.pr" +
-      "otosB\013RealDataNewP\000"
+      "s.PvMO\"\206\001\n\007Msg8717\022\r\n\005dtuSn\030\001 \002(\014\022\014\n\004tim" +
+      "e\030\002 \002(\r\022\014\n\004val3\030\003 \002(\r\022\014\n\004val5\030\005 \002(\r\022!\n\010s" +
+      "gsDatas\030\t \003(\0132\017.hoymiles.SGSMO\022\037\n\007pvData" +
+      "s\030\013 \003(\0132\016.hoymiles.PvMOB3\n\"com.hoymiles." +
+      "infrastructure.protosB\013RealDataNewP\000"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -17890,6 +19898,12 @@ public final class RealDataNew {
     internal_static_hoymiles_Msg8716_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_hoymiles_Msg8716_descriptor,
+        new java.lang.String[] { "DtuSn", "Time", "Val3", "Val5", "SgsDatas", "PvDatas", });
+    internal_static_hoymiles_Msg8717_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_hoymiles_Msg8717_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_hoymiles_Msg8717_descriptor,
         new java.lang.String[] { "DtuSn", "Time", "Val3", "Val5", "SgsDatas", "PvDatas", });
   }
 

@@ -310,3 +310,187 @@ message Msg8716 {
   repeated SGSMO sgsDatas = 9;
   repeated PvMO pvDatas = 11;
 }
+
+/**
+response, msgId=8717
+0a0c31304638373232323637393710a2ebe69106180128014a2c0881e5819197ac04100118c11320892728b65330f80138ac0340e80748c504500358a6476001a001b580d8014a2d0890d2819197ac04100118b413208927288e5130f00138a20340e80748a204500158bfb7026001a001b680e0014a2d08a6e2819197ac04100118aa1320892728e05130f50138a70340e80748cc04500158dbae036001a001b580d8015a1f0881e5819197ac04100118cc0220e00628b31630989304388c0a40808080185a1f0881e5819197ac04100218cc0220cb0628ee1530c4870438ee0940808080185a1f0881e5819197ac04100318cb0220c70628d01530a3b50338b30940808080185a1f0881e5819197ac04100418cb0220d30628f8153099890438f30940808080185a1f0890d2819197ac04100118cc0220b50628a2153085d20338bd0940808080185a1f0890d2819197ac04100218cc0220c00628c71530c6da0338dd0940808080185a1f0890d2819197ac04100318cb0220b306289515308fb50338a90940808080185a1f0890d2819197ac04100418cb0220bc0628b21530e9ba0338cd0940808080185a1f08a6e2819197ac04100118cb0220be0628b81530e4c80338bb0940808080185a1f08a6e2819197ac04100218cb0220c50628cf153095cf0338c80940808080185a1f08a6e2819197ac04100318ca0220c40628c61530f2d90338c90940808080185a1f08a6e2819197ac04100418ca0220c00628ba15309acd0338d2094080808018
+
+Field #1: 0A String Length = 12, Hex = 0C, UTF8 = "10F872226797"
+Field #2: 10 Varint Value = 1647949218, Hex = A2-EB-E6-91-06
+Field #3: 18 Varint Value = 1, Hex = 01
+Field #5: 28 Varint Value = 1, Hex = 01
+Field #9: 4A String Length = 44, Hex = 2C, UTF8 = "�偑��� �'(�S0�8�@�H�PX�G`����"
+As sub-object :
+Field #1: 0A Varint Value = 19110224228993, Hex = 0C-31-30-46-38-37-32
+Field #2: 32 Varint Value = 1, Hex = 32
+Field #3: 36 Varint Value = 2497, Hex = 37-39
+Field #4: 37 Varint Value = 5001, Hex = 10-A2
+Field #5: EB Varint Value = 10678, Hex = E6-91
+Field #6: 06 Varint Value = 248, Hex = 18-01
+Field #7: 28 Varint Value = 428, Hex = 01-4A
+Field #8: 2C Varint Value = 1000, Hex = 08-81
+Field #9: E5 Varint Value = 581, Hex = 81-91
+Field #10: 97 Varint Value = 3, Hex = AC
+Field #11: 04 Varint Value = 9126, Hex = 10-01
+Field #12: 18 Varint Value = 1, Hex = C1
+Field #20: 13-20 Varint Value = 3538997, Hex = 89-27-28-B6
+Field #9: 4A String Length = 45, Hex = 2D, UTF8 = "�ҁ���� �'(�Q0�8�@�H�PX��`����"
+As sub-object :
+Field #1: 0A Varint Value = 19110224226576, Hex = 0C-31-30-46-38-37-32
+Field #2: 32 Varint Value = 1, Hex = 32
+Field #3: 36 Varint Value = 2484, Hex = 37-39
+Field #4: 37 Varint Value = 5001, Hex = 10-A2
+Field #5: EB Varint Value = 10382, Hex = E6-91
+Field #6: 06 Varint Value = 240, Hex = 18-01
+Field #7: 28 Varint Value = 418, Hex = 01-4A
+Field #8: 2C Varint Value = 1000, Hex = 08-81
+Field #9: E5 Varint Value = 546, Hex = 81-91
+Field #10: 97 Varint Value = 1, Hex = AC
+Field #11: 04 Varint Value = 39871, Hex = 10-01-18
+Field #12: C1 Varint Value = 1, Hex = 13
+Field #20: 20-89 Varint Value = 3670070, Hex = 27-28-B6-53
+Field #9: 4A String Length = 45, Hex = 2D, UTF8 = "�⁑��� �'(�Q0�8�@�H�PXۮ`����"
+As sub-object :
+Field #1: 0A Varint Value = 19110224228646, Hex = 0C-31-30-46-38-37-32
+Field #2: 32 Varint Value = 1, Hex = 32
+Field #3: 36 Varint Value = 2474, Hex = 37-39
+Field #4: 37 Varint Value = 5001, Hex = 10-A2
+Field #5: EB Varint Value = 10464, Hex = E6-91
+Field #6: 06 Varint Value = 245, Hex = 18-01
+Field #7: 28 Varint Value = 423, Hex = 01-4A
+Field #8: 2C Varint Value = 1000, Hex = 08-81
+Field #9: E5 Varint Value = 588, Hex = 81-91
+Field #10: 97 Varint Value = 1, Hex = AC
+Field #11: 04 Varint Value = 55131, Hex = 10-01-18
+Field #12: C1 Varint Value = 1, Hex = 13
+Field #20: 20-89 Varint Value = 3538997, Hex = 27-28-B6-53
+Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�偑��� �(�0��8� @���"
+As sub-object :
+Field #1: 0A Varint Value = 19110224228993, Hex = 0C-31-30-46-38-37-32
+Field #2: 32 Varint Value = 1, Hex = 32
+Field #3: 36 Varint Value = 332, Hex = 37-39
+Field #4: 37 Varint Value = 864, Hex = 10-A2
+Field #5: EB Varint Value = 2867, Hex = E6-91
+Field #6: 06 Varint Value = 67992, Hex = 18-01-28
+Field #7: 01 Varint Value = 1292, Hex = 4A-2C
+Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�偑��� �(�0ć8� @���"
+As sub-object :
+Field #1: 0A Varint Value = 19110224228993, Hex = 0C-31-30-46-38-37-32
+Field #2: 32 Varint Value = 2, Hex = 32
+Field #3: 36 Varint Value = 332, Hex = 37-39
+Field #4: 37 Varint Value = 843, Hex = 10-A2
+Field #5: EB Varint Value = 2798, Hex = E6-91
+Field #6: 06 Varint Value = 66500, Hex = 18-01-28
+Field #7: 01 Varint Value = 1262, Hex = 4A-2C
+Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�偑��� �(�0��8� @���"
+As sub-object :
+Field #1: 0A Varint Value = 19110224228993, Hex = 0C-31-30-46-38-37-32
+Field #2: 32 Varint Value = 3, Hex = 32
+Field #3: 36 Varint Value = 331, Hex = 37-39
+Field #4: 37 Varint Value = 839, Hex = 10-A2
+Field #5: EB Varint Value = 2768, Hex = E6-91
+Field #6: 06 Varint Value = 55971, Hex = 18-01-28
+Field #7: 01 Varint Value = 1203, Hex = 4A-2C
+Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�偑��� �(�0��8� @���"
+As sub-object :
+Field #1: 0A Varint Value = 19110224228993, Hex = 0C-31-30-46-38-37-32
+Field #2: 32 Varint Value = 4, Hex = 32
+Field #3: 36 Varint Value = 331, Hex = 37-39
+Field #4: 37 Varint Value = 851, Hex = 10-A2
+Field #5: EB Varint Value = 2808, Hex = E6-91
+Field #6: 06 Varint Value = 66713, Hex = 18-01-28
+Field #7: 01 Varint Value = 1267, Hex = 4A-2C
+Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�ҁ���� �(�0��8� @���"
+As sub-object :
+Field #1: 0A Varint Value = 19110224226576, Hex = 0C-31-30-46-38-37-32
+Field #2: 32 Varint Value = 1, Hex = 32
+Field #3: 36 Varint Value = 332, Hex = 37-39
+Field #4: 37 Varint Value = 821, Hex = 10-A2
+Field #5: EB Varint Value = 2722, Hex = E6-91
+Field #6: 06 Varint Value = 59653, Hex = 18-01-28
+Field #7: 01 Varint Value = 1213, Hex = 4A-2C
+Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�ҁ���� �(�0��8� @���"
+As sub-object :
+Field #1: 0A Varint Value = 19110224226576, Hex = 0C-31-30-46-38-37-32
+Field #2: 32 Varint Value = 2, Hex = 32
+Field #3: 36 Varint Value = 332, Hex = 37-39
+Field #4: 37 Varint Value = 832, Hex = 10-A2
+Field #5: EB Varint Value = 2759, Hex = E6-91
+Field #6: 06 Varint Value = 60742, Hex = 18-01-28
+Field #7: 01 Varint Value = 1245, Hex = 4A-2C
+Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�ҁ���� �(�0��8� @���"
+As sub-object :
+Field #1: 0A Varint Value = 19110224226576, Hex = 0C-31-30-46-38-37-32
+Field #2: 32 Varint Value = 3, Hex = 32
+Field #3: 36 Varint Value = 331, Hex = 37-39
+Field #4: 37 Varint Value = 819, Hex = 10-A2
+Field #5: EB Varint Value = 2709, Hex = E6-91
+Field #6: 06 Varint Value = 55951, Hex = 18-01-28
+Field #7: 01 Varint Value = 1193, Hex = 4A-2C
+Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�ҁ���� �(�0�8� @���"
+As sub-object :
+Field #1: 0A Varint Value = 19110224226576, Hex = 0C-31-30-46-38-37-32
+Field #2: 32 Varint Value = 4, Hex = 32
+Field #3: 36 Varint Value = 331, Hex = 37-39
+Field #4: 37 Varint Value = 828, Hex = 10-A2
+Field #5: EB Varint Value = 2738, Hex = E6-91
+Field #6: 06 Varint Value = 56681, Hex = 18-01-28
+Field #7: 01 Varint Value = 1229, Hex = 4A-2C
+Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�⁑��� �(�0��8� @���"
+As sub-object :
+Field #1: 0A Varint Value = 19110224228646, Hex = 0C-31-30-46-38-37-32
+Field #2: 32 Varint Value = 1, Hex = 32
+Field #3: 36 Varint Value = 331, Hex = 37-39
+Field #4: 37 Varint Value = 830, Hex = 10-A2
+Field #5: EB Varint Value = 2744, Hex = E6-91
+Field #6: 06 Varint Value = 58468, Hex = 18-01-28
+Field #7: 01 Varint Value = 1211, Hex = 4A-2C
+Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�⁑��� �(�0��8� @���"
+As sub-object :
+Field #1: 0A Varint Value = 19110224228646, Hex = 0C-31-30-46-38-37-32
+Field #2: 32 Varint Value = 2, Hex = 32
+Field #3: 36 Varint Value = 331, Hex = 37-39
+Field #4: 37 Varint Value = 837, Hex = 10-A2
+Field #5: EB Varint Value = 2767, Hex = E6-91
+Field #6: 06 Varint Value = 59285, Hex = 18-01-28
+Field #7: 01 Varint Value = 1224, Hex = 4A-2C
+Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�⁑��� �(�0��8� @���"
+As sub-object :
+Field #1: 0A Varint Value = 19110224228646, Hex = 0C-31-30-46-38-37-32
+Field #2: 32 Varint Value = 3, Hex = 32
+Field #3: 36 Varint Value = 330, Hex = 37-39
+Field #4: 37 Varint Value = 836, Hex = 10-A2
+Field #5: EB Varint Value = 2758, Hex = E6-91
+Field #6: 06 Varint Value = 60658, Hex = 18-01-28
+Field #7: 01 Varint Value = 1225, Hex = 4A-2C
+Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+Field #11: 5A String Length = 31, Hex = 1F, UTF8 = "�⁑��� �(�0��8� @���"
+As sub-object :
+Field #1: 0A Varint Value = 19110224228646, Hex = 0C-31-30-46-38-37-32
+Field #2: 32 Varint Value = 4, Hex = 32
+Field #3: 36 Varint Value = 330, Hex = 37-39
+Field #4: 37 Varint Value = 832, Hex = 10-A2
+Field #5: EB Varint Value = 2746, Hex = E6-91
+Field #6: 06 Varint Value = 59034, Hex = 18-01-28
+Field #7: 01 Varint Value = 1234, Hex = 4A-2C
+Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
+ */
+message Msg8717 {
+  required bytes dtuSn = 1;
+  required uint32 time = 2;
+  required uint32 val3 = 3;
+  // missing 4
+  required uint32 val5 = 5;
+  repeated SGSMO sgsDatas = 9;
+  repeated PvMO pvDatas = 11;
+}

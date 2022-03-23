@@ -13,6 +13,7 @@ import com.hoymiles.infrastructure.protos.APPInformationData;
 import com.hoymiles.infrastructure.protos.RealDataNew;
 import com.hoymiles.infrastructure.repository.mapper.APPInformationData2AppInfoMapper;
 import com.hoymiles.infrastructure.repository.mapper.Msg8716ToRealDataMapper;
+import com.hoymiles.infrastructure.repository.mapper.Msg8717ToRealDataMapper;
 import com.hoymiles.infrastructure.repository.mapper.RealDataNewToRealDataMapper;
 import com.typesafe.config.Config;
 import io.reactivex.rxjava3.core.Observable;
@@ -40,6 +41,7 @@ public class DtuRepository implements IDtuRepository {
     private final APPInformationData2AppInfoMapper appInformationData2AppInfoMapper;
     private final RealDataNewToRealDataMapper realDataNew2RealDataMapper;
     private final Msg8716ToRealDataMapper msg8716ToRealDataMapper;
+    private final Msg8717ToRealDataMapper msg8717ToRealDataMapper;
 
     private final SpreadsheetWriter spreadsheetWriter;
 
@@ -50,10 +52,15 @@ public class DtuRepository implements IDtuRepository {
         }
 
         switch (event.getCode()) {
-            case 8716:
+            case 8716: {
                 RealData realData = msg8716ToRealDataMapper.map((RealDataNew.Msg8716) event.getMessage());
                 beanManager.fireEvent(new RealDataEvent(realData));
-                break;
+            } break;
+
+            case 8717: {
+                RealData realData = msg8717ToRealDataMapper.map((RealDataNew.Msg8717) event.getMessage());
+                beanManager.fireEvent(new RealDataEvent(realData));
+            } break;
         }
 
         return null;
@@ -83,12 +90,6 @@ public class DtuRepository implements IDtuRepository {
                     .blockingFirst();
             return realDataNew2RealDataMapper.map(realReqDTO);
         } else {
-//            com.hoymiles.protos.RealData.RealDataReqDTO realReqDTO = dtuClient.command(dtuCommand.realDataBuilder().build(), com.hoymiles.protos.RealData.RealDataReqDTO.class)
-//                    .observeOn(Schedulers.newThread())
-//                    .subscribeOn(Schedulers.trampoline())
-//                    .timeout(5, TimeUnit.SECONDS)
-//                    .retry(RxUtils.retryPredicate(3))
-//                    .blockingFirst();
             throw new NotImplementedException("Device with sw_version < 512 is currently not supported");
         }
     }

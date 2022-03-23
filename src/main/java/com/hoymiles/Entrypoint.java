@@ -1,6 +1,7 @@
 package com.hoymiles;
 
 import com.hoymiles.infrastructure.App;
+import com.hoymiles.infrastructure.server.TcpServer;
 import jakarta.enterprise.inject.se.SeContainer;
 import jakarta.enterprise.inject.se.SeContainerInitializer;
 import lombok.SneakyThrows;
@@ -29,6 +30,10 @@ public class Entrypoint {
                 app.halt();
                 log.error("Uncaught exception: " + e.getMessage(), e);
             }
+
+//            log.info("Starting server");
+//            TcpServer server = container.select(TcpServer.class).get();
+//            server.start(10081);
 
             log.info("Shutdown complete");
         }

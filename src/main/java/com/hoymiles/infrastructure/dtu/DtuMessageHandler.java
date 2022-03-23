@@ -33,6 +33,7 @@ public class DtuMessageHandler {
             new DtuMessageHandler(DtuClientConstants.TAG_AppRealDataRes_X, RealDataNew.RealResDTO.class),
             new DtuMessageHandler(DtuClientConstants.TAG_AppRealDataReq_X, RealDataNew.RealReqDTO.class),
             new DtuMessageHandler(8716, RealDataNew.Msg8716.class),
+            new DtuMessageHandler(8717, RealDataNew.Msg8717.class),
             // GetConfig.proto
             new DtuMessageHandler(DtuClientConstants.TAG_AppGetConfigRes, GetConfig.GetConfigRes.class),
             new DtuMessageHandler(DtuClientConstants.TAG_AppGetConfigReq, GetConfig.GetConfigReq.class),
