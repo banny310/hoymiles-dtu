@@ -9,7 +9,7 @@ variables:
   MAVEN_CLI_OPTS: "--batch-mode --update-snapshots --errors --fail-at-end"
   BUILD_FROM_AMD64: "adoptopenjdk/openjdk11:x86_64-ubuntu-jdk-11.0.14.1_1-slim"
   BUILD_FROM_AARCH64: "adoptopenjdk/openjdk11:aarch64-ubuntu-jdk-11.0.14.1_1-slim"
-  BUILD_FROM_ARMV7: "adoptopenjdk/openjdk11:armv7l-ubuntu-jdk-11.0.14.1_1-slim"
+  BUILD_FROM_ARMV7: "adoptopenjdk/openjdk11:armv7l-ubuntu-jdk-11.0.15_10-slim"
 
 build-artifact:
   image:
@@ -33,7 +33,7 @@ build-artifact:
       - tags
 
 build-docker:
-  image: docker:19.03.12
+  image: docker:20.10.12
   stage: deploy
   dependencies:
     - build-artifact
