@@ -12,7 +12,9 @@ variables:
   BUILD_FROM_ARMV7: "adoptopenjdk/openjdk11:armv7l-ubuntu-jdk-11.0.14.1_1-slim"
 
 build-artifact:
-  image: maven:3-eclipse-temurin-11
+  image:
+    name: maven:3-eclipse-temurin-11
+    entrypoint: [ '/bin/sh', '-c' ]
   stage: build
   script:
     - mvn clean compile assembly:single ${MAVEN_CLI_OPTS}
