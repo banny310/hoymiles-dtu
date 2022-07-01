@@ -18,7 +18,7 @@ public class MqttConnectionConfigProvider {
 
     public MqttConnectOptions getConnectionOptions() {
         MqttConnectOptions options = new MqttConnectOptions();
-        options.setAutomaticReconnect(true);
+        options.setAutomaticReconnect(false);
         options.setKeepAliveInterval(60);
         options.setCleanSession(true);
         options.setConnectionTimeout(5);

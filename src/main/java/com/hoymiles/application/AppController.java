@@ -10,6 +10,8 @@ import com.hoymiles.domain.model.AppMode;
 import com.hoymiles.domain.model.RealData;
 import com.hoymiles.infrastructure.dtu.DtuClient;
 import com.hoymiles.infrastructure.dtu.DtuCommandBuilder;
+import com.hoymiles.infrastructure.mqtt.MqttConnectedEvent;
+import com.hoymiles.infrastructure.mqtt.MqttSendException;
 import com.hoymiles.infrastructure.protos.GetConfig;
 import com.hoymiles.infrastructure.protos.SetConfig;
 import com.typesafe.config.Config;
@@ -41,20 +43,25 @@ public class AppController {
 
     private boolean pvAutodiscoverySent = false;
 
-    public Void handle(@Observes @Priority(1) @NotNull RealDataEvent command) {
+    public Void handleDtuData(@Observes @Priority(1) @NotNull RealDataEvent command) {
         log.info("Incoming new metrics");
         sendRealData(command.getRealData());
         return null;
     }
 
-    public void start() throws InterruptedException {
+    public Void handleMqttConnected(@Observes @Priority(1) @NotNull MqttConnectedEvent event) {
+        log.info("Successful connected to {}", event.getConnectionUri());
+
         log.info("Sending online state...");
         mqttRepository.sendOnlineState();
+        return null;
+    }
 
+    public void start() throws InterruptedException {
         log.info("Getting AppInfo from DTU...");
         AppInfo appInfo = dtuRepository.getAppInfo();
 
-        log.info("DTU info: hw={}, sw={}", appInfo.getDtuInfo().getDtuHw(), appInfo.getDtuInfo().getDtuSw());
+        log.info("DTU: hw={}, sw={}", appInfo.getDtuInfo().getDtuHw(), appInfo.getDtuInfo().getDtuSw());
 
         log.info("Sending autodiscovery...");
         autodiscoveryService.registerHomeAssistantAutodiscovery(appInfo);
@@ -111,15 +118,20 @@ public class AppController {
 //            }).blockingSubscribe();
 
         log.info("Waiting for incoming messages...");
-        while (executor.awaitTermination(10, TimeUnit.SECONDS)) {}
+        while (!executor.awaitTermination(1, TimeUnit.SECONDS)) {
+        }
     }
 
     private void sendRealData(RealData realData) {
-        if (!pvAutodiscoverySent) {
-            autodiscoveryService.registerPvAutodiscovery(realData.getPanels());
-            pvAutodiscoverySent = true;
-        }
+        try {
+            if (!pvAutodiscoverySent) {
+                autodiscoveryService.registerPvAutodiscovery(realData.getPanels());
+                pvAutodiscoverySent = true;
+            }
 
-        mqttRepository.sendRealData(realData);
+            mqttRepository.sendRealData(realData);
+        } catch(MqttSendException e) {
+            log.error("Cannot send realData", e);
+        }
     }
 }

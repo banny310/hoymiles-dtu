@@ -33,6 +33,7 @@ public class AutodiscoveryService {
             mqttService.sendHomeAssistantConfig(key(pvId, "port"), gson.toJson(position).getBytes());
 
             Sensor voltage = newPvModelBuilder(key(pvId, "voltage"), pv)
+                    .uniqueId(key(pvId, "voltage"))
                     .stateClass("measurement")
                     .deviceClass("voltage")
                     .unitOfMeasurement("V")
@@ -41,6 +42,7 @@ public class AutodiscoveryService {
             mqttService.sendHomeAssistantConfig(key(pvId, "voltage"), gson.toJson(voltage).getBytes());
 
             Sensor current = newPvModelBuilder(key(pvId, "current"), pv)
+                    .uniqueId(key(pvId, "current"))
                     .stateClass("measurement")
                     .deviceClass("current")
                     .unitOfMeasurement("A")
@@ -49,6 +51,7 @@ public class AutodiscoveryService {
             mqttService.sendHomeAssistantConfig(key(pvId, "current"), gson.toJson(current).getBytes());
 
             Sensor power = newPvModelBuilder(key(pvId, "power"), pv)
+                    .uniqueId(key(pvId, "power"))
                     .icon("mdi:solar-power")
                     .stateClass("measurement")
                     .deviceClass("power")
@@ -58,6 +61,7 @@ public class AutodiscoveryService {
             mqttService.sendHomeAssistantConfig(key(pvId, "power"), gson.toJson(power).getBytes());
 
             Sensor energyToday = newPvModelBuilder(key(pvId, "energy_today"), pv)
+                    .uniqueId(key(pvId, "energy_today"))
                     .stateClass("total_increasing")
                     .deviceClass("energy")
                     .unitOfMeasurement("Wh")
@@ -66,6 +70,7 @@ public class AutodiscoveryService {
             mqttService.sendHomeAssistantConfig(key(pvId, "energy_today"), gson.toJson(energyToday).getBytes());
 
             Sensor energyTotal = newPvModelBuilder(key(pvId, "energy_total"), pv)
+                    .uniqueId(key(pvId, "energy_total"))
                     .stateClass("total_increasing")
                     .deviceClass("energy")
                     .unitOfMeasurement("Wh")
@@ -83,7 +88,9 @@ public class AutodiscoveryService {
     private void registerDtuAutodiscovery(@NotNull AppInfo info) {
         String dtuId = String.format("dtu_%s", info.getDtuSn());
 
-        Sensor modelPowerTotalW = newDtuModelBuilder("Total power (W)", info)
+        Sensor modelPowerTotalW = newDtuModelBuilder(key(dtuId, "power_total_w"), info)
+                .uniqueId(key(dtuId, "power_total_w"))
+                .objectId(key(dtuId, "power_total_w"))
                 .icon("mdi:solar-power")
                 .stateClass("measurement")
                 .deviceClass("power")
@@ -92,7 +99,9 @@ public class AutodiscoveryService {
                 .build();
         mqttService.sendHomeAssistantConfig("power_total_w", gson.toJson(modelPowerTotalW).getBytes());
 
-        Sensor modelPowerTotalKW = newDtuModelBuilder("Total power (kW)", info)
+        Sensor modelPowerTotalKW = newDtuModelBuilder(key(dtuId, "power_total_kw"), info)
+                .uniqueId(key(dtuId, "power_total_kw"))
+                .objectId(key(dtuId, "power_total_kw"))
                 .icon("mdi:solar-power")
                 .stateClass("measurement")
                 .deviceClass("power")
@@ -102,7 +111,9 @@ public class AutodiscoveryService {
         mqttService.sendHomeAssistantConfig("power_total_kw", gson.toJson(modelPowerTotalKW).getBytes());
 
         // energy today
-        Sensor modelEnergyTodayWh = newDtuModelBuilder("Energy today (Wh)", info)
+        Sensor modelEnergyTodayWh = newDtuModelBuilder(key(dtuId, "energy_today_wh"), info)
+                .uniqueId(key(dtuId, "energy_today_wh"))
+                .objectId(key(dtuId, "energy_today_wh"))
                 .stateClass("total_increasing")
                 .deviceClass("energy")
                 .unitOfMeasurement("Wh")
@@ -110,7 +121,9 @@ public class AutodiscoveryService {
                 .build();
         mqttService.sendHomeAssistantConfig("energy_today_wh", gson.toJson(modelEnergyTodayWh).getBytes());
 
-        Sensor modelEnergyTodayKWh = newDtuModelBuilder("Energy today (kWh)", info)
+        Sensor modelEnergyTodayKWh = newDtuModelBuilder(key(dtuId, "energy_today_kwh"), info)
+                .uniqueId(key(dtuId, "energy_today_kwh"))
+                .objectId(key(dtuId, "energy_today_kwh"))
                 .stateClass("total_increasing")
                 .deviceClass("energy")
                 .unitOfMeasurement("kWh")
@@ -119,7 +132,9 @@ public class AutodiscoveryService {
         mqttService.sendHomeAssistantConfig("energy_today_kwh", gson.toJson(modelEnergyTodayKWh).getBytes());
 
         // energy total
-        Sensor modelEnergyTotalWh = newDtuModelBuilder("Energy total (Wh)", info)
+        Sensor modelEnergyTotalWh = newDtuModelBuilder(key(dtuId, "energy_total_wh"), info)
+                .uniqueId(key(dtuId, "energy_total_wh"))
+                .objectId(key(dtuId, "energy_total_wh"))
                 .stateClass("total_increasing")
                 .deviceClass("energy")
                 .unitOfMeasurement("Wh")
@@ -127,7 +142,9 @@ public class AutodiscoveryService {
                 .build();
         mqttService.sendHomeAssistantConfig("energy_total_wh", gson.toJson(modelEnergyTotalWh).getBytes());
 
-        Sensor modelEnergyTotalKWh = newDtuModelBuilder("Energy total (kWh)", info)
+        Sensor modelEnergyTotalKWh = newDtuModelBuilder(key(dtuId, "energy_total_kwh"), info)
+                .uniqueId(key(dtuId, "energy_total_kwh"))
+                .objectId(key(dtuId, "energy_total_kwh"))
                 .stateClass("total_increasing")
                 .deviceClass("energy")
                 .unitOfMeasurement("kWh")
@@ -135,7 +152,9 @@ public class AutodiscoveryService {
                 .build();
         mqttService.sendHomeAssistantConfig("energy_total_kwh", gson.toJson(modelEnergyTotalKWh).getBytes());
 
-        Sensor position = newDtuModelBuilder("Last seen", info)
+        Sensor position = newDtuModelBuilder("last_seen", info)
+                .uniqueId(key(dtuId, "last_seen"))
+                .objectId(key(dtuId, "last_seen"))
                 .icon("mdi:clock")
                 .deviceClass("timestamp")
                 .valueTemplate("{{ value_json.last_seen }}")
@@ -154,6 +173,7 @@ public class AutodiscoveryService {
             String invId = String.format("inv_%s", sgsInfo.getInvSn());
 
             Sensor gridVoltage = newInvModelBuilder(key(invId, "grid_voltage"), sgsInfo)
+                    .uniqueId(key(invId, "grid_voltage"))
                     .stateClass("measurement")
                     .deviceClass("voltage")
                     .unitOfMeasurement("V")
@@ -162,6 +182,7 @@ public class AutodiscoveryService {
             mqttService.sendHomeAssistantConfig(key(invId, "grid_voltage"), gson.toJson(gridVoltage).getBytes());
 
             Sensor gridFrequency = newInvModelBuilder(key(invId, "grid_frequency"), sgsInfo)
+                    .uniqueId(key(invId, "grid_frequency"))
                     .stateClass("measurement")
                     .deviceClass("frequency")
                     .unitOfMeasurement("Hz")
@@ -170,6 +191,7 @@ public class AutodiscoveryService {
             mqttService.sendHomeAssistantConfig(key(invId, "grid_frequency"), gson.toJson(gridFrequency).getBytes());
 
             Sensor gridPower = newInvModelBuilder(key(invId, "grid_power"), sgsInfo)
+                    .uniqueId(key(invId, "grid_power"))
                     .icon("mdi:solar-power")
                     .stateClass("measurement")
                     .deviceClass("power")
@@ -179,6 +201,7 @@ public class AutodiscoveryService {
             mqttService.sendHomeAssistantConfig(key(invId, "grid_power"), gson.toJson(gridPower).getBytes());
 
             Sensor gridReactivePower = newInvModelBuilder(key(invId, "grid_reactive_power"), sgsInfo)
+                    .uniqueId(key(invId, "grid_reactive_power"))
                     .stateClass("measurement")
                     .deviceClass("reactive_power")
                     .unitOfMeasurement("var")
@@ -187,6 +210,7 @@ public class AutodiscoveryService {
             mqttService.sendHomeAssistantConfig(key(invId, "grid_reactive_power"), gson.toJson(gridReactivePower).getBytes());
 
             Sensor gridCurrent = newInvModelBuilder(key(invId, "grid_current"), sgsInfo)
+                    .uniqueId(key(invId, "grid_current"))
                     .stateClass("measurement")
                     .deviceClass("current")
                     .unitOfMeasurement("A")
@@ -195,6 +219,7 @@ public class AutodiscoveryService {
             mqttService.sendHomeAssistantConfig(key(invId, "grid_current"), gson.toJson(gridCurrent).getBytes());
 
             Sensor powerFactor = newInvModelBuilder(key(invId, "power_factor"), sgsInfo)
+                    .uniqueId(key(invId, "power_factor"))
                     .stateClass("measurement")
                     .deviceClass("power_factor")
                     .unitOfMeasurement("%")
@@ -203,6 +228,7 @@ public class AutodiscoveryService {
             mqttService.sendHomeAssistantConfig(key(invId, "power_factor"), gson.toJson(powerFactor).getBytes());
 
             Sensor temperature = newInvModelBuilder(key(invId, "temperature"), sgsInfo)
+                    .uniqueId(key(invId, "temperature"))
                     .stateClass("measurement")
                     .deviceClass("temperature")
                     .unitOfMeasurement("°C")

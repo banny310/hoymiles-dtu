@@ -15,7 +15,6 @@ import io.netty.handler.codec.ByteToMessageDecoder;
 import io.netty.handler.timeout.IdleStateHandler;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.ObservableEmitter;
-import jakarta.enterprise.inject.se.SeContainer;
 import jakarta.enterprise.inject.spi.BeanManager;
 import lombok.SneakyThrows;
 import lombok.extern.log4j.Log4j2;
@@ -27,6 +26,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Predicate;
 
@@ -37,7 +37,7 @@ public class DtuClient {
     private final EventLoopGroup group;
     private final List<Pair<Integer, ObservableEmitter<? extends Message>>> emitters = new ArrayList<>();
 
-    private ChannelFuture connectionFuture;
+    private Channel channel;
     private String host;
     private int port;
 
@@ -58,12 +58,27 @@ public class DtuClient {
         });
     }
 
+    public boolean isConnected() {
+        return Optional.ofNullable(channel)
+                .map(Channel::isActive)
+                .orElse(false);
+    }
+
     public void connect(String host, int port) throws InterruptedException {
         this.host = host;
         this.port = port;
+
         log.info(String.format("Trying connect to %s:%d", host, port));
-        connectionFuture = bootstrap.connect(host, port).sync();
-        if (connectionFuture.isSuccess()) {
+
+        ChannelFuture channelFuture = bootstrap.connect(host, port).sync();
+
+        channel = channelFuture.channel();
+        channel.closeFuture().addListener(ChannelFutureListener.CLOSE);
+        channel.closeFuture().addListener(f -> {
+            beanManager.fireEvent(new DtuConnectionLostEvent(f.cause()));
+        });
+
+        if (channelFuture.isSuccess()) {
             log.info(String.format("Connect success to %s:%d", host, port));
         } else {
             log.warn("Connect error!");
@@ -74,16 +89,17 @@ public class DtuClient {
         connect(host, port);
     }
 
-    public void close() {
-        if (connectionFuture != null) {
-            connectionFuture.channel().closeFuture().awaitUninterruptibly();
-            group.shutdownGracefully();
+    public void disconnect() {
+        if (isConnected()) {
+            ChannelFuture closeFuture = channel.disconnect();
+            closeFuture.awaitUninterruptibly();
+            group.shutdownGracefully(2, 5, TimeUnit.SECONDS);
         }
     }
 
     public void send(Message message) throws NoHandlerException {
-        if (!connectionFuture.isSuccess()) {
-            throw new IllegalStateException("Not connected");
+        if (!isConnected()) {
+            throw new DtuNotConnectedException();
         }
 
         try {
@@ -92,7 +108,7 @@ public class DtuClient {
             log.info(message.toString().replaceAll("\t|\r|\n", ", "));
             ByteBuf buffer = Unpooled.buffer();
             buffer.writeBytes(messageHandler.toByte(message));
-            connectionFuture.channel().writeAndFlush(buffer);
+            channel.writeAndFlush(buffer);
         } catch (NoHandlerException e) {
             log.info("--> sending: msgId={}", "unknown");
             log.info(message.toString().replaceAll("\t|\r|\n", ", "));
@@ -185,6 +201,30 @@ public class DtuClient {
             if (cause instanceof IOException) {
                 reconnect();
             }
+        }
+
+        @Override
+        public void channelActive(ChannelHandlerContext ctx) throws Exception {
+            super.channelActive(ctx);
+            log.debug("channelActive");
+        }
+
+        @Override
+        public void channelInactive(ChannelHandlerContext ctx) throws Exception {
+            super.channelInactive(ctx);
+            log.debug("channelInactive");
+        }
+
+        @Override
+        public void channelRegistered(ChannelHandlerContext ctx) throws Exception {
+            super.channelRegistered(ctx);
+            log.debug("channelRegistered");
+        }
+
+        @Override
+        public void channelUnregistered(ChannelHandlerContext ctx) throws Exception {
+            super.channelUnregistered(ctx);
+            log.debug("channelUnregistered");
         }
     }
 }

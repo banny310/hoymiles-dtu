@@ -29,6 +29,8 @@ public class Sensor {
     private String stateTopic;
     @SerializedName("unique_id")
     private String uniqueId;
+    @SerializedName("object_id")
+    private String objectId;
     @SerializedName("unit_of_measurement")
     private String unitOfMeasurement;
     @SerializedName("value_template")

@@ -7,6 +7,7 @@ import com.hoymiles.infrastructure.dtu.DtuClient;
 import com.hoymiles.infrastructure.dtu.utils.DateUtil;
 import com.hoymiles.infrastructure.gson.DateAdapter;
 import com.hoymiles.infrastructure.mqtt.MqttConnectionConfigProvider;
+import com.hoymiles.infrastructure.mqtt.MqttConnectionLostEvent;
 import com.hoymiles.infrastructure.repository.dto.DtuRealDataDTO;
 import com.hoymiles.infrastructure.repository.dto.InvRealDataDTO;
 import com.hoymiles.infrastructure.repository.dto.PvRealDataDTO;
@@ -18,9 +19,7 @@ import jakarta.enterprise.inject.spi.BeanManager;
 import jakarta.inject.Named;
 import jakarta.inject.Singleton;
 import lombok.extern.log4j.Log4j2;
-import org.eclipse.paho.client.mqttv3.IMqttClient;
-import org.eclipse.paho.client.mqttv3.MqttClient;
-import org.eclipse.paho.client.mqttv3.MqttException;
+import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 import org.jetbrains.annotations.NotNull;
 import org.modelmapper.Converter;
@@ -62,9 +61,25 @@ public class BeanFactory {
 
     @Produces
     @Singleton
-    public IMqttClient getMqttClient(@NotNull MqttConnectionConfigProvider connectionUriProvider) throws MqttException {
+    public IMqttClient getMqttClient(@NotNull MqttConnectionConfigProvider connectionUriProvider, @NotNull BeanManager beanManager) throws MqttException {
         String publisherId = "mqtt_hoymiles_dtu_" + UUID.randomUUID();
         IMqttClient mqttClient = new MqttClient(connectionUriProvider.getConnectionUri(), publisherId, new MemoryPersistence());
+        mqttClient.setCallback(new MqttCallback() {
+            @Override
+            public void connectionLost(Throwable cause) {
+                log.error("connectionLost: " + cause.getMessage(), cause);
+                beanManager.fireEvent(new MqttConnectionLostEvent(cause));
+            }
+
+            @Override
+            public void messageArrived(String topic, MqttMessage message) throws Exception {
+
+            }
+
+            @Override
+            public void deliveryComplete(IMqttDeliveryToken token) {
+            }
+        });
         return mqttClient;
     }
 
