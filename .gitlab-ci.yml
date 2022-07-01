@@ -33,7 +33,7 @@ build-artifact:
       - tags
 
 build-docker:
-  image: docker:20.10.17
+  image: docker:19.03.12
   stage: deploy
   dependencies:
     - build-artifact
