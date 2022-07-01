@@ -13,8 +13,8 @@ variables:
 
 build-artifact:
   image:
-    name: maven:3-eclipse-temurin-11
-    entrypoint: [ '/bin/sh', '-c' ]
+    name: maven:3.8.3-eclipse-temurin-11
+    #entrypoint: [ '/bin/sh', '-c' ]
   stage: build
   script:
     - mvn clean compile assembly:single ${MAVEN_CLI_OPTS}
