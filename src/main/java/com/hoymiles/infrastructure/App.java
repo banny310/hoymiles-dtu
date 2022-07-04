@@ -20,6 +20,7 @@ import lombok.extern.log4j.Log4j2;
 import org.eclipse.paho.client.mqttv3.*;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Optional;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -38,13 +39,15 @@ public class App {
     private final AtomicBoolean alive = new AtomicBoolean(true);
 
     public Void handleDtuConnectionLost(@Observes @Priority(1) @NotNull DtuConnectionLostEvent event) {
-        log.error("Dtu connection lost: {}", event.getCause().getMessage(), event.getCause());
+        String reason = Optional.ofNullable(event.getCause()).map(Throwable::getMessage).orElse("(null)");
+        log.error("Dtu connection lost: {}", reason, event.getCause());
         initDtuConnection();
         return null;
     }
 
     public Void handleMqttConnectionLost(@Observes @Priority(1) @NotNull MqttConnectionLostEvent event) {
-        log.error("Mqtt connection lost: {}", event.getCause().getMessage(), event.getCause());
+        String reason = Optional.ofNullable(event.getCause()).map(Throwable::getMessage).orElse("(null)");
+        log.error("Mqtt connection lost: {}", reason, event.getCause());
         initMqttConnection();
         return null;
     }

@@ -7,8 +7,8 @@ variables:
   MAVEN_LOCAL_REPO: "/projects-cache/.m2/"
   MAVEN_OPTS: '-DXmx1024m -DXX:MaxPermSize=256m'
   MAVEN_CLI_OPTS: "--batch-mode --update-snapshots --errors --fail-at-end"
-  BUILD_FROM_AMD64: "adoptopenjdk/openjdk11:x86_64-ubuntu-jdk-11.0.14.1_1-slim"
-  BUILD_FROM_AARCH64: "adoptopenjdk/openjdk11:aarch64-ubuntu-jdk-11.0.14.1_1-slim"
+  BUILD_FROM_AMD64: "adoptopenjdk/openjdk11:x86_64-ubuntu-jdk-11.0.15_10-slim"
+  BUILD_FROM_AARCH64: "adoptopenjdk/openjdk11:aarch64-ubuntu-jdk-11.0.15_10-slim"
   BUILD_FROM_ARMV7: "adoptopenjdk/openjdk11:armv7l-ubuntu-jdk-11.0.15_10-slim"
 
 build-artifact:

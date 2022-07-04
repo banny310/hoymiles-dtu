@@ -38,7 +38,7 @@ This is a new file, so you won’t find anything contained within. Paste the fol
 
 4. Register qemu 
 
-`docker run --rm --privileged multiarch/qemu-user-static --reset -p yes`
+`docker run --rm --privileged multiarch/qemu-user-static:6.1.0-8 --reset -p yes`
 
 5. Test
 
