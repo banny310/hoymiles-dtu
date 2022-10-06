@@ -7,14 +7,13 @@ import com.hoymiles.domain.MetricsService;
 import com.hoymiles.domain.event.RealDataEvent;
 import com.hoymiles.domain.model.AppInfo;
 import com.hoymiles.domain.model.AppMode;
-import com.hoymiles.domain.model.RealData;
-import com.hoymiles.infrastructure.dtu.DtuClient;
 import com.hoymiles.infrastructure.dtu.DtuCommandBuilder;
 import com.hoymiles.infrastructure.mqtt.MqttConnectedEvent;
 import com.hoymiles.infrastructure.mqtt.MqttSendException;
 import com.hoymiles.infrastructure.protos.GetConfig;
 import com.hoymiles.infrastructure.protos.SetConfig;
 import com.typesafe.config.Config;
+import io.reactivex.rxjava3.core.Observable;
 import jakarta.annotation.Priority;
 import jakarta.enterprise.context.Dependent;
 import jakarta.enterprise.event.Observes;
@@ -24,31 +23,22 @@ import lombok.extern.log4j.Log4j2;
 import org.jetbrains.annotations.NotNull;
 
 import java.nio.charset.StandardCharsets;
-import java.util.Optional;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 @Dependent
 @Log4j2
 @RequiredArgsConstructor(onConstructor_ = {@Inject})
 public class AppController {
-    private final ScheduledExecutorService executor;
     private final Config config;
     private final IDtuRepository dtuRepository;
     private final IMqttRepository mqttRepository;
     private final AutodiscoveryService autodiscoveryService;
     private final MetricsService metricsService;
     private final DtuCommandBuilder dtuCommand;
-    private final DtuClient dtuClient;
 
     private boolean pvAutodiscoverySent = false;
 
-    public Void handleDtuData(@Observes @Priority(1) @NotNull RealDataEvent command) {
-        log.info("Incoming new metrics");
-        sendRealData(command.getRealData());
-        return null;
-    }
-
+    @Handler
     public Void handleMqttConnected(@Observes @Priority(1) @NotNull MqttConnectedEvent event) {
         log.info("Successful connected to {}", event.getConnectionUri());
 
@@ -57,7 +47,23 @@ public class AppController {
         return null;
     }
 
-    public void start() throws InterruptedException {
+    @Handler
+    public Void handleSolarData(@Observes @Priority(1) @NotNull RealDataEvent command) {
+        log.info("Incoming new metrics");
+        try {
+            if (!pvAutodiscoverySent) {
+                autodiscoveryService.registerPvAutodiscovery(command.getRealData().getPanels());
+                pvAutodiscoverySent = true;
+            }
+
+            mqttRepository.sendRealData(command.getRealData());
+        } catch (MqttSendException e) {
+            log.error("Cannot send realData", e);
+        }
+        return null;
+    }
+
+    public void start() {
         log.info("Getting AppInfo from DTU...");
         AppInfo appInfo = dtuRepository.getAppInfo();
 
@@ -69,24 +75,21 @@ public class AppController {
         AppMode mode = AppMode.valueOf(config.getString("app.mode").toUpperCase());
         switch (mode) {
             case ACTIVE:
-                int delay = config.getInt("app.mode_active.pull_interval");
-                Runnable job = new Runnable() {
-                    @Override
-                    public void run() {
-                        log.info("Pooling metrics...");
-                        Optional.ofNullable(metricsService.getRealData(appInfo))
-                                .ifPresent(realData -> sendRealData(realData));
-                        executor.schedule(this, delay, TimeUnit.MILLISECONDS);
-                    }
-                };
-
-                executor.execute(job);
+                Observable.create(emitter -> {
+                    log.info("Pooling metrics...");
+                    Observable.interval(config.getInt("app.mode_active.pull_interval"), TimeUnit.MILLISECONDS)
+                            .map(time -> metricsService.getRealData(appInfo))
+                            .subscribe(realData -> {
+                                log.info("Sending realdata");
+                                if (realData != null)
+                                    mqttRepository.sendRealData(realData);
+                            }, emitter::onError);
+                }).blockingSubscribe();
                 break;
 
             case PASSIVE:
                 log.info("Gathering configuration...");
-                GetConfig.GetConfigRes cmd = dtuCommand.getConfigBuilder().build();
-                GetConfig.GetConfigReq dtuConfig = dtuClient.command(cmd, GetConfig.GetConfigReq.class).blockingFirst();
+                GetConfig.GetConfigReq dtuConfig = dtuRepository.getConfiguration();
 
                 boolean setServerSendTime = config.getBoolean("app.mode_passive.set_server_send_time");
                 if (setServerSendTime) {
@@ -100,38 +103,13 @@ public class AppController {
                                 .build();
 
                         log.info("changing 'serverSendTime' to {}", serverSendTime);
-                        SetConfig.SetConfigReq confReq = dtuClient.command(confCmd, SetConfig.SetConfigReq.class).blockingFirst();
+                        SetConfig.SetConfigReq confReq = dtuRepository.setConfiguration(confCmd);
                     }
                 }
                 break;
-        }
 
-//            Observable.create(emitter -> {
-//                log.info("Pooling metrics...");
-//                Observable.interval(config.getInt("app.mode_active.pull_interval"), TimeUnit.MILLISECONDS)
-//                        .map(time -> metricsService.getRealData(appInfo))
-//                        .subscribe(realData -> {
-//                            log.info("Sending realdata");
-//                            if (realData != null)
-//                                mqttRepository.sendRealData(realData);
-//                        }, emitter::onError);
-//            }).blockingSubscribe();
-
-        log.info("Waiting for incoming messages...");
-        while (!executor.awaitTermination(1, TimeUnit.SECONDS)) {
-        }
-    }
-
-    private void sendRealData(RealData realData) {
-        try {
-            if (!pvAutodiscoverySent) {
-                autodiscoveryService.registerPvAutodiscovery(realData.getPanels());
-                pvAutodiscoverySent = true;
-            }
-
-            mqttRepository.sendRealData(realData);
-        } catch(MqttSendException e) {
-            log.error("Cannot send realData", e);
+            default:
+                throw new IllegalArgumentException(String.format("Unsupported mode: %s", mode));
         }
     }
 }

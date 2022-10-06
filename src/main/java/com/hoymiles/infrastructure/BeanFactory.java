@@ -2,15 +2,20 @@ package com.hoymiles.infrastructure;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.hoymiles.domain.event.RealDataEvent;
 import com.hoymiles.domain.model.RealData;
 import com.hoymiles.infrastructure.dtu.DtuClient;
+import com.hoymiles.infrastructure.dtu.DtuMessageRouter;
 import com.hoymiles.infrastructure.dtu.utils.DateUtil;
 import com.hoymiles.infrastructure.gson.DateAdapter;
 import com.hoymiles.infrastructure.mqtt.MqttConnectionConfigProvider;
-import com.hoymiles.infrastructure.mqtt.MqttConnectionLostEvent;
+import com.hoymiles.infrastructure.protos.RealDataNew;
+import com.hoymiles.infrastructure.repository.SpreadsheetWriter;
 import com.hoymiles.infrastructure.repository.dto.DtuRealDataDTO;
 import com.hoymiles.infrastructure.repository.dto.InvRealDataDTO;
 import com.hoymiles.infrastructure.repository.dto.PvRealDataDTO;
+import com.hoymiles.infrastructure.repository.mapper.Msg8716ToRealDataMapper;
+import com.hoymiles.infrastructure.repository.mapper.Msg8717ToRealDataMapper;
 import com.hoymiles.infrastructure.repository.mapper.NumberFormatter;
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
@@ -19,15 +24,21 @@ import jakarta.enterprise.inject.spi.BeanManager;
 import jakarta.inject.Named;
 import jakarta.inject.Singleton;
 import lombok.extern.log4j.Log4j2;
-import org.eclipse.paho.client.mqttv3.*;
+import org.eclipse.paho.client.mqttv3.IMqttClient;
+import org.eclipse.paho.client.mqttv3.MqttClient;
+import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 import org.jetbrains.annotations.NotNull;
 import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
 
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
-import java.util.concurrent.*;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
 
 @Log4j2
 public class BeanFactory {
@@ -41,8 +52,8 @@ public class BeanFactory {
     @Produces
     @Singleton
     @Named("mainExecutor")
-    public ScheduledExecutorService getExecutor() {
-        return Executors.newSingleThreadScheduledExecutor();
+    public ExecutorService getExecutor() {
+        return Executors.newSingleThreadExecutor();
     }
 
     @Produces
@@ -63,31 +74,28 @@ public class BeanFactory {
     @Singleton
     public IMqttClient getMqttClient(@NotNull MqttConnectionConfigProvider connectionUriProvider, @NotNull BeanManager beanManager) throws MqttException {
         String publisherId = "mqtt_hoymiles_dtu_" + UUID.randomUUID();
-        IMqttClient mqttClient = new MqttClient(connectionUriProvider.getConnectionUri(), publisherId, new MemoryPersistence());
-        mqttClient.setCallback(new MqttCallback() {
-            @Override
-            public void connectionLost(Throwable cause) {
-                log.error("connectionLost: " + cause.getMessage(), cause);
-                beanManager.fireEvent(new MqttConnectionLostEvent(cause));
-            }
-
-            @Override
-            public void messageArrived(String topic, MqttMessage message) throws Exception {
-
-            }
-
-            @Override
-            public void deliveryComplete(IMqttDeliveryToken token) {
-            }
-        });
-        return mqttClient;
+        return new MqttClient(connectionUriProvider.getConnectionUri(), publisherId, new MemoryPersistence());
     }
 
     @Produces
     @Singleton
     public DtuClient getDtuClient(@NotNull Config config, @NotNull BeanManager beanManager) {
-        DtuClient client = new DtuClient(beanManager);
-        return client;
+        return new DtuClient(beanManager);
+    }
+
+    @Produces
+    @Singleton
+    public DtuMessageRouter messageRouter(
+            @NotNull BeanManager beanManager,
+            @NotNull Config config,
+            @NotNull SpreadsheetWriter spreadsheetWriter,
+            @NotNull ModelMapper modelMapper,
+            @NotNull Msg8716ToRealDataMapper mapper8716,
+            @NotNull Msg8717ToRealDataMapper mapper8717) {
+        DtuMessageRouter router = new DtuMessageRouter(beanManager, config, spreadsheetWriter);
+        router.register(8716, event -> new RealDataEvent(mapper8716.map((RealDataNew.Msg8716) event.getMessage())));
+        router.register(8717, event -> new RealDataEvent(mapper8717.map((RealDataNew.Msg8717) event.getMessage())));
+        return router;
     }
 
     @Produces
