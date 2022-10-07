@@ -2,7 +2,6 @@ package com.hoymiles.infrastructure.dtu;
 
 import com.hoymiles.infrastructure.repository.SpreadsheetWriter;
 import com.typesafe.config.Config;
-import jakarta.enterprise.context.Dependent;
 import jakarta.enterprise.inject.spi.BeanManager;
 import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
@@ -10,7 +9,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.HashMap;
 import java.util.Map;
 
-@Dependent
 @RequiredArgsConstructor
 public class DtuMessageRouter {
     @FunctionalInterface
