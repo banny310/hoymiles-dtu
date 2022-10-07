@@ -304,8 +304,8 @@ Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
 message Msg8716 {
   required bytes dtuSn = 1;
   required uint32 time = 2;
-  required uint32 val3 = 3;
-  // missing 4
+  required uint32 packetCount = 3;
+  optional uint32 packetNum = 4 [default = 0];
   required uint32 val5 = 5;
   repeated SGSMO sgsDatas = 9;
   repeated PvMO pvDatas = 11;
@@ -488,8 +488,8 @@ Field #8: 08 Varint Value = 50331648, Hex = 81-E5-81-91
 message Msg8717 {
   required bytes dtuSn = 1;
   required uint32 time = 2;
-  required uint32 val3 = 3;
-  // missing 4
+  required uint32 packetCount = 3;
+  optional uint32 packetNum = 4 [default = 0];
   required uint32 val5 = 5;
   repeated SGSMO sgsDatas = 9;
   repeated PvMO pvDatas = 11;

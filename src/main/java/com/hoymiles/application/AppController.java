@@ -7,6 +7,7 @@ import com.hoymiles.domain.MetricsService;
 import com.hoymiles.domain.event.RealDataEvent;
 import com.hoymiles.domain.model.AppInfo;
 import com.hoymiles.domain.model.AppMode;
+import com.hoymiles.domain.model.RealData;
 import com.hoymiles.infrastructure.dtu.DtuCommandBuilder;
 import com.hoymiles.infrastructure.mqtt.MqttConnectedEvent;
 import com.hoymiles.infrastructure.mqtt.MqttSendException;
@@ -15,7 +16,7 @@ import com.hoymiles.infrastructure.protos.SetConfig;
 import com.typesafe.config.Config;
 import io.reactivex.rxjava3.core.Observable;
 import jakarta.annotation.Priority;
-import jakarta.enterprise.context.Dependent;
+import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.event.Observes;
 import jakarta.inject.Inject;
 import lombok.RequiredArgsConstructor;
@@ -23,9 +24,10 @@ import lombok.extern.log4j.Log4j2;
 import org.jetbrains.annotations.NotNull;
 
 import java.nio.charset.StandardCharsets;
+import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
-@Dependent
+@ApplicationScoped
 @Log4j2
 @RequiredArgsConstructor(onConstructor_ = {@Inject})
 public class AppController {
@@ -36,7 +38,9 @@ public class AppController {
     private final MetricsService metricsService;
     private final DtuCommandBuilder dtuCommand;
 
+    // WARNING: not stateless!!!
     private boolean pvAutodiscoverySent = false;
+    private RealData lastRealData;
 
     @Handler
     public Void handleMqttConnected(@Observes @Priority(1) @NotNull MqttConnectedEvent event) {
@@ -47,16 +51,43 @@ public class AppController {
         return null;
     }
 
+    /**
+        NOTICE: DTU in large installations divides data in two separate messages
+        One of them contains inverters and some panels, other one contains only panels
+        For example: installation with 6 inverters and 24 panels
+        Message 1: 6 inverters, 8 panels
+        Message 2: 0 inverters, 16 panels
+     */
     @Handler
     public Void handleSolarData(@Observes @Priority(1) @NotNull RealDataEvent command) {
-        log.info("Incoming new metrics");
+        log.info("Incoming new metrics {}@{}", getClass().getName(), System.identityHashCode(this));
         try {
+            RealData data = command.getRealData();
             if (!pvAutodiscoverySent) {
-                autodiscoveryService.registerPvAutodiscovery(command.getRealData().getPanels());
+                autodiscoveryService.registerPvAutodiscovery(data.getPanels());
                 pvAutodiscoverySent = true;
             }
 
-            mqttRepository.sendRealData(command.getRealData());
+            int nextPacketNum = Optional.ofNullable(lastRealData)
+                    .map(realData -> realData.getPacketNum() + 1)
+                    .orElse(0);
+            log.info("Packet received: num={}, count={}, expected={}", data.getPacketNum(), data.getPacketCount(), nextPacketNum);
+
+            if (data.getPacketNum() == nextPacketNum) {
+                // merge incoming packet with previously stored
+                lastRealData = Optional.ofNullable(lastRealData)
+                        .map(realData -> realData.merge(data))
+                        .orElse(data);
+
+                if (data.getPacketNum() == data.getPacketCount() - 1) {
+                    log.info("Last packed received. Sending to mqtt...");
+                    mqttRepository.sendRealData(Optional.ofNullable(lastRealData).orElse(data));
+                    lastRealData = null;
+                }
+            } else {
+                log.info("Packet number mismatch");
+                lastRealData = null;
+            }
         } catch (MqttSendException e) {
             log.error("Cannot send realData", e);
         }

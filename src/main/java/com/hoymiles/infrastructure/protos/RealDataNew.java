@@ -15760,30 +15760,33 @@ public final class RealDataNew {
     int getTime();
 
     /**
-     * <code>required uint32 val3 = 3;</code>
-     * @return Whether the val3 field is set.
+     * <code>required uint32 packetCount = 3;</code>
+     * @return Whether the packetCount field is set.
      */
-    boolean hasVal3();
+    boolean hasPacketCount();
     /**
-     * <code>required uint32 val3 = 3;</code>
-     * @return The val3.
+     * <code>required uint32 packetCount = 3;</code>
+     * @return The packetCount.
      */
-    int getVal3();
+    int getPacketCount();
 
     /**
-     * <pre>
-     * missing 4
-     * </pre>
-     *
+     * <code>optional uint32 packetNum = 4 [default = 0];</code>
+     * @return Whether the packetNum field is set.
+     */
+    boolean hasPacketNum();
+    /**
+     * <code>optional uint32 packetNum = 4 [default = 0];</code>
+     * @return The packetNum.
+     */
+    int getPacketNum();
+
+    /**
      * <code>required uint32 val5 = 5;</code>
      * @return Whether the val5 field is set.
      */
     boolean hasVal5();
     /**
-     * <pre>
-     * missing 4
-     * </pre>
-     *
      * <code>required uint32 val5 = 5;</code>
      * @return The val5.
      */
@@ -16073,27 +16076,32 @@ public final class RealDataNew {
             }
             case 24: {
               bitField0_ |= 0x00000004;
-              val3_ = input.readUInt32();
+              packetCount_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              packetNum_ = input.readUInt32();
               break;
             }
             case 40: {
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000010;
               val5_ = input.readUInt32();
               break;
             }
             case 74: {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 sgsDatas_ = new java.util.ArrayList<com.hoymiles.infrastructure.protos.RealDataNew.SGSMO>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000020;
               }
               sgsDatas_.add(
                   input.readMessage(com.hoymiles.infrastructure.protos.RealDataNew.SGSMO.PARSER, extensionRegistry));
               break;
             }
             case 90: {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                 pvDatas_ = new java.util.ArrayList<com.hoymiles.infrastructure.protos.RealDataNew.PvMO>();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000040;
               }
               pvDatas_.add(
                   input.readMessage(com.hoymiles.infrastructure.protos.RealDataNew.PvMO.PARSER, extensionRegistry));
@@ -16114,10 +16122,10 @@ public final class RealDataNew {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        if (((mutable_bitField0_ & 0x00000020) != 0)) {
           sgsDatas_ = java.util.Collections.unmodifiableList(sgsDatas_);
         }
-        if (((mutable_bitField0_ & 0x00000020) != 0)) {
+        if (((mutable_bitField0_ & 0x00000040) != 0)) {
           pvDatas_ = java.util.Collections.unmodifiableList(pvDatas_);
         }
         this.unknownFields = unknownFields.build();
@@ -16176,44 +16184,55 @@ public final class RealDataNew {
       return time_;
     }
 
-    public static final int VAL3_FIELD_NUMBER = 3;
-    private int val3_;
+    public static final int PACKETCOUNT_FIELD_NUMBER = 3;
+    private int packetCount_;
     /**
-     * <code>required uint32 val3 = 3;</code>
-     * @return Whether the val3 field is set.
+     * <code>required uint32 packetCount = 3;</code>
+     * @return Whether the packetCount field is set.
      */
     @java.lang.Override
-    public boolean hasVal3() {
+    public boolean hasPacketCount() {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>required uint32 val3 = 3;</code>
-     * @return The val3.
+     * <code>required uint32 packetCount = 3;</code>
+     * @return The packetCount.
      */
     @java.lang.Override
-    public int getVal3() {
-      return val3_;
+    public int getPacketCount() {
+      return packetCount_;
+    }
+
+    public static final int PACKETNUM_FIELD_NUMBER = 4;
+    private int packetNum_;
+    /**
+     * <code>optional uint32 packetNum = 4 [default = 0];</code>
+     * @return Whether the packetNum field is set.
+     */
+    @java.lang.Override
+    public boolean hasPacketNum() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <code>optional uint32 packetNum = 4 [default = 0];</code>
+     * @return The packetNum.
+     */
+    @java.lang.Override
+    public int getPacketNum() {
+      return packetNum_;
     }
 
     public static final int VAL5_FIELD_NUMBER = 5;
     private int val5_;
     /**
-     * <pre>
-     * missing 4
-     * </pre>
-     *
      * <code>required uint32 val5 = 5;</code>
      * @return Whether the val5 field is set.
      */
     @java.lang.Override
     public boolean hasVal5() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
-     * <pre>
-     * missing 4
-     * </pre>
-     *
      * <code>required uint32 val5 = 5;</code>
      * @return The val5.
      */
@@ -16317,7 +16336,7 @@ public final class RealDataNew {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasVal3()) {
+      if (!hasPacketCount()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -16351,9 +16370,12 @@ public final class RealDataNew {
         output.writeUInt32(2, time_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
-        output.writeUInt32(3, val3_);
+        output.writeUInt32(3, packetCount_);
       }
       if (((bitField0_ & 0x00000008) != 0)) {
+        output.writeUInt32(4, packetNum_);
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
         output.writeUInt32(5, val5_);
       }
       for (int i = 0; i < sgsDatas_.size(); i++) {
@@ -16381,9 +16403,13 @@ public final class RealDataNew {
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, val3_);
+          .computeUInt32Size(3, packetCount_);
       }
       if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, packetNum_);
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, val5_);
       }
@@ -16420,10 +16446,15 @@ public final class RealDataNew {
         if (getTime()
             != other.getTime()) return false;
       }
-      if (hasVal3() != other.hasVal3()) return false;
-      if (hasVal3()) {
-        if (getVal3()
-            != other.getVal3()) return false;
+      if (hasPacketCount() != other.hasPacketCount()) return false;
+      if (hasPacketCount()) {
+        if (getPacketCount()
+            != other.getPacketCount()) return false;
+      }
+      if (hasPacketNum() != other.hasPacketNum()) return false;
+      if (hasPacketNum()) {
+        if (getPacketNum()
+            != other.getPacketNum()) return false;
       }
       if (hasVal5() != other.hasVal5()) return false;
       if (hasVal5()) {
@@ -16453,9 +16484,13 @@ public final class RealDataNew {
         hash = (37 * hash) + TIME_FIELD_NUMBER;
         hash = (53 * hash) + getTime();
       }
-      if (hasVal3()) {
-        hash = (37 * hash) + VAL3_FIELD_NUMBER;
-        hash = (53 * hash) + getVal3();
+      if (hasPacketCount()) {
+        hash = (37 * hash) + PACKETCOUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getPacketCount();
+      }
+      if (hasPacketNum()) {
+        hash = (37 * hash) + PACKETNUM_FIELD_NUMBER;
+        hash = (53 * hash) + getPacketNum();
       }
       if (hasVal5()) {
         hash = (37 * hash) + VAL5_FIELD_NUMBER;
@@ -16783,19 +16818,21 @@ public final class RealDataNew {
         bitField0_ = (bitField0_ & ~0x00000001);
         time_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
-        val3_ = 0;
+        packetCount_ = 0;
         bitField0_ = (bitField0_ & ~0x00000004);
-        val5_ = 0;
+        packetNum_ = 0;
         bitField0_ = (bitField0_ & ~0x00000008);
+        val5_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000010);
         if (sgsDatasBuilder_ == null) {
           sgsDatas_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           sgsDatasBuilder_.clear();
         }
         if (pvDatasBuilder_ == null) {
           pvDatas_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
           pvDatasBuilder_.clear();
         }
@@ -16836,26 +16873,30 @@ public final class RealDataNew {
           to_bitField0_ |= 0x00000002;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.val3_ = val3_;
+          result.packetCount_ = packetCount_;
           to_bitField0_ |= 0x00000004;
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.val5_ = val5_;
+          result.packetNum_ = packetNum_;
           to_bitField0_ |= 0x00000008;
         }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.val5_ = val5_;
+          to_bitField0_ |= 0x00000010;
+        }
         if (sgsDatasBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)) {
+          if (((bitField0_ & 0x00000020) != 0)) {
             sgsDatas_ = java.util.Collections.unmodifiableList(sgsDatas_);
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           }
           result.sgsDatas_ = sgsDatas_;
         } else {
           result.sgsDatas_ = sgsDatasBuilder_.build();
         }
         if (pvDatasBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0)) {
+          if (((bitField0_ & 0x00000040) != 0)) {
             pvDatas_ = java.util.Collections.unmodifiableList(pvDatas_);
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
           }
           result.pvDatas_ = pvDatas_;
         } else {
@@ -16916,8 +16957,11 @@ public final class RealDataNew {
         if (other.hasTime()) {
           setTime(other.getTime());
         }
-        if (other.hasVal3()) {
-          setVal3(other.getVal3());
+        if (other.hasPacketCount()) {
+          setPacketCount(other.getPacketCount());
+        }
+        if (other.hasPacketNum()) {
+          setPacketNum(other.getPacketNum());
         }
         if (other.hasVal5()) {
           setVal5(other.getVal5());
@@ -16926,7 +16970,7 @@ public final class RealDataNew {
           if (!other.sgsDatas_.isEmpty()) {
             if (sgsDatas_.isEmpty()) {
               sgsDatas_ = other.sgsDatas_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000020);
             } else {
               ensureSgsDatasIsMutable();
               sgsDatas_.addAll(other.sgsDatas_);
@@ -16939,7 +16983,7 @@ public final class RealDataNew {
               sgsDatasBuilder_.dispose();
               sgsDatasBuilder_ = null;
               sgsDatas_ = other.sgsDatas_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000020);
               sgsDatasBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getSgsDatasFieldBuilder() : null;
@@ -16952,7 +16996,7 @@ public final class RealDataNew {
           if (!other.pvDatas_.isEmpty()) {
             if (pvDatas_.isEmpty()) {
               pvDatas_ = other.pvDatas_;
-              bitField0_ = (bitField0_ & ~0x00000020);
+              bitField0_ = (bitField0_ & ~0x00000040);
             } else {
               ensurePvDatasIsMutable();
               pvDatas_.addAll(other.pvDatas_);
@@ -16965,7 +17009,7 @@ public final class RealDataNew {
               pvDatasBuilder_.dispose();
               pvDatasBuilder_ = null;
               pvDatas_ = other.pvDatas_;
-              bitField0_ = (bitField0_ & ~0x00000020);
+              bitField0_ = (bitField0_ & ~0x00000040);
               pvDatasBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getPvDatasFieldBuilder() : null;
@@ -16987,7 +17031,7 @@ public final class RealDataNew {
         if (!hasTime()) {
           return false;
         }
-        if (!hasVal3()) {
+        if (!hasPacketCount()) {
           return false;
         }
         if (!hasVal5()) {
@@ -17107,63 +17151,94 @@ public final class RealDataNew {
         return this;
       }
 
-      private int val3_ ;
+      private int packetCount_ ;
       /**
-       * <code>required uint32 val3 = 3;</code>
-       * @return Whether the val3 field is set.
+       * <code>required uint32 packetCount = 3;</code>
+       * @return Whether the packetCount field is set.
        */
       @java.lang.Override
-      public boolean hasVal3() {
+      public boolean hasPacketCount() {
         return ((bitField0_ & 0x00000004) != 0);
       }
       /**
-       * <code>required uint32 val3 = 3;</code>
-       * @return The val3.
+       * <code>required uint32 packetCount = 3;</code>
+       * @return The packetCount.
        */
       @java.lang.Override
-      public int getVal3() {
-        return val3_;
+      public int getPacketCount() {
+        return packetCount_;
       }
       /**
-       * <code>required uint32 val3 = 3;</code>
-       * @param value The val3 to set.
+       * <code>required uint32 packetCount = 3;</code>
+       * @param value The packetCount to set.
        * @return This builder for chaining.
        */
-      public Builder setVal3(int value) {
+      public Builder setPacketCount(int value) {
         bitField0_ |= 0x00000004;
-        val3_ = value;
+        packetCount_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required uint32 val3 = 3;</code>
+       * <code>required uint32 packetCount = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearVal3() {
+      public Builder clearPacketCount() {
         bitField0_ = (bitField0_ & ~0x00000004);
-        val3_ = 0;
+        packetCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int packetNum_ ;
+      /**
+       * <code>optional uint32 packetNum = 4 [default = 0];</code>
+       * @return Whether the packetNum field is set.
+       */
+      @java.lang.Override
+      public boolean hasPacketNum() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       * <code>optional uint32 packetNum = 4 [default = 0];</code>
+       * @return The packetNum.
+       */
+      @java.lang.Override
+      public int getPacketNum() {
+        return packetNum_;
+      }
+      /**
+       * <code>optional uint32 packetNum = 4 [default = 0];</code>
+       * @param value The packetNum to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPacketNum(int value) {
+        bitField0_ |= 0x00000008;
+        packetNum_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 packetNum = 4 [default = 0];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPacketNum() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        packetNum_ = 0;
         onChanged();
         return this;
       }
 
       private int val5_ ;
       /**
-       * <pre>
-       * missing 4
-       * </pre>
-       *
        * <code>required uint32 val5 = 5;</code>
        * @return Whether the val5 field is set.
        */
       @java.lang.Override
       public boolean hasVal5() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
-       * <pre>
-       * missing 4
-       * </pre>
-       *
        * <code>required uint32 val5 = 5;</code>
        * @return The val5.
        */
@@ -17172,30 +17247,22 @@ public final class RealDataNew {
         return val5_;
       }
       /**
-       * <pre>
-       * missing 4
-       * </pre>
-       *
        * <code>required uint32 val5 = 5;</code>
        * @param value The val5 to set.
        * @return This builder for chaining.
        */
       public Builder setVal5(int value) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         val5_ = value;
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       * missing 4
-       * </pre>
-       *
        * <code>required uint32 val5 = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearVal5() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         val5_ = 0;
         onChanged();
         return this;
@@ -17204,9 +17271,9 @@ public final class RealDataNew {
       private java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.SGSMO> sgsDatas_ =
         java.util.Collections.emptyList();
       private void ensureSgsDatasIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           sgsDatas_ = new java.util.ArrayList<com.hoymiles.infrastructure.protos.RealDataNew.SGSMO>(sgsDatas_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
          }
       }
 
@@ -17356,7 +17423,7 @@ public final class RealDataNew {
       public Builder clearSgsDatas() {
         if (sgsDatasBuilder_ == null) {
           sgsDatas_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
           onChanged();
         } else {
           sgsDatasBuilder_.clear();
@@ -17433,7 +17500,7 @@ public final class RealDataNew {
           sgsDatasBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.hoymiles.infrastructure.protos.RealDataNew.SGSMO, com.hoymiles.infrastructure.protos.RealDataNew.SGSMO.Builder, com.hoymiles.infrastructure.protos.RealDataNew.SGSMOOrBuilder>(
                   sgsDatas_,
-                  ((bitField0_ & 0x00000010) != 0),
+                  ((bitField0_ & 0x00000020) != 0),
                   getParentForChildren(),
                   isClean());
           sgsDatas_ = null;
@@ -17444,9 +17511,9 @@ public final class RealDataNew {
       private java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.PvMO> pvDatas_ =
         java.util.Collections.emptyList();
       private void ensurePvDatasIsMutable() {
-        if (!((bitField0_ & 0x00000020) != 0)) {
+        if (!((bitField0_ & 0x00000040) != 0)) {
           pvDatas_ = new java.util.ArrayList<com.hoymiles.infrastructure.protos.RealDataNew.PvMO>(pvDatas_);
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
          }
       }
 
@@ -17596,7 +17663,7 @@ public final class RealDataNew {
       public Builder clearPvDatas() {
         if (pvDatasBuilder_ == null) {
           pvDatas_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000040);
           onChanged();
         } else {
           pvDatasBuilder_.clear();
@@ -17673,7 +17740,7 @@ public final class RealDataNew {
           pvDatasBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.hoymiles.infrastructure.protos.RealDataNew.PvMO, com.hoymiles.infrastructure.protos.RealDataNew.PvMO.Builder, com.hoymiles.infrastructure.protos.RealDataNew.PvMOOrBuilder>(
                   pvDatas_,
-                  ((bitField0_ & 0x00000020) != 0),
+                  ((bitField0_ & 0x00000040) != 0),
                   getParentForChildren(),
                   isClean());
           pvDatas_ = null;
@@ -17760,30 +17827,33 @@ public final class RealDataNew {
     int getTime();
 
     /**
-     * <code>required uint32 val3 = 3;</code>
-     * @return Whether the val3 field is set.
+     * <code>required uint32 packetCount = 3;</code>
+     * @return Whether the packetCount field is set.
      */
-    boolean hasVal3();
+    boolean hasPacketCount();
     /**
-     * <code>required uint32 val3 = 3;</code>
-     * @return The val3.
+     * <code>required uint32 packetCount = 3;</code>
+     * @return The packetCount.
      */
-    int getVal3();
+    int getPacketCount();
 
     /**
-     * <pre>
-     * missing 4
-     * </pre>
-     *
+     * <code>optional uint32 packetNum = 4 [default = 0];</code>
+     * @return Whether the packetNum field is set.
+     */
+    boolean hasPacketNum();
+    /**
+     * <code>optional uint32 packetNum = 4 [default = 0];</code>
+     * @return The packetNum.
+     */
+    int getPacketNum();
+
+    /**
      * <code>required uint32 val5 = 5;</code>
      * @return Whether the val5 field is set.
      */
     boolean hasVal5();
     /**
-     * <pre>
-     * missing 4
-     * </pre>
-     *
      * <code>required uint32 val5 = 5;</code>
      * @return The val5.
      */
@@ -18073,27 +18143,32 @@ public final class RealDataNew {
             }
             case 24: {
               bitField0_ |= 0x00000004;
-              val3_ = input.readUInt32();
+              packetCount_ = input.readUInt32();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              packetNum_ = input.readUInt32();
               break;
             }
             case 40: {
-              bitField0_ |= 0x00000008;
+              bitField0_ |= 0x00000010;
               val5_ = input.readUInt32();
               break;
             }
             case 74: {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
                 sgsDatas_ = new java.util.ArrayList<com.hoymiles.infrastructure.protos.RealDataNew.SGSMO>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000020;
               }
               sgsDatas_.add(
                   input.readMessage(com.hoymiles.infrastructure.protos.RealDataNew.SGSMO.PARSER, extensionRegistry));
               break;
             }
             case 90: {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
                 pvDatas_ = new java.util.ArrayList<com.hoymiles.infrastructure.protos.RealDataNew.PvMO>();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000040;
               }
               pvDatas_.add(
                   input.readMessage(com.hoymiles.infrastructure.protos.RealDataNew.PvMO.PARSER, extensionRegistry));
@@ -18114,10 +18189,10 @@ public final class RealDataNew {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
+        if (((mutable_bitField0_ & 0x00000020) != 0)) {
           sgsDatas_ = java.util.Collections.unmodifiableList(sgsDatas_);
         }
-        if (((mutable_bitField0_ & 0x00000020) != 0)) {
+        if (((mutable_bitField0_ & 0x00000040) != 0)) {
           pvDatas_ = java.util.Collections.unmodifiableList(pvDatas_);
         }
         this.unknownFields = unknownFields.build();
@@ -18176,44 +18251,55 @@ public final class RealDataNew {
       return time_;
     }
 
-    public static final int VAL3_FIELD_NUMBER = 3;
-    private int val3_;
+    public static final int PACKETCOUNT_FIELD_NUMBER = 3;
+    private int packetCount_;
     /**
-     * <code>required uint32 val3 = 3;</code>
-     * @return Whether the val3 field is set.
+     * <code>required uint32 packetCount = 3;</code>
+     * @return Whether the packetCount field is set.
      */
     @java.lang.Override
-    public boolean hasVal3() {
+    public boolean hasPacketCount() {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>required uint32 val3 = 3;</code>
-     * @return The val3.
+     * <code>required uint32 packetCount = 3;</code>
+     * @return The packetCount.
      */
     @java.lang.Override
-    public int getVal3() {
-      return val3_;
+    public int getPacketCount() {
+      return packetCount_;
+    }
+
+    public static final int PACKETNUM_FIELD_NUMBER = 4;
+    private int packetNum_;
+    /**
+     * <code>optional uint32 packetNum = 4 [default = 0];</code>
+     * @return Whether the packetNum field is set.
+     */
+    @java.lang.Override
+    public boolean hasPacketNum() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <code>optional uint32 packetNum = 4 [default = 0];</code>
+     * @return The packetNum.
+     */
+    @java.lang.Override
+    public int getPacketNum() {
+      return packetNum_;
     }
 
     public static final int VAL5_FIELD_NUMBER = 5;
     private int val5_;
     /**
-     * <pre>
-     * missing 4
-     * </pre>
-     *
      * <code>required uint32 val5 = 5;</code>
      * @return Whether the val5 field is set.
      */
     @java.lang.Override
     public boolean hasVal5() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
-     * <pre>
-     * missing 4
-     * </pre>
-     *
      * <code>required uint32 val5 = 5;</code>
      * @return The val5.
      */
@@ -18317,7 +18403,7 @@ public final class RealDataNew {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasVal3()) {
+      if (!hasPacketCount()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -18351,9 +18437,12 @@ public final class RealDataNew {
         output.writeUInt32(2, time_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
-        output.writeUInt32(3, val3_);
+        output.writeUInt32(3, packetCount_);
       }
       if (((bitField0_ & 0x00000008) != 0)) {
+        output.writeUInt32(4, packetNum_);
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
         output.writeUInt32(5, val5_);
       }
       for (int i = 0; i < sgsDatas_.size(); i++) {
@@ -18381,9 +18470,13 @@ public final class RealDataNew {
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, val3_);
+          .computeUInt32Size(3, packetCount_);
       }
       if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, packetNum_);
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, val5_);
       }
@@ -18420,10 +18513,15 @@ public final class RealDataNew {
         if (getTime()
             != other.getTime()) return false;
       }
-      if (hasVal3() != other.hasVal3()) return false;
-      if (hasVal3()) {
-        if (getVal3()
-            != other.getVal3()) return false;
+      if (hasPacketCount() != other.hasPacketCount()) return false;
+      if (hasPacketCount()) {
+        if (getPacketCount()
+            != other.getPacketCount()) return false;
+      }
+      if (hasPacketNum() != other.hasPacketNum()) return false;
+      if (hasPacketNum()) {
+        if (getPacketNum()
+            != other.getPacketNum()) return false;
       }
       if (hasVal5() != other.hasVal5()) return false;
       if (hasVal5()) {
@@ -18453,9 +18551,13 @@ public final class RealDataNew {
         hash = (37 * hash) + TIME_FIELD_NUMBER;
         hash = (53 * hash) + getTime();
       }
-      if (hasVal3()) {
-        hash = (37 * hash) + VAL3_FIELD_NUMBER;
-        hash = (53 * hash) + getVal3();
+      if (hasPacketCount()) {
+        hash = (37 * hash) + PACKETCOUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getPacketCount();
+      }
+      if (hasPacketNum()) {
+        hash = (37 * hash) + PACKETNUM_FIELD_NUMBER;
+        hash = (53 * hash) + getPacketNum();
       }
       if (hasVal5()) {
         hash = (37 * hash) + VAL5_FIELD_NUMBER;
@@ -18783,19 +18885,21 @@ public final class RealDataNew {
         bitField0_ = (bitField0_ & ~0x00000001);
         time_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
-        val3_ = 0;
+        packetCount_ = 0;
         bitField0_ = (bitField0_ & ~0x00000004);
-        val5_ = 0;
+        packetNum_ = 0;
         bitField0_ = (bitField0_ & ~0x00000008);
+        val5_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000010);
         if (sgsDatasBuilder_ == null) {
           sgsDatas_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           sgsDatasBuilder_.clear();
         }
         if (pvDatasBuilder_ == null) {
           pvDatas_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
           pvDatasBuilder_.clear();
         }
@@ -18836,26 +18940,30 @@ public final class RealDataNew {
           to_bitField0_ |= 0x00000002;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.val3_ = val3_;
+          result.packetCount_ = packetCount_;
           to_bitField0_ |= 0x00000004;
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.val5_ = val5_;
+          result.packetNum_ = packetNum_;
           to_bitField0_ |= 0x00000008;
         }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.val5_ = val5_;
+          to_bitField0_ |= 0x00000010;
+        }
         if (sgsDatasBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)) {
+          if (((bitField0_ & 0x00000020) != 0)) {
             sgsDatas_ = java.util.Collections.unmodifiableList(sgsDatas_);
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           }
           result.sgsDatas_ = sgsDatas_;
         } else {
           result.sgsDatas_ = sgsDatasBuilder_.build();
         }
         if (pvDatasBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0)) {
+          if (((bitField0_ & 0x00000040) != 0)) {
             pvDatas_ = java.util.Collections.unmodifiableList(pvDatas_);
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
           }
           result.pvDatas_ = pvDatas_;
         } else {
@@ -18916,8 +19024,11 @@ public final class RealDataNew {
         if (other.hasTime()) {
           setTime(other.getTime());
         }
-        if (other.hasVal3()) {
-          setVal3(other.getVal3());
+        if (other.hasPacketCount()) {
+          setPacketCount(other.getPacketCount());
+        }
+        if (other.hasPacketNum()) {
+          setPacketNum(other.getPacketNum());
         }
         if (other.hasVal5()) {
           setVal5(other.getVal5());
@@ -18926,7 +19037,7 @@ public final class RealDataNew {
           if (!other.sgsDatas_.isEmpty()) {
             if (sgsDatas_.isEmpty()) {
               sgsDatas_ = other.sgsDatas_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000020);
             } else {
               ensureSgsDatasIsMutable();
               sgsDatas_.addAll(other.sgsDatas_);
@@ -18939,7 +19050,7 @@ public final class RealDataNew {
               sgsDatasBuilder_.dispose();
               sgsDatasBuilder_ = null;
               sgsDatas_ = other.sgsDatas_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000020);
               sgsDatasBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getSgsDatasFieldBuilder() : null;
@@ -18952,7 +19063,7 @@ public final class RealDataNew {
           if (!other.pvDatas_.isEmpty()) {
             if (pvDatas_.isEmpty()) {
               pvDatas_ = other.pvDatas_;
-              bitField0_ = (bitField0_ & ~0x00000020);
+              bitField0_ = (bitField0_ & ~0x00000040);
             } else {
               ensurePvDatasIsMutable();
               pvDatas_.addAll(other.pvDatas_);
@@ -18965,7 +19076,7 @@ public final class RealDataNew {
               pvDatasBuilder_.dispose();
               pvDatasBuilder_ = null;
               pvDatas_ = other.pvDatas_;
-              bitField0_ = (bitField0_ & ~0x00000020);
+              bitField0_ = (bitField0_ & ~0x00000040);
               pvDatasBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getPvDatasFieldBuilder() : null;
@@ -18987,7 +19098,7 @@ public final class RealDataNew {
         if (!hasTime()) {
           return false;
         }
-        if (!hasVal3()) {
+        if (!hasPacketCount()) {
           return false;
         }
         if (!hasVal5()) {
@@ -19107,63 +19218,94 @@ public final class RealDataNew {
         return this;
       }
 
-      private int val3_ ;
+      private int packetCount_ ;
       /**
-       * <code>required uint32 val3 = 3;</code>
-       * @return Whether the val3 field is set.
+       * <code>required uint32 packetCount = 3;</code>
+       * @return Whether the packetCount field is set.
        */
       @java.lang.Override
-      public boolean hasVal3() {
+      public boolean hasPacketCount() {
         return ((bitField0_ & 0x00000004) != 0);
       }
       /**
-       * <code>required uint32 val3 = 3;</code>
-       * @return The val3.
+       * <code>required uint32 packetCount = 3;</code>
+       * @return The packetCount.
        */
       @java.lang.Override
-      public int getVal3() {
-        return val3_;
+      public int getPacketCount() {
+        return packetCount_;
       }
       /**
-       * <code>required uint32 val3 = 3;</code>
-       * @param value The val3 to set.
+       * <code>required uint32 packetCount = 3;</code>
+       * @param value The packetCount to set.
        * @return This builder for chaining.
        */
-      public Builder setVal3(int value) {
+      public Builder setPacketCount(int value) {
         bitField0_ |= 0x00000004;
-        val3_ = value;
+        packetCount_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required uint32 val3 = 3;</code>
+       * <code>required uint32 packetCount = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearVal3() {
+      public Builder clearPacketCount() {
         bitField0_ = (bitField0_ & ~0x00000004);
-        val3_ = 0;
+        packetCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int packetNum_ ;
+      /**
+       * <code>optional uint32 packetNum = 4 [default = 0];</code>
+       * @return Whether the packetNum field is set.
+       */
+      @java.lang.Override
+      public boolean hasPacketNum() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       * <code>optional uint32 packetNum = 4 [default = 0];</code>
+       * @return The packetNum.
+       */
+      @java.lang.Override
+      public int getPacketNum() {
+        return packetNum_;
+      }
+      /**
+       * <code>optional uint32 packetNum = 4 [default = 0];</code>
+       * @param value The packetNum to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPacketNum(int value) {
+        bitField0_ |= 0x00000008;
+        packetNum_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 packetNum = 4 [default = 0];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPacketNum() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        packetNum_ = 0;
         onChanged();
         return this;
       }
 
       private int val5_ ;
       /**
-       * <pre>
-       * missing 4
-       * </pre>
-       *
        * <code>required uint32 val5 = 5;</code>
        * @return Whether the val5 field is set.
        */
       @java.lang.Override
       public boolean hasVal5() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
-       * <pre>
-       * missing 4
-       * </pre>
-       *
        * <code>required uint32 val5 = 5;</code>
        * @return The val5.
        */
@@ -19172,30 +19314,22 @@ public final class RealDataNew {
         return val5_;
       }
       /**
-       * <pre>
-       * missing 4
-       * </pre>
-       *
        * <code>required uint32 val5 = 5;</code>
        * @param value The val5 to set.
        * @return This builder for chaining.
        */
       public Builder setVal5(int value) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         val5_ = value;
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       * missing 4
-       * </pre>
-       *
        * <code>required uint32 val5 = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearVal5() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         val5_ = 0;
         onChanged();
         return this;
@@ -19204,9 +19338,9 @@ public final class RealDataNew {
       private java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.SGSMO> sgsDatas_ =
         java.util.Collections.emptyList();
       private void ensureSgsDatasIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           sgsDatas_ = new java.util.ArrayList<com.hoymiles.infrastructure.protos.RealDataNew.SGSMO>(sgsDatas_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
          }
       }
 
@@ -19356,7 +19490,7 @@ public final class RealDataNew {
       public Builder clearSgsDatas() {
         if (sgsDatasBuilder_ == null) {
           sgsDatas_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
           onChanged();
         } else {
           sgsDatasBuilder_.clear();
@@ -19433,7 +19567,7 @@ public final class RealDataNew {
           sgsDatasBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.hoymiles.infrastructure.protos.RealDataNew.SGSMO, com.hoymiles.infrastructure.protos.RealDataNew.SGSMO.Builder, com.hoymiles.infrastructure.protos.RealDataNew.SGSMOOrBuilder>(
                   sgsDatas_,
-                  ((bitField0_ & 0x00000010) != 0),
+                  ((bitField0_ & 0x00000020) != 0),
                   getParentForChildren(),
                   isClean());
           sgsDatas_ = null;
@@ -19444,9 +19578,9 @@ public final class RealDataNew {
       private java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.PvMO> pvDatas_ =
         java.util.Collections.emptyList();
       private void ensurePvDatasIsMutable() {
-        if (!((bitField0_ & 0x00000020) != 0)) {
+        if (!((bitField0_ & 0x00000040) != 0)) {
           pvDatas_ = new java.util.ArrayList<com.hoymiles.infrastructure.protos.RealDataNew.PvMO>(pvDatas_);
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
          }
       }
 
@@ -19596,7 +19730,7 @@ public final class RealDataNew {
       public Builder clearPvDatas() {
         if (pvDatasBuilder_ == null) {
           pvDatas_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000040);
           onChanged();
         } else {
           pvDatasBuilder_.clear();
@@ -19673,7 +19807,7 @@ public final class RealDataNew {
           pvDatasBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.hoymiles.infrastructure.protos.RealDataNew.PvMO, com.hoymiles.infrastructure.protos.RealDataNew.PvMO.Builder, com.hoymiles.infrastructure.protos.RealDataNew.PvMOOrBuilder>(
                   pvDatas_,
-                  ((bitField0_ & 0x00000020) != 0),
+                  ((bitField0_ & 0x00000040) != 0),
                   getParentForChildren(),
                   isClean());
           pvDatas_ = null;
@@ -19831,15 +19965,17 @@ public final class RealDataNew {
       "link\030\023 \002(\005\022\020\n\010miSignal\030\024 \002(\005\"w\n\004PvMO\022\n\n\002" +
       "sn\030\001 \002(\003\022\n\n\002pi\030\002 \002(\005\022\014\n\001v\030\003 \001(\005:\0010\022\014\n\001i\030" +
       "\004 \001(\005:\0010\022\014\n\001p\030\005 \001(\005:\0010\022\r\n\002et\030\006 \001(\005:\0010\022\r\n" +
-      "\002ed\030\007 \001(\005:\0010\022\017\n\004code\030\010 \001(\005:\0010\"\206\001\n\007Msg871" +
-      "6\022\r\n\005dtuSn\030\001 \002(\014\022\014\n\004time\030\002 \002(\r\022\014\n\004val3\030\003" +
-      " \002(\r\022\014\n\004val5\030\005 \002(\r\022!\n\010sgsDatas\030\t \003(\0132\017.h" +
-      "oymiles.SGSMO\022\037\n\007pvDatas\030\013 \003(\0132\016.hoymile" +
-      "s.PvMO\"\206\001\n\007Msg8717\022\r\n\005dtuSn\030\001 \002(\014\022\014\n\004tim" +
-      "e\030\002 \002(\r\022\014\n\004val3\030\003 \002(\r\022\014\n\004val5\030\005 \002(\r\022!\n\010s" +
-      "gsDatas\030\t \003(\0132\017.hoymiles.SGSMO\022\037\n\007pvData" +
-      "s\030\013 \003(\0132\016.hoymiles.PvMOB3\n\"com.hoymiles." +
-      "infrastructure.protosB\013RealDataNewP\000"
+      "\002ed\030\007 \001(\005:\0010\022\017\n\004code\030\010 \001(\005:\0010\"\243\001\n\007Msg871" +
+      "6\022\r\n\005dtuSn\030\001 \002(\014\022\014\n\004time\030\002 \002(\r\022\023\n\013packet" +
+      "Count\030\003 \002(\r\022\024\n\tpacketNum\030\004 \001(\r:\0010\022\014\n\004val" +
+      "5\030\005 \002(\r\022!\n\010sgsDatas\030\t \003(\0132\017.hoymiles.SGS" +
+      "MO\022\037\n\007pvDatas\030\013 \003(\0132\016.hoymiles.PvMO\"\243\001\n\007" +
+      "Msg8717\022\r\n\005dtuSn\030\001 \002(\014\022\014\n\004time\030\002 \002(\r\022\023\n\013" +
+      "packetCount\030\003 \002(\r\022\024\n\tpacketNum\030\004 \001(\r:\0010\022" +
+      "\014\n\004val5\030\005 \002(\r\022!\n\010sgsDatas\030\t \003(\0132\017.hoymil" +
+      "es.SGSMO\022\037\n\007pvDatas\030\013 \003(\0132\016.hoymiles.PvM" +
+      "OB3\n\"com.hoymiles.infrastructure.protosB" +
+      "\013RealDataNewP\000"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -19898,13 +20034,13 @@ public final class RealDataNew {
     internal_static_hoymiles_Msg8716_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_hoymiles_Msg8716_descriptor,
-        new java.lang.String[] { "DtuSn", "Time", "Val3", "Val5", "SgsDatas", "PvDatas", });
+        new java.lang.String[] { "DtuSn", "Time", "PacketCount", "PacketNum", "Val5", "SgsDatas", "PvDatas", });
     internal_static_hoymiles_Msg8717_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_hoymiles_Msg8717_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_hoymiles_Msg8717_descriptor,
-        new java.lang.String[] { "DtuSn", "Time", "Val3", "Val5", "SgsDatas", "PvDatas", });
+        new java.lang.String[] { "DtuSn", "Time", "PacketCount", "PacketNum", "Val5", "SgsDatas", "PvDatas", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

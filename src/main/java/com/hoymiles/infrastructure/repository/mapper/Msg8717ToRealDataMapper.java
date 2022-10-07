@@ -15,10 +15,9 @@ public class Msg8717ToRealDataMapper implements GenericMapper<RealDataNew.Msg871
     public RealData map(RealDataNew.Msg8717 src) {
         return RealData.builder()
                 .dtuSn(src.getDtuSn().toString(StandardCharsets.ISO_8859_1))
-                .powerTotal(src.getSgsDatasList().stream().map(v -> (float) v.getP() / 10f).reduce(0f, Float::sum))
-                .energyTotal(src.getPvDatasList().stream().map(RealDataNew.PvMO::getEt).reduce(0, Integer::sum))
-                .energyToday(src.getPvDatasList().stream().map(RealDataNew.PvMO::getEd).reduce(0, Integer::sum))
                 .time(src.getTime())
+                .packetCount(src.getPacketCount())
+                .packetNum(src.getPacketNum())
                 .inverters(src.getSgsDatasList().stream().map(
                         src1 -> RealData.SGSMO.builder()
                                 .sn(DeviceUtils.decToHex(String.valueOf(src1.getSn())))

@@ -3,6 +3,7 @@ package com.hoymiles.domain.model;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
 import java.util.List;
@@ -18,6 +19,8 @@ public class RealData implements Serializable {
     private int energyTotal;
     private int energyToday;
     private int time;               // timestamp
+    private int packetNum;
+    private int packetCount;
 
     @Getter
     @Setter
@@ -48,5 +51,23 @@ public class RealData implements Serializable {
         private int energyTotal;    // energy total (Wh)
         private int energyToday;    // energy daily (Wh)
         private int time;           // timestamp
+    }
+
+    public RealData calculate() {
+        powerTotal = inverters.stream().map(SGSMO::getGridPower).reduce(0f, Float::sum);
+        energyToday = panels.stream().map(PvMO::getEnergyToday).reduce(0, Integer::sum);
+        energyTotal = panels.stream().map(PvMO::getEnergyTotal).reduce(0, Integer::sum);
+        return this;
+    }
+
+    public RealData merge(@NotNull RealData other) {
+        inverters.addAll(other.inverters);
+        panels.addAll(other.panels);
+        time = other.time;
+        packetNum = other.packetNum;
+        packetCount = other.packetCount;
+
+        // recalculate
+        return calculate();
     }
 }

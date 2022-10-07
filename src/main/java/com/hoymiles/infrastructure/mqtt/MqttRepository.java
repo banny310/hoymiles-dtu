@@ -45,16 +45,9 @@ public class MqttRepository implements IMqttRepository {
     @Override
     public void sendRealData(@NotNull RealData realData) {
         try {
-            // NOTICE: DTU in large installations divides data in two separate messages
-            // One of them contains inverters and some panels, other one contains only panels
-            // For example: installation with 6 inverters and 24 panels
-            // Message 1: 6 inverters, 8 panels
-            // Message 2: 0 inverters, 16 panels
-            if (realData.getInverters().size() > 0) {
-                String dtuId = String.format("dtu_%s", realData.getDtuSn());
-                DtuRealDataDTO dto = modelMapper.map(realData, DtuRealDataDTO.class);
-                mqttClient.publish("hoymiles-dtu/" + dtuId, gson.toJson(dto).getBytes(), 1, false);
-            }
+            String dtuId = String.format("dtu_%s", realData.getDtuSn());
+            DtuRealDataDTO dto = modelMapper.map(realData, DtuRealDataDTO.class);
+            mqttClient.publish("hoymiles-dtu/" + dtuId, gson.toJson(dto).getBytes(), 1, false);
 
             for (RealData.SGSMO sgsmo : realData.getInverters()) {
                 String invId = String.format("inv_%s", sgsmo.getSn());
