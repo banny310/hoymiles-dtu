@@ -100,6 +100,7 @@ public class App {
         // initialize connection to DTU
         String dtuHost = config.getString("dtu.host");
         int dtuPort = config.getInt("dtu.port");
+        int watchdogTimeout = config.getInt("dtu.watchdog_timeout");
         assert dtuHost != null;
         assert dtuPort != 0;
 
@@ -107,7 +108,7 @@ public class App {
         //noinspection ResultOfMethodCallIgnored
         Observable.create(emitter -> {
                     dtuClient.setListener(new DtuClientListenerExecutorWrapper(dtuListener, executor));
-                    dtuClient.connect(dtuHost, dtuPort);
+                    dtuClient.connect(dtuHost, dtuPort, watchdogTimeout);
                     emitter.onNext(1);
                 })
                 .retryWhen(RxUtils.retryPredicate(

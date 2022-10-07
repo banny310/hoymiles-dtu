@@ -4,7 +4,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.hoymiles.domain.event.RealDataEvent;
 import com.hoymiles.domain.model.RealData;
-import com.hoymiles.infrastructure.dtu.DtuClient;
 import com.hoymiles.infrastructure.dtu.DtuMessageRouter;
 import com.hoymiles.infrastructure.dtu.utils.DateUtil;
 import com.hoymiles.infrastructure.gson.DateAdapter;
@@ -33,7 +32,6 @@ import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
 
 import java.util.Date;
-import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ExecutorService;
@@ -75,12 +73,6 @@ public class BeanFactory {
     public IMqttClient getMqttClient(@NotNull MqttConnectionConfigProvider connectionUriProvider, @NotNull BeanManager beanManager) throws MqttException {
         String publisherId = "mqtt_hoymiles_dtu_" + UUID.randomUUID();
         return new MqttClient(connectionUriProvider.getConnectionUri(), publisherId, new MemoryPersistence());
-    }
-
-    @Produces
-    @Singleton
-    public DtuClient getDtuClient(@NotNull Config config, @NotNull BeanManager beanManager) {
-        return new DtuClient(beanManager);
     }
 
     @Produces

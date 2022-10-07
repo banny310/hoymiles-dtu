@@ -15,7 +15,8 @@ import io.netty.handler.codec.ByteToMessageDecoder;
 import io.netty.handler.timeout.IdleStateHandler;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.ObservableEmitter;
-import jakarta.enterprise.inject.spi.BeanManager;
+import io.reactivex.rxjava3.disposables.Disposable;
+import jakarta.enterprise.context.ApplicationScoped;
 import lombok.SneakyThrows;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.lang3.tuple.ImmutablePair;
@@ -29,6 +30,7 @@ import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Predicate;
 
+@ApplicationScoped
 @Log4j2
 public class DtuClient {
     public interface Listener {
@@ -39,15 +41,15 @@ public class DtuClient {
         void onConnectionLost(Throwable cause);
     }
 
-    private final BeanManager beanManager;
+    private int watchdogTimeout;
+
     private final EventLoopGroup group;
     private final List<Pair<Integer, ObservableEmitter<? extends Message>>> emitters = new ArrayList<>();
     private Channel channel;
     private Listener listener;
+    private Disposable disposable;
 
-    public DtuClient(BeanManager beanManager) {
-        this.beanManager = beanManager;
-
+    public DtuClient() {
         group = new NioEventLoopGroup(1);
     }
 
@@ -57,7 +59,7 @@ public class DtuClient {
                 .orElse(false);
     }
 
-    public void connect(String host, int port) throws InterruptedException {
+    public void connect(String host, int port, int watchdogTimeout) throws InterruptedException {
         Bootstrap bootstrap = new Bootstrap();
         bootstrap.group(group);
         bootstrap.channel(NioSocketChannel.class);
@@ -82,6 +84,15 @@ public class DtuClient {
             log.info(String.format("Connect success to %s:%d", host, port));
         } else {
             log.warn("Connect error!");
+        }
+    }
+
+    public void disconnect() {
+        if (isConnected()) {
+            log.info("Disconnecting from DTU...");
+            ChannelFuture closeFuture = channel.disconnect();
+            closeFuture.awaitUninterruptibly();
+            group.shutdownGracefully(2, 5, TimeUnit.SECONDS);
         }
     }
 
@@ -184,6 +195,18 @@ public class DtuClient {
                 // it is event if not consumed
                 if (!consumed) {
                     listener.onEvent(dtuMsg);
+                }
+
+                // start watchdog after each packet receive
+                if (watchdogTimeout > 0) {
+                    Optional.ofNullable(disposable).ifPresent(Disposable::dispose);
+                    disposable = Observable.just("Watchdog timeout")
+                            .delay(watchdogTimeout, TimeUnit.SECONDS)
+                            .subscribe(s -> {
+                                log.warn(s);
+                                ChannelFuture closeFuture = channel.disconnect();
+                                closeFuture.awaitUninterruptibly();
+                            });
                 }
 
 //                if (((DtuMessage) msg).getCode() == 8706) {
