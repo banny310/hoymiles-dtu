@@ -20,6 +20,7 @@ public final class AppInfo {
     public static final class DtuInfo {
         // 520 -> V00.02.08
         // 522 -> V00.02.10
+        // 527 -> V00.02.0F
         private int dtuSw;
 
         // 37122 -> H09.01.02

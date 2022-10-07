@@ -40,7 +40,7 @@ public class RxUtils {
      * Retry Handler Support
      *
      * @param predicate      filter error
-     * @param maxTry         max attempts
+     * @param maxTry         max attempts (-1 == unlimited)
      * @param periodStrategy delay
      * @param timeUnit       unit
      */
@@ -54,11 +54,11 @@ public class RxUtils {
         return (error) -> error.doOnNext(e -> {
                     errorCount.increment();
                     long currentCount = errorCount.longValue();
-                    boolean tryContinue = predicate.test(e) && currentCount < maxTry;
+                    boolean tryContinue = predicate.test(e) && (maxTry == -1 || currentCount < maxTry);
                     logger.info(String.format("No. of errors: %d %s, %s", currentCount, e.getClass(),
                             tryContinue
-                                    ? String.format("please wait %d %s.", periodStrategy.apply(currentCount), timeUnit.name())
-                                    : "skip and throw"));
+                                    ? String.format("retrying in %d %s...", periodStrategy.apply(currentCount), timeUnit.name().toLowerCase())
+                                    : "skip and throw."));
                     if (!tryContinue)
                         throw e;
                 })

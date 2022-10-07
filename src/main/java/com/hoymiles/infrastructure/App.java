@@ -9,7 +9,6 @@ import com.hoymiles.infrastructure.dtu.utils.RxUtils;
 import com.hoymiles.infrastructure.mqtt.MqttConnectedEvent;
 import com.hoymiles.infrastructure.mqtt.MqttConnectionConfigProvider;
 import com.typesafe.config.Config;
-import io.netty.channel.ConnectTimeoutException;
 import io.reactivex.rxjava3.core.Observable;
 import jakarta.enterprise.context.Dependent;
 import jakarta.enterprise.inject.spi.BeanManager;
@@ -103,8 +102,9 @@ public class App {
         int watchdogTimeout = config.getInt("dtu.watchdog_timeout");
         assert dtuHost != null;
         assert dtuPort != 0;
+        assert watchdogTimeout >= 0;
 
-        log.info("Connecting to DTU: " + dtuHost + ":" + dtuPort);
+        log.info("Connecting to DTU: {}:{} (watchdog_timeout={})", dtuHost, dtuPort, watchdogTimeout);
         //noinspection ResultOfMethodCallIgnored
         Observable.create(emitter -> {
                     dtuClient.setListener(new DtuClientListenerExecutorWrapper(dtuListener, executor));
@@ -114,10 +114,9 @@ public class App {
                 .retryWhen(RxUtils.retryPredicate(
                         e -> {
                             log.warn("DTU connection error: " + e.getMessage());
-                            log.warn("Retrying...");
-                            return e instanceof ConnectTimeoutException;
-                        }, 3,
-                        count -> (long) Math.pow(2, count - 1), TimeUnit.SECONDS))
+                            return true; //e instanceof ConnectTimeoutException;
+                        }, -1,
+                        count -> Math.min((long) Math.pow(2, count - 1), 300), TimeUnit.SECONDS))
                 .blockingFirst();
         log.info("DTU connection success");
     }
@@ -125,7 +124,6 @@ public class App {
     private void initMqttConnection() {
         log.info("Connecting to MQTT: {}", connectionConfigProvider.getConnectionUri());
 
-        //noinspection ResultOfMethodCallIgnored
         Observable.create(emitter -> {
                     mqttClient.setCallback(mqttCallback);
                     mqttClient.connect(connectionConfigProvider.getConnectionOptions());
@@ -135,8 +133,8 @@ public class App {
                             log.warn("Mqtt connection error: " + e.getMessage());
                             log.warn("Retrying...");
                             return true;
-                        }, 3,
-                        count -> (long) Math.pow(2, count - 1), TimeUnit.SECONDS))
+                        }, -1,
+                        count -> Math.min((long) Math.pow(2, count - 1), 300), TimeUnit.SECONDS))
                 .blockingFirst();
 
         log.info("MQTT connection success");

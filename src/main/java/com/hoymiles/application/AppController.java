@@ -60,7 +60,7 @@ public class AppController {
      */
     @Handler
     public Void handleSolarData(@Observes @Priority(1) @NotNull RealDataEvent command) {
-        log.info("Incoming new metrics {}@{}", getClass().getName(), System.identityHashCode(this));
+        log.info("Incoming new metrics");
         try {
             RealData data = command.getRealData();
             if (!pvAutodiscoverySent) {

@@ -40,14 +40,12 @@ public class DtuClient {
 
         void onConnectionLost(Throwable cause);
     }
-
-    private int watchdogTimeout;
-
     private final EventLoopGroup group;
     private final List<Pair<Integer, ObservableEmitter<? extends Message>>> emitters = new ArrayList<>();
     private Channel channel;
     private Listener listener;
     private Disposable disposable;
+    private int watchdogTimeout;
 
     public DtuClient() {
         group = new NioEventLoopGroup(1);
@@ -60,6 +58,8 @@ public class DtuClient {
     }
 
     public void connect(String host, int port, int watchdogTimeout) throws InterruptedException {
+        this.watchdogTimeout = watchdogTimeout;
+
         Bootstrap bootstrap = new Bootstrap();
         bootstrap.group(group);
         bootstrap.channel(NioSocketChannel.class);
