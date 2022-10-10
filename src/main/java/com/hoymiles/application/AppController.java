@@ -60,9 +60,9 @@ public class AppController {
      */
     @Handler
     public Void handleSolarData(@Observes @Priority(1) @NotNull RealDataEvent command) {
-        log.info("Incoming new metrics");
+        RealData data = command.getRealData();
+        log.info("Incoming new metrics: time={}", data.getTime());
         try {
-            RealData data = command.getRealData();
             if (!pvAutodiscoverySent) {
                 autodiscoveryService.registerPvAutodiscovery(data.getPanels());
                 pvAutodiscoverySent = true;
@@ -98,7 +98,8 @@ public class AppController {
         log.info("Getting AppInfo from DTU...");
         AppInfo appInfo = dtuRepository.getAppInfo();
 
-        log.info("DTU: hw={}, sw={}", appInfo.getDtuInfo().getDtuHw(), appInfo.getDtuInfo().getDtuSw());
+
+        log.info("DTU: hw={}, sw={}, time={}", appInfo.getDtuInfo().getDtuHw(), appInfo.getDtuInfo().getDtuSw(), appInfo.getTime());
 
         log.info("Sending autodiscovery...");
         autodiscoveryService.registerHomeAssistantAutodiscovery(appInfo);

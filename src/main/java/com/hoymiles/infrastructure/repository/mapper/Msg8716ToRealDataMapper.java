@@ -7,6 +7,9 @@ import com.hoymiles.infrastructure.protos.RealDataNew;
 import jakarta.enterprise.context.Dependent;
 
 import java.nio.charset.StandardCharsets;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.stream.Collectors;
 
 @Dependent
@@ -15,7 +18,7 @@ public class Msg8716ToRealDataMapper implements GenericMapper<RealDataNew.Msg871
     public RealData map(RealDataNew.Msg8716 src) {
         return RealData.builder()
                 .dtuSn(src.getDtuSn().toString(StandardCharsets.ISO_8859_1))
-                .time(src.getTime())
+                .time(LocalDateTime.ofInstant(Instant.ofEpochSecond(src.getTime()), ZoneId.of("Europe/Warsaw")))
                 .packetCount(src.getPacketCount())
                 .packetNum(src.getPacketNum())
                 .inverters(src.getSgsDatasList().stream().map(

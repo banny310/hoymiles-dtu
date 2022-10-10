@@ -4,12 +4,14 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
 @Setter
 @Builder
 public final class AppInfo {
+    private LocalDateTime time;
     private String dtuSn;
     private DtuInfo dtuInfo;
     private List<SgsInfo> sgsInfo;

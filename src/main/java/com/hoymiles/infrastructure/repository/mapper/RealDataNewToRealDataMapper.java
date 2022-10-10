@@ -4,9 +4,12 @@ import com.hoymiles.domain.model.RealData;
 import com.hoymiles.infrastructure.GenericMapper;
 import com.hoymiles.infrastructure.dtu.utils.DeviceUtils;
 import com.hoymiles.infrastructure.protos.RealDataNew;
-
 import jakarta.enterprise.context.Dependent;
+
 import java.nio.charset.StandardCharsets;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.stream.Collectors;
 
 @Dependent
@@ -18,7 +21,7 @@ public class RealDataNewToRealDataMapper implements GenericMapper<RealDataNew.Re
                 .powerTotal(src.getSgsDatasList().stream().map(v -> (float) v.getP() / 10f).reduce(0f, Float::sum))
                 .energyTotal(src.getPvDatasList().stream().map(RealDataNew.PvMO::getEt).reduce(0, Integer::sum))
                 .energyToday(src.getPvDatasList().stream().map(RealDataNew.PvMO::getEd).reduce(0, Integer::sum))
-                .time(src.getTime())
+                .time(LocalDateTime.ofInstant(Instant.ofEpochSecond(src.getTime()), ZoneId.of("Europe/Warsaw")))
                 .inverters(src.getSgsDatasList().stream().map(
                         src1 -> RealData.SGSMO.builder()
                                 .sn(DeviceUtils.decToHex(String.valueOf(src1.getSn())))

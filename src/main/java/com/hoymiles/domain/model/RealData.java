@@ -6,6 +6,7 @@ import lombok.Setter;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
@@ -18,7 +19,7 @@ public class RealData implements Serializable {
     private float powerTotal;
     private int energyTotal;
     private int energyToday;
-    private int time;               // timestamp
+    private LocalDateTime time;               // timestamp
     private int packetNum;
     private int packetCount;
 
