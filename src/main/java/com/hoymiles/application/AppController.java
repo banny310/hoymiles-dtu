@@ -24,6 +24,8 @@ import lombok.extern.log4j.Log4j2;
 import org.jetbrains.annotations.NotNull;
 
 import java.nio.charset.StandardCharsets;
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
@@ -62,6 +64,13 @@ public class AppController {
     public Void handleSolarData(@Observes @Priority(1) @NotNull RealDataEvent command) {
         RealData data = command.getRealData();
         log.info("Incoming new metrics: time={}", data.getTime());
+        // make sure metrics are not older than 5 minutes
+        if (!LocalDateTime.now().minusMinutes(5).isBefore(data.getTime())) {
+            long minutes = ChronoUnit.MINUTES.between(data.getTime(), LocalDateTime.now());
+            log.warn("Metrics are {} minutes old. Discarding.", minutes);
+            return null;
+        }
+
         try {
             if (!pvAutodiscoverySent) {
                 autodiscoveryService.registerPvAutodiscovery(data.getPanels());
@@ -71,7 +80,7 @@ public class AppController {
             int nextPacketNum = Optional.ofNullable(lastRealData)
                     .map(realData -> realData.getPacketNum() + 1)
                     .orElse(0);
-            log.info("Packet received: num={}, count={}, expected={}", data.getPacketNum(), data.getPacketCount(), nextPacketNum);
+            log.info("Packet received: num={}, expected={}, count={}", data.getPacketNum(), nextPacketNum, data.getPacketCount());
 
             if (data.getPacketNum() == nextPacketNum) {
                 // merge incoming packet with previously stored
