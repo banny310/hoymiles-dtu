@@ -18,7 +18,7 @@ public class APPInformationData2AppInfoMapper implements GenericMapper<APPInform
     public AppInfo map(APPInformationData.APPInfoDataReqDTO src) {
         return AppInfo.builder()
                 .dtuSn(src.getDtuSn().toString(StandardCharsets.ISO_8859_1))
-                .time(LocalDateTime.ofInstant(Instant.ofEpochSecond(src.getTime()), ZoneId.of("Europe/Warsaw")))
+                .time(LocalDateTime.ofInstant(Instant.ofEpochSecond(src.getTime()), ZoneId.systemDefault()))
                 .dtuInfo(AppInfo.DtuInfo.builder()
                         .dtuSw(src.getMAPPDtuInfo().getDtuSw())
                         .dtuHw(src.getMAPPDtuInfo().getDtuHw())

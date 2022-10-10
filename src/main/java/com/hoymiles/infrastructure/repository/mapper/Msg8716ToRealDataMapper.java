@@ -18,7 +18,7 @@ public class Msg8716ToRealDataMapper implements GenericMapper<RealDataNew.Msg871
     public RealData map(RealDataNew.Msg8716 src) {
         return RealData.builder()
                 .dtuSn(src.getDtuSn().toString(StandardCharsets.ISO_8859_1))
-                .time(LocalDateTime.ofInstant(Instant.ofEpochSecond(src.getTime()), ZoneId.of("Europe/Warsaw")))
+                .time(LocalDateTime.ofInstant(Instant.ofEpochSecond(src.getTime()), ZoneId.systemDefault()))
                 .packetCount(src.getPacketCount())
                 .packetNum(src.getPacketNum())
                 .inverters(src.getSgsDatasList().stream().map(

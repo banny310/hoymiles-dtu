@@ -3,9 +3,9 @@ package com.hoymiles;
 import com.hoymiles.infrastructure.App;
 import jakarta.enterprise.inject.se.SeContainer;
 import jakarta.enterprise.inject.se.SeContainerInitializer;
-import lombok.SneakyThrows;
 import lombok.extern.log4j.Log4j2;
 
+import java.time.ZoneId;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.TimeUnit;
 
@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit;
 public class Entrypoint {
     public static void main(String[] args) throws InterruptedException {
         log.info("Starting...");
+        log.info("TimeZone: {}", ZoneId.systemDefault().toString());
 
         final SeContainerInitializer initializer = SeContainerInitializer.newInstance();
         final SeContainer container = initializer.initialize();

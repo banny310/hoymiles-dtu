@@ -21,7 +21,7 @@ public class RealDataNewToRealDataMapper implements GenericMapper<RealDataNew.Re
                 .powerTotal(src.getSgsDatasList().stream().map(v -> (float) v.getP() / 10f).reduce(0f, Float::sum))
                 .energyTotal(src.getPvDatasList().stream().map(RealDataNew.PvMO::getEt).reduce(0, Integer::sum))
                 .energyToday(src.getPvDatasList().stream().map(RealDataNew.PvMO::getEd).reduce(0, Integer::sum))
-                .time(LocalDateTime.ofInstant(Instant.ofEpochSecond(src.getTime()), ZoneId.of("Europe/Warsaw")))
+                .time(LocalDateTime.ofInstant(Instant.ofEpochSecond(src.getTime()), ZoneId.systemDefault()))
                 .inverters(src.getSgsDatasList().stream().map(
                         src1 -> RealData.SGSMO.builder()
                                 .sn(DeviceUtils.decToHex(String.valueOf(src1.getSn())))

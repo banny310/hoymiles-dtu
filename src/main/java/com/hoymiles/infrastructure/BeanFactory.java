@@ -31,6 +31,8 @@ import org.jetbrains.annotations.NotNull;
 import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.UUID;
 import java.util.concurrent.BlockingQueue;
@@ -98,6 +100,7 @@ public class BeanFactory {
         Converter<Float, Float> divide1000f = ctx -> formatter.format3fd(ctx.getSource() / 1000f);
         Converter<Integer, Float> divide1000fInt = ctx -> formatter.format3fd(Float.valueOf(ctx.getSource()) / 1000f);
         Converter<Integer, Date> timestamp2Date = ctx -> new Date(ctx.getSource() * 1000L);
+        Converter<LocalDateTime, Date> localDateTime2Date = ctx -> Date.from(ctx.getSource().atZone(ZoneId.systemDefault()).toInstant());
         modelMapper.typeMap(RealData.class, DtuRealDataDTO.class)
                 .addMappings(mapper -> {
                     mapper.using(format0fc).map(RealData::getPowerTotal, DtuRealDataDTO::setPowerTotalW);
@@ -106,7 +109,7 @@ public class BeanFactory {
                     mapper.using(divide1000fInt).map(RealData::getEnergyToday, DtuRealDataDTO::setEnergyTodayKWh);
                     mapper.using(divide1000fInt).map(RealData::getEnergyTotal, DtuRealDataDTO::setEnergyTotalKWh);
                     mapper.map(RealData::getEnergyTotal, DtuRealDataDTO::setEnergyTotalWh);
-                    mapper.using(timestamp2Date).map(RealData::getTime, DtuRealDataDTO::setLastSeen);
+                    mapper.using(localDateTime2Date).map(RealData::getTime, DtuRealDataDTO::setLastSeen);
                 });
 
 
