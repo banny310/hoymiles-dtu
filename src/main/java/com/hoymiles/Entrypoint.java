@@ -31,6 +31,7 @@ public class Entrypoint {
                 app.run();
             } catch (Exception e) {
                 log.error("Uncaught exception: " + e.getMessage(), e);
+                app.halt();
             }
         });
 
