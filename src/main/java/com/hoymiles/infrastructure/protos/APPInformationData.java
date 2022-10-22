@@ -6178,12 +6178,12 @@ public final class APPInformationData {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required int32 deviceKind = 1;</code>
+     * <code>optional int32 deviceKind = 1;</code>
      * @return Whether the deviceKind field is set.
      */
     boolean hasDeviceKind();
     /**
-     * <code>required int32 deviceKind = 1;</code>
+     * <code>optional int32 deviceKind = 1;</code>
      * @return The deviceKind.
      */
     int getDeviceKind();
@@ -6211,12 +6211,12 @@ public final class APPInformationData {
     int getMeterModel();
 
     /**
-     * <code>required int32 meterCt = 4;</code>
+     * <code>optional int32 meterCt = 4;</code>
      * @return Whether the meterCt field is set.
      */
     boolean hasMeterCt();
     /**
-     * <code>required int32 meterCt = 4;</code>
+     * <code>optional int32 meterCt = 4;</code>
      * @return The meterCt.
      */
     int getMeterCt();
@@ -6233,34 +6233,34 @@ public final class APPInformationData {
     int getComWay();
 
     /**
-     * <code>required int32 accessMode = 6;</code>
+     * <code>optional int32 accessMode = 6;</code>
      * @return Whether the accessMode field is set.
      */
     boolean hasAccessMode();
     /**
-     * <code>required int32 accessMode = 6;</code>
+     * <code>optional int32 accessMode = 6;</code>
      * @return The accessMode.
      */
     int getAccessMode();
 
     /**
-     * <code>required int32 swVsn = 7;</code>
+     * <code>optional int32 swVsn = 7;</code>
      * @return Whether the swVsn field is set.
      */
     boolean hasSwVsn();
     /**
-     * <code>required int32 swVsn = 7;</code>
+     * <code>optional int32 swVsn = 7;</code>
      * @return The swVsn.
      */
     int getSwVsn();
 
     /**
-     * <code>required bytes meterVal = 8;</code>
+     * <code>optional bytes meterVal = 8;</code>
      * @return Whether the meterVal field is set.
      */
     boolean hasMeterVal();
     /**
-     * <code>required bytes meterVal = 8;</code>
+     * <code>optional bytes meterVal = 8;</code>
      * @return The meterVal.
      */
     com.google.protobuf.ByteString getMeterVal();
@@ -6388,7 +6388,7 @@ public final class APPInformationData {
     public static final int DEVICEKIND_FIELD_NUMBER = 1;
     private int deviceKind_;
     /**
-     * <code>required int32 deviceKind = 1;</code>
+     * <code>optional int32 deviceKind = 1;</code>
      * @return Whether the deviceKind field is set.
      */
     @java.lang.Override
@@ -6396,7 +6396,7 @@ public final class APPInformationData {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>required int32 deviceKind = 1;</code>
+     * <code>optional int32 deviceKind = 1;</code>
      * @return The deviceKind.
      */
     @java.lang.Override
@@ -6445,7 +6445,7 @@ public final class APPInformationData {
     public static final int METERCT_FIELD_NUMBER = 4;
     private int meterCt_;
     /**
-     * <code>required int32 meterCt = 4;</code>
+     * <code>optional int32 meterCt = 4;</code>
      * @return Whether the meterCt field is set.
      */
     @java.lang.Override
@@ -6453,7 +6453,7 @@ public final class APPInformationData {
       return ((bitField0_ & 0x00000008) != 0);
     }
     /**
-     * <code>required int32 meterCt = 4;</code>
+     * <code>optional int32 meterCt = 4;</code>
      * @return The meterCt.
      */
     @java.lang.Override
@@ -6483,7 +6483,7 @@ public final class APPInformationData {
     public static final int ACCESSMODE_FIELD_NUMBER = 6;
     private int accessMode_;
     /**
-     * <code>required int32 accessMode = 6;</code>
+     * <code>optional int32 accessMode = 6;</code>
      * @return Whether the accessMode field is set.
      */
     @java.lang.Override
@@ -6491,7 +6491,7 @@ public final class APPInformationData {
       return ((bitField0_ & 0x00000020) != 0);
     }
     /**
-     * <code>required int32 accessMode = 6;</code>
+     * <code>optional int32 accessMode = 6;</code>
      * @return The accessMode.
      */
     @java.lang.Override
@@ -6502,7 +6502,7 @@ public final class APPInformationData {
     public static final int SWVSN_FIELD_NUMBER = 7;
     private int swVsn_;
     /**
-     * <code>required int32 swVsn = 7;</code>
+     * <code>optional int32 swVsn = 7;</code>
      * @return Whether the swVsn field is set.
      */
     @java.lang.Override
@@ -6510,7 +6510,7 @@ public final class APPInformationData {
       return ((bitField0_ & 0x00000040) != 0);
     }
     /**
-     * <code>required int32 swVsn = 7;</code>
+     * <code>optional int32 swVsn = 7;</code>
      * @return The swVsn.
      */
     @java.lang.Override
@@ -6521,7 +6521,7 @@ public final class APPInformationData {
     public static final int METERVAL_FIELD_NUMBER = 8;
     private com.google.protobuf.ByteString meterVal_;
     /**
-     * <code>required bytes meterVal = 8;</code>
+     * <code>optional bytes meterVal = 8;</code>
      * @return Whether the meterVal field is set.
      */
     @java.lang.Override
@@ -6529,7 +6529,7 @@ public final class APPInformationData {
       return ((bitField0_ & 0x00000080) != 0);
     }
     /**
-     * <code>required bytes meterVal = 8;</code>
+     * <code>optional bytes meterVal = 8;</code>
      * @return The meterVal.
      */
     @java.lang.Override
@@ -6544,10 +6544,6 @@ public final class APPInformationData {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasDeviceKind()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       if (!hasMeterSn()) {
         memoizedIsInitialized = 0;
         return false;
@@ -6556,23 +6552,7 @@ public final class APPInformationData {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasMeterCt()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       if (!hasComWay()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasAccessMode()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasSwVsn()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasMeterVal()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -7036,28 +7016,13 @@ public final class APPInformationData {
 
       @java.lang.Override
       public final boolean isInitialized() {
-        if (!hasDeviceKind()) {
-          return false;
-        }
         if (!hasMeterSn()) {
           return false;
         }
         if (!hasMeterModel()) {
           return false;
         }
-        if (!hasMeterCt()) {
-          return false;
-        }
         if (!hasComWay()) {
-          return false;
-        }
-        if (!hasAccessMode()) {
-          return false;
-        }
-        if (!hasSwVsn()) {
-          return false;
-        }
-        if (!hasMeterVal()) {
           return false;
         }
         return true;
@@ -7085,7 +7050,7 @@ public final class APPInformationData {
 
       private int deviceKind_ ;
       /**
-       * <code>required int32 deviceKind = 1;</code>
+       * <code>optional int32 deviceKind = 1;</code>
        * @return Whether the deviceKind field is set.
        */
       @java.lang.Override
@@ -7093,7 +7058,7 @@ public final class APPInformationData {
         return ((bitField0_ & 0x00000001) != 0);
       }
       /**
-       * <code>required int32 deviceKind = 1;</code>
+       * <code>optional int32 deviceKind = 1;</code>
        * @return The deviceKind.
        */
       @java.lang.Override
@@ -7101,7 +7066,7 @@ public final class APPInformationData {
         return deviceKind_;
       }
       /**
-       * <code>required int32 deviceKind = 1;</code>
+       * <code>optional int32 deviceKind = 1;</code>
        * @param value The deviceKind to set.
        * @return This builder for chaining.
        */
@@ -7112,7 +7077,7 @@ public final class APPInformationData {
         return this;
       }
       /**
-       * <code>required int32 deviceKind = 1;</code>
+       * <code>optional int32 deviceKind = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearDeviceKind() {
@@ -7202,7 +7167,7 @@ public final class APPInformationData {
 
       private int meterCt_ ;
       /**
-       * <code>required int32 meterCt = 4;</code>
+       * <code>optional int32 meterCt = 4;</code>
        * @return Whether the meterCt field is set.
        */
       @java.lang.Override
@@ -7210,7 +7175,7 @@ public final class APPInformationData {
         return ((bitField0_ & 0x00000008) != 0);
       }
       /**
-       * <code>required int32 meterCt = 4;</code>
+       * <code>optional int32 meterCt = 4;</code>
        * @return The meterCt.
        */
       @java.lang.Override
@@ -7218,7 +7183,7 @@ public final class APPInformationData {
         return meterCt_;
       }
       /**
-       * <code>required int32 meterCt = 4;</code>
+       * <code>optional int32 meterCt = 4;</code>
        * @param value The meterCt to set.
        * @return This builder for chaining.
        */
@@ -7229,7 +7194,7 @@ public final class APPInformationData {
         return this;
       }
       /**
-       * <code>required int32 meterCt = 4;</code>
+       * <code>optional int32 meterCt = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearMeterCt() {
@@ -7280,7 +7245,7 @@ public final class APPInformationData {
 
       private int accessMode_ ;
       /**
-       * <code>required int32 accessMode = 6;</code>
+       * <code>optional int32 accessMode = 6;</code>
        * @return Whether the accessMode field is set.
        */
       @java.lang.Override
@@ -7288,7 +7253,7 @@ public final class APPInformationData {
         return ((bitField0_ & 0x00000020) != 0);
       }
       /**
-       * <code>required int32 accessMode = 6;</code>
+       * <code>optional int32 accessMode = 6;</code>
        * @return The accessMode.
        */
       @java.lang.Override
@@ -7296,7 +7261,7 @@ public final class APPInformationData {
         return accessMode_;
       }
       /**
-       * <code>required int32 accessMode = 6;</code>
+       * <code>optional int32 accessMode = 6;</code>
        * @param value The accessMode to set.
        * @return This builder for chaining.
        */
@@ -7307,7 +7272,7 @@ public final class APPInformationData {
         return this;
       }
       /**
-       * <code>required int32 accessMode = 6;</code>
+       * <code>optional int32 accessMode = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearAccessMode() {
@@ -7319,7 +7284,7 @@ public final class APPInformationData {
 
       private int swVsn_ ;
       /**
-       * <code>required int32 swVsn = 7;</code>
+       * <code>optional int32 swVsn = 7;</code>
        * @return Whether the swVsn field is set.
        */
       @java.lang.Override
@@ -7327,7 +7292,7 @@ public final class APPInformationData {
         return ((bitField0_ & 0x00000040) != 0);
       }
       /**
-       * <code>required int32 swVsn = 7;</code>
+       * <code>optional int32 swVsn = 7;</code>
        * @return The swVsn.
        */
       @java.lang.Override
@@ -7335,7 +7300,7 @@ public final class APPInformationData {
         return swVsn_;
       }
       /**
-       * <code>required int32 swVsn = 7;</code>
+       * <code>optional int32 swVsn = 7;</code>
        * @param value The swVsn to set.
        * @return This builder for chaining.
        */
@@ -7346,7 +7311,7 @@ public final class APPInformationData {
         return this;
       }
       /**
-       * <code>required int32 swVsn = 7;</code>
+       * <code>optional int32 swVsn = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearSwVsn() {
@@ -7358,7 +7323,7 @@ public final class APPInformationData {
 
       private com.google.protobuf.ByteString meterVal_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>required bytes meterVal = 8;</code>
+       * <code>optional bytes meterVal = 8;</code>
        * @return Whether the meterVal field is set.
        */
       @java.lang.Override
@@ -7366,7 +7331,7 @@ public final class APPInformationData {
         return ((bitField0_ & 0x00000080) != 0);
       }
       /**
-       * <code>required bytes meterVal = 8;</code>
+       * <code>optional bytes meterVal = 8;</code>
        * @return The meterVal.
        */
       @java.lang.Override
@@ -7374,7 +7339,7 @@ public final class APPInformationData {
         return meterVal_;
       }
       /**
-       * <code>required bytes meterVal = 8;</code>
+       * <code>optional bytes meterVal = 8;</code>
        * @param value The meterVal to set.
        * @return This builder for chaining.
        */
@@ -7388,7 +7353,7 @@ public final class APPInformationData {
         return this;
       }
       /**
-       * <code>required bytes meterVal = 8;</code>
+       * <code>optional bytes meterVal = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearMeterVal() {
@@ -10025,10 +9990,10 @@ public final class APPInformationData {
       "\001(\005:\0010\022\025\n\nsub1GChnum\030\023 \001(\005:\0010\022\022\n\007sub1GRp" +
       "\030\024 \001(\005:\0010\022\027\n\014sub1GChtotal\030\025 \001(\005:\0010\022\020\n\010gp" +
       "rsImei\030\026 \002(\014\"\237\001\n\016APPMeterInfoMO\022\022\n\ndevic" +
-      "eKind\030\001 \002(\005\022\017\n\007meterSn\030\002 \002(\003\022\022\n\nmeterMod" +
-      "el\030\003 \002(\005\022\017\n\007meterCt\030\004 \002(\005\022\016\n\006comWay\030\005 \002(" +
-      "\005\022\022\n\naccessMode\030\006 \002(\005\022\r\n\005swVsn\030\007 \002(\005\022\020\n\010" +
-      "meterVal\030\010 \002(\014\"]\n\013APPRpInfoMO\022\022\n\ndeviceK" +
+      "eKind\030\001 \001(\005\022\017\n\007meterSn\030\002 \002(\003\022\022\n\nmeterMod" +
+      "el\030\003 \002(\005\022\017\n\007meterCt\030\004 \001(\005\022\016\n\006comWay\030\005 \002(" +
+      "\005\022\022\n\naccessMode\030\006 \001(\005\022\r\n\005swVsn\030\007 \001(\005\022\020\n\010" +
+      "meterVal\030\010 \001(\014\"]\n\013APPRpInfoMO\022\022\n\ndeviceK" +
       "ind\030\001 \002(\005\022\014\n\004rpSn\030\002 \002(\003\022\014\n\004rpSw\030\003 \002(\005\022\014\n" +
       "\004rpHw\030\004 \002(\005\022\020\n\010rpRuleId\030\005 \002(\005\"\316\001\n\013APPPvI" +
       "nfoMO\022\025\n\ndeviceKind\030\001 \001(\005:\0010\022\014\n\004pvSn\030\002 \002" +

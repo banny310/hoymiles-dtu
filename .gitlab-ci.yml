@@ -40,8 +40,8 @@ build-artifact:
   script:
     - docker build --build-arg JAR_FILE=artifacts/${APPLICATION_NAME}-${BUILD_VERSION}.jar --build-arg BUILD_FROM=${BUILD_FROM} --build-arg BUILD_ARCH=${BUILD_ARCH} --platform ${DOCKER_PLATFORM} --tag ${DOCKER_TAG}:latest --tag ${DOCKER_TAG}:${BUILD_VERSION} --file docker/Dockerfile .
     - docker login -u ${DOCKER_REGISTRY_USERNAME} -p ${HUBDOCKER_PASSWORD}
-    - docker push banny310/hoymiles-dtu-armv7:${BUILD_VERSION}
-    - docker push banny310/hoymiles-dtu-armv7:latest
+    - docker push ${DOCKER_TAG}:${BUILD_VERSION}
+    - docker push ${DOCKER_TAG}:latest
   tags:
     - docker
   only:

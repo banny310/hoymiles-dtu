@@ -168,7 +168,7 @@ public class DtuClient {
             } catch (NoHandlerException e) {
                 log.warn(e.getMessage());
             } catch (Throwable e) {
-                log.error(e);
+                log.error(e.getMessage(), e);
             } finally {
                 log.info("<-- end");
             }

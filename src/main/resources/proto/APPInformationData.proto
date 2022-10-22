@@ -54,14 +54,14 @@ message APPDtuInfoMO {
 }
 
 message APPMeterInfoMO {
-  required int32 deviceKind = 1;
+  optional int32 deviceKind = 1;
   required int64 meterSn = 2;
   required int32 meterModel = 3;
-  required int32 meterCt = 4;
+  optional int32 meterCt = 4;
   required int32 comWay = 5;
-  required int32 accessMode = 6;
-  required int32 swVsn = 7;
-  required bytes meterVal = 8;
+  optional int32 accessMode = 6;
+  optional int32 swVsn = 7;
+  optional bytes meterVal = 8;
 }
 
 message APPRpInfoMO {

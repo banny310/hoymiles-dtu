@@ -26,6 +26,7 @@ public final class AppInfo {
         private int dtuSw;
 
         // 37122 -> H09.01.02
+        // 37378 -> Fusio
         private int dtuHw;
     }
 
