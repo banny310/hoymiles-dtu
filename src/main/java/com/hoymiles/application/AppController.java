@@ -118,7 +118,7 @@ public class AppController {
             case ACTIVE:
                 Observable.create(emitter -> {
                     log.info("Pooling metrics...");
-                    Observable.interval(config.getInt("app.mode_active.pull_interval"), TimeUnit.MILLISECONDS)
+                    Observable.interval(config.getInt("app.mode_active.pull_interval"), TimeUnit.SECONDS)
                             .map(time -> metricsService.getRealData(appInfo))
                             .subscribe(realData -> {
                                 log.info("Sending realdata");
