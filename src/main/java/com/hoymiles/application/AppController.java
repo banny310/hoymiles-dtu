@@ -118,7 +118,7 @@ public class AppController {
             case ACTIVE:
                 Observable.create(emitter -> {
                     log.info("Pooling metrics...");
-                    Observable.interval(config.getInt("app.mode_active.pull_interval"), TimeUnit.SECONDS)
+                    Observable.interval(config.getInt("app_mode_active.pull_interval"), TimeUnit.SECONDS)
                             .map(time -> metricsService.getRealData(appInfo))
                             .subscribe(realData -> {
                                 log.info("Sending realdata");
@@ -132,9 +132,9 @@ public class AppController {
                 log.info("Gathering configuration...");
                 GetConfig.GetConfigReq dtuConfig = dtuRepository.getConfiguration();
 
-                boolean setServerSendTime = config.getBoolean("app.mode_passive.set_server_send_time");
+                boolean setServerSendTime = config.getBoolean("app_mode_passive.set_server_send_time");
                 if (setServerSendTime) {
-                    int serverSendTime = config.getInt("app.mode_passive.server_send_time");
+                    int serverSendTime = config.getInt("app_mode_passive.server_send_time");
                     assert serverSendTime > 0;
                     log.info("serverSendTime: expected={}, current={}", serverSendTime, dtuConfig.getServerSendTime());
                     if (serverSendTime != dtuConfig.getServerSendTime()) {
