@@ -25,7 +25,7 @@ public class DtuMessageRouter {
 
     public void handle(@NotNull DtuMessage event) {
         if (config.getBoolean("app.store_messages_in_excel")) {
-            spreadsheetWriter.write(event.getCode(), event.getMessage());
+            spreadsheetWriter.write(event.getCode(), event.getProto());
         }
 
         if (mapperMap.containsKey(event.getCode())) {

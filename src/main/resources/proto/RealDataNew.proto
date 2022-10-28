@@ -17,8 +17,8 @@ message RealResDTO {
 message RealReqDTO {
   required bytes dtuSn = 1;
   required int32 time = 2;
-  required int32 ap = 3;
-  optional int32 cp = 4 [default = 0];
+  required uint32 packetCount = 3;
+  optional uint32 packetNum = 4 [default = 0];
   required int32 ver = 5;
   repeated MeterMO meterDatas = 6;
   repeated RpMO rpDatas = 7;
@@ -89,7 +89,7 @@ message SGSMO {
   optional int32 crc = 11 [default = 0];  //
   optional int32 link = 12 [default = 0]; // status?
   optional int32 pLim = 13 [default = 0];
-  required int32 miSignal = 20;
+  optional int32 miSignal = 20;
 }
 
 message TGSMO {
@@ -306,8 +306,12 @@ message Msg8716 {
   required uint32 time = 2;
   required uint32 packetCount = 3;
   optional uint32 packetNum = 4 [default = 0];
-  required uint32 val5 = 5;
+  required int32 ver = 5;
+  repeated MeterMO meterDatas = 6;
+  repeated RpMO rpDatas = 7;
+  repeated RSDMO rsdDatas = 8;
   repeated SGSMO sgsDatas = 9;
+  repeated TGSMO tgsDatas = 10;
   repeated PvMO pvDatas = 11;
 }
 

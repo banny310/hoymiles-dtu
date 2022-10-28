@@ -8,6 +8,7 @@ import com.hoymiles.domain.event.RealDataEvent;
 import com.hoymiles.domain.model.AppInfo;
 import com.hoymiles.domain.model.AppMode;
 import com.hoymiles.domain.model.RealData;
+import com.hoymiles.infrastructure.dtu.DtuClient;
 import com.hoymiles.infrastructure.dtu.DtuCommandBuilder;
 import com.hoymiles.infrastructure.mqtt.MqttConnectedEvent;
 import com.hoymiles.infrastructure.mqtt.MqttSendException;
@@ -15,6 +16,7 @@ import com.hoymiles.infrastructure.protos.GetConfig;
 import com.hoymiles.infrastructure.protos.SetConfig;
 import com.typesafe.config.Config;
 import io.reactivex.rxjava3.core.Observable;
+import io.reactivex.rxjava3.disposables.Disposable;
 import jakarta.annotation.Priority;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.event.Observes;
@@ -39,10 +41,12 @@ public class AppController {
     private final AutodiscoveryService autodiscoveryService;
     private final MetricsService metricsService;
     private final DtuCommandBuilder dtuCommand;
+    private final DtuClient dtuClient;
 
     // WARNING: not stateless!!!
+    private AppInfo appInfo;
     private boolean pvAutodiscoverySent = false;
-    private RealData lastRealData;
+    private Disposable poolDisposable;
 
     @Handler
     public Void handleMqttConnected(@Observes @Priority(1) @NotNull MqttConnectedEvent event) {
@@ -77,26 +81,7 @@ public class AppController {
                 pvAutodiscoverySent = true;
             }
 
-            int nextPacketNum = Optional.ofNullable(lastRealData)
-                    .map(realData -> realData.getPacketNum() + 1)
-                    .orElse(0);
-            log.info("Packet received: num={}, expected={}, count={}", data.getPacketNum(), nextPacketNum, data.getPacketCount());
-
-            if (data.getPacketNum() == nextPacketNum) {
-                // merge incoming packet with previously stored
-                lastRealData = Optional.ofNullable(lastRealData)
-                        .map(realData -> realData.merge(data))
-                        .orElse(data);
-
-                if (data.getPacketNum() == data.getPacketCount() - 1) {
-                    log.info("Last packed received. Sending to mqtt...");
-                    mqttRepository.sendRealData(Optional.ofNullable(lastRealData).orElse(data));
-                    lastRealData = null;
-                }
-            } else {
-                log.info("Packet number mismatch");
-                lastRealData = null;
-            }
+            mqttRepository.sendRealData(data);
         } catch (MqttSendException e) {
             log.error("Cannot send realData", e);
         }
@@ -105,7 +90,7 @@ public class AppController {
 
     public void start() {
         log.info("Getting AppInfo from DTU...");
-        AppInfo appInfo = dtuRepository.getAppInfo();
+        appInfo = dtuRepository.getAppInfo();
 
 
         log.info("DTU: hw={}, sw={}, time={}", appInfo.getDtuInfo().getDtuHw(), appInfo.getDtuInfo().getDtuSw(), appInfo.getTime());
@@ -116,16 +101,18 @@ public class AppController {
         AppMode mode = AppMode.valueOf(config.getString("app.mode").toUpperCase());
         switch (mode) {
             case ACTIVE:
-                Observable.create(emitter -> {
-                    log.info("Pooling metrics...");
-                    Observable.interval(config.getInt("app_mode_active.pull_interval"), TimeUnit.SECONDS)
-                            .map(time -> metricsService.getRealData(appInfo))
-                            .subscribe(realData -> {
-                                log.info("Sending realdata");
-                                if (realData != null)
-                                    mqttRepository.sendRealData(realData);
-                            }, emitter::onError);
-                }).blockingSubscribe();
+                int pullInterval = config.getInt("app_mode_active.pull_interval");
+                metricsService.sendRealDataReq(appInfo, 0);
+                poolDisposable = Observable.interval(pullInterval, TimeUnit.SECONDS)
+                                .subscribe(tick -> metricsService.sendRealDataReq(appInfo, 0));
+
+//                Message msg = dtuCommand.genericCommandBuilder()
+//                        .setYmdHms(DeviceUtils.toByteString("2022-10-27 19:48:45"))
+//                        .setPackageNow(0)
+//                        .setTime(1666871325)
+//                        .build();
+//                dtuClient.send(new DtuMessage(8971, msg));
+
                 break;
 
             case PASSIVE:
@@ -141,6 +128,8 @@ public class AppController {
                         SetConfig.SetConfigRes confCmd = dtuCommand
                                 .setConfigBuilder(dtuConfig.getDtuSn().toString(StandardCharsets.ISO_8859_1))
                                 .setServerSendTime(serverSendTime)
+                                .setWifiSsid(dtuConfig.getWifiSsid())
+                                .setWifiPassword(dtuConfig.getWifiPassword())
                                 .build();
 
                         log.info("changing 'serverSendTime' to {}", serverSendTime);
@@ -149,8 +138,20 @@ public class AppController {
                 }
                 break;
 
+            case NONE:
+                // do nothing (just listen)
+
+                log.info("Gathering configuration...");
+                dtuRepository.getConfiguration();
+                break;
+
             default:
                 throw new IllegalArgumentException(String.format("Unsupported mode: %s", mode));
         }
+    }
+
+    public void stop() {
+        log.info("Stopping...");
+        Optional.ofNullable(poolDisposable).ifPresent(Disposable::dispose);
     }
 }

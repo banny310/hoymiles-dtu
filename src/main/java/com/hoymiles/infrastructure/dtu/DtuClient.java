@@ -4,26 +4,25 @@ import com.google.protobuf.GeneratedMessageV3;
 import com.google.protobuf.Message;
 import com.hoymiles.infrastructure.dtu.utils.DeviceUtils;
 import io.netty.bootstrap.Bootstrap;
-import io.netty.buffer.ByteBuf;
-import io.netty.buffer.ByteBufUtil;
-import io.netty.buffer.Unpooled;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import io.netty.handler.codec.ByteToMessageDecoder;
+import io.netty.handler.timeout.IdleState;
+import io.netty.handler.timeout.IdleStateEvent;
 import io.netty.handler.timeout.IdleStateHandler;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.core.ObservableEmitter;
-import io.reactivex.rxjava3.disposables.Disposable;
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 import org.jetbrains.annotations.NotNull;
 
-import java.nio.charset.StandardCharsets;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -40,14 +39,16 @@ public class DtuClient {
 
         void onConnectionLost(Throwable cause);
     }
+
+    private final DtuCommandBuilder dtuCommand;
     private final EventLoopGroup group;
     private final List<Pair<Integer, ObservableEmitter<? extends Message>>> emitters = new ArrayList<>();
     private Channel channel;
     private Listener listener;
-    private Disposable disposable;
-    private int watchdogTimeout;
 
-    public DtuClient() {
+    @Inject
+    public DtuClient(DtuCommandBuilder dtuCommandBuilder) {
+        dtuCommand = dtuCommandBuilder;
         group = new NioEventLoopGroup(1);
     }
 
@@ -58,8 +59,6 @@ public class DtuClient {
     }
 
     public void connect(String host, int port, int watchdogTimeout) throws InterruptedException {
-        this.watchdogTimeout = watchdogTimeout;
-
         Bootstrap bootstrap = new Bootstrap();
         bootstrap.group(group);
         bootstrap.channel(NioSocketChannel.class);
@@ -67,8 +66,11 @@ public class DtuClient {
         bootstrap.option(ChannelOption.CONNECT_TIMEOUT_MILLIS, 5000);
         bootstrap.handler(new ChannelInitializer<SocketChannel>() {
             public void initChannel(SocketChannel channel) {
-                channel.pipeline().addLast(new IdleStateHandler(10L, 10L, 10L, TimeUnit.SECONDS));
-                channel.pipeline().addLast(new InboundDecoder(), new InboundHandler());
+                channel.pipeline().addFirst("encoder", new DtuMessageEncoder());
+                channel.pipeline().addLast("watchdog", new IdleStateHandler(watchdogTimeout, 10L, 0L, TimeUnit.SECONDS));
+                channel.pipeline().addLast("decoder", new DtuMessageDecoder());
+                channel.pipeline().addLast("aggregator", new DtuMessageAggregator(dtuCommand));
+                channel.pipeline().addLast("response", new InboundHandler());
             }
         });
 
@@ -103,11 +105,7 @@ public class DtuClient {
 
         try {
             DtuMessageHandler messageHandler = DtuMessageHandler.findHandler(message.getClass());
-            log.info("--> sending: msgId={}", messageHandler.getCode());
-            log.info(message.toString().replaceAll("[\t\r\n]", ", "));
-            ByteBuf buffer = Unpooled.buffer();
-            buffer.writeBytes(messageHandler.toByte(message));
-            channel.writeAndFlush(buffer);
+            send(new DtuMessage(messageHandler.getCode(), message));
         } catch (NoHandlerException e) {
             log.info("--> sending: msgId={}", "unknown");
             log.info(message.toString().replaceAll("[\t\r\n]", ", "));
@@ -117,12 +115,20 @@ public class DtuClient {
         }
     }
 
+    public void send(DtuMessage message) {
+        log.info("--> sending: msgId={}", message.getCode());
+        log.info(message.getProto().toString().replaceAll("[\t\r\n]", ", "));
+        channel.writeAndFlush(message);
+    }
+
     public <T extends Message> Observable<T> command(Message message, Class<T> responseClazz) {
         return Observable.create(emitter -> {
-            DtuMessageHandler responseHandler = DtuMessageHandler.findHandler(responseClazz);
-            emitters.add(new ImmutablePair<>(responseHandler.getCode(), emitter));
-            log.info("Sending command: message={}, responseClazz={}", message.getClass().getName(), responseClazz.getName());
-            send(message);
+            synchronized (this) {
+                DtuMessageHandler responseHandler = DtuMessageHandler.findHandler(responseClazz);
+                emitters.add(new ImmutablePair<>(responseHandler.getCode(), emitter));
+                log.info("Sending command: message={}, responseClazz={}", message.getClass().getName(), responseClazz.getName());
+                send(message);
+            }
         });
     }
 
@@ -130,97 +136,54 @@ public class DtuClient {
         this.listener = listener;
     }
 
-    public static class InboundDecoder extends ByteToMessageDecoder {
+    @RequiredArgsConstructor
+    public class InboundHandler extends SimpleChannelInboundHandler<DtuMessage> {
         @Override
-        protected void decode(ChannelHandlerContext channelHandlerContext, @NotNull ByteBuf byteBuf, @NotNull List<Object> list) {
-            int len = byteBuf.readableBytes();
-            log.info("<-- decode: incoming message, length={}", len);
+        public void channelRead0(ChannelHandlerContext ctx, DtuMessage dtuMsg) {
+            DeviceUtils.linePbObj((GeneratedMessageV3) dtuMsg.getProto());
 
-            String hexDump = ByteBufUtil.hexDump(byteBuf);
-            log.info(hexDump.substring(0, 20) + "|" + hexDump.substring(20));
-
-            try {
-                assert byteBuf.readableBytes() >= 10;
-
-                byteBuf.resetReaderIndex();
-                String hmHeader = byteBuf.readCharSequence(2, StandardCharsets.ISO_8859_1).toString();
-                final int msgId = byteBuf.readUnsignedShort();
-                final short counter = byteBuf.readShort();      // ???
-                final short crc = byteBuf.readShort();          // ??? crc
-                final short msgLen = byteBuf.readShort();
-                final int dataLength = msgLen - 10;
-
-                assert hmHeader.equals("HM");
-                assert msgLen * 2 == hexDump.length();
-                assert dataLength > 0;
-                assert dataLength <= len;
-
-                log.info(String.format("header=%s, msgId=%d, counter=%d, crc=%d, msgLen=%d", hmHeader, msgId, counter, crc, msgLen));
-
-                final byte[] bArr = new byte[dataLength];
-                byteBuf.readBytes(bArr, 0, dataLength);
-
-                DtuMessageHandler handler = DtuMessageHandler.findHandler(msgId);
-                Message msg = handler.fromByte(bArr);
-                list.add(new DtuMessage(msgId, msg));
-
-                log.info(msg.toString().replaceAll("[\t\r\n]", ", "));
-            } catch (NoHandlerException e) {
-                log.warn(e.getMessage());
-            } catch (Throwable e) {
-                log.error(e.getMessage(), e);
-            } finally {
-                log.info("<-- end");
-            }
-        }
-    }
-
-    public class InboundHandler extends ChannelInboundHandlerAdapter {
-        @Override
-        public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-            super.channelRead(ctx, msg);
-
-            if (msg instanceof DtuMessage) {
-                DtuMessage dtuMsg = (DtuMessage) msg;
-                DeviceUtils.linePbObj((GeneratedMessageV3) dtuMsg.getMessage());
-
-                // find consumer for command
+            // find consumer for command
+            synchronized (this) {
                 Predicate<Pair<Integer, ObservableEmitter<? extends Message>>> isQualified = item -> item.getKey() == dtuMsg.getCode();
                 //noinspection unchecked
                 emitters.stream()
                         .filter(isQualified)
-                        .forEach(el -> ((ObservableEmitter<Message>) el.getValue()).onNext(dtuMsg.getMessage()));
+                        .forEach(el -> ((ObservableEmitter<Message>) el.getValue()).onNext(dtuMsg.getProto()));
                 boolean consumed = emitters.removeIf(isQualified);
 
                 // it is event if not consumed
                 if (!consumed) {
                     listener.onEvent(dtuMsg);
                 }
+            }
+        }
 
-                // start watchdog after each packet receive
-                if (watchdogTimeout > 0) {
-                    Optional.ofNullable(disposable).ifPresent(Disposable::dispose);
-                    disposable = Observable.just("Watchdog timeout")
-                            .delay(watchdogTimeout, TimeUnit.SECONDS)
-                            .subscribe(s -> {
-                                log.warn(s);
-                                ChannelFuture closeFuture = channel.disconnect();
-                                closeFuture.awaitUninterruptibly();
-                            });
+        @Override
+        public void userEventTriggered(ChannelHandlerContext ctx, Object evt) {
+            if (evt instanceof IdleStateEvent) {
+                IdleStateEvent e = (IdleStateEvent) evt;
+                if (e.state() == IdleState.READER_IDLE) {
+                    log.warn("Watchdog timeout");
+                    ctx.close();
                 }
-
-//                if (((DtuMessage) msg).getCode() == 8706) {
-//                    throw new IOException("Reconnection test");
-//                }
             }
         }
 
         @Override
         @SneakyThrows
         public void exceptionCaught(@NotNull ChannelHandlerContext ctx, Throwable cause) {
-            log.error("exceptionCaught: " + cause.getMessage());
-            listener.onError(cause);
-            ctx.close().awaitUninterruptibly(5000L);
+
+            // java.io.IOException: Connection reset by peer
+            if (cause instanceof IOException) {
+                log.warn("IOException: " + cause.getMessage());
+                // close connection, and allow reconnect
+                ctx.close();
+            } else
+            // forward all others to App
+            {
+                log.error("exceptionCaught: " + cause.getMessage(), cause);
+                listener.onError(cause);
+            }
         }
     }
 }

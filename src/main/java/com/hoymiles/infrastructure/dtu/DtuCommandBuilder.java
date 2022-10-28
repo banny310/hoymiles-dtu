@@ -4,15 +4,26 @@ import com.google.protobuf.ByteString;
 import com.hoymiles.infrastructure.dtu.utils.DateUtil;
 import com.hoymiles.infrastructure.dtu.utils.DeviceUtils;
 import com.hoymiles.infrastructure.protos.*;
-
 import jakarta.enterprise.context.Dependent;
+import org.jetbrains.annotations.NotNull;
+
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Dependent
 public class DtuCommandBuilder {
+    public GenericCommand.GenericCommandResDTO.Builder genericCommandBuilder() {
+        int time = DeviceUtils.getCurrentTime();
+        String ymdHms = new SimpleDateFormat(DateUtil.DATE_FORMAT).format(new Date(System.currentTimeMillis()));
+        GenericCommand.GenericCommandResDTO.Builder newBuilder = GenericCommand.GenericCommandResDTO.newBuilder();
+        newBuilder.setYmdHms(DeviceUtils.toByteString(ymdHms));
+        newBuilder.setPackageNow(0);
+        newBuilder.setOffset(3600);
+        newBuilder.setTime(time);
 
+        return newBuilder;
+    }
 
     public CommandPB.CommandResDTO.Builder commandBuilder() {
         int time = DeviceUtils.getCurrentTime();
@@ -41,7 +52,7 @@ public class DtuCommandBuilder {
     public APPInformationData.APPInfoDataResDTO.Builder appInfoBuilder() {
         APPInformationData.APPInfoDataResDTO.Builder newBuilder = APPInformationData.APPInfoDataResDTO.newBuilder();
         newBuilder.setTime(DeviceUtils.getCurrentTime());
-        newBuilder.setOffset(28800);
+        newBuilder.setOffset(3600);
         newBuilder.setYmdHms(DeviceUtils.toByteString(
                 new SimpleDateFormat(DateUtil.DATE_FORMAT).format(new Date(System.currentTimeMillis()))
         ));
@@ -53,7 +64,7 @@ public class DtuCommandBuilder {
     public RealData.RealDataResDTO.Builder realDataBuilder() {
         RealData.RealDataResDTO.Builder newBuilder = RealData.RealDataResDTO.newBuilder();
         newBuilder.setTime(DeviceUtils.getCurrentTime());
-        newBuilder.setOffset(28800);
+        newBuilder.setOffset(3600);
         newBuilder.setYmdHms(DeviceUtils.toByteString(
                 new SimpleDateFormat(DateUtil.DATE_FORMAT).format(new Date(System.currentTimeMillis())))
         );
@@ -65,7 +76,7 @@ public class DtuCommandBuilder {
     public RealDataNew.RealResDTO.Builder realDataXBuilder() {
         RealDataNew.RealResDTO.Builder newBuilder = RealDataNew.RealResDTO.newBuilder();
         newBuilder.setTime(DeviceUtils.getCurrentTime());
-        newBuilder.setOft(28800);
+        newBuilder.setOft(3600);
         newBuilder.setYmdHms(DeviceUtils.toByteString(
                 new SimpleDateFormat(DateUtil.DATE_FORMAT).format(new Date(System.currentTimeMillis())))
         );
@@ -76,7 +87,7 @@ public class DtuCommandBuilder {
 
     public GetConfig.GetConfigRes.Builder getConfigBuilder() {
         return GetConfig.GetConfigRes.newBuilder()
-                .setOffset(28800)
+                .setOffset(3600)
                 .setTime(DeviceUtils.getCurrentTime());
     }
 
@@ -84,10 +95,10 @@ public class DtuCommandBuilder {
         return SetConfig.SetConfigRes.newBuilder()
                 .setTime(DeviceUtils.getCurrentTime())
                 .setDtuSn(ByteString.copyFrom(dtuSn, StandardCharsets.ISO_8859_1))
-                .setOffset(28800);
+                .setOffset(3600);
     }
 
-    public SetConfig.SetConfigRes.Builder setConfigBuilder(GetConfig.GetConfigReq config) {
+    public SetConfig.SetConfigRes.Builder setConfigBuilder(@NotNull GetConfig.GetConfigReq config) {
         return SetConfig.SetConfigRes.newBuilder()
                 .setTime(DeviceUtils.getCurrentTime())
                 .setDtuSn(config.getDtuSn())

@@ -11,6 +11,8 @@ public interface IDtuRepository {
 
     RealData getRealData(@NotNull AppInfo appInfo);
 
+    void sendRealDataReq(@NotNull AppInfo appInfo, int packetNum);
+
     GetConfig.GetConfigReq getConfiguration();
 
     SetConfig.SetConfigReq setConfiguration(SetConfig.SetConfigRes config);

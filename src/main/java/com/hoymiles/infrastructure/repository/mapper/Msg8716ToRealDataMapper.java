@@ -19,8 +19,6 @@ public class Msg8716ToRealDataMapper implements GenericMapper<RealDataNew.Msg871
         return RealData.builder()
                 .dtuSn(src.getDtuSn().toString(StandardCharsets.ISO_8859_1))
                 .time(LocalDateTime.ofInstant(Instant.ofEpochSecond(src.getTime()), ZoneId.systemDefault()))
-                .packetCount(src.getPacketCount())
-                .packetNum(src.getPacketNum())
                 .inverters(src.getSgsDatasList().stream().map(
                         src1 -> RealData.SGSMO.builder()
                                 .sn(DeviceUtils.decToHex(String.valueOf(src1.getSn())))
@@ -47,7 +45,6 @@ public class Msg8716ToRealDataMapper implements GenericMapper<RealDataNew.Msg871
                                 .energyToday(src2.getEd())
                                 .build()
                 ).collect(Collectors.toList()))
-                .build()
-                .calculate();
+                .build();
     }
 }

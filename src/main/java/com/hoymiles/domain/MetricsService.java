@@ -3,13 +3,13 @@ package com.hoymiles.domain;
 
 import com.hoymiles.domain.model.AppInfo;
 import com.hoymiles.domain.model.RealData;
+import jakarta.enterprise.context.Dependent;
+import jakarta.inject.Inject;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import jakarta.enterprise.context.Dependent;
-import jakarta.inject.Inject;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
@@ -23,6 +23,10 @@ public class MetricsService {
 
     private final IDtuRepository dtuRepository;
     private final IMqttRepository mqttRepository;
+
+    public void sendRealDataReq(@NotNull AppInfo appInfo, int packetNum) {
+        dtuRepository.sendRealDataReq(appInfo, packetNum);
+    }
 
     public @Nullable RealData getRealData(@NotNull AppInfo appInfo) {
         RealData realData = dtuRepository.getRealData(appInfo);

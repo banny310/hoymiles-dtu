@@ -90,6 +90,8 @@ public class App {
     public void halt() {
         log.info("Stopping...");
 
+        appController.stop();
+
         executor.shutdownNow();
         //noinspection ResultOfMethodCallIgnored
         executor.awaitTermination(5, TimeUnit.SECONDS);

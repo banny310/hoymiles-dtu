@@ -5,6 +5,7 @@ import com.hoymiles.domain.model.AppInfo;
 import com.hoymiles.domain.model.RealData;
 import com.hoymiles.infrastructure.dtu.DtuClient;
 import com.hoymiles.infrastructure.dtu.DtuCommandBuilder;
+import com.hoymiles.infrastructure.dtu.NoHandlerException;
 import com.hoymiles.infrastructure.dtu.utils.RxUtils;
 import com.hoymiles.infrastructure.protos.APPInformationData;
 import com.hoymiles.infrastructure.protos.GetConfig;
@@ -54,6 +55,19 @@ public class DtuRepository implements IDtuRepository {
                     .retry(RxUtils.retryPredicate(3))
                     .blockingFirst();
             return realDataNew2RealDataMapper.map(realReqDTO);
+        } else {
+            throw new NotImplementedException("Device with sw_version < 512 is currently not supported");
+        }
+    }
+
+    @Override
+    public void sendRealDataReq(@NotNull AppInfo appInfo, int packetNum) {
+        if (appInfo.getDtuInfo().getDtuSw() >= 512) {
+            try {
+                dtuClient.send(dtuCommand.realDataXBuilder().setCp(packetNum).build());
+            } catch (NoHandlerException e) {
+                throw new RuntimeException(e);
+            }
         } else {
             throw new NotImplementedException("Device with sw_version < 512 is currently not supported");
         }

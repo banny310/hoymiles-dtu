@@ -2,3 +2,4 @@ target/
 .idea/
 hoymiles_solar-*
 src/main/resources/application.json
+sniffer/node_modules/

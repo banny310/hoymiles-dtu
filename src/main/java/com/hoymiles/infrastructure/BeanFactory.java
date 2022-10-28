@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.hoymiles.domain.event.RealDataEvent;
 import com.hoymiles.domain.model.RealData;
+import com.hoymiles.infrastructure.dtu.DtuClientConstants;
 import com.hoymiles.infrastructure.dtu.DtuMessageRouter;
 import com.hoymiles.infrastructure.dtu.utils.DateUtil;
 import com.hoymiles.infrastructure.gson.DateAdapter;
@@ -13,9 +14,8 @@ import com.hoymiles.infrastructure.repository.SpreadsheetWriter;
 import com.hoymiles.infrastructure.repository.dto.DtuRealDataDTO;
 import com.hoymiles.infrastructure.repository.dto.InvRealDataDTO;
 import com.hoymiles.infrastructure.repository.dto.PvRealDataDTO;
-import com.hoymiles.infrastructure.repository.mapper.Msg8716ToRealDataMapper;
-import com.hoymiles.infrastructure.repository.mapper.Msg8717ToRealDataMapper;
 import com.hoymiles.infrastructure.repository.mapper.NumberFormatter;
+import com.hoymiles.infrastructure.repository.mapper.RealDataNewToRealDataMapper;
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
 import jakarta.enterprise.inject.Produces;
@@ -84,11 +84,11 @@ public class BeanFactory {
             @NotNull Config config,
             @NotNull SpreadsheetWriter spreadsheetWriter,
             @NotNull ModelMapper modelMapper,
-            @NotNull Msg8716ToRealDataMapper mapper8716,
-            @NotNull Msg8717ToRealDataMapper mapper8717) {
+            @NotNull RealDataNewToRealDataMapper realDataMapper) {
         DtuMessageRouter router = new DtuMessageRouter(beanManager, config, spreadsheetWriter);
-        router.register(8716, event -> new RealDataEvent(mapper8716.map((RealDataNew.Msg8716) event.getMessage())));
-        router.register(8717, event -> new RealDataEvent(mapper8717.map((RealDataNew.Msg8717) event.getMessage())));
+        router.register(8716, event -> new RealDataEvent(realDataMapper.map((RealDataNew.RealReqDTO) event.getProto())));
+        router.register(8717, event -> new RealDataEvent(realDataMapper.map((RealDataNew.RealReqDTO) event.getProto())));
+        router.register(DtuClientConstants.TAG_AppRealDataReq_X, event -> new RealDataEvent(realDataMapper.map((RealDataNew.RealReqDTO) event.getProto())));
         return router;
     }
 

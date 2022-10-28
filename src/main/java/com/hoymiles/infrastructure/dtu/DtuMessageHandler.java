@@ -1,8 +1,8 @@
 package com.hoymiles.infrastructure.dtu;
 
 import com.google.protobuf.Message;
-import com.hoymiles.infrastructure.protos.*;
 import com.hoymiles.infrastructure.dtu.utils.CRC16Util;
+import com.hoymiles.infrastructure.protos.*;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufUtil;
 import io.netty.buffer.Unpooled;
@@ -32,8 +32,9 @@ public class DtuMessageHandler {
             // new protocol (dtuSw >= 512)
             new DtuMessageHandler(DtuClientConstants.TAG_AppRealDataRes_X, RealDataNew.RealResDTO.class),
             new DtuMessageHandler(DtuClientConstants.TAG_AppRealDataReq_X, RealDataNew.RealReqDTO.class),
-            new DtuMessageHandler(8716, RealDataNew.Msg8716.class),
-            new DtuMessageHandler(8717, RealDataNew.Msg8717.class),
+            new DtuMessageHandler(8716, RealDataNew.RealReqDTO.class),
+            new DtuMessageHandler(8717, RealDataNew.RealReqDTO.class),
+            new DtuMessageHandler(8715, Unknown.Msg8715.class),
             // GetConfig.proto
             new DtuMessageHandler(DtuClientConstants.TAG_AppGetConfigRes, GetConfig.GetConfigRes.class),
             new DtuMessageHandler(DtuClientConstants.TAG_AppGetConfigReq, GetConfig.GetConfigReq.class),
@@ -47,7 +48,6 @@ public class DtuMessageHandler {
 
             new DtuMessageHandler(8705, Unknown.Msg8705.class),
             new DtuMessageHandler(8706, Unknown.Msg8706.class),
-            new DtuMessageHandler(8715, Unknown.Msg8715.class),
     };
 
     private final int code;

@@ -8,5 +8,5 @@ import lombok.Getter;
 @Getter
 public class DtuMessage {
     private final int code;
-    private final Message message;
+    private final Message proto;
 }

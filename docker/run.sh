@@ -33,7 +33,7 @@ if [ -e ${HA_CONFIG_PATH} ]; then
   cat /application.json
   bashio::log.info "Starting..."
 
-  java -Dconfig.override_with_env_vars=true -Dconfig.file=${APP_CONFIG_PATH} -jar ${APP_JAR}
+  java -Dconfig.override_with_env_vars=true -Dconfig.file=${APP_CONFIG_PATH} -ea:com.hoymiles -jar ${APP_JAR}
 else
   bashio::log.fatal "/data/options.json NOT exists!"
 fi

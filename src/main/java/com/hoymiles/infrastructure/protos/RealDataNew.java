@@ -999,26 +999,26 @@ public final class RealDataNew {
     int getTime();
 
     /**
-     * <code>required int32 ap = 3;</code>
-     * @return Whether the ap field is set.
+     * <code>required uint32 packetCount = 3;</code>
+     * @return Whether the packetCount field is set.
      */
-    boolean hasAp();
+    boolean hasPacketCount();
     /**
-     * <code>required int32 ap = 3;</code>
-     * @return The ap.
+     * <code>required uint32 packetCount = 3;</code>
+     * @return The packetCount.
      */
-    int getAp();
+    int getPacketCount();
 
     /**
-     * <code>optional int32 cp = 4 [default = 0];</code>
-     * @return Whether the cp field is set.
+     * <code>optional uint32 packetNum = 4 [default = 0];</code>
+     * @return Whether the packetNum field is set.
      */
-    boolean hasCp();
+    boolean hasPacketNum();
     /**
-     * <code>optional int32 cp = 4 [default = 0];</code>
-     * @return The cp.
+     * <code>optional uint32 packetNum = 4 [default = 0];</code>
+     * @return The packetNum.
      */
-    int getCp();
+    int getPacketNum();
 
     /**
      * <code>required int32 ver = 5;</code>
@@ -1240,12 +1240,12 @@ public final class RealDataNew {
             }
             case 24: {
               bitField0_ |= 0x00000004;
-              ap_ = input.readInt32();
+              packetCount_ = input.readUInt32();
               break;
             }
             case 32: {
               bitField0_ |= 0x00000008;
-              cp_ = input.readInt32();
+              packetNum_ = input.readUInt32();
               break;
             }
             case 40: {
@@ -1396,42 +1396,42 @@ public final class RealDataNew {
       return time_;
     }
 
-    public static final int AP_FIELD_NUMBER = 3;
-    private int ap_;
+    public static final int PACKETCOUNT_FIELD_NUMBER = 3;
+    private int packetCount_;
     /**
-     * <code>required int32 ap = 3;</code>
-     * @return Whether the ap field is set.
+     * <code>required uint32 packetCount = 3;</code>
+     * @return Whether the packetCount field is set.
      */
     @java.lang.Override
-    public boolean hasAp() {
+    public boolean hasPacketCount() {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>required int32 ap = 3;</code>
-     * @return The ap.
+     * <code>required uint32 packetCount = 3;</code>
+     * @return The packetCount.
      */
     @java.lang.Override
-    public int getAp() {
-      return ap_;
+    public int getPacketCount() {
+      return packetCount_;
     }
 
-    public static final int CP_FIELD_NUMBER = 4;
-    private int cp_;
+    public static final int PACKETNUM_FIELD_NUMBER = 4;
+    private int packetNum_;
     /**
-     * <code>optional int32 cp = 4 [default = 0];</code>
-     * @return Whether the cp field is set.
+     * <code>optional uint32 packetNum = 4 [default = 0];</code>
+     * @return Whether the packetNum field is set.
      */
     @java.lang.Override
-    public boolean hasCp() {
+    public boolean hasPacketNum() {
       return ((bitField0_ & 0x00000008) != 0);
     }
     /**
-     * <code>optional int32 cp = 4 [default = 0];</code>
-     * @return The cp.
+     * <code>optional uint32 packetNum = 4 [default = 0];</code>
+     * @return The packetNum.
      */
     @java.lang.Override
-    public int getCp() {
-      return cp_;
+    public int getPacketNum() {
+      return packetNum_;
     }
 
     public static final int VER_FIELD_NUMBER = 5;
@@ -1708,7 +1708,7 @@ public final class RealDataNew {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasAp()) {
+      if (!hasPacketCount()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -1766,10 +1766,10 @@ public final class RealDataNew {
         output.writeInt32(2, time_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
-        output.writeInt32(3, ap_);
+        output.writeUInt32(3, packetCount_);
       }
       if (((bitField0_ & 0x00000008) != 0)) {
-        output.writeInt32(4, cp_);
+        output.writeUInt32(4, packetNum_);
       }
       if (((bitField0_ & 0x00000010) != 0)) {
         output.writeInt32(5, ver_);
@@ -1811,11 +1811,11 @@ public final class RealDataNew {
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, ap_);
+          .computeUInt32Size(3, packetCount_);
       }
       if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, cp_);
+          .computeUInt32Size(4, packetNum_);
       }
       if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.CodedOutputStream
@@ -1870,15 +1870,15 @@ public final class RealDataNew {
         if (getTime()
             != other.getTime()) return false;
       }
-      if (hasAp() != other.hasAp()) return false;
-      if (hasAp()) {
-        if (getAp()
-            != other.getAp()) return false;
+      if (hasPacketCount() != other.hasPacketCount()) return false;
+      if (hasPacketCount()) {
+        if (getPacketCount()
+            != other.getPacketCount()) return false;
       }
-      if (hasCp() != other.hasCp()) return false;
-      if (hasCp()) {
-        if (getCp()
-            != other.getCp()) return false;
+      if (hasPacketNum() != other.hasPacketNum()) return false;
+      if (hasPacketNum()) {
+        if (getPacketNum()
+            != other.getPacketNum()) return false;
       }
       if (hasVer() != other.hasVer()) return false;
       if (hasVer()) {
@@ -1916,13 +1916,13 @@ public final class RealDataNew {
         hash = (37 * hash) + TIME_FIELD_NUMBER;
         hash = (53 * hash) + getTime();
       }
-      if (hasAp()) {
-        hash = (37 * hash) + AP_FIELD_NUMBER;
-        hash = (53 * hash) + getAp();
+      if (hasPacketCount()) {
+        hash = (37 * hash) + PACKETCOUNT_FIELD_NUMBER;
+        hash = (53 * hash) + getPacketCount();
       }
-      if (hasCp()) {
-        hash = (37 * hash) + CP_FIELD_NUMBER;
-        hash = (53 * hash) + getCp();
+      if (hasPacketNum()) {
+        hash = (37 * hash) + PACKETNUM_FIELD_NUMBER;
+        hash = (53 * hash) + getPacketNum();
       }
       if (hasVer()) {
         hash = (37 * hash) + VER_FIELD_NUMBER;
@@ -2095,9 +2095,9 @@ public final class RealDataNew {
         bitField0_ = (bitField0_ & ~0x00000001);
         time_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
-        ap_ = 0;
+        packetCount_ = 0;
         bitField0_ = (bitField0_ & ~0x00000004);
-        cp_ = 0;
+        packetNum_ = 0;
         bitField0_ = (bitField0_ & ~0x00000008);
         ver_ = 0;
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -2174,11 +2174,11 @@ public final class RealDataNew {
           to_bitField0_ |= 0x00000002;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.ap_ = ap_;
+          result.packetCount_ = packetCount_;
           to_bitField0_ |= 0x00000004;
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.cp_ = cp_;
+          result.packetNum_ = packetNum_;
           to_bitField0_ |= 0x00000008;
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
@@ -2294,11 +2294,11 @@ public final class RealDataNew {
         if (other.hasTime()) {
           setTime(other.getTime());
         }
-        if (other.hasAp()) {
-          setAp(other.getAp());
+        if (other.hasPacketCount()) {
+          setPacketCount(other.getPacketCount());
         }
-        if (other.hasCp()) {
-          setCp(other.getCp());
+        if (other.hasPacketNum()) {
+          setPacketNum(other.getPacketNum());
         }
         if (other.hasVer()) {
           setVer(other.getVer());
@@ -2472,7 +2472,7 @@ public final class RealDataNew {
         if (!hasTime()) {
           return false;
         }
-        if (!hasAp()) {
+        if (!hasPacketCount()) {
           return false;
         }
         if (!hasVer()) {
@@ -2612,80 +2612,80 @@ public final class RealDataNew {
         return this;
       }
 
-      private int ap_ ;
+      private int packetCount_ ;
       /**
-       * <code>required int32 ap = 3;</code>
-       * @return Whether the ap field is set.
+       * <code>required uint32 packetCount = 3;</code>
+       * @return Whether the packetCount field is set.
        */
       @java.lang.Override
-      public boolean hasAp() {
+      public boolean hasPacketCount() {
         return ((bitField0_ & 0x00000004) != 0);
       }
       /**
-       * <code>required int32 ap = 3;</code>
-       * @return The ap.
+       * <code>required uint32 packetCount = 3;</code>
+       * @return The packetCount.
        */
       @java.lang.Override
-      public int getAp() {
-        return ap_;
+      public int getPacketCount() {
+        return packetCount_;
       }
       /**
-       * <code>required int32 ap = 3;</code>
-       * @param value The ap to set.
+       * <code>required uint32 packetCount = 3;</code>
+       * @param value The packetCount to set.
        * @return This builder for chaining.
        */
-      public Builder setAp(int value) {
+      public Builder setPacketCount(int value) {
         bitField0_ |= 0x00000004;
-        ap_ = value;
+        packetCount_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required int32 ap = 3;</code>
+       * <code>required uint32 packetCount = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearAp() {
+      public Builder clearPacketCount() {
         bitField0_ = (bitField0_ & ~0x00000004);
-        ap_ = 0;
+        packetCount_ = 0;
         onChanged();
         return this;
       }
 
-      private int cp_ ;
+      private int packetNum_ ;
       /**
-       * <code>optional int32 cp = 4 [default = 0];</code>
-       * @return Whether the cp field is set.
+       * <code>optional uint32 packetNum = 4 [default = 0];</code>
+       * @return Whether the packetNum field is set.
        */
       @java.lang.Override
-      public boolean hasCp() {
+      public boolean hasPacketNum() {
         return ((bitField0_ & 0x00000008) != 0);
       }
       /**
-       * <code>optional int32 cp = 4 [default = 0];</code>
-       * @return The cp.
+       * <code>optional uint32 packetNum = 4 [default = 0];</code>
+       * @return The packetNum.
        */
       @java.lang.Override
-      public int getCp() {
-        return cp_;
+      public int getPacketNum() {
+        return packetNum_;
       }
       /**
-       * <code>optional int32 cp = 4 [default = 0];</code>
-       * @param value The cp to set.
+       * <code>optional uint32 packetNum = 4 [default = 0];</code>
+       * @param value The packetNum to set.
        * @return This builder for chaining.
        */
-      public Builder setCp(int value) {
+      public Builder setPacketNum(int value) {
         bitField0_ |= 0x00000008;
-        cp_ = value;
+        packetNum_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 cp = 4 [default = 0];</code>
+       * <code>optional uint32 packetNum = 4 [default = 0];</code>
        * @return This builder for chaining.
        */
-      public Builder clearCp() {
+      public Builder clearPacketNum() {
         bitField0_ = (bitField0_ & ~0x00000008);
-        cp_ = 0;
+        packetNum_ = 0;
         onChanged();
         return this;
       }
@@ -9766,12 +9766,12 @@ public final class RealDataNew {
     int getPLim();
 
     /**
-     * <code>required int32 miSignal = 20;</code>
+     * <code>optional int32 miSignal = 20;</code>
      * @return Whether the miSignal field is set.
      */
     boolean hasMiSignal();
     /**
-     * <code>required int32 miSignal = 20;</code>
+     * <code>optional int32 miSignal = 20;</code>
      * @return The miSignal.
      */
     int getMiSignal();
@@ -10269,7 +10269,7 @@ public final class RealDataNew {
     public static final int MISIGNAL_FIELD_NUMBER = 20;
     private int miSignal_;
     /**
-     * <code>required int32 miSignal = 20;</code>
+     * <code>optional int32 miSignal = 20;</code>
      * @return Whether the miSignal field is set.
      */
     @java.lang.Override
@@ -10277,7 +10277,7 @@ public final class RealDataNew {
       return ((bitField0_ & 0x00002000) != 0);
     }
     /**
-     * <code>required int32 miSignal = 20;</code>
+     * <code>optional int32 miSignal = 20;</code>
      * @return The miSignal.
      */
     @java.lang.Override
@@ -10293,10 +10293,6 @@ public final class RealDataNew {
       if (isInitialized == 0) return false;
 
       if (!hasSn()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasMiSignal()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -10911,9 +10907,6 @@ public final class RealDataNew {
       @java.lang.Override
       public final boolean isInitialized() {
         if (!hasSn()) {
-          return false;
-        }
-        if (!hasMiSignal()) {
           return false;
         }
         return true;
@@ -11636,7 +11629,7 @@ public final class RealDataNew {
 
       private int miSignal_ ;
       /**
-       * <code>required int32 miSignal = 20;</code>
+       * <code>optional int32 miSignal = 20;</code>
        * @return Whether the miSignal field is set.
        */
       @java.lang.Override
@@ -11644,7 +11637,7 @@ public final class RealDataNew {
         return ((bitField0_ & 0x00002000) != 0);
       }
       /**
-       * <code>required int32 miSignal = 20;</code>
+       * <code>optional int32 miSignal = 20;</code>
        * @return The miSignal.
        */
       @java.lang.Override
@@ -11652,7 +11645,7 @@ public final class RealDataNew {
         return miSignal_;
       }
       /**
-       * <code>required int32 miSignal = 20;</code>
+       * <code>optional int32 miSignal = 20;</code>
        * @param value The miSignal to set.
        * @return This builder for chaining.
        */
@@ -11663,7 +11656,7 @@ public final class RealDataNew {
         return this;
       }
       /**
-       * <code>required int32 miSignal = 20;</code>
+       * <code>optional int32 miSignal = 20;</code>
        * @return This builder for chaining.
        */
       public Builder clearMiSignal() {
@@ -15782,15 +15775,87 @@ public final class RealDataNew {
     int getPacketNum();
 
     /**
-     * <code>required uint32 val5 = 5;</code>
-     * @return Whether the val5 field is set.
+     * <code>required int32 ver = 5;</code>
+     * @return Whether the ver field is set.
      */
-    boolean hasVal5();
+    boolean hasVer();
     /**
-     * <code>required uint32 val5 = 5;</code>
-     * @return The val5.
+     * <code>required int32 ver = 5;</code>
+     * @return The ver.
      */
-    int getVal5();
+    int getVer();
+
+    /**
+     * <code>repeated .hoymiles.MeterMO meterDatas = 6;</code>
+     */
+    java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.MeterMO> 
+        getMeterDatasList();
+    /**
+     * <code>repeated .hoymiles.MeterMO meterDatas = 6;</code>
+     */
+    com.hoymiles.infrastructure.protos.RealDataNew.MeterMO getMeterDatas(int index);
+    /**
+     * <code>repeated .hoymiles.MeterMO meterDatas = 6;</code>
+     */
+    int getMeterDatasCount();
+    /**
+     * <code>repeated .hoymiles.MeterMO meterDatas = 6;</code>
+     */
+    java.util.List<? extends com.hoymiles.infrastructure.protos.RealDataNew.MeterMOOrBuilder> 
+        getMeterDatasOrBuilderList();
+    /**
+     * <code>repeated .hoymiles.MeterMO meterDatas = 6;</code>
+     */
+    com.hoymiles.infrastructure.protos.RealDataNew.MeterMOOrBuilder getMeterDatasOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .hoymiles.RpMO rpDatas = 7;</code>
+     */
+    java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.RpMO> 
+        getRpDatasList();
+    /**
+     * <code>repeated .hoymiles.RpMO rpDatas = 7;</code>
+     */
+    com.hoymiles.infrastructure.protos.RealDataNew.RpMO getRpDatas(int index);
+    /**
+     * <code>repeated .hoymiles.RpMO rpDatas = 7;</code>
+     */
+    int getRpDatasCount();
+    /**
+     * <code>repeated .hoymiles.RpMO rpDatas = 7;</code>
+     */
+    java.util.List<? extends com.hoymiles.infrastructure.protos.RealDataNew.RpMOOrBuilder> 
+        getRpDatasOrBuilderList();
+    /**
+     * <code>repeated .hoymiles.RpMO rpDatas = 7;</code>
+     */
+    com.hoymiles.infrastructure.protos.RealDataNew.RpMOOrBuilder getRpDatasOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .hoymiles.RSDMO rsdDatas = 8;</code>
+     */
+    java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.RSDMO> 
+        getRsdDatasList();
+    /**
+     * <code>repeated .hoymiles.RSDMO rsdDatas = 8;</code>
+     */
+    com.hoymiles.infrastructure.protos.RealDataNew.RSDMO getRsdDatas(int index);
+    /**
+     * <code>repeated .hoymiles.RSDMO rsdDatas = 8;</code>
+     */
+    int getRsdDatasCount();
+    /**
+     * <code>repeated .hoymiles.RSDMO rsdDatas = 8;</code>
+     */
+    java.util.List<? extends com.hoymiles.infrastructure.protos.RealDataNew.RSDMOOrBuilder> 
+        getRsdDatasOrBuilderList();
+    /**
+     * <code>repeated .hoymiles.RSDMO rsdDatas = 8;</code>
+     */
+    com.hoymiles.infrastructure.protos.RealDataNew.RSDMOOrBuilder getRsdDatasOrBuilder(
+        int index);
 
     /**
      * <code>repeated .hoymiles.SGSMO sgsDatas = 9;</code>
@@ -15814,6 +15879,30 @@ public final class RealDataNew {
      * <code>repeated .hoymiles.SGSMO sgsDatas = 9;</code>
      */
     com.hoymiles.infrastructure.protos.RealDataNew.SGSMOOrBuilder getSgsDatasOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .hoymiles.TGSMO tgsDatas = 10;</code>
+     */
+    java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.TGSMO> 
+        getTgsDatasList();
+    /**
+     * <code>repeated .hoymiles.TGSMO tgsDatas = 10;</code>
+     */
+    com.hoymiles.infrastructure.protos.RealDataNew.TGSMO getTgsDatas(int index);
+    /**
+     * <code>repeated .hoymiles.TGSMO tgsDatas = 10;</code>
+     */
+    int getTgsDatasCount();
+    /**
+     * <code>repeated .hoymiles.TGSMO tgsDatas = 10;</code>
+     */
+    java.util.List<? extends com.hoymiles.infrastructure.protos.RealDataNew.TGSMOOrBuilder> 
+        getTgsDatasOrBuilderList();
+    /**
+     * <code>repeated .hoymiles.TGSMO tgsDatas = 10;</code>
+     */
+    com.hoymiles.infrastructure.protos.RealDataNew.TGSMOOrBuilder getTgsDatasOrBuilder(
         int index);
 
     /**
@@ -16029,7 +16118,11 @@ public final class RealDataNew {
     }
     private Msg8716() {
       dtuSn_ = com.google.protobuf.ByteString.EMPTY;
+      meterDatas_ = java.util.Collections.emptyList();
+      rpDatas_ = java.util.Collections.emptyList();
+      rsdDatas_ = java.util.Collections.emptyList();
       sgsDatas_ = java.util.Collections.emptyList();
+      tgsDatas_ = java.util.Collections.emptyList();
       pvDatas_ = java.util.Collections.emptyList();
     }
 
@@ -16086,22 +16179,58 @@ public final class RealDataNew {
             }
             case 40: {
               bitField0_ |= 0x00000010;
-              val5_ = input.readUInt32();
+              ver_ = input.readInt32();
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+                meterDatas_ = new java.util.ArrayList<com.hoymiles.infrastructure.protos.RealDataNew.MeterMO>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              meterDatas_.add(
+                  input.readMessage(com.hoymiles.infrastructure.protos.RealDataNew.MeterMO.PARSER, extensionRegistry));
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+                rpDatas_ = new java.util.ArrayList<com.hoymiles.infrastructure.protos.RealDataNew.RpMO>();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              rpDatas_.add(
+                  input.readMessage(com.hoymiles.infrastructure.protos.RealDataNew.RpMO.PARSER, extensionRegistry));
+              break;
+            }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
+                rsdDatas_ = new java.util.ArrayList<com.hoymiles.infrastructure.protos.RealDataNew.RSDMO>();
+                mutable_bitField0_ |= 0x00000080;
+              }
+              rsdDatas_.add(
+                  input.readMessage(com.hoymiles.infrastructure.protos.RealDataNew.RSDMO.PARSER, extensionRegistry));
               break;
             }
             case 74: {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000100) != 0)) {
                 sgsDatas_ = new java.util.ArrayList<com.hoymiles.infrastructure.protos.RealDataNew.SGSMO>();
-                mutable_bitField0_ |= 0x00000020;
+                mutable_bitField0_ |= 0x00000100;
               }
               sgsDatas_.add(
                   input.readMessage(com.hoymiles.infrastructure.protos.RealDataNew.SGSMO.PARSER, extensionRegistry));
               break;
             }
+            case 82: {
+              if (!((mutable_bitField0_ & 0x00000200) != 0)) {
+                tgsDatas_ = new java.util.ArrayList<com.hoymiles.infrastructure.protos.RealDataNew.TGSMO>();
+                mutable_bitField0_ |= 0x00000200;
+              }
+              tgsDatas_.add(
+                  input.readMessage(com.hoymiles.infrastructure.protos.RealDataNew.TGSMO.PARSER, extensionRegistry));
+              break;
+            }
             case 90: {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
+              if (!((mutable_bitField0_ & 0x00000400) != 0)) {
                 pvDatas_ = new java.util.ArrayList<com.hoymiles.infrastructure.protos.RealDataNew.PvMO>();
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000400;
               }
               pvDatas_.add(
                   input.readMessage(com.hoymiles.infrastructure.protos.RealDataNew.PvMO.PARSER, extensionRegistry));
@@ -16123,9 +16252,21 @@ public final class RealDataNew {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000020) != 0)) {
-          sgsDatas_ = java.util.Collections.unmodifiableList(sgsDatas_);
+          meterDatas_ = java.util.Collections.unmodifiableList(meterDatas_);
         }
         if (((mutable_bitField0_ & 0x00000040) != 0)) {
+          rpDatas_ = java.util.Collections.unmodifiableList(rpDatas_);
+        }
+        if (((mutable_bitField0_ & 0x00000080) != 0)) {
+          rsdDatas_ = java.util.Collections.unmodifiableList(rsdDatas_);
+        }
+        if (((mutable_bitField0_ & 0x00000100) != 0)) {
+          sgsDatas_ = java.util.Collections.unmodifiableList(sgsDatas_);
+        }
+        if (((mutable_bitField0_ & 0x00000200) != 0)) {
+          tgsDatas_ = java.util.Collections.unmodifiableList(tgsDatas_);
+        }
+        if (((mutable_bitField0_ & 0x00000400) != 0)) {
           pvDatas_ = java.util.Collections.unmodifiableList(pvDatas_);
         }
         this.unknownFields = unknownFields.build();
@@ -16222,23 +16363,143 @@ public final class RealDataNew {
       return packetNum_;
     }
 
-    public static final int VAL5_FIELD_NUMBER = 5;
-    private int val5_;
+    public static final int VER_FIELD_NUMBER = 5;
+    private int ver_;
     /**
-     * <code>required uint32 val5 = 5;</code>
-     * @return Whether the val5 field is set.
+     * <code>required int32 ver = 5;</code>
+     * @return Whether the ver field is set.
      */
     @java.lang.Override
-    public boolean hasVal5() {
+    public boolean hasVer() {
       return ((bitField0_ & 0x00000010) != 0);
     }
     /**
-     * <code>required uint32 val5 = 5;</code>
-     * @return The val5.
+     * <code>required int32 ver = 5;</code>
+     * @return The ver.
      */
     @java.lang.Override
-    public int getVal5() {
-      return val5_;
+    public int getVer() {
+      return ver_;
+    }
+
+    public static final int METERDATAS_FIELD_NUMBER = 6;
+    private java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.MeterMO> meterDatas_;
+    /**
+     * <code>repeated .hoymiles.MeterMO meterDatas = 6;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.MeterMO> getMeterDatasList() {
+      return meterDatas_;
+    }
+    /**
+     * <code>repeated .hoymiles.MeterMO meterDatas = 6;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.hoymiles.infrastructure.protos.RealDataNew.MeterMOOrBuilder> 
+        getMeterDatasOrBuilderList() {
+      return meterDatas_;
+    }
+    /**
+     * <code>repeated .hoymiles.MeterMO meterDatas = 6;</code>
+     */
+    @java.lang.Override
+    public int getMeterDatasCount() {
+      return meterDatas_.size();
+    }
+    /**
+     * <code>repeated .hoymiles.MeterMO meterDatas = 6;</code>
+     */
+    @java.lang.Override
+    public com.hoymiles.infrastructure.protos.RealDataNew.MeterMO getMeterDatas(int index) {
+      return meterDatas_.get(index);
+    }
+    /**
+     * <code>repeated .hoymiles.MeterMO meterDatas = 6;</code>
+     */
+    @java.lang.Override
+    public com.hoymiles.infrastructure.protos.RealDataNew.MeterMOOrBuilder getMeterDatasOrBuilder(
+        int index) {
+      return meterDatas_.get(index);
+    }
+
+    public static final int RPDATAS_FIELD_NUMBER = 7;
+    private java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.RpMO> rpDatas_;
+    /**
+     * <code>repeated .hoymiles.RpMO rpDatas = 7;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.RpMO> getRpDatasList() {
+      return rpDatas_;
+    }
+    /**
+     * <code>repeated .hoymiles.RpMO rpDatas = 7;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.hoymiles.infrastructure.protos.RealDataNew.RpMOOrBuilder> 
+        getRpDatasOrBuilderList() {
+      return rpDatas_;
+    }
+    /**
+     * <code>repeated .hoymiles.RpMO rpDatas = 7;</code>
+     */
+    @java.lang.Override
+    public int getRpDatasCount() {
+      return rpDatas_.size();
+    }
+    /**
+     * <code>repeated .hoymiles.RpMO rpDatas = 7;</code>
+     */
+    @java.lang.Override
+    public com.hoymiles.infrastructure.protos.RealDataNew.RpMO getRpDatas(int index) {
+      return rpDatas_.get(index);
+    }
+    /**
+     * <code>repeated .hoymiles.RpMO rpDatas = 7;</code>
+     */
+    @java.lang.Override
+    public com.hoymiles.infrastructure.protos.RealDataNew.RpMOOrBuilder getRpDatasOrBuilder(
+        int index) {
+      return rpDatas_.get(index);
+    }
+
+    public static final int RSDDATAS_FIELD_NUMBER = 8;
+    private java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.RSDMO> rsdDatas_;
+    /**
+     * <code>repeated .hoymiles.RSDMO rsdDatas = 8;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.RSDMO> getRsdDatasList() {
+      return rsdDatas_;
+    }
+    /**
+     * <code>repeated .hoymiles.RSDMO rsdDatas = 8;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.hoymiles.infrastructure.protos.RealDataNew.RSDMOOrBuilder> 
+        getRsdDatasOrBuilderList() {
+      return rsdDatas_;
+    }
+    /**
+     * <code>repeated .hoymiles.RSDMO rsdDatas = 8;</code>
+     */
+    @java.lang.Override
+    public int getRsdDatasCount() {
+      return rsdDatas_.size();
+    }
+    /**
+     * <code>repeated .hoymiles.RSDMO rsdDatas = 8;</code>
+     */
+    @java.lang.Override
+    public com.hoymiles.infrastructure.protos.RealDataNew.RSDMO getRsdDatas(int index) {
+      return rsdDatas_.get(index);
+    }
+    /**
+     * <code>repeated .hoymiles.RSDMO rsdDatas = 8;</code>
+     */
+    @java.lang.Override
+    public com.hoymiles.infrastructure.protos.RealDataNew.RSDMOOrBuilder getRsdDatasOrBuilder(
+        int index) {
+      return rsdDatas_.get(index);
     }
 
     public static final int SGSDATAS_FIELD_NUMBER = 9;
@@ -16279,6 +16540,46 @@ public final class RealDataNew {
     public com.hoymiles.infrastructure.protos.RealDataNew.SGSMOOrBuilder getSgsDatasOrBuilder(
         int index) {
       return sgsDatas_.get(index);
+    }
+
+    public static final int TGSDATAS_FIELD_NUMBER = 10;
+    private java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.TGSMO> tgsDatas_;
+    /**
+     * <code>repeated .hoymiles.TGSMO tgsDatas = 10;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.TGSMO> getTgsDatasList() {
+      return tgsDatas_;
+    }
+    /**
+     * <code>repeated .hoymiles.TGSMO tgsDatas = 10;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.hoymiles.infrastructure.protos.RealDataNew.TGSMOOrBuilder> 
+        getTgsDatasOrBuilderList() {
+      return tgsDatas_;
+    }
+    /**
+     * <code>repeated .hoymiles.TGSMO tgsDatas = 10;</code>
+     */
+    @java.lang.Override
+    public int getTgsDatasCount() {
+      return tgsDatas_.size();
+    }
+    /**
+     * <code>repeated .hoymiles.TGSMO tgsDatas = 10;</code>
+     */
+    @java.lang.Override
+    public com.hoymiles.infrastructure.protos.RealDataNew.TGSMO getTgsDatas(int index) {
+      return tgsDatas_.get(index);
+    }
+    /**
+     * <code>repeated .hoymiles.TGSMO tgsDatas = 10;</code>
+     */
+    @java.lang.Override
+    public com.hoymiles.infrastructure.protos.RealDataNew.TGSMOOrBuilder getTgsDatasOrBuilder(
+        int index) {
+      return tgsDatas_.get(index);
     }
 
     public static final int PVDATAS_FIELD_NUMBER = 11;
@@ -16340,12 +16641,36 @@ public final class RealDataNew {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasVal5()) {
+      if (!hasVer()) {
         memoizedIsInitialized = 0;
         return false;
       }
+      for (int i = 0; i < getMeterDatasCount(); i++) {
+        if (!getMeterDatas(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getRpDatasCount(); i++) {
+        if (!getRpDatas(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getRsdDatasCount(); i++) {
+        if (!getRsdDatas(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
       for (int i = 0; i < getSgsDatasCount(); i++) {
         if (!getSgsDatas(i).isInitialized()) {
+          memoizedIsInitialized = 0;
+          return false;
+        }
+      }
+      for (int i = 0; i < getTgsDatasCount(); i++) {
+        if (!getTgsDatas(i).isInitialized()) {
           memoizedIsInitialized = 0;
           return false;
         }
@@ -16376,10 +16701,22 @@ public final class RealDataNew {
         output.writeUInt32(4, packetNum_);
       }
       if (((bitField0_ & 0x00000010) != 0)) {
-        output.writeUInt32(5, val5_);
+        output.writeInt32(5, ver_);
+      }
+      for (int i = 0; i < meterDatas_.size(); i++) {
+        output.writeMessage(6, meterDatas_.get(i));
+      }
+      for (int i = 0; i < rpDatas_.size(); i++) {
+        output.writeMessage(7, rpDatas_.get(i));
+      }
+      for (int i = 0; i < rsdDatas_.size(); i++) {
+        output.writeMessage(8, rsdDatas_.get(i));
       }
       for (int i = 0; i < sgsDatas_.size(); i++) {
         output.writeMessage(9, sgsDatas_.get(i));
+      }
+      for (int i = 0; i < tgsDatas_.size(); i++) {
+        output.writeMessage(10, tgsDatas_.get(i));
       }
       for (int i = 0; i < pvDatas_.size(); i++) {
         output.writeMessage(11, pvDatas_.get(i));
@@ -16411,11 +16748,27 @@ public final class RealDataNew {
       }
       if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(5, val5_);
+          .computeInt32Size(5, ver_);
+      }
+      for (int i = 0; i < meterDatas_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, meterDatas_.get(i));
+      }
+      for (int i = 0; i < rpDatas_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, rpDatas_.get(i));
+      }
+      for (int i = 0; i < rsdDatas_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(8, rsdDatas_.get(i));
       }
       for (int i = 0; i < sgsDatas_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, sgsDatas_.get(i));
+      }
+      for (int i = 0; i < tgsDatas_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, tgsDatas_.get(i));
       }
       for (int i = 0; i < pvDatas_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -16456,13 +16809,21 @@ public final class RealDataNew {
         if (getPacketNum()
             != other.getPacketNum()) return false;
       }
-      if (hasVal5() != other.hasVal5()) return false;
-      if (hasVal5()) {
-        if (getVal5()
-            != other.getVal5()) return false;
+      if (hasVer() != other.hasVer()) return false;
+      if (hasVer()) {
+        if (getVer()
+            != other.getVer()) return false;
       }
+      if (!getMeterDatasList()
+          .equals(other.getMeterDatasList())) return false;
+      if (!getRpDatasList()
+          .equals(other.getRpDatasList())) return false;
+      if (!getRsdDatasList()
+          .equals(other.getRsdDatasList())) return false;
       if (!getSgsDatasList()
           .equals(other.getSgsDatasList())) return false;
+      if (!getTgsDatasList()
+          .equals(other.getTgsDatasList())) return false;
       if (!getPvDatasList()
           .equals(other.getPvDatasList())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
@@ -16492,13 +16853,29 @@ public final class RealDataNew {
         hash = (37 * hash) + PACKETNUM_FIELD_NUMBER;
         hash = (53 * hash) + getPacketNum();
       }
-      if (hasVal5()) {
-        hash = (37 * hash) + VAL5_FIELD_NUMBER;
-        hash = (53 * hash) + getVal5();
+      if (hasVer()) {
+        hash = (37 * hash) + VER_FIELD_NUMBER;
+        hash = (53 * hash) + getVer();
+      }
+      if (getMeterDatasCount() > 0) {
+        hash = (37 * hash) + METERDATAS_FIELD_NUMBER;
+        hash = (53 * hash) + getMeterDatasList().hashCode();
+      }
+      if (getRpDatasCount() > 0) {
+        hash = (37 * hash) + RPDATAS_FIELD_NUMBER;
+        hash = (53 * hash) + getRpDatasList().hashCode();
+      }
+      if (getRsdDatasCount() > 0) {
+        hash = (37 * hash) + RSDDATAS_FIELD_NUMBER;
+        hash = (53 * hash) + getRsdDatasList().hashCode();
       }
       if (getSgsDatasCount() > 0) {
         hash = (37 * hash) + SGSDATAS_FIELD_NUMBER;
         hash = (53 * hash) + getSgsDatasList().hashCode();
+      }
+      if (getTgsDatasCount() > 0) {
+        hash = (37 * hash) + TGSDATAS_FIELD_NUMBER;
+        hash = (53 * hash) + getTgsDatasList().hashCode();
       }
       if (getPvDatasCount() > 0) {
         hash = (37 * hash) + PVDATAS_FIELD_NUMBER;
@@ -16807,7 +17184,11 @@ public final class RealDataNew {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getMeterDatasFieldBuilder();
+          getRpDatasFieldBuilder();
+          getRsdDatasFieldBuilder();
           getSgsDatasFieldBuilder();
+          getTgsDatasFieldBuilder();
           getPvDatasFieldBuilder();
         }
       }
@@ -16822,17 +17203,41 @@ public final class RealDataNew {
         bitField0_ = (bitField0_ & ~0x00000004);
         packetNum_ = 0;
         bitField0_ = (bitField0_ & ~0x00000008);
-        val5_ = 0;
+        ver_ = 0;
         bitField0_ = (bitField0_ & ~0x00000010);
+        if (meterDatasBuilder_ == null) {
+          meterDatas_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+        } else {
+          meterDatasBuilder_.clear();
+        }
+        if (rpDatasBuilder_ == null) {
+          rpDatas_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+        } else {
+          rpDatasBuilder_.clear();
+        }
+        if (rsdDatasBuilder_ == null) {
+          rsdDatas_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000080);
+        } else {
+          rsdDatasBuilder_.clear();
+        }
         if (sgsDatasBuilder_ == null) {
           sgsDatas_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
           sgsDatasBuilder_.clear();
         }
+        if (tgsDatasBuilder_ == null) {
+          tgsDatas_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000200);
+        } else {
+          tgsDatasBuilder_.clear();
+        }
         if (pvDatasBuilder_ == null) {
           pvDatas_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000400);
         } else {
           pvDatasBuilder_.clear();
         }
@@ -16881,22 +17286,58 @@ public final class RealDataNew {
           to_bitField0_ |= 0x00000008;
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.val5_ = val5_;
+          result.ver_ = ver_;
           to_bitField0_ |= 0x00000010;
         }
-        if (sgsDatasBuilder_ == null) {
+        if (meterDatasBuilder_ == null) {
           if (((bitField0_ & 0x00000020) != 0)) {
-            sgsDatas_ = java.util.Collections.unmodifiableList(sgsDatas_);
+            meterDatas_ = java.util.Collections.unmodifiableList(meterDatas_);
             bitField0_ = (bitField0_ & ~0x00000020);
+          }
+          result.meterDatas_ = meterDatas_;
+        } else {
+          result.meterDatas_ = meterDatasBuilder_.build();
+        }
+        if (rpDatasBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) != 0)) {
+            rpDatas_ = java.util.Collections.unmodifiableList(rpDatas_);
+            bitField0_ = (bitField0_ & ~0x00000040);
+          }
+          result.rpDatas_ = rpDatas_;
+        } else {
+          result.rpDatas_ = rpDatasBuilder_.build();
+        }
+        if (rsdDatasBuilder_ == null) {
+          if (((bitField0_ & 0x00000080) != 0)) {
+            rsdDatas_ = java.util.Collections.unmodifiableList(rsdDatas_);
+            bitField0_ = (bitField0_ & ~0x00000080);
+          }
+          result.rsdDatas_ = rsdDatas_;
+        } else {
+          result.rsdDatas_ = rsdDatasBuilder_.build();
+        }
+        if (sgsDatasBuilder_ == null) {
+          if (((bitField0_ & 0x00000100) != 0)) {
+            sgsDatas_ = java.util.Collections.unmodifiableList(sgsDatas_);
+            bitField0_ = (bitField0_ & ~0x00000100);
           }
           result.sgsDatas_ = sgsDatas_;
         } else {
           result.sgsDatas_ = sgsDatasBuilder_.build();
         }
+        if (tgsDatasBuilder_ == null) {
+          if (((bitField0_ & 0x00000200) != 0)) {
+            tgsDatas_ = java.util.Collections.unmodifiableList(tgsDatas_);
+            bitField0_ = (bitField0_ & ~0x00000200);
+          }
+          result.tgsDatas_ = tgsDatas_;
+        } else {
+          result.tgsDatas_ = tgsDatasBuilder_.build();
+        }
         if (pvDatasBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) != 0)) {
+          if (((bitField0_ & 0x00000400) != 0)) {
             pvDatas_ = java.util.Collections.unmodifiableList(pvDatas_);
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000400);
           }
           result.pvDatas_ = pvDatas_;
         } else {
@@ -16963,14 +17404,92 @@ public final class RealDataNew {
         if (other.hasPacketNum()) {
           setPacketNum(other.getPacketNum());
         }
-        if (other.hasVal5()) {
-          setVal5(other.getVal5());
+        if (other.hasVer()) {
+          setVer(other.getVer());
+        }
+        if (meterDatasBuilder_ == null) {
+          if (!other.meterDatas_.isEmpty()) {
+            if (meterDatas_.isEmpty()) {
+              meterDatas_ = other.meterDatas_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+            } else {
+              ensureMeterDatasIsMutable();
+              meterDatas_.addAll(other.meterDatas_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.meterDatas_.isEmpty()) {
+            if (meterDatasBuilder_.isEmpty()) {
+              meterDatasBuilder_.dispose();
+              meterDatasBuilder_ = null;
+              meterDatas_ = other.meterDatas_;
+              bitField0_ = (bitField0_ & ~0x00000020);
+              meterDatasBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getMeterDatasFieldBuilder() : null;
+            } else {
+              meterDatasBuilder_.addAllMessages(other.meterDatas_);
+            }
+          }
+        }
+        if (rpDatasBuilder_ == null) {
+          if (!other.rpDatas_.isEmpty()) {
+            if (rpDatas_.isEmpty()) {
+              rpDatas_ = other.rpDatas_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+            } else {
+              ensureRpDatasIsMutable();
+              rpDatas_.addAll(other.rpDatas_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.rpDatas_.isEmpty()) {
+            if (rpDatasBuilder_.isEmpty()) {
+              rpDatasBuilder_.dispose();
+              rpDatasBuilder_ = null;
+              rpDatas_ = other.rpDatas_;
+              bitField0_ = (bitField0_ & ~0x00000040);
+              rpDatasBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getRpDatasFieldBuilder() : null;
+            } else {
+              rpDatasBuilder_.addAllMessages(other.rpDatas_);
+            }
+          }
+        }
+        if (rsdDatasBuilder_ == null) {
+          if (!other.rsdDatas_.isEmpty()) {
+            if (rsdDatas_.isEmpty()) {
+              rsdDatas_ = other.rsdDatas_;
+              bitField0_ = (bitField0_ & ~0x00000080);
+            } else {
+              ensureRsdDatasIsMutable();
+              rsdDatas_.addAll(other.rsdDatas_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.rsdDatas_.isEmpty()) {
+            if (rsdDatasBuilder_.isEmpty()) {
+              rsdDatasBuilder_.dispose();
+              rsdDatasBuilder_ = null;
+              rsdDatas_ = other.rsdDatas_;
+              bitField0_ = (bitField0_ & ~0x00000080);
+              rsdDatasBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getRsdDatasFieldBuilder() : null;
+            } else {
+              rsdDatasBuilder_.addAllMessages(other.rsdDatas_);
+            }
+          }
         }
         if (sgsDatasBuilder_ == null) {
           if (!other.sgsDatas_.isEmpty()) {
             if (sgsDatas_.isEmpty()) {
               sgsDatas_ = other.sgsDatas_;
-              bitField0_ = (bitField0_ & ~0x00000020);
+              bitField0_ = (bitField0_ & ~0x00000100);
             } else {
               ensureSgsDatasIsMutable();
               sgsDatas_.addAll(other.sgsDatas_);
@@ -16983,7 +17502,7 @@ public final class RealDataNew {
               sgsDatasBuilder_.dispose();
               sgsDatasBuilder_ = null;
               sgsDatas_ = other.sgsDatas_;
-              bitField0_ = (bitField0_ & ~0x00000020);
+              bitField0_ = (bitField0_ & ~0x00000100);
               sgsDatasBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getSgsDatasFieldBuilder() : null;
@@ -16992,11 +17511,37 @@ public final class RealDataNew {
             }
           }
         }
+        if (tgsDatasBuilder_ == null) {
+          if (!other.tgsDatas_.isEmpty()) {
+            if (tgsDatas_.isEmpty()) {
+              tgsDatas_ = other.tgsDatas_;
+              bitField0_ = (bitField0_ & ~0x00000200);
+            } else {
+              ensureTgsDatasIsMutable();
+              tgsDatas_.addAll(other.tgsDatas_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.tgsDatas_.isEmpty()) {
+            if (tgsDatasBuilder_.isEmpty()) {
+              tgsDatasBuilder_.dispose();
+              tgsDatasBuilder_ = null;
+              tgsDatas_ = other.tgsDatas_;
+              bitField0_ = (bitField0_ & ~0x00000200);
+              tgsDatasBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getTgsDatasFieldBuilder() : null;
+            } else {
+              tgsDatasBuilder_.addAllMessages(other.tgsDatas_);
+            }
+          }
+        }
         if (pvDatasBuilder_ == null) {
           if (!other.pvDatas_.isEmpty()) {
             if (pvDatas_.isEmpty()) {
               pvDatas_ = other.pvDatas_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+              bitField0_ = (bitField0_ & ~0x00000400);
             } else {
               ensurePvDatasIsMutable();
               pvDatas_.addAll(other.pvDatas_);
@@ -17009,7 +17554,7 @@ public final class RealDataNew {
               pvDatasBuilder_.dispose();
               pvDatasBuilder_ = null;
               pvDatas_ = other.pvDatas_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+              bitField0_ = (bitField0_ & ~0x00000400);
               pvDatasBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getPvDatasFieldBuilder() : null;
@@ -17034,11 +17579,31 @@ public final class RealDataNew {
         if (!hasPacketCount()) {
           return false;
         }
-        if (!hasVal5()) {
+        if (!hasVer()) {
           return false;
+        }
+        for (int i = 0; i < getMeterDatasCount(); i++) {
+          if (!getMeterDatas(i).isInitialized()) {
+            return false;
+          }
+        }
+        for (int i = 0; i < getRpDatasCount(); i++) {
+          if (!getRpDatas(i).isInitialized()) {
+            return false;
+          }
+        }
+        for (int i = 0; i < getRsdDatasCount(); i++) {
+          if (!getRsdDatas(i).isInitialized()) {
+            return false;
+          }
         }
         for (int i = 0; i < getSgsDatasCount(); i++) {
           if (!getSgsDatas(i).isInitialized()) {
+            return false;
+          }
+        }
+        for (int i = 0; i < getTgsDatasCount(); i++) {
+          if (!getTgsDatas(i).isInitialized()) {
             return false;
           }
         }
@@ -17229,51 +17794,771 @@ public final class RealDataNew {
         return this;
       }
 
-      private int val5_ ;
+      private int ver_ ;
       /**
-       * <code>required uint32 val5 = 5;</code>
-       * @return Whether the val5 field is set.
+       * <code>required int32 ver = 5;</code>
+       * @return Whether the ver field is set.
        */
       @java.lang.Override
-      public boolean hasVal5() {
+      public boolean hasVer() {
         return ((bitField0_ & 0x00000010) != 0);
       }
       /**
-       * <code>required uint32 val5 = 5;</code>
-       * @return The val5.
+       * <code>required int32 ver = 5;</code>
+       * @return The ver.
        */
       @java.lang.Override
-      public int getVal5() {
-        return val5_;
+      public int getVer() {
+        return ver_;
       }
       /**
-       * <code>required uint32 val5 = 5;</code>
-       * @param value The val5 to set.
+       * <code>required int32 ver = 5;</code>
+       * @param value The ver to set.
        * @return This builder for chaining.
        */
-      public Builder setVal5(int value) {
+      public Builder setVer(int value) {
         bitField0_ |= 0x00000010;
-        val5_ = value;
+        ver_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>required uint32 val5 = 5;</code>
+       * <code>required int32 ver = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearVal5() {
+      public Builder clearVer() {
         bitField0_ = (bitField0_ & ~0x00000010);
-        val5_ = 0;
+        ver_ = 0;
         onChanged();
         return this;
+      }
+
+      private java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.MeterMO> meterDatas_ =
+        java.util.Collections.emptyList();
+      private void ensureMeterDatasIsMutable() {
+        if (!((bitField0_ & 0x00000020) != 0)) {
+          meterDatas_ = new java.util.ArrayList<com.hoymiles.infrastructure.protos.RealDataNew.MeterMO>(meterDatas_);
+          bitField0_ |= 0x00000020;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.hoymiles.infrastructure.protos.RealDataNew.MeterMO, com.hoymiles.infrastructure.protos.RealDataNew.MeterMO.Builder, com.hoymiles.infrastructure.protos.RealDataNew.MeterMOOrBuilder> meterDatasBuilder_;
+
+      /**
+       * <code>repeated .hoymiles.MeterMO meterDatas = 6;</code>
+       */
+      public java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.MeterMO> getMeterDatasList() {
+        if (meterDatasBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(meterDatas_);
+        } else {
+          return meterDatasBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .hoymiles.MeterMO meterDatas = 6;</code>
+       */
+      public int getMeterDatasCount() {
+        if (meterDatasBuilder_ == null) {
+          return meterDatas_.size();
+        } else {
+          return meterDatasBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .hoymiles.MeterMO meterDatas = 6;</code>
+       */
+      public com.hoymiles.infrastructure.protos.RealDataNew.MeterMO getMeterDatas(int index) {
+        if (meterDatasBuilder_ == null) {
+          return meterDatas_.get(index);
+        } else {
+          return meterDatasBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .hoymiles.MeterMO meterDatas = 6;</code>
+       */
+      public Builder setMeterDatas(
+          int index, com.hoymiles.infrastructure.protos.RealDataNew.MeterMO value) {
+        if (meterDatasBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMeterDatasIsMutable();
+          meterDatas_.set(index, value);
+          onChanged();
+        } else {
+          meterDatasBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.MeterMO meterDatas = 6;</code>
+       */
+      public Builder setMeterDatas(
+          int index, com.hoymiles.infrastructure.protos.RealDataNew.MeterMO.Builder builderForValue) {
+        if (meterDatasBuilder_ == null) {
+          ensureMeterDatasIsMutable();
+          meterDatas_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          meterDatasBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.MeterMO meterDatas = 6;</code>
+       */
+      public Builder addMeterDatas(com.hoymiles.infrastructure.protos.RealDataNew.MeterMO value) {
+        if (meterDatasBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMeterDatasIsMutable();
+          meterDatas_.add(value);
+          onChanged();
+        } else {
+          meterDatasBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.MeterMO meterDatas = 6;</code>
+       */
+      public Builder addMeterDatas(
+          int index, com.hoymiles.infrastructure.protos.RealDataNew.MeterMO value) {
+        if (meterDatasBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureMeterDatasIsMutable();
+          meterDatas_.add(index, value);
+          onChanged();
+        } else {
+          meterDatasBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.MeterMO meterDatas = 6;</code>
+       */
+      public Builder addMeterDatas(
+          com.hoymiles.infrastructure.protos.RealDataNew.MeterMO.Builder builderForValue) {
+        if (meterDatasBuilder_ == null) {
+          ensureMeterDatasIsMutable();
+          meterDatas_.add(builderForValue.build());
+          onChanged();
+        } else {
+          meterDatasBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.MeterMO meterDatas = 6;</code>
+       */
+      public Builder addMeterDatas(
+          int index, com.hoymiles.infrastructure.protos.RealDataNew.MeterMO.Builder builderForValue) {
+        if (meterDatasBuilder_ == null) {
+          ensureMeterDatasIsMutable();
+          meterDatas_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          meterDatasBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.MeterMO meterDatas = 6;</code>
+       */
+      public Builder addAllMeterDatas(
+          java.lang.Iterable<? extends com.hoymiles.infrastructure.protos.RealDataNew.MeterMO> values) {
+        if (meterDatasBuilder_ == null) {
+          ensureMeterDatasIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, meterDatas_);
+          onChanged();
+        } else {
+          meterDatasBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.MeterMO meterDatas = 6;</code>
+       */
+      public Builder clearMeterDatas() {
+        if (meterDatasBuilder_ == null) {
+          meterDatas_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000020);
+          onChanged();
+        } else {
+          meterDatasBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.MeterMO meterDatas = 6;</code>
+       */
+      public Builder removeMeterDatas(int index) {
+        if (meterDatasBuilder_ == null) {
+          ensureMeterDatasIsMutable();
+          meterDatas_.remove(index);
+          onChanged();
+        } else {
+          meterDatasBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.MeterMO meterDatas = 6;</code>
+       */
+      public com.hoymiles.infrastructure.protos.RealDataNew.MeterMO.Builder getMeterDatasBuilder(
+          int index) {
+        return getMeterDatasFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .hoymiles.MeterMO meterDatas = 6;</code>
+       */
+      public com.hoymiles.infrastructure.protos.RealDataNew.MeterMOOrBuilder getMeterDatasOrBuilder(
+          int index) {
+        if (meterDatasBuilder_ == null) {
+          return meterDatas_.get(index);  } else {
+          return meterDatasBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .hoymiles.MeterMO meterDatas = 6;</code>
+       */
+      public java.util.List<? extends com.hoymiles.infrastructure.protos.RealDataNew.MeterMOOrBuilder> 
+           getMeterDatasOrBuilderList() {
+        if (meterDatasBuilder_ != null) {
+          return meterDatasBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(meterDatas_);
+        }
+      }
+      /**
+       * <code>repeated .hoymiles.MeterMO meterDatas = 6;</code>
+       */
+      public com.hoymiles.infrastructure.protos.RealDataNew.MeterMO.Builder addMeterDatasBuilder() {
+        return getMeterDatasFieldBuilder().addBuilder(
+            com.hoymiles.infrastructure.protos.RealDataNew.MeterMO.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .hoymiles.MeterMO meterDatas = 6;</code>
+       */
+      public com.hoymiles.infrastructure.protos.RealDataNew.MeterMO.Builder addMeterDatasBuilder(
+          int index) {
+        return getMeterDatasFieldBuilder().addBuilder(
+            index, com.hoymiles.infrastructure.protos.RealDataNew.MeterMO.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .hoymiles.MeterMO meterDatas = 6;</code>
+       */
+      public java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.MeterMO.Builder> 
+           getMeterDatasBuilderList() {
+        return getMeterDatasFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.hoymiles.infrastructure.protos.RealDataNew.MeterMO, com.hoymiles.infrastructure.protos.RealDataNew.MeterMO.Builder, com.hoymiles.infrastructure.protos.RealDataNew.MeterMOOrBuilder> 
+          getMeterDatasFieldBuilder() {
+        if (meterDatasBuilder_ == null) {
+          meterDatasBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.hoymiles.infrastructure.protos.RealDataNew.MeterMO, com.hoymiles.infrastructure.protos.RealDataNew.MeterMO.Builder, com.hoymiles.infrastructure.protos.RealDataNew.MeterMOOrBuilder>(
+                  meterDatas_,
+                  ((bitField0_ & 0x00000020) != 0),
+                  getParentForChildren(),
+                  isClean());
+          meterDatas_ = null;
+        }
+        return meterDatasBuilder_;
+      }
+
+      private java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.RpMO> rpDatas_ =
+        java.util.Collections.emptyList();
+      private void ensureRpDatasIsMutable() {
+        if (!((bitField0_ & 0x00000040) != 0)) {
+          rpDatas_ = new java.util.ArrayList<com.hoymiles.infrastructure.protos.RealDataNew.RpMO>(rpDatas_);
+          bitField0_ |= 0x00000040;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.hoymiles.infrastructure.protos.RealDataNew.RpMO, com.hoymiles.infrastructure.protos.RealDataNew.RpMO.Builder, com.hoymiles.infrastructure.protos.RealDataNew.RpMOOrBuilder> rpDatasBuilder_;
+
+      /**
+       * <code>repeated .hoymiles.RpMO rpDatas = 7;</code>
+       */
+      public java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.RpMO> getRpDatasList() {
+        if (rpDatasBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(rpDatas_);
+        } else {
+          return rpDatasBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .hoymiles.RpMO rpDatas = 7;</code>
+       */
+      public int getRpDatasCount() {
+        if (rpDatasBuilder_ == null) {
+          return rpDatas_.size();
+        } else {
+          return rpDatasBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .hoymiles.RpMO rpDatas = 7;</code>
+       */
+      public com.hoymiles.infrastructure.protos.RealDataNew.RpMO getRpDatas(int index) {
+        if (rpDatasBuilder_ == null) {
+          return rpDatas_.get(index);
+        } else {
+          return rpDatasBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .hoymiles.RpMO rpDatas = 7;</code>
+       */
+      public Builder setRpDatas(
+          int index, com.hoymiles.infrastructure.protos.RealDataNew.RpMO value) {
+        if (rpDatasBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRpDatasIsMutable();
+          rpDatas_.set(index, value);
+          onChanged();
+        } else {
+          rpDatasBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.RpMO rpDatas = 7;</code>
+       */
+      public Builder setRpDatas(
+          int index, com.hoymiles.infrastructure.protos.RealDataNew.RpMO.Builder builderForValue) {
+        if (rpDatasBuilder_ == null) {
+          ensureRpDatasIsMutable();
+          rpDatas_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          rpDatasBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.RpMO rpDatas = 7;</code>
+       */
+      public Builder addRpDatas(com.hoymiles.infrastructure.protos.RealDataNew.RpMO value) {
+        if (rpDatasBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRpDatasIsMutable();
+          rpDatas_.add(value);
+          onChanged();
+        } else {
+          rpDatasBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.RpMO rpDatas = 7;</code>
+       */
+      public Builder addRpDatas(
+          int index, com.hoymiles.infrastructure.protos.RealDataNew.RpMO value) {
+        if (rpDatasBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRpDatasIsMutable();
+          rpDatas_.add(index, value);
+          onChanged();
+        } else {
+          rpDatasBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.RpMO rpDatas = 7;</code>
+       */
+      public Builder addRpDatas(
+          com.hoymiles.infrastructure.protos.RealDataNew.RpMO.Builder builderForValue) {
+        if (rpDatasBuilder_ == null) {
+          ensureRpDatasIsMutable();
+          rpDatas_.add(builderForValue.build());
+          onChanged();
+        } else {
+          rpDatasBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.RpMO rpDatas = 7;</code>
+       */
+      public Builder addRpDatas(
+          int index, com.hoymiles.infrastructure.protos.RealDataNew.RpMO.Builder builderForValue) {
+        if (rpDatasBuilder_ == null) {
+          ensureRpDatasIsMutable();
+          rpDatas_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          rpDatasBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.RpMO rpDatas = 7;</code>
+       */
+      public Builder addAllRpDatas(
+          java.lang.Iterable<? extends com.hoymiles.infrastructure.protos.RealDataNew.RpMO> values) {
+        if (rpDatasBuilder_ == null) {
+          ensureRpDatasIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, rpDatas_);
+          onChanged();
+        } else {
+          rpDatasBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.RpMO rpDatas = 7;</code>
+       */
+      public Builder clearRpDatas() {
+        if (rpDatasBuilder_ == null) {
+          rpDatas_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000040);
+          onChanged();
+        } else {
+          rpDatasBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.RpMO rpDatas = 7;</code>
+       */
+      public Builder removeRpDatas(int index) {
+        if (rpDatasBuilder_ == null) {
+          ensureRpDatasIsMutable();
+          rpDatas_.remove(index);
+          onChanged();
+        } else {
+          rpDatasBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.RpMO rpDatas = 7;</code>
+       */
+      public com.hoymiles.infrastructure.protos.RealDataNew.RpMO.Builder getRpDatasBuilder(
+          int index) {
+        return getRpDatasFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .hoymiles.RpMO rpDatas = 7;</code>
+       */
+      public com.hoymiles.infrastructure.protos.RealDataNew.RpMOOrBuilder getRpDatasOrBuilder(
+          int index) {
+        if (rpDatasBuilder_ == null) {
+          return rpDatas_.get(index);  } else {
+          return rpDatasBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .hoymiles.RpMO rpDatas = 7;</code>
+       */
+      public java.util.List<? extends com.hoymiles.infrastructure.protos.RealDataNew.RpMOOrBuilder> 
+           getRpDatasOrBuilderList() {
+        if (rpDatasBuilder_ != null) {
+          return rpDatasBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(rpDatas_);
+        }
+      }
+      /**
+       * <code>repeated .hoymiles.RpMO rpDatas = 7;</code>
+       */
+      public com.hoymiles.infrastructure.protos.RealDataNew.RpMO.Builder addRpDatasBuilder() {
+        return getRpDatasFieldBuilder().addBuilder(
+            com.hoymiles.infrastructure.protos.RealDataNew.RpMO.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .hoymiles.RpMO rpDatas = 7;</code>
+       */
+      public com.hoymiles.infrastructure.protos.RealDataNew.RpMO.Builder addRpDatasBuilder(
+          int index) {
+        return getRpDatasFieldBuilder().addBuilder(
+            index, com.hoymiles.infrastructure.protos.RealDataNew.RpMO.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .hoymiles.RpMO rpDatas = 7;</code>
+       */
+      public java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.RpMO.Builder> 
+           getRpDatasBuilderList() {
+        return getRpDatasFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.hoymiles.infrastructure.protos.RealDataNew.RpMO, com.hoymiles.infrastructure.protos.RealDataNew.RpMO.Builder, com.hoymiles.infrastructure.protos.RealDataNew.RpMOOrBuilder> 
+          getRpDatasFieldBuilder() {
+        if (rpDatasBuilder_ == null) {
+          rpDatasBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.hoymiles.infrastructure.protos.RealDataNew.RpMO, com.hoymiles.infrastructure.protos.RealDataNew.RpMO.Builder, com.hoymiles.infrastructure.protos.RealDataNew.RpMOOrBuilder>(
+                  rpDatas_,
+                  ((bitField0_ & 0x00000040) != 0),
+                  getParentForChildren(),
+                  isClean());
+          rpDatas_ = null;
+        }
+        return rpDatasBuilder_;
+      }
+
+      private java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.RSDMO> rsdDatas_ =
+        java.util.Collections.emptyList();
+      private void ensureRsdDatasIsMutable() {
+        if (!((bitField0_ & 0x00000080) != 0)) {
+          rsdDatas_ = new java.util.ArrayList<com.hoymiles.infrastructure.protos.RealDataNew.RSDMO>(rsdDatas_);
+          bitField0_ |= 0x00000080;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.hoymiles.infrastructure.protos.RealDataNew.RSDMO, com.hoymiles.infrastructure.protos.RealDataNew.RSDMO.Builder, com.hoymiles.infrastructure.protos.RealDataNew.RSDMOOrBuilder> rsdDatasBuilder_;
+
+      /**
+       * <code>repeated .hoymiles.RSDMO rsdDatas = 8;</code>
+       */
+      public java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.RSDMO> getRsdDatasList() {
+        if (rsdDatasBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(rsdDatas_);
+        } else {
+          return rsdDatasBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .hoymiles.RSDMO rsdDatas = 8;</code>
+       */
+      public int getRsdDatasCount() {
+        if (rsdDatasBuilder_ == null) {
+          return rsdDatas_.size();
+        } else {
+          return rsdDatasBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .hoymiles.RSDMO rsdDatas = 8;</code>
+       */
+      public com.hoymiles.infrastructure.protos.RealDataNew.RSDMO getRsdDatas(int index) {
+        if (rsdDatasBuilder_ == null) {
+          return rsdDatas_.get(index);
+        } else {
+          return rsdDatasBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .hoymiles.RSDMO rsdDatas = 8;</code>
+       */
+      public Builder setRsdDatas(
+          int index, com.hoymiles.infrastructure.protos.RealDataNew.RSDMO value) {
+        if (rsdDatasBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRsdDatasIsMutable();
+          rsdDatas_.set(index, value);
+          onChanged();
+        } else {
+          rsdDatasBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.RSDMO rsdDatas = 8;</code>
+       */
+      public Builder setRsdDatas(
+          int index, com.hoymiles.infrastructure.protos.RealDataNew.RSDMO.Builder builderForValue) {
+        if (rsdDatasBuilder_ == null) {
+          ensureRsdDatasIsMutable();
+          rsdDatas_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          rsdDatasBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.RSDMO rsdDatas = 8;</code>
+       */
+      public Builder addRsdDatas(com.hoymiles.infrastructure.protos.RealDataNew.RSDMO value) {
+        if (rsdDatasBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRsdDatasIsMutable();
+          rsdDatas_.add(value);
+          onChanged();
+        } else {
+          rsdDatasBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.RSDMO rsdDatas = 8;</code>
+       */
+      public Builder addRsdDatas(
+          int index, com.hoymiles.infrastructure.protos.RealDataNew.RSDMO value) {
+        if (rsdDatasBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRsdDatasIsMutable();
+          rsdDatas_.add(index, value);
+          onChanged();
+        } else {
+          rsdDatasBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.RSDMO rsdDatas = 8;</code>
+       */
+      public Builder addRsdDatas(
+          com.hoymiles.infrastructure.protos.RealDataNew.RSDMO.Builder builderForValue) {
+        if (rsdDatasBuilder_ == null) {
+          ensureRsdDatasIsMutable();
+          rsdDatas_.add(builderForValue.build());
+          onChanged();
+        } else {
+          rsdDatasBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.RSDMO rsdDatas = 8;</code>
+       */
+      public Builder addRsdDatas(
+          int index, com.hoymiles.infrastructure.protos.RealDataNew.RSDMO.Builder builderForValue) {
+        if (rsdDatasBuilder_ == null) {
+          ensureRsdDatasIsMutable();
+          rsdDatas_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          rsdDatasBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.RSDMO rsdDatas = 8;</code>
+       */
+      public Builder addAllRsdDatas(
+          java.lang.Iterable<? extends com.hoymiles.infrastructure.protos.RealDataNew.RSDMO> values) {
+        if (rsdDatasBuilder_ == null) {
+          ensureRsdDatasIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, rsdDatas_);
+          onChanged();
+        } else {
+          rsdDatasBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.RSDMO rsdDatas = 8;</code>
+       */
+      public Builder clearRsdDatas() {
+        if (rsdDatasBuilder_ == null) {
+          rsdDatas_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000080);
+          onChanged();
+        } else {
+          rsdDatasBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.RSDMO rsdDatas = 8;</code>
+       */
+      public Builder removeRsdDatas(int index) {
+        if (rsdDatasBuilder_ == null) {
+          ensureRsdDatasIsMutable();
+          rsdDatas_.remove(index);
+          onChanged();
+        } else {
+          rsdDatasBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.RSDMO rsdDatas = 8;</code>
+       */
+      public com.hoymiles.infrastructure.protos.RealDataNew.RSDMO.Builder getRsdDatasBuilder(
+          int index) {
+        return getRsdDatasFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .hoymiles.RSDMO rsdDatas = 8;</code>
+       */
+      public com.hoymiles.infrastructure.protos.RealDataNew.RSDMOOrBuilder getRsdDatasOrBuilder(
+          int index) {
+        if (rsdDatasBuilder_ == null) {
+          return rsdDatas_.get(index);  } else {
+          return rsdDatasBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .hoymiles.RSDMO rsdDatas = 8;</code>
+       */
+      public java.util.List<? extends com.hoymiles.infrastructure.protos.RealDataNew.RSDMOOrBuilder> 
+           getRsdDatasOrBuilderList() {
+        if (rsdDatasBuilder_ != null) {
+          return rsdDatasBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(rsdDatas_);
+        }
+      }
+      /**
+       * <code>repeated .hoymiles.RSDMO rsdDatas = 8;</code>
+       */
+      public com.hoymiles.infrastructure.protos.RealDataNew.RSDMO.Builder addRsdDatasBuilder() {
+        return getRsdDatasFieldBuilder().addBuilder(
+            com.hoymiles.infrastructure.protos.RealDataNew.RSDMO.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .hoymiles.RSDMO rsdDatas = 8;</code>
+       */
+      public com.hoymiles.infrastructure.protos.RealDataNew.RSDMO.Builder addRsdDatasBuilder(
+          int index) {
+        return getRsdDatasFieldBuilder().addBuilder(
+            index, com.hoymiles.infrastructure.protos.RealDataNew.RSDMO.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .hoymiles.RSDMO rsdDatas = 8;</code>
+       */
+      public java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.RSDMO.Builder> 
+           getRsdDatasBuilderList() {
+        return getRsdDatasFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.hoymiles.infrastructure.protos.RealDataNew.RSDMO, com.hoymiles.infrastructure.protos.RealDataNew.RSDMO.Builder, com.hoymiles.infrastructure.protos.RealDataNew.RSDMOOrBuilder> 
+          getRsdDatasFieldBuilder() {
+        if (rsdDatasBuilder_ == null) {
+          rsdDatasBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.hoymiles.infrastructure.protos.RealDataNew.RSDMO, com.hoymiles.infrastructure.protos.RealDataNew.RSDMO.Builder, com.hoymiles.infrastructure.protos.RealDataNew.RSDMOOrBuilder>(
+                  rsdDatas_,
+                  ((bitField0_ & 0x00000080) != 0),
+                  getParentForChildren(),
+                  isClean());
+          rsdDatas_ = null;
+        }
+        return rsdDatasBuilder_;
       }
 
       private java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.SGSMO> sgsDatas_ =
         java.util.Collections.emptyList();
       private void ensureSgsDatasIsMutable() {
-        if (!((bitField0_ & 0x00000020) != 0)) {
+        if (!((bitField0_ & 0x00000100) != 0)) {
           sgsDatas_ = new java.util.ArrayList<com.hoymiles.infrastructure.protos.RealDataNew.SGSMO>(sgsDatas_);
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000100;
          }
       }
 
@@ -17423,7 +18708,7 @@ public final class RealDataNew {
       public Builder clearSgsDatas() {
         if (sgsDatasBuilder_ == null) {
           sgsDatas_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000100);
           onChanged();
         } else {
           sgsDatasBuilder_.clear();
@@ -17500,7 +18785,7 @@ public final class RealDataNew {
           sgsDatasBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.hoymiles.infrastructure.protos.RealDataNew.SGSMO, com.hoymiles.infrastructure.protos.RealDataNew.SGSMO.Builder, com.hoymiles.infrastructure.protos.RealDataNew.SGSMOOrBuilder>(
                   sgsDatas_,
-                  ((bitField0_ & 0x00000020) != 0),
+                  ((bitField0_ & 0x00000100) != 0),
                   getParentForChildren(),
                   isClean());
           sgsDatas_ = null;
@@ -17508,12 +18793,252 @@ public final class RealDataNew {
         return sgsDatasBuilder_;
       }
 
+      private java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.TGSMO> tgsDatas_ =
+        java.util.Collections.emptyList();
+      private void ensureTgsDatasIsMutable() {
+        if (!((bitField0_ & 0x00000200) != 0)) {
+          tgsDatas_ = new java.util.ArrayList<com.hoymiles.infrastructure.protos.RealDataNew.TGSMO>(tgsDatas_);
+          bitField0_ |= 0x00000200;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.hoymiles.infrastructure.protos.RealDataNew.TGSMO, com.hoymiles.infrastructure.protos.RealDataNew.TGSMO.Builder, com.hoymiles.infrastructure.protos.RealDataNew.TGSMOOrBuilder> tgsDatasBuilder_;
+
+      /**
+       * <code>repeated .hoymiles.TGSMO tgsDatas = 10;</code>
+       */
+      public java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.TGSMO> getTgsDatasList() {
+        if (tgsDatasBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(tgsDatas_);
+        } else {
+          return tgsDatasBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .hoymiles.TGSMO tgsDatas = 10;</code>
+       */
+      public int getTgsDatasCount() {
+        if (tgsDatasBuilder_ == null) {
+          return tgsDatas_.size();
+        } else {
+          return tgsDatasBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .hoymiles.TGSMO tgsDatas = 10;</code>
+       */
+      public com.hoymiles.infrastructure.protos.RealDataNew.TGSMO getTgsDatas(int index) {
+        if (tgsDatasBuilder_ == null) {
+          return tgsDatas_.get(index);
+        } else {
+          return tgsDatasBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .hoymiles.TGSMO tgsDatas = 10;</code>
+       */
+      public Builder setTgsDatas(
+          int index, com.hoymiles.infrastructure.protos.RealDataNew.TGSMO value) {
+        if (tgsDatasBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTgsDatasIsMutable();
+          tgsDatas_.set(index, value);
+          onChanged();
+        } else {
+          tgsDatasBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.TGSMO tgsDatas = 10;</code>
+       */
+      public Builder setTgsDatas(
+          int index, com.hoymiles.infrastructure.protos.RealDataNew.TGSMO.Builder builderForValue) {
+        if (tgsDatasBuilder_ == null) {
+          ensureTgsDatasIsMutable();
+          tgsDatas_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          tgsDatasBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.TGSMO tgsDatas = 10;</code>
+       */
+      public Builder addTgsDatas(com.hoymiles.infrastructure.protos.RealDataNew.TGSMO value) {
+        if (tgsDatasBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTgsDatasIsMutable();
+          tgsDatas_.add(value);
+          onChanged();
+        } else {
+          tgsDatasBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.TGSMO tgsDatas = 10;</code>
+       */
+      public Builder addTgsDatas(
+          int index, com.hoymiles.infrastructure.protos.RealDataNew.TGSMO value) {
+        if (tgsDatasBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTgsDatasIsMutable();
+          tgsDatas_.add(index, value);
+          onChanged();
+        } else {
+          tgsDatasBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.TGSMO tgsDatas = 10;</code>
+       */
+      public Builder addTgsDatas(
+          com.hoymiles.infrastructure.protos.RealDataNew.TGSMO.Builder builderForValue) {
+        if (tgsDatasBuilder_ == null) {
+          ensureTgsDatasIsMutable();
+          tgsDatas_.add(builderForValue.build());
+          onChanged();
+        } else {
+          tgsDatasBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.TGSMO tgsDatas = 10;</code>
+       */
+      public Builder addTgsDatas(
+          int index, com.hoymiles.infrastructure.protos.RealDataNew.TGSMO.Builder builderForValue) {
+        if (tgsDatasBuilder_ == null) {
+          ensureTgsDatasIsMutable();
+          tgsDatas_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          tgsDatasBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.TGSMO tgsDatas = 10;</code>
+       */
+      public Builder addAllTgsDatas(
+          java.lang.Iterable<? extends com.hoymiles.infrastructure.protos.RealDataNew.TGSMO> values) {
+        if (tgsDatasBuilder_ == null) {
+          ensureTgsDatasIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, tgsDatas_);
+          onChanged();
+        } else {
+          tgsDatasBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.TGSMO tgsDatas = 10;</code>
+       */
+      public Builder clearTgsDatas() {
+        if (tgsDatasBuilder_ == null) {
+          tgsDatas_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000200);
+          onChanged();
+        } else {
+          tgsDatasBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.TGSMO tgsDatas = 10;</code>
+       */
+      public Builder removeTgsDatas(int index) {
+        if (tgsDatasBuilder_ == null) {
+          ensureTgsDatasIsMutable();
+          tgsDatas_.remove(index);
+          onChanged();
+        } else {
+          tgsDatasBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .hoymiles.TGSMO tgsDatas = 10;</code>
+       */
+      public com.hoymiles.infrastructure.protos.RealDataNew.TGSMO.Builder getTgsDatasBuilder(
+          int index) {
+        return getTgsDatasFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .hoymiles.TGSMO tgsDatas = 10;</code>
+       */
+      public com.hoymiles.infrastructure.protos.RealDataNew.TGSMOOrBuilder getTgsDatasOrBuilder(
+          int index) {
+        if (tgsDatasBuilder_ == null) {
+          return tgsDatas_.get(index);  } else {
+          return tgsDatasBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .hoymiles.TGSMO tgsDatas = 10;</code>
+       */
+      public java.util.List<? extends com.hoymiles.infrastructure.protos.RealDataNew.TGSMOOrBuilder> 
+           getTgsDatasOrBuilderList() {
+        if (tgsDatasBuilder_ != null) {
+          return tgsDatasBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(tgsDatas_);
+        }
+      }
+      /**
+       * <code>repeated .hoymiles.TGSMO tgsDatas = 10;</code>
+       */
+      public com.hoymiles.infrastructure.protos.RealDataNew.TGSMO.Builder addTgsDatasBuilder() {
+        return getTgsDatasFieldBuilder().addBuilder(
+            com.hoymiles.infrastructure.protos.RealDataNew.TGSMO.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .hoymiles.TGSMO tgsDatas = 10;</code>
+       */
+      public com.hoymiles.infrastructure.protos.RealDataNew.TGSMO.Builder addTgsDatasBuilder(
+          int index) {
+        return getTgsDatasFieldBuilder().addBuilder(
+            index, com.hoymiles.infrastructure.protos.RealDataNew.TGSMO.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .hoymiles.TGSMO tgsDatas = 10;</code>
+       */
+      public java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.TGSMO.Builder> 
+           getTgsDatasBuilderList() {
+        return getTgsDatasFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.hoymiles.infrastructure.protos.RealDataNew.TGSMO, com.hoymiles.infrastructure.protos.RealDataNew.TGSMO.Builder, com.hoymiles.infrastructure.protos.RealDataNew.TGSMOOrBuilder> 
+          getTgsDatasFieldBuilder() {
+        if (tgsDatasBuilder_ == null) {
+          tgsDatasBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.hoymiles.infrastructure.protos.RealDataNew.TGSMO, com.hoymiles.infrastructure.protos.RealDataNew.TGSMO.Builder, com.hoymiles.infrastructure.protos.RealDataNew.TGSMOOrBuilder>(
+                  tgsDatas_,
+                  ((bitField0_ & 0x00000200) != 0),
+                  getParentForChildren(),
+                  isClean());
+          tgsDatas_ = null;
+        }
+        return tgsDatasBuilder_;
+      }
+
       private java.util.List<com.hoymiles.infrastructure.protos.RealDataNew.PvMO> pvDatas_ =
         java.util.Collections.emptyList();
       private void ensurePvDatasIsMutable() {
-        if (!((bitField0_ & 0x00000040) != 0)) {
+        if (!((bitField0_ & 0x00000400) != 0)) {
           pvDatas_ = new java.util.ArrayList<com.hoymiles.infrastructure.protos.RealDataNew.PvMO>(pvDatas_);
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000400;
          }
       }
 
@@ -17663,7 +19188,7 @@ public final class RealDataNew {
       public Builder clearPvDatas() {
         if (pvDatasBuilder_ == null) {
           pvDatas_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000400);
           onChanged();
         } else {
           pvDatasBuilder_.clear();
@@ -17740,7 +19265,7 @@ public final class RealDataNew {
           pvDatasBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.hoymiles.infrastructure.protos.RealDataNew.PvMO, com.hoymiles.infrastructure.protos.RealDataNew.PvMO.Builder, com.hoymiles.infrastructure.protos.RealDataNew.PvMOOrBuilder>(
                   pvDatas_,
-                  ((bitField0_ & 0x00000040) != 0),
+                  ((bitField0_ & 0x00000400) != 0),
                   getParentForChildren(),
                   isClean());
           pvDatas_ = null;
@@ -19929,53 +21454,57 @@ public final class RealDataNew {
       "\n*src/main/resources/proto/RealDataNew.p" +
       "roto\022\010hoymiles\"T\n\nRealResDTO\022\016\n\006ymdHms\030\001" +
       " \002(\014\022\n\n\002cp\030\002 \002(\005\022\017\n\007errCode\030\003 \002(\005\022\013\n\003oft" +
-      "\030\004 \002(\005\022\014\n\004time\030\005 \002(\005\"\243\002\n\nRealReqDTO\022\r\n\005d" +
-      "tuSn\030\001 \002(\014\022\014\n\004time\030\002 \002(\005\022\n\n\002ap\030\003 \002(\005\022\r\n\002" +
-      "cp\030\004 \001(\005:\0010\022\013\n\003ver\030\005 \002(\005\022%\n\nmeterDatas\030\006" +
-      " \003(\0132\021.hoymiles.MeterMO\022\037\n\007rpDatas\030\007 \003(\013" +
-      "2\016.hoymiles.RpMO\022!\n\010rsdDatas\030\010 \003(\0132\017.hoy" +
-      "miles.RSDMO\022!\n\010sgsDatas\030\t \003(\0132\017.hoymiles" +
-      ".SGSMO\022!\n\010tgsDatas\030\n \003(\0132\017.hoymiles.TGSM" +
-      "O\022\037\n\007pvDatas\030\013 \003(\0132\016.hoymiles.PvMO\"\334\002\n\007M" +
-      "eterMO\022\014\n\004type\030\001 \002(\005\022\n\n\002sn\030\002 \002(\003\022\013\n\003pTt\030" +
-      "\003 \002(\005\022\014\n\004pTta\030\004 \002(\005\022\014\n\004pTtb\030\005 \002(\005\022\014\n\004pTt" +
-      "c\030\006 \002(\005\022\014\n\004pfTt\030\007 \002(\005\022\014\n\004epTt\030\010 \002(\005\022\r\n\005e" +
-      "pTta\030\t \002(\005\022\r\n\005epTtb\030\n \002(\005\022\r\n\005epTtc\030\013 \002(\005" +
-      "\022\014\n\004enTt\030\014 \002(\005\022\r\n\005enTta\030\r \002(\005\022\r\n\005enTtb\030\016" +
-      " \002(\005\022\r\n\005enTtc\030\017 \002(\005\022\r\n\005fault\030\020 \002(\005\022\n\n\002uA" +
-      "\030\021 \002(\005\022\n\n\002uB\030\022 \002(\005\022\n\n\002uC\030\023 \002(\005\022\n\n\002iA\030\024 \002" +
-      "(\005\022\n\n\002iB\030\025 \002(\005\022\n\n\002iC\030\026 \002(\005\022\013\n\003pfA\030\027 \002(\005\022" +
-      "\013\n\003pfB\030\030 \002(\005\022\013\n\003pfC\030\031 \002(\005\"K\n\004RpMO\022\014\n\004sig" +
-      "n\030\002 \002(\005\022\n\n\002sn\030\001 \002(\003\022\014\n\004chan\030\003 \002(\005\022\r\n\005pvN" +
-      "ub\030\004 \002(\005\022\014\n\004link\030\005 \002(\005\"m\n\005RSDMO\022\n\n\002sn\030\001 " +
-      "\002(\003\022\013\n\003ver\030\002 \002(\005\022\t\n\001v\030\003 \002(\005\022\t\n\001p\030\004 \002(\005\022\014" +
-      "\n\004temp\030\005 \002(\005\022\014\n\004wnum\030\006 \002(\005\022\013\n\003crc\030\007 \002(\005\022" +
-      "\014\n\004link\030\010 \002(\005\"\341\001\n\005SGSMO\022\n\n\002sn\030\001 \002(\003\022\016\n\003v" +
-      "er\030\002 \001(\005:\0010\022\014\n\001v\030\003 \001(\005:\0010\022\017\n\004freq\030\004 \001(\005:" +
-      "\0010\022\014\n\001p\030\005 \001(\005:\0010\022\014\n\001q\030\006 \001(\005:\0010\022\014\n\001i\030\007 \001(" +
-      "\005:\0010\022\r\n\002pf\030\010 \001(\005:\0010\022\017\n\004temp\030\t \001(\005:\0010\022\017\n\004" +
-      "wnum\030\n \001(\005:\0010\022\016\n\003crc\030\013 \001(\005:\0010\022\017\n\004link\030\014 " +
-      "\001(\005:\0010\022\017\n\004pLim\030\r \001(\005:\0010\022\020\n\010miSignal\030\024 \002(" +
-      "\005\"\210\002\n\005TGSMO\022\n\n\002sn\030\001 \002(\003\022\013\n\003ver\030\002 \002(\005\022\n\n\002" +
-      "vA\030\003 \002(\005\022\n\n\002vB\030\004 \002(\005\022\n\n\002vC\030\005 \002(\005\022\013\n\003vAb\030" +
-      "\006 \002(\005\022\013\n\003vBc\030\007 \002(\005\022\013\n\003vCa\030\010 \002(\005\022\014\n\004freq\030" +
-      "\t \002(\005\022\t\n\001p\030\n \002(\005\022\t\n\001q\030\013 \002(\005\022\n\n\002iA\030\014 \002(\005\022" +
-      "\n\n\002iB\030\r \002(\005\022\n\n\002iC\030\016 \002(\005\022\n\n\002pf\030\017 \002(\005\022\014\n\004t" +
-      "emp\030\020 \002(\005\022\014\n\004wnum\030\021 \002(\005\022\013\n\003crc\030\022 \002(\005\022\014\n\004" +
-      "link\030\023 \002(\005\022\020\n\010miSignal\030\024 \002(\005\"w\n\004PvMO\022\n\n\002" +
-      "sn\030\001 \002(\003\022\n\n\002pi\030\002 \002(\005\022\014\n\001v\030\003 \001(\005:\0010\022\014\n\001i\030" +
-      "\004 \001(\005:\0010\022\014\n\001p\030\005 \001(\005:\0010\022\r\n\002et\030\006 \001(\005:\0010\022\r\n" +
-      "\002ed\030\007 \001(\005:\0010\022\017\n\004code\030\010 \001(\005:\0010\"\243\001\n\007Msg871" +
-      "6\022\r\n\005dtuSn\030\001 \002(\014\022\014\n\004time\030\002 \002(\r\022\023\n\013packet" +
-      "Count\030\003 \002(\r\022\024\n\tpacketNum\030\004 \001(\r:\0010\022\014\n\004val" +
-      "5\030\005 \002(\r\022!\n\010sgsDatas\030\t \003(\0132\017.hoymiles.SGS" +
-      "MO\022\037\n\007pvDatas\030\013 \003(\0132\016.hoymiles.PvMO\"\243\001\n\007" +
-      "Msg8717\022\r\n\005dtuSn\030\001 \002(\014\022\014\n\004time\030\002 \002(\r\022\023\n\013" +
-      "packetCount\030\003 \002(\r\022\024\n\tpacketNum\030\004 \001(\r:\0010\022" +
-      "\014\n\004val5\030\005 \002(\r\022!\n\010sgsDatas\030\t \003(\0132\017.hoymil" +
-      "es.SGSMO\022\037\n\007pvDatas\030\013 \003(\0132\016.hoymiles.PvM" +
-      "OB3\n\"com.hoymiles.infrastructure.protosB" +
-      "\013RealDataNewP\000"
+      "\030\004 \002(\005\022\014\n\004time\030\005 \002(\005\"\263\002\n\nRealReqDTO\022\r\n\005d" +
+      "tuSn\030\001 \002(\014\022\014\n\004time\030\002 \002(\005\022\023\n\013packetCount\030" +
+      "\003 \002(\r\022\024\n\tpacketNum\030\004 \001(\r:\0010\022\013\n\003ver\030\005 \002(\005" +
+      "\022%\n\nmeterDatas\030\006 \003(\0132\021.hoymiles.MeterMO\022" +
+      "\037\n\007rpDatas\030\007 \003(\0132\016.hoymiles.RpMO\022!\n\010rsdD" +
+      "atas\030\010 \003(\0132\017.hoymiles.RSDMO\022!\n\010sgsDatas\030" +
+      "\t \003(\0132\017.hoymiles.SGSMO\022!\n\010tgsDatas\030\n \003(\013" +
+      "2\017.hoymiles.TGSMO\022\037\n\007pvDatas\030\013 \003(\0132\016.hoy" +
+      "miles.PvMO\"\334\002\n\007MeterMO\022\014\n\004type\030\001 \002(\005\022\n\n\002" +
+      "sn\030\002 \002(\003\022\013\n\003pTt\030\003 \002(\005\022\014\n\004pTta\030\004 \002(\005\022\014\n\004p" +
+      "Ttb\030\005 \002(\005\022\014\n\004pTtc\030\006 \002(\005\022\014\n\004pfTt\030\007 \002(\005\022\014\n" +
+      "\004epTt\030\010 \002(\005\022\r\n\005epTta\030\t \002(\005\022\r\n\005epTtb\030\n \002(" +
+      "\005\022\r\n\005epTtc\030\013 \002(\005\022\014\n\004enTt\030\014 \002(\005\022\r\n\005enTta\030" +
+      "\r \002(\005\022\r\n\005enTtb\030\016 \002(\005\022\r\n\005enTtc\030\017 \002(\005\022\r\n\005f" +
+      "ault\030\020 \002(\005\022\n\n\002uA\030\021 \002(\005\022\n\n\002uB\030\022 \002(\005\022\n\n\002uC" +
+      "\030\023 \002(\005\022\n\n\002iA\030\024 \002(\005\022\n\n\002iB\030\025 \002(\005\022\n\n\002iC\030\026 \002" +
+      "(\005\022\013\n\003pfA\030\027 \002(\005\022\013\n\003pfB\030\030 \002(\005\022\013\n\003pfC\030\031 \002(" +
+      "\005\"K\n\004RpMO\022\014\n\004sign\030\002 \002(\005\022\n\n\002sn\030\001 \002(\003\022\014\n\004c" +
+      "han\030\003 \002(\005\022\r\n\005pvNub\030\004 \002(\005\022\014\n\004link\030\005 \002(\005\"m" +
+      "\n\005RSDMO\022\n\n\002sn\030\001 \002(\003\022\013\n\003ver\030\002 \002(\005\022\t\n\001v\030\003 " +
+      "\002(\005\022\t\n\001p\030\004 \002(\005\022\014\n\004temp\030\005 \002(\005\022\014\n\004wnum\030\006 \002" +
+      "(\005\022\013\n\003crc\030\007 \002(\005\022\014\n\004link\030\010 \002(\005\"\341\001\n\005SGSMO\022" +
+      "\n\n\002sn\030\001 \002(\003\022\016\n\003ver\030\002 \001(\005:\0010\022\014\n\001v\030\003 \001(\005:\001" +
+      "0\022\017\n\004freq\030\004 \001(\005:\0010\022\014\n\001p\030\005 \001(\005:\0010\022\014\n\001q\030\006 " +
+      "\001(\005:\0010\022\014\n\001i\030\007 \001(\005:\0010\022\r\n\002pf\030\010 \001(\005:\0010\022\017\n\004t" +
+      "emp\030\t \001(\005:\0010\022\017\n\004wnum\030\n \001(\005:\0010\022\016\n\003crc\030\013 \001" +
+      "(\005:\0010\022\017\n\004link\030\014 \001(\005:\0010\022\017\n\004pLim\030\r \001(\005:\0010\022" +
+      "\020\n\010miSignal\030\024 \001(\005\"\210\002\n\005TGSMO\022\n\n\002sn\030\001 \002(\003\022" +
+      "\013\n\003ver\030\002 \002(\005\022\n\n\002vA\030\003 \002(\005\022\n\n\002vB\030\004 \002(\005\022\n\n\002" +
+      "vC\030\005 \002(\005\022\013\n\003vAb\030\006 \002(\005\022\013\n\003vBc\030\007 \002(\005\022\013\n\003vC" +
+      "a\030\010 \002(\005\022\014\n\004freq\030\t \002(\005\022\t\n\001p\030\n \002(\005\022\t\n\001q\030\013 " +
+      "\002(\005\022\n\n\002iA\030\014 \002(\005\022\n\n\002iB\030\r \002(\005\022\n\n\002iC\030\016 \002(\005\022" +
+      "\n\n\002pf\030\017 \002(\005\022\014\n\004temp\030\020 \002(\005\022\014\n\004wnum\030\021 \002(\005\022" +
+      "\013\n\003crc\030\022 \002(\005\022\014\n\004link\030\023 \002(\005\022\020\n\010miSignal\030\024" +
+      " \002(\005\"w\n\004PvMO\022\n\n\002sn\030\001 \002(\003\022\n\n\002pi\030\002 \002(\005\022\014\n\001" +
+      "v\030\003 \001(\005:\0010\022\014\n\001i\030\004 \001(\005:\0010\022\014\n\001p\030\005 \001(\005:\0010\022\r" +
+      "\n\002et\030\006 \001(\005:\0010\022\r\n\002ed\030\007 \001(\005:\0010\022\017\n\004code\030\010 \001" +
+      "(\005:\0010\"\260\002\n\007Msg8716\022\r\n\005dtuSn\030\001 \002(\014\022\014\n\004time" +
+      "\030\002 \002(\r\022\023\n\013packetCount\030\003 \002(\r\022\024\n\tpacketNum" +
+      "\030\004 \001(\r:\0010\022\013\n\003ver\030\005 \002(\005\022%\n\nmeterDatas\030\006 \003" +
+      "(\0132\021.hoymiles.MeterMO\022\037\n\007rpDatas\030\007 \003(\0132\016" +
+      ".hoymiles.RpMO\022!\n\010rsdDatas\030\010 \003(\0132\017.hoymi" +
+      "les.RSDMO\022!\n\010sgsDatas\030\t \003(\0132\017.hoymiles.S" +
+      "GSMO\022!\n\010tgsDatas\030\n \003(\0132\017.hoymiles.TGSMO\022" +
+      "\037\n\007pvDatas\030\013 \003(\0132\016.hoymiles.PvMO\"\243\001\n\007Msg" +
+      "8717\022\r\n\005dtuSn\030\001 \002(\014\022\014\n\004time\030\002 \002(\r\022\023\n\013pac" +
+      "ketCount\030\003 \002(\r\022\024\n\tpacketNum\030\004 \001(\r:\0010\022\014\n\004" +
+      "val5\030\005 \002(\r\022!\n\010sgsDatas\030\t \003(\0132\017.hoymiles." +
+      "SGSMO\022\037\n\007pvDatas\030\013 \003(\0132\016.hoymiles.PvMOB3" +
+      "\n\"com.hoymiles.infrastructure.protosB\013Re" +
+      "alDataNewP\000"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -19992,7 +21521,7 @@ public final class RealDataNew {
     internal_static_hoymiles_RealReqDTO_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_hoymiles_RealReqDTO_descriptor,
-        new java.lang.String[] { "DtuSn", "Time", "Ap", "Cp", "Ver", "MeterDatas", "RpDatas", "RsdDatas", "SgsDatas", "TgsDatas", "PvDatas", });
+        new java.lang.String[] { "DtuSn", "Time", "PacketCount", "PacketNum", "Ver", "MeterDatas", "RpDatas", "RsdDatas", "SgsDatas", "TgsDatas", "PvDatas", });
     internal_static_hoymiles_MeterMO_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_hoymiles_MeterMO_fieldAccessorTable = new
@@ -20034,7 +21563,7 @@ public final class RealDataNew {
     internal_static_hoymiles_Msg8716_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_hoymiles_Msg8716_descriptor,
-        new java.lang.String[] { "DtuSn", "Time", "PacketCount", "PacketNum", "Val5", "SgsDatas", "PvDatas", });
+        new java.lang.String[] { "DtuSn", "Time", "PacketCount", "PacketNum", "Ver", "MeterDatas", "RpDatas", "RsdDatas", "SgsDatas", "TgsDatas", "PvDatas", });
     internal_static_hoymiles_Msg8717_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_hoymiles_Msg8717_fieldAccessorTable = new

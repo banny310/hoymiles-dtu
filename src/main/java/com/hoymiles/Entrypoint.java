@@ -35,7 +35,7 @@ public class Entrypoint {
             }
         });
 
-        while (!executor.awaitTermination(1, TimeUnit.SECONDS)) {}
+        while (!executor.awaitTermination(100, TimeUnit.MILLISECONDS)) {}
 
 //        log.info("Starting server");
 //        TcpServer server = container.select(TcpServer.class).get();
