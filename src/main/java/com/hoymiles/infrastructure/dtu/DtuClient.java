@@ -98,7 +98,7 @@ public class DtuClient {
         }
     }
 
-    public void send(Message message) throws NoHandlerException {
+    public void send(Message message) {
         if (!isConnected()) {
             throw new DtuNotConnectedException();
         }
@@ -109,7 +109,7 @@ public class DtuClient {
         } catch (NoHandlerException e) {
             log.info("--> sending: msgId={}", "unknown");
             log.info(message.toString().replaceAll("[\t\r\n]", ", "));
-            throw e;
+            throw new RuntimeException(e);
         } finally {
             log.info("--> end");
         }

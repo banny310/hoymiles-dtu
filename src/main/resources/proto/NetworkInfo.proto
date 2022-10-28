@@ -1,0 +1,26 @@
+syntax = "proto2";
+
+package hoymiles;
+
+option java_multiple_files = false;
+option java_package = "com.hoymiles.infrastructure.protos";
+option java_outer_classname = "NetworkInfo";
+
+message NetworkInfoRes {
+  required int32 offset = 1;
+  required int32 time = 2;
+}
+
+message NetworkInfoReq {
+  optional int32 apSetState = 10;
+  optional int32 csq = 8;
+  required bytes dtuSn = 1;
+  optional int32 netSetMod = 3;
+  optional int32 netSetState = 5;
+  optional int32 netSetTime = 4;
+  optional int32 netWorkMod = 6;
+  optional int32 netWorkState = 9;
+  optional int32 netWorkTime = 7;
+  optional int32 time = 2;
+}
+

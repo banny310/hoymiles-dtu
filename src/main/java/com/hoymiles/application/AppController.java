@@ -1,5 +1,6 @@
 package com.hoymiles.application;
 
+import com.google.protobuf.Message;
 import com.hoymiles.domain.AutodiscoveryService;
 import com.hoymiles.domain.IDtuRepository;
 import com.hoymiles.domain.IMqttRepository;
@@ -10,9 +11,11 @@ import com.hoymiles.domain.model.AppMode;
 import com.hoymiles.domain.model.RealData;
 import com.hoymiles.infrastructure.dtu.DtuClient;
 import com.hoymiles.infrastructure.dtu.DtuCommandBuilder;
+import com.hoymiles.infrastructure.dtu.utils.DeviceUtils;
 import com.hoymiles.infrastructure.mqtt.MqttConnectedEvent;
 import com.hoymiles.infrastructure.mqtt.MqttSendException;
 import com.hoymiles.infrastructure.protos.GetConfig;
+import com.hoymiles.infrastructure.protos.NetworkInfo;
 import com.hoymiles.infrastructure.protos.SetConfig;
 import com.typesafe.config.Config;
 import io.reactivex.rxjava3.core.Observable;
@@ -140,9 +143,10 @@ public class AppController {
 
             case NONE:
                 // do nothing (just listen)
-
-                log.info("Gathering configuration...");
-                dtuRepository.getConfiguration();
+                Message message = NetworkInfo.NetworkInfoRes.newBuilder()
+                        .setTime(DeviceUtils.getCurrentTime())
+                        .setOffset(3600).build();
+                dtuClient.send(message);
                 break;
 
             default:

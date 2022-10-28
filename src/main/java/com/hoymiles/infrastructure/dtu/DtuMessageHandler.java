@@ -41,6 +41,9 @@ public class DtuMessageHandler {
             // SetConfig.proto
             new DtuMessageHandler(DtuClientConstants.TAG_AppSetConfigRes, SetConfig.SetConfigRes.class),
             new DtuMessageHandler(DtuClientConstants.TAG_AppSetConfigReq, SetConfig.SetConfigReq.class),
+            // NetworkInfo.proto
+            new DtuMessageHandler(DtuClientConstants.TAG_AppConfigStatusRes, NetworkInfo.NetworkInfoRes.class),
+            new DtuMessageHandler(DtuClientConstants.TAG_AppConfigStatusReq, NetworkInfo.NetworkInfoReq.class),
 
             new DtuMessageHandler(8971, GenericCommand.GenericCommandResDTO2.class),
             new DtuMessageHandler(8972, GenericCommand.GenericCommandResDTO2.class),

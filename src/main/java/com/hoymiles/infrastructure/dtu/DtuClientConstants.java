@@ -1,6 +1,7 @@
 package com.hoymiles.infrastructure.dtu;
 
 import com.hoymiles.infrastructure.dtu.utils.DateUtil;
+
 import java.text.SimpleDateFormat;
 
 public class DtuClientConstants {
@@ -76,8 +77,10 @@ public class DtuClientConstants {
     public static final int TAG_AppConfigCommandReq_ES = 33285;
     public static final int TAG_AppConfigCommandRes = 41733;
     public static final int TAG_AppConfigCommandRes_ES = 33541;
+    // NetworkInfo
     public static final int TAG_AppConfigStatusReq = 41492;
     public static final int TAG_AppConfigStatusRes = 41748;
+
     public static final int TAG_AppDevConfigFetchReq = 41479;
     public static final int TAG_AppDevConfigFetchReq_ES = 33287;
     public static final int TAG_AppDevConfigFetchRes = 41735;
