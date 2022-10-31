@@ -23,7 +23,7 @@ message Msg8706 {
   required uint32 val3 = 3;
   required bytes dtuSn = 4;   // DTU sn
   // missing 5
-  required uint32 val6 = 6;
+  optional uint32 val6 = 6;
   optional uint32 val7 = 7;
 }
 

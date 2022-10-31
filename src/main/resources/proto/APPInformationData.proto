@@ -35,13 +35,13 @@ message APPDtuInfoMO {
   optional int32 dtuStepTime = 4 [default = 0];
   optional int32 dtuRfHw = 5 [default = 0];
   optional int32 dtuRfSw = 6 [default = 0];
-  required int32 accessModel = 7;
-  required int32 communicationTime = 8;
+  optional int32 accessModel = 7;
+  optional int32 communicationTime = 8;
   optional int32 signalStrength = 9 [default = 0];
-  required bytes gprsVsn = 10;
-  required bytes wifiVsn = 11;
-  required bytes kaNub = 12;
-  required int32 dtuRuleId = 13;
+  optional bytes gprsVsn = 10;
+  optional bytes wifiVsn = 11;
+  optional bytes kaNub = 12;
+  optional int32 dtuRuleId = 13;
   optional int32 dtuErrorCode = 14 [default = 0];
   optional int32 dtu485Mode = 15 [default = 0];
   optional int32 dtu485Addr = 16 [default = 0];
@@ -50,7 +50,7 @@ message APPDtuInfoMO {
   optional int32 sub1GChnum = 19 [default = 0];
   optional int32 sub1GRp = 20 [default = 0];
   optional int32 sub1GChtotal = 21 [default = 0];
-  required bytes gprsImei = 22;
+  optional bytes gprsImei = 22;
 }
 
 message APPMeterInfoMO {

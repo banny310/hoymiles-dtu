@@ -1310,6 +1310,39 @@ public final class GetConfig {
      * @return The zeroExportEnable.
      */
     int getZeroExportEnable();
+
+    /**
+     * <code>optional bytes gprsImei = 60;</code>
+     * @return Whether the gprsImei field is set.
+     */
+    boolean hasGprsImei();
+    /**
+     * <code>optional bytes gprsImei = 60;</code>
+     * @return The gprsImei.
+     */
+    com.google.protobuf.ByteString getGprsImei();
+
+    /**
+     * <code>optional bytes dtuApSsid = 61;</code>
+     * @return Whether the dtuApSsid field is set.
+     */
+    boolean hasDtuApSsid();
+    /**
+     * <code>optional bytes dtuApSsid = 61;</code>
+     * @return The dtuApSsid.
+     */
+    com.google.protobuf.ByteString getDtuApSsid();
+
+    /**
+     * <code>optional bytes dtuApPass = 62;</code>
+     * @return Whether the dtuApPass field is set.
+     */
+    boolean hasDtuApPass();
+    /**
+     * <code>optional bytes dtuApPass = 62;</code>
+     * @return The dtuApPass.
+     */
+    com.google.protobuf.ByteString getDtuApPass();
   }
   /**
    * <pre>
@@ -1338,6 +1371,9 @@ public final class GetConfig {
       serverDomainName_ = com.google.protobuf.ByteString.EMPTY;
       wifiPassword_ = com.google.protobuf.ByteString.EMPTY;
       wifiSsid_ = com.google.protobuf.ByteString.EMPTY;
+      gprsImei_ = com.google.protobuf.ByteString.EMPTY;
+      dtuApSsid_ = com.google.protobuf.ByteString.EMPTY;
+      dtuApPass_ = com.google.protobuf.ByteString.EMPTY;
     }
 
     @java.lang.Override
@@ -1665,6 +1701,21 @@ public final class GetConfig {
             case 472: {
               bitField1_ |= 0x00200000;
               wifiMac5_ = input.readInt32();
+              break;
+            }
+            case 482: {
+              bitField1_ |= 0x08000000;
+              gprsImei_ = input.readBytes();
+              break;
+            }
+            case 490: {
+              bitField1_ |= 0x10000000;
+              dtuApSsid_ = input.readBytes();
+              break;
+            }
+            case 498: {
+              bitField1_ |= 0x20000000;
+              dtuApPass_ = input.readBytes();
               break;
             }
             default: {
@@ -2822,6 +2873,63 @@ public final class GetConfig {
       return zeroExportEnable_;
     }
 
+    public static final int GPRSIMEI_FIELD_NUMBER = 60;
+    private com.google.protobuf.ByteString gprsImei_;
+    /**
+     * <code>optional bytes gprsImei = 60;</code>
+     * @return Whether the gprsImei field is set.
+     */
+    @java.lang.Override
+    public boolean hasGprsImei() {
+      return ((bitField1_ & 0x08000000) != 0);
+    }
+    /**
+     * <code>optional bytes gprsImei = 60;</code>
+     * @return The gprsImei.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getGprsImei() {
+      return gprsImei_;
+    }
+
+    public static final int DTUAPSSID_FIELD_NUMBER = 61;
+    private com.google.protobuf.ByteString dtuApSsid_;
+    /**
+     * <code>optional bytes dtuApSsid = 61;</code>
+     * @return Whether the dtuApSsid field is set.
+     */
+    @java.lang.Override
+    public boolean hasDtuApSsid() {
+      return ((bitField1_ & 0x10000000) != 0);
+    }
+    /**
+     * <code>optional bytes dtuApSsid = 61;</code>
+     * @return The dtuApSsid.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDtuApSsid() {
+      return dtuApSsid_;
+    }
+
+    public static final int DTUAPPASS_FIELD_NUMBER = 62;
+    private com.google.protobuf.ByteString dtuApPass_;
+    /**
+     * <code>optional bytes dtuApPass = 62;</code>
+     * @return Whether the dtuApPass field is set.
+     */
+    @java.lang.Override
+    public boolean hasDtuApPass() {
+      return ((bitField1_ & 0x20000000) != 0);
+    }
+    /**
+     * <code>optional bytes dtuApPass = 62;</code>
+     * @return The dtuApPass.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDtuApPass() {
+      return dtuApPass_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3012,6 +3120,15 @@ public final class GetConfig {
       }
       if (((bitField1_ & 0x00200000) != 0)) {
         output.writeInt32(59, wifiMac5_);
+      }
+      if (((bitField1_ & 0x08000000) != 0)) {
+        output.writeBytes(60, gprsImei_);
+      }
+      if (((bitField1_ & 0x10000000) != 0)) {
+        output.writeBytes(61, dtuApSsid_);
+      }
+      if (((bitField1_ & 0x20000000) != 0)) {
+        output.writeBytes(62, dtuApPass_);
       }
       unknownFields.writeTo(output);
     }
@@ -3257,6 +3374,18 @@ public final class GetConfig {
       if (((bitField1_ & 0x00200000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(59, wifiMac5_);
+      }
+      if (((bitField1_ & 0x08000000) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(60, gprsImei_);
+      }
+      if (((bitField1_ & 0x10000000) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(61, dtuApSsid_);
+      }
+      if (((bitField1_ & 0x20000000) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(62, dtuApPass_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3568,6 +3697,21 @@ public final class GetConfig {
         if (getZeroExportEnable()
             != other.getZeroExportEnable()) return false;
       }
+      if (hasGprsImei() != other.hasGprsImei()) return false;
+      if (hasGprsImei()) {
+        if (!getGprsImei()
+            .equals(other.getGprsImei())) return false;
+      }
+      if (hasDtuApSsid() != other.hasDtuApSsid()) return false;
+      if (hasDtuApSsid()) {
+        if (!getDtuApSsid()
+            .equals(other.getDtuApSsid())) return false;
+      }
+      if (hasDtuApPass() != other.hasDtuApPass()) return false;
+      if (hasDtuApPass()) {
+        if (!getDtuApPass()
+            .equals(other.getDtuApPass())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -3814,6 +3958,18 @@ public final class GetConfig {
       if (hasZeroExportEnable()) {
         hash = (37 * hash) + ZEROEXPORTENABLE_FIELD_NUMBER;
         hash = (53 * hash) + getZeroExportEnable();
+      }
+      if (hasGprsImei()) {
+        hash = (37 * hash) + GPRSIMEI_FIELD_NUMBER;
+        hash = (53 * hash) + getGprsImei().hashCode();
+      }
+      if (hasDtuApSsid()) {
+        hash = (37 * hash) + DTUAPSSID_FIELD_NUMBER;
+        hash = (53 * hash) + getDtuApSsid().hashCode();
+      }
+      if (hasDtuApPass()) {
+        hash = (37 * hash) + DTUAPPASS_FIELD_NUMBER;
+        hash = (53 * hash) + getDtuApPass().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -4070,6 +4226,12 @@ public final class GetConfig {
         bitField1_ = (bitField1_ & ~0x02000000);
         zeroExportEnable_ = 0;
         bitField1_ = (bitField1_ & ~0x04000000);
+        gprsImei_ = com.google.protobuf.ByteString.EMPTY;
+        bitField1_ = (bitField1_ & ~0x08000000);
+        dtuApSsid_ = com.google.protobuf.ByteString.EMPTY;
+        bitField1_ = (bitField1_ & ~0x10000000);
+        dtuApPass_ = com.google.protobuf.ByteString.EMPTY;
+        bitField1_ = (bitField1_ & ~0x20000000);
         return this;
       }
 
@@ -4336,6 +4498,18 @@ public final class GetConfig {
           result.zeroExportEnable_ = zeroExportEnable_;
           to_bitField1_ |= 0x04000000;
         }
+        if (((from_bitField1_ & 0x08000000) != 0)) {
+          to_bitField1_ |= 0x08000000;
+        }
+        result.gprsImei_ = gprsImei_;
+        if (((from_bitField1_ & 0x10000000) != 0)) {
+          to_bitField1_ |= 0x10000000;
+        }
+        result.dtuApSsid_ = dtuApSsid_;
+        if (((from_bitField1_ & 0x20000000) != 0)) {
+          to_bitField1_ |= 0x20000000;
+        }
+        result.dtuApPass_ = dtuApPass_;
         result.bitField0_ = to_bitField0_;
         result.bitField1_ = to_bitField1_;
         onBuilt();
@@ -4562,6 +4736,15 @@ public final class GetConfig {
         }
         if (other.hasZeroExportEnable()) {
           setZeroExportEnable(other.getZeroExportEnable());
+        }
+        if (other.hasGprsImei()) {
+          setGprsImei(other.getGprsImei());
+        }
+        if (other.hasDtuApSsid()) {
+          setDtuApSsid(other.getDtuApSsid());
+        }
+        if (other.hasDtuApPass()) {
+          setDtuApPass(other.getDtuApPass());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -6924,6 +7107,132 @@ public final class GetConfig {
         onChanged();
         return this;
       }
+
+      private com.google.protobuf.ByteString gprsImei_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>optional bytes gprsImei = 60;</code>
+       * @return Whether the gprsImei field is set.
+       */
+      @java.lang.Override
+      public boolean hasGprsImei() {
+        return ((bitField1_ & 0x08000000) != 0);
+      }
+      /**
+       * <code>optional bytes gprsImei = 60;</code>
+       * @return The gprsImei.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getGprsImei() {
+        return gprsImei_;
+      }
+      /**
+       * <code>optional bytes gprsImei = 60;</code>
+       * @param value The gprsImei to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGprsImei(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField1_ |= 0x08000000;
+        gprsImei_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bytes gprsImei = 60;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGprsImei() {
+        bitField1_ = (bitField1_ & ~0x08000000);
+        gprsImei_ = getDefaultInstance().getGprsImei();
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString dtuApSsid_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>optional bytes dtuApSsid = 61;</code>
+       * @return Whether the dtuApSsid field is set.
+       */
+      @java.lang.Override
+      public boolean hasDtuApSsid() {
+        return ((bitField1_ & 0x10000000) != 0);
+      }
+      /**
+       * <code>optional bytes dtuApSsid = 61;</code>
+       * @return The dtuApSsid.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getDtuApSsid() {
+        return dtuApSsid_;
+      }
+      /**
+       * <code>optional bytes dtuApSsid = 61;</code>
+       * @param value The dtuApSsid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDtuApSsid(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField1_ |= 0x10000000;
+        dtuApSsid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bytes dtuApSsid = 61;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDtuApSsid() {
+        bitField1_ = (bitField1_ & ~0x10000000);
+        dtuApSsid_ = getDefaultInstance().getDtuApSsid();
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString dtuApPass_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>optional bytes dtuApPass = 62;</code>
+       * @return Whether the dtuApPass field is set.
+       */
+      @java.lang.Override
+      public boolean hasDtuApPass() {
+        return ((bitField1_ & 0x20000000) != 0);
+      }
+      /**
+       * <code>optional bytes dtuApPass = 62;</code>
+       * @return The dtuApPass.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getDtuApPass() {
+        return dtuApPass_;
+      }
+      /**
+       * <code>optional bytes dtuApPass = 62;</code>
+       * @param value The dtuApPass to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDtuApPass(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField1_ |= 0x20000000;
+        dtuApPass_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bytes dtuApPass = 62;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDtuApPass() {
+        bitField1_ = (bitField1_ & ~0x20000000);
+        dtuApPass_ = getDefaultInstance().getDtuApPass();
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -6998,7 +7307,7 @@ public final class GetConfig {
     java.lang.String[] descriptorData = {
       "\n(src/main/resources/proto/GetConfig.pro" +
       "to\022\010hoymiles\",\n\014GetConfigRes\022\016\n\006offset\030\001" +
-      " \002(\005\022\014\n\004time\030\002 \002(\005\"\233\t\n\014GetConfigReq\022\023\n\013a" +
+      " \002(\005\022\014\n\004time\030\002 \002(\005\"\323\t\n\014GetConfigReq\022\023\n\013a" +
       "ccessModel\030\025 \001(\005\022\017\n\007apnName\030( \001(\014\022\023\n\013apn" +
       "Password\030) \001(\014\022\016\n\006apnSet\030\r \001(\014\022\021\n\tcableD" +
       "ns0\030, \001(\005\022\021\n\tcableDns1\030- \001(\005\022\021\n\tcableDns" +
@@ -7028,8 +7337,9 @@ public final class GetConfig {
       "ac5\030; \001(\005\022\024\n\014wifiPassword\030\021 \001(\014\022\020\n\010wifiR" +
       "ssi\030\013 \001(\005\022\020\n\010wifiSsid\030\020 \001(\014\022\031\n\021zeroExpor" +
       "t433Addr\030\006 \001(\005\022\030\n\020zeroExportEnable\030\007 \001(\005" +
-      "B1\n\"com.hoymiles.infrastructure.protosB\t" +
-      "GetConfigP\000"
+      "\022\020\n\010gprsImei\030< \001(\014\022\021\n\tdtuApSsid\030= \001(\014\022\021\n" +
+      "\tdtuApPass\030> \001(\014B1\n\"com.hoymiles.infrast" +
+      "ructure.protosB\tGetConfigP\000"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -7046,7 +7356,7 @@ public final class GetConfig {
     internal_static_hoymiles_GetConfigReq_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_hoymiles_GetConfigReq_descriptor,
-        new java.lang.String[] { "AccessModel", "ApnName", "ApnPassword", "ApnSet", "CableDns0", "CableDns1", "CableDns2", "CableDns3", "ChannelSelect", "DefaultGateway0", "DefaultGateway1", "DefaultGateway2", "DefaultGateway3", "DhcpSwitch", "DtuSn", "InvType", "IpAddr0", "IpAddr1", "IpAddr2", "IpAddr3", "KaNub", "LimitPowerMyPower", "LockPassword", "LockTime", "Mac0", "Mac1", "Mac2", "Mac3", "Mac4", "Mac5", "MeterInterface", "MeterKind", "NetmodeSelect", "Offset", "ServerDomainName", "ServerSendTime", "ServerPort", "Sub1GSweepSwitch", "Sub1GWorkChannel", "SubnetMask0", "SubnetMask1", "SubnetMask2", "SubnetMask3", "Time", "WifiIpAddr0", "WifiIpAddr1", "WifiIpAddr2", "WifiIpAddr3", "WifiMac0", "WifiMac1", "WifiMac2", "WifiMac3", "WifiMac4", "WifiMac5", "WifiPassword", "WifiRssi", "WifiSsid", "ZeroExport433Addr", "ZeroExportEnable", });
+        new java.lang.String[] { "AccessModel", "ApnName", "ApnPassword", "ApnSet", "CableDns0", "CableDns1", "CableDns2", "CableDns3", "ChannelSelect", "DefaultGateway0", "DefaultGateway1", "DefaultGateway2", "DefaultGateway3", "DhcpSwitch", "DtuSn", "InvType", "IpAddr0", "IpAddr1", "IpAddr2", "IpAddr3", "KaNub", "LimitPowerMyPower", "LockPassword", "LockTime", "Mac0", "Mac1", "Mac2", "Mac3", "Mac4", "Mac5", "MeterInterface", "MeterKind", "NetmodeSelect", "Offset", "ServerDomainName", "ServerSendTime", "ServerPort", "Sub1GSweepSwitch", "Sub1GWorkChannel", "SubnetMask0", "SubnetMask1", "SubnetMask2", "SubnetMask3", "Time", "WifiIpAddr0", "WifiIpAddr1", "WifiIpAddr2", "WifiIpAddr3", "WifiMac0", "WifiMac1", "WifiMac2", "WifiMac3", "WifiMac4", "WifiMac5", "WifiPassword", "WifiRssi", "WifiSsid", "ZeroExport433Addr", "ZeroExportEnable", "GprsImei", "DtuApSsid", "DtuApPass", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

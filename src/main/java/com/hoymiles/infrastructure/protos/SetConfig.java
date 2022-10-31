@@ -534,6 +534,28 @@ public final class SetConfig {
      * @return The zeroExportEnable.
      */
     int getZeroExportEnable();
+
+    /**
+     * <code>optional bytes dtuApSsid = 48;</code>
+     * @return Whether the dtuApSsid field is set.
+     */
+    boolean hasDtuApSsid();
+    /**
+     * <code>optional bytes dtuApSsid = 48;</code>
+     * @return The dtuApSsid.
+     */
+    com.google.protobuf.ByteString getDtuApSsid();
+
+    /**
+     * <code>optional bytes dtuApPass = 49;</code>
+     * @return Whether the dtuApPass field is set.
+     */
+    boolean hasDtuApPass();
+    /**
+     * <code>optional bytes dtuApPass = 49;</code>
+     * @return The dtuApPass.
+     */
+    com.google.protobuf.ByteString getDtuApPass();
   }
   /**
    * Protobuf type {@code hoymiles.SetConfigRes}
@@ -557,6 +579,8 @@ public final class SetConfig {
       serverDomainName_ = com.google.protobuf.ByteString.EMPTY;
       wifiPassword_ = com.google.protobuf.ByteString.EMPTY;
       wifiSsid_ = com.google.protobuf.ByteString.EMPTY;
+      dtuApSsid_ = com.google.protobuf.ByteString.EMPTY;
+      dtuApPass_ = com.google.protobuf.ByteString.EMPTY;
     }
 
     @java.lang.Override
@@ -824,6 +848,16 @@ public final class SetConfig {
             case 376: {
               bitField0_ |= 0x10000000;
               mac5_ = input.readInt32();
+              break;
+            }
+            case 386: {
+              bitField1_ |= 0x00008000;
+              dtuApSsid_ = input.readBytes();
+              break;
+            }
+            case 394: {
+              bitField1_ |= 0x00010000;
+              dtuApPass_ = input.readBytes();
               break;
             }
             default: {
@@ -1753,6 +1787,44 @@ public final class SetConfig {
       return zeroExportEnable_;
     }
 
+    public static final int DTUAPSSID_FIELD_NUMBER = 48;
+    private com.google.protobuf.ByteString dtuApSsid_;
+    /**
+     * <code>optional bytes dtuApSsid = 48;</code>
+     * @return Whether the dtuApSsid field is set.
+     */
+    @java.lang.Override
+    public boolean hasDtuApSsid() {
+      return ((bitField1_ & 0x00008000) != 0);
+    }
+    /**
+     * <code>optional bytes dtuApSsid = 48;</code>
+     * @return The dtuApSsid.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDtuApSsid() {
+      return dtuApSsid_;
+    }
+
+    public static final int DTUAPPASS_FIELD_NUMBER = 49;
+    private com.google.protobuf.ByteString dtuApPass_;
+    /**
+     * <code>optional bytes dtuApPass = 49;</code>
+     * @return Whether the dtuApPass field is set.
+     */
+    @java.lang.Override
+    public boolean hasDtuApPass() {
+      return ((bitField1_ & 0x00010000) != 0);
+    }
+    /**
+     * <code>optional bytes dtuApPass = 49;</code>
+     * @return The dtuApPass.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getDtuApPass() {
+      return dtuApPass_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1919,6 +1991,12 @@ public final class SetConfig {
       }
       if (((bitField0_ & 0x10000000) != 0)) {
         output.writeInt32(47, mac5_);
+      }
+      if (((bitField1_ & 0x00008000) != 0)) {
+        output.writeBytes(48, dtuApSsid_);
+      }
+      if (((bitField1_ & 0x00010000) != 0)) {
+        output.writeBytes(49, dtuApPass_);
       }
       unknownFields.writeTo(output);
     }
@@ -2116,6 +2194,14 @@ public final class SetConfig {
       if (((bitField0_ & 0x10000000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(47, mac5_);
+      }
+      if (((bitField1_ & 0x00008000) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(48, dtuApSsid_);
+      }
+      if (((bitField1_ & 0x00010000) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(49, dtuApPass_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2367,6 +2453,16 @@ public final class SetConfig {
         if (getZeroExportEnable()
             != other.getZeroExportEnable()) return false;
       }
+      if (hasDtuApSsid() != other.hasDtuApSsid()) return false;
+      if (hasDtuApSsid()) {
+        if (!getDtuApSsid()
+            .equals(other.getDtuApSsid())) return false;
+      }
+      if (hasDtuApPass() != other.hasDtuApPass()) return false;
+      if (hasDtuApPass()) {
+        if (!getDtuApPass()
+            .equals(other.getDtuApPass())) return false;
+      }
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -2565,6 +2661,14 @@ public final class SetConfig {
       if (hasZeroExportEnable()) {
         hash = (37 * hash) + ZEROEXPORTENABLE_FIELD_NUMBER;
         hash = (53 * hash) + getZeroExportEnable();
+      }
+      if (hasDtuApSsid()) {
+        hash = (37 * hash) + DTUAPSSID_FIELD_NUMBER;
+        hash = (53 * hash) + getDtuApSsid().hashCode();
+      }
+      if (hasDtuApPass()) {
+        hash = (37 * hash) + DTUAPPASS_FIELD_NUMBER;
+        hash = (53 * hash) + getDtuApPass().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -2793,6 +2897,10 @@ public final class SetConfig {
         bitField1_ = (bitField1_ & ~0x00002000);
         zeroExportEnable_ = 0;
         bitField1_ = (bitField1_ & ~0x00004000);
+        dtuApSsid_ = com.google.protobuf.ByteString.EMPTY;
+        bitField1_ = (bitField1_ & ~0x00008000);
+        dtuApPass_ = com.google.protobuf.ByteString.EMPTY;
+        bitField1_ = (bitField1_ & ~0x00010000);
         return this;
       }
 
@@ -3011,6 +3119,14 @@ public final class SetConfig {
           result.zeroExportEnable_ = zeroExportEnable_;
           to_bitField1_ |= 0x00004000;
         }
+        if (((from_bitField1_ & 0x00008000) != 0)) {
+          to_bitField1_ |= 0x00008000;
+        }
+        result.dtuApSsid_ = dtuApSsid_;
+        if (((from_bitField1_ & 0x00010000) != 0)) {
+          to_bitField1_ |= 0x00010000;
+        }
+        result.dtuApPass_ = dtuApPass_;
         result.bitField0_ = to_bitField0_;
         result.bitField1_ = to_bitField1_;
         onBuilt();
@@ -3201,6 +3317,12 @@ public final class SetConfig {
         }
         if (other.hasZeroExportEnable()) {
           setZeroExportEnable(other.getZeroExportEnable());
+        }
+        if (other.hasDtuApSsid()) {
+          setDtuApSsid(other.getDtuApSsid());
+        }
+        if (other.hasDtuApPass()) {
+          setDtuApPass(other.getDtuApPass());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -5101,6 +5223,90 @@ public final class SetConfig {
         onChanged();
         return this;
       }
+
+      private com.google.protobuf.ByteString dtuApSsid_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>optional bytes dtuApSsid = 48;</code>
+       * @return Whether the dtuApSsid field is set.
+       */
+      @java.lang.Override
+      public boolean hasDtuApSsid() {
+        return ((bitField1_ & 0x00008000) != 0);
+      }
+      /**
+       * <code>optional bytes dtuApSsid = 48;</code>
+       * @return The dtuApSsid.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getDtuApSsid() {
+        return dtuApSsid_;
+      }
+      /**
+       * <code>optional bytes dtuApSsid = 48;</code>
+       * @param value The dtuApSsid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDtuApSsid(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField1_ |= 0x00008000;
+        dtuApSsid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bytes dtuApSsid = 48;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDtuApSsid() {
+        bitField1_ = (bitField1_ & ~0x00008000);
+        dtuApSsid_ = getDefaultInstance().getDtuApSsid();
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString dtuApPass_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>optional bytes dtuApPass = 49;</code>
+       * @return Whether the dtuApPass field is set.
+       */
+      @java.lang.Override
+      public boolean hasDtuApPass() {
+        return ((bitField1_ & 0x00010000) != 0);
+      }
+      /**
+       * <code>optional bytes dtuApPass = 49;</code>
+       * @return The dtuApPass.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getDtuApPass() {
+        return dtuApPass_;
+      }
+      /**
+       * <code>optional bytes dtuApPass = 49;</code>
+       * @param value The dtuApPass to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDtuApPass(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField1_ |= 0x00010000;
+        dtuApPass_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bytes dtuApPass = 49;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDtuApPass() {
+        bitField1_ = (bitField1_ & ~0x00010000);
+        dtuApPass_ = getDefaultInstance().getDtuApPass();
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -5895,7 +6101,7 @@ public final class SetConfig {
   static {
     java.lang.String[] descriptorData = {
       "\n(src/main/resources/proto/SetConfig.pro" +
-      "to\022\010hoymiles\"\272\007\n\014SetConfigRes\022\023\n\013accessM" +
+      "to\022\010hoymiles\"\340\007\n\014SetConfigRes\022\023\n\013accessM" +
       "odel\030\024 \001(\005\022\017\n\007apnName\030& \001(\014\022\023\n\013apnPasswo" +
       "rd\030\' \001(\014\022\016\n\006apnSet\030\014 \001(\014\022\021\n\tcableDns0\030* " +
       "\001(\005\022\021\n\tcableDns1\030+ \001(\005\022\021\n\tcableDns2\030, \001(" +
@@ -5919,10 +6125,11 @@ public final class SetConfig {
       "\005\022\023\n\013subnetMask3\030! \001(\005\022\014\n\004time\030\002 \002(\005\022\024\n\014" +
       "wifiPassword\030\020 \001(\014\022\020\n\010wifiSsid\030\017 \001(\014\022\031\n\021" +
       "zeroExport433Addr\030\006 \001(\005\022\030\n\020zeroExportEna" +
-      "ble\030\007 \001(\005\"=\n\014SetConfigReq\022\016\n\006offset\030\001 \001(" +
-      "\005\022\014\n\004time\030\002 \001(\005\022\017\n\007errCode\030\003 \001(\005B1\n\"com." +
-      "hoymiles.infrastructure.protosB\tSetConfi" +
-      "gP\000"
+      "ble\030\007 \001(\005\022\021\n\tdtuApSsid\0300 \001(\014\022\021\n\tdtuApPas" +
+      "s\0301 \001(\014\"=\n\014SetConfigReq\022\016\n\006offset\030\001 \001(\005\022" +
+      "\014\n\004time\030\002 \001(\005\022\017\n\007errCode\030\003 \001(\005B1\n\"com.ho" +
+      "ymiles.infrastructure.protosB\tSetConfigP" +
+      "\000"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5933,7 +6140,7 @@ public final class SetConfig {
     internal_static_hoymiles_SetConfigRes_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_hoymiles_SetConfigRes_descriptor,
-        new java.lang.String[] { "AccessModel", "ApnName", "ApnPassword", "ApnSet", "CableDns0", "CableDns1", "CableDns2", "CableDns3", "ChannelSelect", "DefaultGateway0", "DefaultGateway1", "DefaultGateway2", "DefaultGateway3", "DhcpSwitch", "DtuSn", "InvType", "IpAddr0", "IpAddr1", "IpAddr2", "IpAddr3", "LimitPowerMyPower", "LockPassword", "LockTime", "Mac0", "Mac1", "Mac2", "Mac3", "Mac4", "Mac5", "MeterInterface", "MeterKind", "NetmodeSelect", "Offset", "ServerDomainName", "ServerSendTime", "ServerPort", "Sub1GSweepSwitch", "Sub1GWorkChannel", "SubnetMask0", "SubnetMask1", "SubnetMask2", "SubnetMask3", "Time", "WifiPassword", "WifiSsid", "ZeroExport433Addr", "ZeroExportEnable", });
+        new java.lang.String[] { "AccessModel", "ApnName", "ApnPassword", "ApnSet", "CableDns0", "CableDns1", "CableDns2", "CableDns3", "ChannelSelect", "DefaultGateway0", "DefaultGateway1", "DefaultGateway2", "DefaultGateway3", "DhcpSwitch", "DtuSn", "InvType", "IpAddr0", "IpAddr1", "IpAddr2", "IpAddr3", "LimitPowerMyPower", "LockPassword", "LockTime", "Mac0", "Mac1", "Mac2", "Mac3", "Mac4", "Mac5", "MeterInterface", "MeterKind", "NetmodeSelect", "Offset", "ServerDomainName", "ServerSendTime", "ServerPort", "Sub1GSweepSwitch", "Sub1GWorkChannel", "SubnetMask0", "SubnetMask1", "SubnetMask2", "SubnetMask3", "Time", "WifiPassword", "WifiSsid", "ZeroExport433Addr", "ZeroExportEnable", "DtuApSsid", "DtuApPass", });
     internal_static_hoymiles_SetConfigReq_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_hoymiles_SetConfigReq_fieldAccessorTable = new

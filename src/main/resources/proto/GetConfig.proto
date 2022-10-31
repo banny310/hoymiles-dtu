@@ -73,4 +73,7 @@ message GetConfigReq {
   optional bytes wifiSsid = 16;
   optional int32 zeroExport433Addr = 6;
   optional int32 zeroExportEnable = 7;
+  optional bytes gprsImei = 60;
+  optional bytes dtuApSsid = 61;
+  optional bytes dtuApPass = 62;
 }

@@ -3563,23 +3563,23 @@ public final class APPInformationData {
     int getDtuRfSw();
 
     /**
-     * <code>required int32 accessModel = 7;</code>
+     * <code>optional int32 accessModel = 7;</code>
      * @return Whether the accessModel field is set.
      */
     boolean hasAccessModel();
     /**
-     * <code>required int32 accessModel = 7;</code>
+     * <code>optional int32 accessModel = 7;</code>
      * @return The accessModel.
      */
     int getAccessModel();
 
     /**
-     * <code>required int32 communicationTime = 8;</code>
+     * <code>optional int32 communicationTime = 8;</code>
      * @return Whether the communicationTime field is set.
      */
     boolean hasCommunicationTime();
     /**
-     * <code>required int32 communicationTime = 8;</code>
+     * <code>optional int32 communicationTime = 8;</code>
      * @return The communicationTime.
      */
     int getCommunicationTime();
@@ -3596,45 +3596,45 @@ public final class APPInformationData {
     int getSignalStrength();
 
     /**
-     * <code>required bytes gprsVsn = 10;</code>
+     * <code>optional bytes gprsVsn = 10;</code>
      * @return Whether the gprsVsn field is set.
      */
     boolean hasGprsVsn();
     /**
-     * <code>required bytes gprsVsn = 10;</code>
+     * <code>optional bytes gprsVsn = 10;</code>
      * @return The gprsVsn.
      */
     com.google.protobuf.ByteString getGprsVsn();
 
     /**
-     * <code>required bytes wifiVsn = 11;</code>
+     * <code>optional bytes wifiVsn = 11;</code>
      * @return Whether the wifiVsn field is set.
      */
     boolean hasWifiVsn();
     /**
-     * <code>required bytes wifiVsn = 11;</code>
+     * <code>optional bytes wifiVsn = 11;</code>
      * @return The wifiVsn.
      */
     com.google.protobuf.ByteString getWifiVsn();
 
     /**
-     * <code>required bytes kaNub = 12;</code>
+     * <code>optional bytes kaNub = 12;</code>
      * @return Whether the kaNub field is set.
      */
     boolean hasKaNub();
     /**
-     * <code>required bytes kaNub = 12;</code>
+     * <code>optional bytes kaNub = 12;</code>
      * @return The kaNub.
      */
     com.google.protobuf.ByteString getKaNub();
 
     /**
-     * <code>required int32 dtuRuleId = 13;</code>
+     * <code>optional int32 dtuRuleId = 13;</code>
      * @return Whether the dtuRuleId field is set.
      */
     boolean hasDtuRuleId();
     /**
-     * <code>required int32 dtuRuleId = 13;</code>
+     * <code>optional int32 dtuRuleId = 13;</code>
      * @return The dtuRuleId.
      */
     int getDtuRuleId();
@@ -3728,12 +3728,12 @@ public final class APPInformationData {
     int getSub1GChtotal();
 
     /**
-     * <code>required bytes gprsImei = 22;</code>
+     * <code>optional bytes gprsImei = 22;</code>
      * @return Whether the gprsImei field is set.
      */
     boolean hasGprsImei();
     /**
-     * <code>required bytes gprsImei = 22;</code>
+     * <code>optional bytes gprsImei = 22;</code>
      * @return The gprsImei.
      */
     com.google.protobuf.ByteString getGprsImei();
@@ -4048,7 +4048,7 @@ public final class APPInformationData {
     public static final int ACCESSMODEL_FIELD_NUMBER = 7;
     private int accessModel_;
     /**
-     * <code>required int32 accessModel = 7;</code>
+     * <code>optional int32 accessModel = 7;</code>
      * @return Whether the accessModel field is set.
      */
     @java.lang.Override
@@ -4056,7 +4056,7 @@ public final class APPInformationData {
       return ((bitField0_ & 0x00000040) != 0);
     }
     /**
-     * <code>required int32 accessModel = 7;</code>
+     * <code>optional int32 accessModel = 7;</code>
      * @return The accessModel.
      */
     @java.lang.Override
@@ -4067,7 +4067,7 @@ public final class APPInformationData {
     public static final int COMMUNICATIONTIME_FIELD_NUMBER = 8;
     private int communicationTime_;
     /**
-     * <code>required int32 communicationTime = 8;</code>
+     * <code>optional int32 communicationTime = 8;</code>
      * @return Whether the communicationTime field is set.
      */
     @java.lang.Override
@@ -4075,7 +4075,7 @@ public final class APPInformationData {
       return ((bitField0_ & 0x00000080) != 0);
     }
     /**
-     * <code>required int32 communicationTime = 8;</code>
+     * <code>optional int32 communicationTime = 8;</code>
      * @return The communicationTime.
      */
     @java.lang.Override
@@ -4105,7 +4105,7 @@ public final class APPInformationData {
     public static final int GPRSVSN_FIELD_NUMBER = 10;
     private com.google.protobuf.ByteString gprsVsn_;
     /**
-     * <code>required bytes gprsVsn = 10;</code>
+     * <code>optional bytes gprsVsn = 10;</code>
      * @return Whether the gprsVsn field is set.
      */
     @java.lang.Override
@@ -4113,7 +4113,7 @@ public final class APPInformationData {
       return ((bitField0_ & 0x00000200) != 0);
     }
     /**
-     * <code>required bytes gprsVsn = 10;</code>
+     * <code>optional bytes gprsVsn = 10;</code>
      * @return The gprsVsn.
      */
     @java.lang.Override
@@ -4124,7 +4124,7 @@ public final class APPInformationData {
     public static final int WIFIVSN_FIELD_NUMBER = 11;
     private com.google.protobuf.ByteString wifiVsn_;
     /**
-     * <code>required bytes wifiVsn = 11;</code>
+     * <code>optional bytes wifiVsn = 11;</code>
      * @return Whether the wifiVsn field is set.
      */
     @java.lang.Override
@@ -4132,7 +4132,7 @@ public final class APPInformationData {
       return ((bitField0_ & 0x00000400) != 0);
     }
     /**
-     * <code>required bytes wifiVsn = 11;</code>
+     * <code>optional bytes wifiVsn = 11;</code>
      * @return The wifiVsn.
      */
     @java.lang.Override
@@ -4143,7 +4143,7 @@ public final class APPInformationData {
     public static final int KANUB_FIELD_NUMBER = 12;
     private com.google.protobuf.ByteString kaNub_;
     /**
-     * <code>required bytes kaNub = 12;</code>
+     * <code>optional bytes kaNub = 12;</code>
      * @return Whether the kaNub field is set.
      */
     @java.lang.Override
@@ -4151,7 +4151,7 @@ public final class APPInformationData {
       return ((bitField0_ & 0x00000800) != 0);
     }
     /**
-     * <code>required bytes kaNub = 12;</code>
+     * <code>optional bytes kaNub = 12;</code>
      * @return The kaNub.
      */
     @java.lang.Override
@@ -4162,7 +4162,7 @@ public final class APPInformationData {
     public static final int DTURULEID_FIELD_NUMBER = 13;
     private int dtuRuleId_;
     /**
-     * <code>required int32 dtuRuleId = 13;</code>
+     * <code>optional int32 dtuRuleId = 13;</code>
      * @return Whether the dtuRuleId field is set.
      */
     @java.lang.Override
@@ -4170,7 +4170,7 @@ public final class APPInformationData {
       return ((bitField0_ & 0x00001000) != 0);
     }
     /**
-     * <code>required int32 dtuRuleId = 13;</code>
+     * <code>optional int32 dtuRuleId = 13;</code>
      * @return The dtuRuleId.
      */
     @java.lang.Override
@@ -4333,7 +4333,7 @@ public final class APPInformationData {
     public static final int GPRSIMEI_FIELD_NUMBER = 22;
     private com.google.protobuf.ByteString gprsImei_;
     /**
-     * <code>required bytes gprsImei = 22;</code>
+     * <code>optional bytes gprsImei = 22;</code>
      * @return Whether the gprsImei field is set.
      */
     @java.lang.Override
@@ -4341,7 +4341,7 @@ public final class APPInformationData {
       return ((bitField0_ & 0x00200000) != 0);
     }
     /**
-     * <code>required bytes gprsImei = 22;</code>
+     * <code>optional bytes gprsImei = 22;</code>
      * @return The gprsImei.
      */
     @java.lang.Override
@@ -4361,34 +4361,6 @@ public final class APPInformationData {
         return false;
       }
       if (!hasDtuHw()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasAccessModel()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasCommunicationTime()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasGprsVsn()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasWifiVsn()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasKaNub()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasDtuRuleId()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasGprsImei()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -5207,27 +5179,6 @@ public final class APPInformationData {
         if (!hasDtuHw()) {
           return false;
         }
-        if (!hasAccessModel()) {
-          return false;
-        }
-        if (!hasCommunicationTime()) {
-          return false;
-        }
-        if (!hasGprsVsn()) {
-          return false;
-        }
-        if (!hasWifiVsn()) {
-          return false;
-        }
-        if (!hasKaNub()) {
-          return false;
-        }
-        if (!hasDtuRuleId()) {
-          return false;
-        }
-        if (!hasGprsImei()) {
-          return false;
-        }
         return true;
       }
 
@@ -5487,7 +5438,7 @@ public final class APPInformationData {
 
       private int accessModel_ ;
       /**
-       * <code>required int32 accessModel = 7;</code>
+       * <code>optional int32 accessModel = 7;</code>
        * @return Whether the accessModel field is set.
        */
       @java.lang.Override
@@ -5495,7 +5446,7 @@ public final class APPInformationData {
         return ((bitField0_ & 0x00000040) != 0);
       }
       /**
-       * <code>required int32 accessModel = 7;</code>
+       * <code>optional int32 accessModel = 7;</code>
        * @return The accessModel.
        */
       @java.lang.Override
@@ -5503,7 +5454,7 @@ public final class APPInformationData {
         return accessModel_;
       }
       /**
-       * <code>required int32 accessModel = 7;</code>
+       * <code>optional int32 accessModel = 7;</code>
        * @param value The accessModel to set.
        * @return This builder for chaining.
        */
@@ -5514,7 +5465,7 @@ public final class APPInformationData {
         return this;
       }
       /**
-       * <code>required int32 accessModel = 7;</code>
+       * <code>optional int32 accessModel = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearAccessModel() {
@@ -5526,7 +5477,7 @@ public final class APPInformationData {
 
       private int communicationTime_ ;
       /**
-       * <code>required int32 communicationTime = 8;</code>
+       * <code>optional int32 communicationTime = 8;</code>
        * @return Whether the communicationTime field is set.
        */
       @java.lang.Override
@@ -5534,7 +5485,7 @@ public final class APPInformationData {
         return ((bitField0_ & 0x00000080) != 0);
       }
       /**
-       * <code>required int32 communicationTime = 8;</code>
+       * <code>optional int32 communicationTime = 8;</code>
        * @return The communicationTime.
        */
       @java.lang.Override
@@ -5542,7 +5493,7 @@ public final class APPInformationData {
         return communicationTime_;
       }
       /**
-       * <code>required int32 communicationTime = 8;</code>
+       * <code>optional int32 communicationTime = 8;</code>
        * @param value The communicationTime to set.
        * @return This builder for chaining.
        */
@@ -5553,7 +5504,7 @@ public final class APPInformationData {
         return this;
       }
       /**
-       * <code>required int32 communicationTime = 8;</code>
+       * <code>optional int32 communicationTime = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearCommunicationTime() {
@@ -5604,7 +5555,7 @@ public final class APPInformationData {
 
       private com.google.protobuf.ByteString gprsVsn_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>required bytes gprsVsn = 10;</code>
+       * <code>optional bytes gprsVsn = 10;</code>
        * @return Whether the gprsVsn field is set.
        */
       @java.lang.Override
@@ -5612,7 +5563,7 @@ public final class APPInformationData {
         return ((bitField0_ & 0x00000200) != 0);
       }
       /**
-       * <code>required bytes gprsVsn = 10;</code>
+       * <code>optional bytes gprsVsn = 10;</code>
        * @return The gprsVsn.
        */
       @java.lang.Override
@@ -5620,7 +5571,7 @@ public final class APPInformationData {
         return gprsVsn_;
       }
       /**
-       * <code>required bytes gprsVsn = 10;</code>
+       * <code>optional bytes gprsVsn = 10;</code>
        * @param value The gprsVsn to set.
        * @return This builder for chaining.
        */
@@ -5634,7 +5585,7 @@ public final class APPInformationData {
         return this;
       }
       /**
-       * <code>required bytes gprsVsn = 10;</code>
+       * <code>optional bytes gprsVsn = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearGprsVsn() {
@@ -5646,7 +5597,7 @@ public final class APPInformationData {
 
       private com.google.protobuf.ByteString wifiVsn_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>required bytes wifiVsn = 11;</code>
+       * <code>optional bytes wifiVsn = 11;</code>
        * @return Whether the wifiVsn field is set.
        */
       @java.lang.Override
@@ -5654,7 +5605,7 @@ public final class APPInformationData {
         return ((bitField0_ & 0x00000400) != 0);
       }
       /**
-       * <code>required bytes wifiVsn = 11;</code>
+       * <code>optional bytes wifiVsn = 11;</code>
        * @return The wifiVsn.
        */
       @java.lang.Override
@@ -5662,7 +5613,7 @@ public final class APPInformationData {
         return wifiVsn_;
       }
       /**
-       * <code>required bytes wifiVsn = 11;</code>
+       * <code>optional bytes wifiVsn = 11;</code>
        * @param value The wifiVsn to set.
        * @return This builder for chaining.
        */
@@ -5676,7 +5627,7 @@ public final class APPInformationData {
         return this;
       }
       /**
-       * <code>required bytes wifiVsn = 11;</code>
+       * <code>optional bytes wifiVsn = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearWifiVsn() {
@@ -5688,7 +5639,7 @@ public final class APPInformationData {
 
       private com.google.protobuf.ByteString kaNub_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>required bytes kaNub = 12;</code>
+       * <code>optional bytes kaNub = 12;</code>
        * @return Whether the kaNub field is set.
        */
       @java.lang.Override
@@ -5696,7 +5647,7 @@ public final class APPInformationData {
         return ((bitField0_ & 0x00000800) != 0);
       }
       /**
-       * <code>required bytes kaNub = 12;</code>
+       * <code>optional bytes kaNub = 12;</code>
        * @return The kaNub.
        */
       @java.lang.Override
@@ -5704,7 +5655,7 @@ public final class APPInformationData {
         return kaNub_;
       }
       /**
-       * <code>required bytes kaNub = 12;</code>
+       * <code>optional bytes kaNub = 12;</code>
        * @param value The kaNub to set.
        * @return This builder for chaining.
        */
@@ -5718,7 +5669,7 @@ public final class APPInformationData {
         return this;
       }
       /**
-       * <code>required bytes kaNub = 12;</code>
+       * <code>optional bytes kaNub = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearKaNub() {
@@ -5730,7 +5681,7 @@ public final class APPInformationData {
 
       private int dtuRuleId_ ;
       /**
-       * <code>required int32 dtuRuleId = 13;</code>
+       * <code>optional int32 dtuRuleId = 13;</code>
        * @return Whether the dtuRuleId field is set.
        */
       @java.lang.Override
@@ -5738,7 +5689,7 @@ public final class APPInformationData {
         return ((bitField0_ & 0x00001000) != 0);
       }
       /**
-       * <code>required int32 dtuRuleId = 13;</code>
+       * <code>optional int32 dtuRuleId = 13;</code>
        * @return The dtuRuleId.
        */
       @java.lang.Override
@@ -5746,7 +5697,7 @@ public final class APPInformationData {
         return dtuRuleId_;
       }
       /**
-       * <code>required int32 dtuRuleId = 13;</code>
+       * <code>optional int32 dtuRuleId = 13;</code>
        * @param value The dtuRuleId to set.
        * @return This builder for chaining.
        */
@@ -5757,7 +5708,7 @@ public final class APPInformationData {
         return this;
       }
       /**
-       * <code>required int32 dtuRuleId = 13;</code>
+       * <code>optional int32 dtuRuleId = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearDtuRuleId() {
@@ -6081,7 +6032,7 @@ public final class APPInformationData {
 
       private com.google.protobuf.ByteString gprsImei_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>required bytes gprsImei = 22;</code>
+       * <code>optional bytes gprsImei = 22;</code>
        * @return Whether the gprsImei field is set.
        */
       @java.lang.Override
@@ -6089,7 +6040,7 @@ public final class APPInformationData {
         return ((bitField0_ & 0x00200000) != 0);
       }
       /**
-       * <code>required bytes gprsImei = 22;</code>
+       * <code>optional bytes gprsImei = 22;</code>
        * @return The gprsImei.
        */
       @java.lang.Override
@@ -6097,7 +6048,7 @@ public final class APPInformationData {
         return gprsImei_;
       }
       /**
-       * <code>required bytes gprsImei = 22;</code>
+       * <code>optional bytes gprsImei = 22;</code>
        * @param value The gprsImei to set.
        * @return This builder for chaining.
        */
@@ -6111,7 +6062,7 @@ public final class APPInformationData {
         return this;
       }
       /**
-       * <code>required bytes gprsImei = 22;</code>
+       * <code>optional bytes gprsImei = 22;</code>
        * @return This builder for chaining.
        */
       public Builder clearGprsImei() {
@@ -9981,15 +9932,15 @@ public final class APPInformationData {
       "d\030\001 \001(\005:\0010\022\r\n\005dtuSw\030\002 \002(\005\022\r\n\005dtuHw\030\003 \002(\005" +
       "\022\026\n\013dtuStepTime\030\004 \001(\005:\0010\022\022\n\007dtuRfHw\030\005 \001(" +
       "\005:\0010\022\022\n\007dtuRfSw\030\006 \001(\005:\0010\022\023\n\013accessModel\030" +
-      "\007 \002(\005\022\031\n\021communicationTime\030\010 \002(\005\022\031\n\016sign" +
-      "alStrength\030\t \001(\005:\0010\022\017\n\007gprsVsn\030\n \002(\014\022\017\n\007" +
-      "wifiVsn\030\013 \002(\014\022\r\n\005kaNub\030\014 \002(\014\022\021\n\tdtuRuleI" +
-      "d\030\r \002(\005\022\027\n\014dtuErrorCode\030\016 \001(\005:\0010\022\025\n\ndtu4" +
+      "\007 \001(\005\022\031\n\021communicationTime\030\010 \001(\005\022\031\n\016sign" +
+      "alStrength\030\t \001(\005:\0010\022\017\n\007gprsVsn\030\n \001(\014\022\017\n\007" +
+      "wifiVsn\030\013 \001(\014\022\r\n\005kaNub\030\014 \001(\014\022\021\n\tdtuRuleI" +
+      "d\030\r \001(\005\022\027\n\014dtuErrorCode\030\016 \001(\005:\0010\022\025\n\ndtu4" +
       "85Mode\030\017 \001(\005:\0010\022\025\n\ndtu485Addr\030\020 \001(\005:\0010\022\026" +
       "\n\013sub1GFqband\030\021 \001(\005:\0010\022\026\n\013sub1GChtnum\030\022 " +
       "\001(\005:\0010\022\025\n\nsub1GChnum\030\023 \001(\005:\0010\022\022\n\007sub1GRp" +
       "\030\024 \001(\005:\0010\022\027\n\014sub1GChtotal\030\025 \001(\005:\0010\022\020\n\010gp" +
-      "rsImei\030\026 \002(\014\"\237\001\n\016APPMeterInfoMO\022\022\n\ndevic" +
+      "rsImei\030\026 \001(\014\"\237\001\n\016APPMeterInfoMO\022\022\n\ndevic" +
       "eKind\030\001 \001(\005\022\017\n\007meterSn\030\002 \002(\003\022\022\n\nmeterMod" +
       "el\030\003 \002(\005\022\017\n\007meterCt\030\004 \001(\005\022\016\n\006comWay\030\005 \002(" +
       "\005\022\022\n\naccessMode\030\006 \001(\005\022\r\n\005swVsn\030\007 \001(\005\022\020\n\010" +

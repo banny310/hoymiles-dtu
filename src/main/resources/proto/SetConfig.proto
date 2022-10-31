@@ -54,6 +54,8 @@ message SetConfigRes {
   optional bytes wifiSsid = 15;
   optional int32 zeroExport433Addr = 6;
   optional int32 zeroExportEnable = 7;
+  optional bytes dtuApSsid = 48;
+  optional bytes dtuApPass = 49;
 }
 
 message SetConfigReq {

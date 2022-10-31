@@ -8,6 +8,7 @@ import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import io.netty.handler.codec.MessageAggregationException;
 import io.netty.handler.timeout.IdleState;
 import io.netty.handler.timeout.IdleStateEvent;
 import io.netty.handler.timeout.IdleStateHandler;
@@ -176,8 +177,10 @@ public class DtuClient {
             // java.io.IOException: Connection reset by peer
             if (cause instanceof IOException) {
                 log.warn("IOException: " + cause.getMessage());
-                // close connection, and allow reconnect
+                // close connection, and allow to reconnect
                 ctx.close();
+            } else if (cause instanceof MessageAggregationException) {
+                log.warn("MessageAggregationException: " + cause.getMessage());
             } else
             // forward all others to App
             {

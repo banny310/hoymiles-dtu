@@ -91,7 +91,7 @@ public final class Unknown {
      * missing 5
      * </pre>
      *
-     * <code>required uint32 val6 = 6;</code>
+     * <code>optional uint32 val6 = 6;</code>
      * @return Whether the val6 field is set.
      */
     boolean hasVal6();
@@ -100,7 +100,7 @@ public final class Unknown {
      * missing 5
      * </pre>
      *
-     * <code>required uint32 val6 = 6;</code>
+     * <code>optional uint32 val6 = 6;</code>
      * @return The val6.
      */
     int getVal6();
@@ -345,7 +345,7 @@ public final class Unknown {
      * missing 5
      * </pre>
      *
-     * <code>required uint32 val6 = 6;</code>
+     * <code>optional uint32 val6 = 6;</code>
      * @return Whether the val6 field is set.
      */
     @java.lang.Override
@@ -357,7 +357,7 @@ public final class Unknown {
      * missing 5
      * </pre>
      *
-     * <code>required uint32 val6 = 6;</code>
+     * <code>optional uint32 val6 = 6;</code>
      * @return The val6.
      */
     @java.lang.Override
@@ -404,10 +404,6 @@ public final class Unknown {
         return false;
       }
       if (!hasDtuSn()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasVal6()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -844,9 +840,6 @@ public final class Unknown {
         if (!hasDtuSn()) {
           return false;
         }
-        if (!hasVal6()) {
-          return false;
-        }
         return true;
       }
 
@@ -1083,7 +1076,7 @@ public final class Unknown {
        * missing 5
        * </pre>
        *
-       * <code>required uint32 val6 = 6;</code>
+       * <code>optional uint32 val6 = 6;</code>
        * @return Whether the val6 field is set.
        */
       @java.lang.Override
@@ -1095,7 +1088,7 @@ public final class Unknown {
        * missing 5
        * </pre>
        *
-       * <code>required uint32 val6 = 6;</code>
+       * <code>optional uint32 val6 = 6;</code>
        * @return The val6.
        */
       @java.lang.Override
@@ -1107,7 +1100,7 @@ public final class Unknown {
        * missing 5
        * </pre>
        *
-       * <code>required uint32 val6 = 6;</code>
+       * <code>optional uint32 val6 = 6;</code>
        * @param value The val6 to set.
        * @return This builder for chaining.
        */
@@ -1122,7 +1115,7 @@ public final class Unknown {
        * missing 5
        * </pre>
        *
-       * <code>required uint32 val6 = 6;</code>
+       * <code>optional uint32 val6 = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearVal6() {
@@ -8746,7 +8739,7 @@ public final class Unknown {
       "\n&src/main/resources/proto/Unknown.proto" +
       "\022\010hoymiles\"`\n\007Msg8706\022\016\n\006offset\030\001 \002(\r\022\014\n" +
       "\004time\030\002 \002(\r\022\014\n\004val3\030\003 \002(\r\022\r\n\005dtuSn\030\004 \002(\014" +
-      "\022\014\n\004val6\030\006 \002(\r\022\014\n\004val7\030\007 \001(\r\"\317\001\n\007Msg8715" +
+      "\022\014\n\004val6\030\006 \001(\r\022\014\n\004val7\030\007 \001(\r\"\317\001\n\007Msg8715" +
       "\022\r\n\005dtuSn\030\001 \002(\014\022\014\n\004time\030\002 \002(\r\022\014\n\004val3\030\003 " +
       "\002(\r\022\014\n\004val5\030\005 \001(\r\022)\n\004invs\030\006 \003(\0132\033.hoymil" +
       "es.Msg8715.Msg8715_6\032`\n\tMsg8715_6\022\014\n\004pvS" +
