@@ -4325,23 +4325,23 @@ public final class RealDataNew {
     int getEpTta();
 
     /**
-     * <code>required int32 epTtb = 10;</code>
+     * <code>optional int32 epTtb = 10;</code>
      * @return Whether the epTtb field is set.
      */
     boolean hasEpTtb();
     /**
-     * <code>required int32 epTtb = 10;</code>
+     * <code>optional int32 epTtb = 10;</code>
      * @return The epTtb.
      */
     int getEpTtb();
 
     /**
-     * <code>required int32 epTtc = 11;</code>
+     * <code>optional int32 epTtc = 11;</code>
      * @return Whether the epTtc field is set.
      */
     boolean hasEpTtc();
     /**
-     * <code>required int32 epTtc = 11;</code>
+     * <code>optional int32 epTtc = 11;</code>
      * @return The epTtc.
      */
     int getEpTtc();
@@ -4369,23 +4369,23 @@ public final class RealDataNew {
     int getEnTta();
 
     /**
-     * <code>required int32 enTtb = 14;</code>
+     * <code>optional int32 enTtb = 14;</code>
      * @return Whether the enTtb field is set.
      */
     boolean hasEnTtb();
     /**
-     * <code>required int32 enTtb = 14;</code>
+     * <code>optional int32 enTtb = 14;</code>
      * @return The enTtb.
      */
     int getEnTtb();
 
     /**
-     * <code>required int32 enTtc = 15;</code>
+     * <code>optional int32 enTtc = 15;</code>
      * @return Whether the enTtc field is set.
      */
     boolean hasEnTtc();
     /**
-     * <code>required int32 enTtc = 15;</code>
+     * <code>optional int32 enTtc = 15;</code>
      * @return The enTtc.
      */
     int getEnTtc();
@@ -4878,7 +4878,7 @@ public final class RealDataNew {
     public static final int EPTTB_FIELD_NUMBER = 10;
     private int epTtb_;
     /**
-     * <code>required int32 epTtb = 10;</code>
+     * <code>optional int32 epTtb = 10;</code>
      * @return Whether the epTtb field is set.
      */
     @java.lang.Override
@@ -4886,7 +4886,7 @@ public final class RealDataNew {
       return ((bitField0_ & 0x00000200) != 0);
     }
     /**
-     * <code>required int32 epTtb = 10;</code>
+     * <code>optional int32 epTtb = 10;</code>
      * @return The epTtb.
      */
     @java.lang.Override
@@ -4897,7 +4897,7 @@ public final class RealDataNew {
     public static final int EPTTC_FIELD_NUMBER = 11;
     private int epTtc_;
     /**
-     * <code>required int32 epTtc = 11;</code>
+     * <code>optional int32 epTtc = 11;</code>
      * @return Whether the epTtc field is set.
      */
     @java.lang.Override
@@ -4905,7 +4905,7 @@ public final class RealDataNew {
       return ((bitField0_ & 0x00000400) != 0);
     }
     /**
-     * <code>required int32 epTtc = 11;</code>
+     * <code>optional int32 epTtc = 11;</code>
      * @return The epTtc.
      */
     @java.lang.Override
@@ -4954,7 +4954,7 @@ public final class RealDataNew {
     public static final int ENTTB_FIELD_NUMBER = 14;
     private int enTtb_;
     /**
-     * <code>required int32 enTtb = 14;</code>
+     * <code>optional int32 enTtb = 14;</code>
      * @return Whether the enTtb field is set.
      */
     @java.lang.Override
@@ -4962,7 +4962,7 @@ public final class RealDataNew {
       return ((bitField0_ & 0x00002000) != 0);
     }
     /**
-     * <code>required int32 enTtb = 14;</code>
+     * <code>optional int32 enTtb = 14;</code>
      * @return The enTtb.
      */
     @java.lang.Override
@@ -4973,7 +4973,7 @@ public final class RealDataNew {
     public static final int ENTTC_FIELD_NUMBER = 15;
     private int enTtc_;
     /**
-     * <code>required int32 enTtc = 15;</code>
+     * <code>optional int32 enTtc = 15;</code>
      * @return Whether the enTtc field is set.
      */
     @java.lang.Override
@@ -4981,7 +4981,7 @@ public final class RealDataNew {
       return ((bitField0_ & 0x00004000) != 0);
     }
     /**
-     * <code>required int32 enTtc = 15;</code>
+     * <code>optional int32 enTtc = 15;</code>
      * @return The enTtc.
      */
     @java.lang.Override
@@ -5222,27 +5222,11 @@ public final class RealDataNew {
         memoizedIsInitialized = 0;
         return false;
       }
-      if (!hasEpTtb()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasEpTtc()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       if (!hasEnTt()) {
         memoizedIsInitialized = 0;
         return false;
       }
       if (!hasEnTta()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasEnTtb()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasEnTtc()) {
         memoizedIsInitialized = 0;
         return false;
       }
@@ -6198,22 +6182,10 @@ public final class RealDataNew {
         if (!hasEpTta()) {
           return false;
         }
-        if (!hasEpTtb()) {
-          return false;
-        }
-        if (!hasEpTtc()) {
-          return false;
-        }
         if (!hasEnTt()) {
           return false;
         }
         if (!hasEnTta()) {
-          return false;
-        }
-        if (!hasEnTtb()) {
-          return false;
-        }
-        if (!hasEnTtc()) {
           return false;
         }
         if (!hasFault()) {
@@ -6622,7 +6594,7 @@ public final class RealDataNew {
 
       private int epTtb_ ;
       /**
-       * <code>required int32 epTtb = 10;</code>
+       * <code>optional int32 epTtb = 10;</code>
        * @return Whether the epTtb field is set.
        */
       @java.lang.Override
@@ -6630,7 +6602,7 @@ public final class RealDataNew {
         return ((bitField0_ & 0x00000200) != 0);
       }
       /**
-       * <code>required int32 epTtb = 10;</code>
+       * <code>optional int32 epTtb = 10;</code>
        * @return The epTtb.
        */
       @java.lang.Override
@@ -6638,7 +6610,7 @@ public final class RealDataNew {
         return epTtb_;
       }
       /**
-       * <code>required int32 epTtb = 10;</code>
+       * <code>optional int32 epTtb = 10;</code>
        * @param value The epTtb to set.
        * @return This builder for chaining.
        */
@@ -6649,7 +6621,7 @@ public final class RealDataNew {
         return this;
       }
       /**
-       * <code>required int32 epTtb = 10;</code>
+       * <code>optional int32 epTtb = 10;</code>
        * @return This builder for chaining.
        */
       public Builder clearEpTtb() {
@@ -6661,7 +6633,7 @@ public final class RealDataNew {
 
       private int epTtc_ ;
       /**
-       * <code>required int32 epTtc = 11;</code>
+       * <code>optional int32 epTtc = 11;</code>
        * @return Whether the epTtc field is set.
        */
       @java.lang.Override
@@ -6669,7 +6641,7 @@ public final class RealDataNew {
         return ((bitField0_ & 0x00000400) != 0);
       }
       /**
-       * <code>required int32 epTtc = 11;</code>
+       * <code>optional int32 epTtc = 11;</code>
        * @return The epTtc.
        */
       @java.lang.Override
@@ -6677,7 +6649,7 @@ public final class RealDataNew {
         return epTtc_;
       }
       /**
-       * <code>required int32 epTtc = 11;</code>
+       * <code>optional int32 epTtc = 11;</code>
        * @param value The epTtc to set.
        * @return This builder for chaining.
        */
@@ -6688,7 +6660,7 @@ public final class RealDataNew {
         return this;
       }
       /**
-       * <code>required int32 epTtc = 11;</code>
+       * <code>optional int32 epTtc = 11;</code>
        * @return This builder for chaining.
        */
       public Builder clearEpTtc() {
@@ -6778,7 +6750,7 @@ public final class RealDataNew {
 
       private int enTtb_ ;
       /**
-       * <code>required int32 enTtb = 14;</code>
+       * <code>optional int32 enTtb = 14;</code>
        * @return Whether the enTtb field is set.
        */
       @java.lang.Override
@@ -6786,7 +6758,7 @@ public final class RealDataNew {
         return ((bitField0_ & 0x00002000) != 0);
       }
       /**
-       * <code>required int32 enTtb = 14;</code>
+       * <code>optional int32 enTtb = 14;</code>
        * @return The enTtb.
        */
       @java.lang.Override
@@ -6794,7 +6766,7 @@ public final class RealDataNew {
         return enTtb_;
       }
       /**
-       * <code>required int32 enTtb = 14;</code>
+       * <code>optional int32 enTtb = 14;</code>
        * @param value The enTtb to set.
        * @return This builder for chaining.
        */
@@ -6805,7 +6777,7 @@ public final class RealDataNew {
         return this;
       }
       /**
-       * <code>required int32 enTtb = 14;</code>
+       * <code>optional int32 enTtb = 14;</code>
        * @return This builder for chaining.
        */
       public Builder clearEnTtb() {
@@ -6817,7 +6789,7 @@ public final class RealDataNew {
 
       private int enTtc_ ;
       /**
-       * <code>required int32 enTtc = 15;</code>
+       * <code>optional int32 enTtc = 15;</code>
        * @return Whether the enTtc field is set.
        */
       @java.lang.Override
@@ -6825,7 +6797,7 @@ public final class RealDataNew {
         return ((bitField0_ & 0x00004000) != 0);
       }
       /**
-       * <code>required int32 enTtc = 15;</code>
+       * <code>optional int32 enTtc = 15;</code>
        * @return The enTtc.
        */
       @java.lang.Override
@@ -6833,7 +6805,7 @@ public final class RealDataNew {
         return enTtc_;
       }
       /**
-       * <code>required int32 enTtc = 15;</code>
+       * <code>optional int32 enTtc = 15;</code>
        * @param value The enTtc to set.
        * @return This builder for chaining.
        */
@@ -6844,7 +6816,7 @@ public final class RealDataNew {
         return this;
       }
       /**
-       * <code>required int32 enTtc = 15;</code>
+       * <code>optional int32 enTtc = 15;</code>
        * @return This builder for chaining.
        */
       public Builder clearEnTtc() {
@@ -21465,9 +21437,9 @@ public final class RealDataNew {
       "miles.PvMO\"\334\002\n\007MeterMO\022\014\n\004type\030\001 \002(\005\022\n\n\002" +
       "sn\030\002 \002(\003\022\013\n\003pTt\030\003 \002(\005\022\014\n\004pTta\030\004 \002(\005\022\014\n\004p" +
       "Ttb\030\005 \002(\005\022\014\n\004pTtc\030\006 \002(\005\022\014\n\004pfTt\030\007 \002(\005\022\014\n" +
-      "\004epTt\030\010 \002(\005\022\r\n\005epTta\030\t \002(\005\022\r\n\005epTtb\030\n \002(" +
-      "\005\022\r\n\005epTtc\030\013 \002(\005\022\014\n\004enTt\030\014 \002(\005\022\r\n\005enTta\030" +
-      "\r \002(\005\022\r\n\005enTtb\030\016 \002(\005\022\r\n\005enTtc\030\017 \002(\005\022\r\n\005f" +
+      "\004epTt\030\010 \002(\005\022\r\n\005epTta\030\t \002(\005\022\r\n\005epTtb\030\n \001(" +
+      "\005\022\r\n\005epTtc\030\013 \001(\005\022\014\n\004enTt\030\014 \002(\005\022\r\n\005enTta\030" +
+      "\r \002(\005\022\r\n\005enTtb\030\016 \001(\005\022\r\n\005enTtc\030\017 \001(\005\022\r\n\005f" +
       "ault\030\020 \002(\005\022\n\n\002uA\030\021 \002(\005\022\n\n\002uB\030\022 \002(\005\022\n\n\002uC" +
       "\030\023 \002(\005\022\n\n\002iA\030\024 \002(\005\022\n\n\002iB\030\025 \002(\005\022\n\n\002iC\030\026 \002" +
       "(\005\022\013\n\003pfA\030\027 \002(\005\022\013\n\003pfB\030\030 \002(\005\022\013\n\003pfC\030\031 \002(" +

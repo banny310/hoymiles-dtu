@@ -38,12 +38,12 @@ message MeterMO {
   required int32 pfTt = 7;
   required int32 epTt = 8;
   required int32 epTta = 9;
-  required int32 epTtb = 10;
-  required int32 epTtc = 11;
+  optional int32 epTtb = 10;
+  optional int32 epTtc = 11;
   required int32 enTt = 12;
   required int32 enTta = 13;
-  required int32 enTtb = 14;
-  required int32 enTtc = 15;
+  optional int32 enTtb = 14;
+  optional int32 enTtc = 15;
   required int32 fault = 16;
   required int32 uA = 17;
   required int32 uB = 18;
