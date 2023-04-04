@@ -100,7 +100,7 @@ public class AppController {
 
         log.info("Sending autodiscovery...");
         autodiscoveryService.registerHomeAssistantAutodiscovery(appInfo);
-
+        
         AppMode mode = AppMode.valueOf(config.getString("app.mode").toUpperCase());
         switch (mode) {
             case ACTIVE:

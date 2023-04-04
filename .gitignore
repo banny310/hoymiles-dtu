@@ -3,3 +3,5 @@ target/
 hoymiles_solar-*
 src/main/resources/application.json
 sniffer/node_modules/
+.vs/
+.vscode/

@@ -15,6 +15,8 @@ public final class AppInfo {
     private String dtuSn;
     private DtuInfo dtuInfo;
     private List<SgsInfo> sgsInfo;
+    private List<MeterInfo> meterInfo;
+    
 
     @Getter
     @Setter
@@ -42,6 +44,21 @@ public final class AppInfo {
         public boolean isConnected() {
             return link != 0;
         }
+    }
+
+    @Getter
+    @Setter
+    @Builder
+    public static final class MeterInfo {
+        
+        private String meterSn;
+        private int deviceKind;
+        private int meterModel;
+        private int meterCt;
+        private int comWay;
+        private int accessMode;
+        private int swVsn;
+
     }
 }
 

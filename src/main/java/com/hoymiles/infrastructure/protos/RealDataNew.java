@@ -1716,12 +1716,6 @@ public final class RealDataNew {
         memoizedIsInitialized = 0;
         return false;
       }
-      for (int i = 0; i < getMeterDatasCount(); i++) {
-        if (!getMeterDatas(i).isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-      }
       for (int i = 0; i < getRpDatasCount(); i++) {
         if (!getRpDatas(i).isInitialized()) {
           memoizedIsInitialized = 0;
@@ -2477,11 +2471,6 @@ public final class RealDataNew {
         }
         if (!hasVer()) {
           return false;
-        }
-        for (int i = 0; i < getMeterDatasCount(); i++) {
-          if (!getMeterDatas(i).isInitialized()) {
-            return false;
-          }
         }
         for (int i = 0; i < getRpDatasCount(); i++) {
           if (!getRpDatas(i).isInitialized()) {
@@ -4226,100 +4215,100 @@ public final class RealDataNew {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>required int32 type = 1;</code>
+     * <code>optional int32 type = 1;</code>
      * @return Whether the type field is set.
      */
     boolean hasType();
     /**
-     * <code>required int32 type = 1;</code>
+     * <code>optional int32 type = 1;</code>
      * @return The type.
      */
     int getType();
 
     /**
-     * <code>required int64 sn = 2;</code>
+     * <code>optional int64 sn = 2;</code>
      * @return Whether the sn field is set.
      */
     boolean hasSn();
     /**
-     * <code>required int64 sn = 2;</code>
+     * <code>optional int64 sn = 2;</code>
      * @return The sn.
      */
     long getSn();
 
     /**
-     * <code>required int32 pTt = 3;</code>
+     * <code>optional int32 pTt = 3;</code>
      * @return Whether the pTt field is set.
      */
     boolean hasPTt();
     /**
-     * <code>required int32 pTt = 3;</code>
+     * <code>optional int32 pTt = 3;</code>
      * @return The pTt.
      */
     int getPTt();
 
     /**
-     * <code>required int32 pTta = 4;</code>
+     * <code>optional int32 pTta = 4;</code>
      * @return Whether the pTta field is set.
      */
     boolean hasPTta();
     /**
-     * <code>required int32 pTta = 4;</code>
+     * <code>optional int32 pTta = 4;</code>
      * @return The pTta.
      */
     int getPTta();
 
     /**
-     * <code>required int32 pTtb = 5;</code>
+     * <code>optional int32 pTtb = 5;</code>
      * @return Whether the pTtb field is set.
      */
     boolean hasPTtb();
     /**
-     * <code>required int32 pTtb = 5;</code>
+     * <code>optional int32 pTtb = 5;</code>
      * @return The pTtb.
      */
     int getPTtb();
 
     /**
-     * <code>required int32 pTtc = 6;</code>
+     * <code>optional int32 pTtc = 6;</code>
      * @return Whether the pTtc field is set.
      */
     boolean hasPTtc();
     /**
-     * <code>required int32 pTtc = 6;</code>
+     * <code>optional int32 pTtc = 6;</code>
      * @return The pTtc.
      */
     int getPTtc();
 
     /**
-     * <code>required int32 pfTt = 7;</code>
+     * <code>optional int32 pfTt = 7;</code>
      * @return Whether the pfTt field is set.
      */
     boolean hasPfTt();
     /**
-     * <code>required int32 pfTt = 7;</code>
+     * <code>optional int32 pfTt = 7;</code>
      * @return The pfTt.
      */
     int getPfTt();
 
     /**
-     * <code>required int32 epTt = 8;</code>
+     * <code>optional int32 epTt = 8;</code>
      * @return Whether the epTt field is set.
      */
     boolean hasEpTt();
     /**
-     * <code>required int32 epTt = 8;</code>
+     * <code>optional int32 epTt = 8;</code>
      * @return The epTt.
      */
     int getEpTt();
 
     /**
-     * <code>required int32 epTta = 9;</code>
+     * <code>optional int32 epTta = 9;</code>
      * @return Whether the epTta field is set.
      */
     boolean hasEpTta();
     /**
-     * <code>required int32 epTta = 9;</code>
+     * <code>optional int32 epTta = 9;</code>
      * @return The epTta.
      */
     int getEpTta();
@@ -4347,23 +4336,23 @@ public final class RealDataNew {
     int getEpTtc();
 
     /**
-     * <code>required int32 enTt = 12;</code>
+     * <code>optional int32 enTt = 12;</code>
      * @return Whether the enTt field is set.
      */
     boolean hasEnTt();
     /**
-     * <code>required int32 enTt = 12;</code>
+     * <code>optional int32 enTt = 12;</code>
      * @return The enTt.
      */
     int getEnTt();
 
     /**
-     * <code>required int32 enTta = 13;</code>
+     * <code>optional int32 enTta = 13;</code>
      * @return Whether the enTta field is set.
      */
     boolean hasEnTta();
     /**
-     * <code>required int32 enTta = 13;</code>
+     * <code>optional int32 enTta = 13;</code>
      * @return The enTta.
      */
     int getEnTta();
@@ -4391,111 +4380,111 @@ public final class RealDataNew {
     int getEnTtc();
 
     /**
-     * <code>required int32 fault = 16;</code>
+     * <code>optional int32 fault = 16;</code>
      * @return Whether the fault field is set.
      */
     boolean hasFault();
     /**
-     * <code>required int32 fault = 16;</code>
+     * <code>optional int32 fault = 16;</code>
      * @return The fault.
      */
     int getFault();
 
     /**
-     * <code>required int32 uA = 17;</code>
+     * <code>optional int32 uA = 17;</code>
      * @return Whether the uA field is set.
      */
     boolean hasUA();
     /**
-     * <code>required int32 uA = 17;</code>
+     * <code>optional int32 uA = 17;</code>
      * @return The uA.
      */
     int getUA();
 
     /**
-     * <code>required int32 uB = 18;</code>
+     * <code>optional int32 uB = 18;</code>
      * @return Whether the uB field is set.
      */
     boolean hasUB();
     /**
-     * <code>required int32 uB = 18;</code>
+     * <code>optional int32 uB = 18;</code>
      * @return The uB.
      */
     int getUB();
 
     /**
-     * <code>required int32 uC = 19;</code>
+     * <code>optional int32 uC = 19;</code>
      * @return Whether the uC field is set.
      */
     boolean hasUC();
     /**
-     * <code>required int32 uC = 19;</code>
+     * <code>optional int32 uC = 19;</code>
      * @return The uC.
      */
     int getUC();
 
     /**
-     * <code>required int32 iA = 20;</code>
+     * <code>optional int32 iA = 20;</code>
      * @return Whether the iA field is set.
      */
     boolean hasIA();
     /**
-     * <code>required int32 iA = 20;</code>
+     * <code>optional int32 iA = 20;</code>
      * @return The iA.
      */
     int getIA();
 
     /**
-     * <code>required int32 iB = 21;</code>
+     * <code>optional int32 iB = 21;</code>
      * @return Whether the iB field is set.
      */
     boolean hasIB();
     /**
-     * <code>required int32 iB = 21;</code>
+     * <code>optional int32 iB = 21;</code>
      * @return The iB.
      */
     int getIB();
 
     /**
-     * <code>required int32 iC = 22;</code>
+     * <code>optional int32 iC = 22;</code>
      * @return Whether the iC field is set.
      */
     boolean hasIC();
     /**
-     * <code>required int32 iC = 22;</code>
+     * <code>optional int32 iC = 22;</code>
      * @return The iC.
      */
     int getIC();
 
     /**
-     * <code>required int32 pfA = 23;</code>
+     * <code>optional int32 pfA = 23;</code>
      * @return Whether the pfA field is set.
      */
     boolean hasPfA();
     /**
-     * <code>required int32 pfA = 23;</code>
+     * <code>optional int32 pfA = 23;</code>
      * @return The pfA.
      */
     int getPfA();
 
     /**
-     * <code>required int32 pfB = 24;</code>
+     * <code>optional int32 pfB = 24;</code>
      * @return Whether the pfB field is set.
      */
     boolean hasPfB();
     /**
-     * <code>required int32 pfB = 24;</code>
+     * <code>optional int32 pfB = 24;</code>
      * @return The pfB.
      */
     int getPfB();
 
     /**
-     * <code>required int32 pfC = 25;</code>
+     * <code>optional int32 pfC = 25;</code>
      * @return Whether the pfC field is set.
      */
     boolean hasPfC();
     /**
-     * <code>required int32 pfC = 25;</code>
+     * <code>optional int32 pfC = 25;</code>
      * @return The pfC.
      */
     int getPfC();
@@ -4707,7 +4696,7 @@ public final class RealDataNew {
     public static final int TYPE_FIELD_NUMBER = 1;
     private int type_;
     /**
-     * <code>required int32 type = 1;</code>
+     * <code>optional int32 type = 1;</code>
      * @return Whether the type field is set.
      */
     @java.lang.Override
@@ -4715,7 +4704,7 @@ public final class RealDataNew {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>required int32 type = 1;</code>
+     * <code>optional int32 type = 1;</code>
      * @return The type.
      */
     @java.lang.Override
@@ -4726,7 +4715,7 @@ public final class RealDataNew {
     public static final int SN_FIELD_NUMBER = 2;
     private long sn_;
     /**
-     * <code>required int64 sn = 2;</code>
+     * <code>optional int64 sn = 2;</code>
      * @return Whether the sn field is set.
      */
     @java.lang.Override
@@ -4734,7 +4723,7 @@ public final class RealDataNew {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>required int64 sn = 2;</code>
+     * <code>optional int64 sn = 2;</code>
      * @return The sn.
      */
     @java.lang.Override
@@ -4745,7 +4734,7 @@ public final class RealDataNew {
     public static final int PTT_FIELD_NUMBER = 3;
     private int pTt_;
     /**
-     * <code>required int32 pTt = 3;</code>
+     * <code>optional int32 pTt = 3;</code>
      * @return Whether the pTt field is set.
      */
     @java.lang.Override
@@ -4753,7 +4742,7 @@ public final class RealDataNew {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>required int32 pTt = 3;</code>
+     * <code>optional int32 pTt = 3;</code>
      * @return The pTt.
      */
     @java.lang.Override
@@ -4764,7 +4753,7 @@ public final class RealDataNew {
     public static final int PTTA_FIELD_NUMBER = 4;
     private int pTta_;
     /**
-     * <code>required int32 pTta = 4;</code>
+     * <code>optional int32 pTta = 4;</code>
      * @return Whether the pTta field is set.
      */
     @java.lang.Override
@@ -4772,7 +4761,7 @@ public final class RealDataNew {
       return ((bitField0_ & 0x00000008) != 0);
     }
     /**
-     * <code>required int32 pTta = 4;</code>
+     * <code>optional int32 pTta = 4;</code>
      * @return The pTta.
      */
     @java.lang.Override
@@ -4783,7 +4772,7 @@ public final class RealDataNew {
     public static final int PTTB_FIELD_NUMBER = 5;
     private int pTtb_;
     /**
-     * <code>required int32 pTtb = 5;</code>
+     * <code>optional int32 pTtb = 5;</code>
      * @return Whether the pTtb field is set.
      */
     @java.lang.Override
@@ -4791,7 +4780,7 @@ public final class RealDataNew {
       return ((bitField0_ & 0x00000010) != 0);
     }
     /**
-     * <code>required int32 pTtb = 5;</code>
+     * <code>optional int32 pTtb = 5;</code>
      * @return The pTtb.
      */
     @java.lang.Override
@@ -4802,7 +4791,7 @@ public final class RealDataNew {
     public static final int PTTC_FIELD_NUMBER = 6;
     private int pTtc_;
     /**
-     * <code>required int32 pTtc = 6;</code>
+     * <code>optional int32 pTtc = 6;</code>
      * @return Whether the pTtc field is set.
      */
     @java.lang.Override
@@ -4810,7 +4799,7 @@ public final class RealDataNew {
       return ((bitField0_ & 0x00000020) != 0);
     }
     /**
-     * <code>required int32 pTtc = 6;</code>
+     * <code>optional int32 pTtc = 6;</code>
      * @return The pTtc.
      */
     @java.lang.Override
@@ -4821,7 +4810,7 @@ public final class RealDataNew {
     public static final int PFTT_FIELD_NUMBER = 7;
     private int pfTt_;
     /**
-     * <code>required int32 pfTt = 7;</code>
+     * <code>optional int32 pfTt = 7;</code>
      * @return Whether the pfTt field is set.
      */
     @java.lang.Override
@@ -4829,7 +4818,7 @@ public final class RealDataNew {
       return ((bitField0_ & 0x00000040) != 0);
     }
     /**
-     * <code>required int32 pfTt = 7;</code>
+     * <code>optional int32 pfTt = 7;</code>
      * @return The pfTt.
      */
     @java.lang.Override
@@ -4840,7 +4829,7 @@ public final class RealDataNew {
     public static final int EPTT_FIELD_NUMBER = 8;
     private int epTt_;
     /**
-     * <code>required int32 epTt = 8;</code>
+     * <code>optional int32 epTt = 8;</code>
      * @return Whether the epTt field is set.
      */
     @java.lang.Override
@@ -4848,7 +4837,7 @@ public final class RealDataNew {
       return ((bitField0_ & 0x00000080) != 0);
     }
     /**
-     * <code>required int32 epTt = 8;</code>
+     * <code>optional int32 epTt = 8;</code>
      * @return The epTt.
      */
     @java.lang.Override
@@ -4859,7 +4848,7 @@ public final class RealDataNew {
     public static final int EPTTA_FIELD_NUMBER = 9;
     private int epTta_;
     /**
-     * <code>required int32 epTta = 9;</code>
+     * <code>optional int32 epTta = 9;</code>
      * @return Whether the epTta field is set.
      */
     @java.lang.Override
@@ -4867,7 +4856,7 @@ public final class RealDataNew {
       return ((bitField0_ & 0x00000100) != 0);
     }
     /**
-     * <code>required int32 epTta = 9;</code>
+     * <code>optional int32 epTta = 9;</code>
      * @return The epTta.
      */
     @java.lang.Override
@@ -4916,7 +4905,7 @@ public final class RealDataNew {
     public static final int ENTT_FIELD_NUMBER = 12;
     private int enTt_;
     /**
-     * <code>required int32 enTt = 12;</code>
+     * <code>optional int32 enTt = 12;</code>
      * @return Whether the enTt field is set.
      */
     @java.lang.Override
@@ -4924,7 +4913,7 @@ public final class RealDataNew {
       return ((bitField0_ & 0x00000800) != 0);
     }
     /**
-     * <code>required int32 enTt = 12;</code>
+     * <code>optional int32 enTt = 12;</code>
      * @return The enTt.
      */
     @java.lang.Override
@@ -4935,7 +4924,7 @@ public final class RealDataNew {
     public static final int ENTTA_FIELD_NUMBER = 13;
     private int enTta_;
     /**
-     * <code>required int32 enTta = 13;</code>
+     * <code>optional int32 enTta = 13;</code>
      * @return Whether the enTta field is set.
      */
     @java.lang.Override
@@ -4943,7 +4932,7 @@ public final class RealDataNew {
       return ((bitField0_ & 0x00001000) != 0);
     }
     /**
-     * <code>required int32 enTta = 13;</code>
+     * <code>optional int32 enTta = 13;</code>
      * @return The enTta.
      */
     @java.lang.Override
@@ -4992,7 +4981,7 @@ public final class RealDataNew {
     public static final int FAULT_FIELD_NUMBER = 16;
     private int fault_;
     /**
-     * <code>required int32 fault = 16;</code>
+     * <code>optional int32 fault = 16;</code>
      * @return Whether the fault field is set.
      */
     @java.lang.Override
@@ -5000,7 +4989,7 @@ public final class RealDataNew {
       return ((bitField0_ & 0x00008000) != 0);
     }
     /**
-     * <code>required int32 fault = 16;</code>
+     * <code>optional int32 fault = 16;</code>
      * @return The fault.
      */
     @java.lang.Override
@@ -5011,7 +5000,7 @@ public final class RealDataNew {
     public static final int UA_FIELD_NUMBER = 17;
     private int uA_;
     /**
-     * <code>required int32 uA = 17;</code>
+     * <code>optional int32 uA = 17;</code>
      * @return Whether the uA field is set.
      */
     @java.lang.Override
@@ -5019,7 +5008,7 @@ public final class RealDataNew {
       return ((bitField0_ & 0x00010000) != 0);
     }
     /**
-     * <code>required int32 uA = 17;</code>
+     * <code>optional int32 uA = 17;</code>
      * @return The uA.
      */
     @java.lang.Override
@@ -5030,7 +5019,7 @@ public final class RealDataNew {
     public static final int UB_FIELD_NUMBER = 18;
     private int uB_;
     /**
-     * <code>required int32 uB = 18;</code>
+     * <code>optional int32 uB = 18;</code>
      * @return Whether the uB field is set.
      */
     @java.lang.Override
@@ -5038,7 +5027,7 @@ public final class RealDataNew {
       return ((bitField0_ & 0x00020000) != 0);
     }
     /**
-     * <code>required int32 uB = 18;</code>
+     * <code>optional int32 uB = 18;</code>
      * @return The uB.
      */
     @java.lang.Override
@@ -5049,7 +5038,7 @@ public final class RealDataNew {
     public static final int UC_FIELD_NUMBER = 19;
     private int uC_;
     /**
-     * <code>required int32 uC = 19;</code>
+     * <code>optional int32 uC = 19;</code>
      * @return Whether the uC field is set.
      */
     @java.lang.Override
@@ -5057,7 +5046,7 @@ public final class RealDataNew {
       return ((bitField0_ & 0x00040000) != 0);
     }
     /**
-     * <code>required int32 uC = 19;</code>
+     * <code>optional int32 uC = 19;</code>
      * @return The uC.
      */
     @java.lang.Override
@@ -5068,7 +5057,7 @@ public final class RealDataNew {
     public static final int IA_FIELD_NUMBER = 20;
     private int iA_;
     /**
-     * <code>required int32 iA = 20;</code>
+     * <code>optional int32 iA = 20;</code>
      * @return Whether the iA field is set.
      */
     @java.lang.Override
@@ -5076,7 +5065,7 @@ public final class RealDataNew {
       return ((bitField0_ & 0x00080000) != 0);
     }
     /**
-     * <code>required int32 iA = 20;</code>
+     * <code>optional int32 iA = 20;</code>
      * @return The iA.
      */
     @java.lang.Override
@@ -5087,7 +5076,7 @@ public final class RealDataNew {
     public static final int IB_FIELD_NUMBER = 21;
     private int iB_;
     /**
-     * <code>required int32 iB = 21;</code>
+     * <code>optional int32 iB = 21;</code>
      * @return Whether the iB field is set.
      */
     @java.lang.Override
@@ -5095,7 +5084,7 @@ public final class RealDataNew {
       return ((bitField0_ & 0x00100000) != 0);
     }
     /**
-     * <code>required int32 iB = 21;</code>
+     * <code>optional int32 iB = 21;</code>
      * @return The iB.
      */
     @java.lang.Override
@@ -5106,7 +5095,7 @@ public final class RealDataNew {
     public static final int IC_FIELD_NUMBER = 22;
     private int iC_;
     /**
-     * <code>required int32 iC = 22;</code>
+     * <code>optional int32 iC = 22;</code>
      * @return Whether the iC field is set.
      */
     @java.lang.Override
@@ -5114,7 +5103,7 @@ public final class RealDataNew {
       return ((bitField0_ & 0x00200000) != 0);
     }
     /**
-     * <code>required int32 iC = 22;</code>
+     * <code>optional int32 iC = 22;</code>
      * @return The iC.
      */
     @java.lang.Override
@@ -5125,7 +5114,7 @@ public final class RealDataNew {
     public static final int PFA_FIELD_NUMBER = 23;
     private int pfA_;
     /**
-     * <code>required int32 pfA = 23;</code>
+     * <code>optional int32 pfA = 23;</code>
      * @return Whether the pfA field is set.
      */
     @java.lang.Override
@@ -5133,7 +5122,7 @@ public final class RealDataNew {
       return ((bitField0_ & 0x00400000) != 0);
     }
     /**
-     * <code>required int32 pfA = 23;</code>
+     * <code>optional int32 pfA = 23;</code>
      * @return The pfA.
      */
     @java.lang.Override
@@ -5144,7 +5133,7 @@ public final class RealDataNew {
     public static final int PFB_FIELD_NUMBER = 24;
     private int pfB_;
     /**
-     * <code>required int32 pfB = 24;</code>
+     * <code>optional int32 pfB = 24;</code>
      * @return Whether the pfB field is set.
      */
     @java.lang.Override
@@ -5152,7 +5141,7 @@ public final class RealDataNew {
       return ((bitField0_ & 0x00800000) != 0);
     }
     /**
-     * <code>required int32 pfB = 24;</code>
+     * <code>optional int32 pfB = 24;</code>
      * @return The pfB.
      */
     @java.lang.Override
@@ -5163,7 +5152,7 @@ public final class RealDataNew {
     public static final int PFC_FIELD_NUMBER = 25;
     private int pfC_;
     /**
-     * <code>required int32 pfC = 25;</code>
+     * <code>optional int32 pfC = 25;</code>
      * @return Whether the pfC field is set.
      */
     @java.lang.Override
@@ -5171,7 +5160,7 @@ public final class RealDataNew {
       return ((bitField0_ & 0x01000000) != 0);
     }
     /**
-     * <code>required int32 pfC = 25;</code>
+     * <code>optional int32 pfC = 25;</code>
      * @return The pfC.
      */
     @java.lang.Override
@@ -5186,90 +5175,6 @@ public final class RealDataNew {
       if (isInitialized == 1) return true;
       if (isInitialized == 0) return false;
 
-      if (!hasType()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasSn()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasPTt()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasPTta()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasPTtb()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasPTtc()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasPfTt()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasEpTt()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasEpTta()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasEnTt()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasEnTta()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasFault()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasUA()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasUB()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasUC()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasIA()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasIB()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasIC()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasPfA()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasPfB()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
-      if (!hasPfC()) {
-        memoizedIsInitialized = 0;
-        return false;
-      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -6155,69 +6060,6 @@ public final class RealDataNew {
 
       @java.lang.Override
       public final boolean isInitialized() {
-        if (!hasType()) {
-          return false;
-        }
-        if (!hasSn()) {
-          return false;
-        }
-        if (!hasPTt()) {
-          return false;
-        }
-        if (!hasPTta()) {
-          return false;
-        }
-        if (!hasPTtb()) {
-          return false;
-        }
-        if (!hasPTtc()) {
-          return false;
-        }
-        if (!hasPfTt()) {
-          return false;
-        }
-        if (!hasEpTt()) {
-          return false;
-        }
-        if (!hasEpTta()) {
-          return false;
-        }
-        if (!hasEnTt()) {
-          return false;
-        }
-        if (!hasEnTta()) {
-          return false;
-        }
-        if (!hasFault()) {
-          return false;
-        }
-        if (!hasUA()) {
-          return false;
-        }
-        if (!hasUB()) {
-          return false;
-        }
-        if (!hasUC()) {
-          return false;
-        }
-        if (!hasIA()) {
-          return false;
-        }
-        if (!hasIB()) {
-          return false;
-        }
-        if (!hasIC()) {
-          return false;
-        }
-        if (!hasPfA()) {
-          return false;
-        }
-        if (!hasPfB()) {
-          return false;
-        }
-        if (!hasPfC()) {
-          return false;
-        }
         return true;
       }
 
@@ -6243,7 +6085,7 @@ public final class RealDataNew {
 
       private int type_ ;
       /**
-       * <code>required int32 type = 1;</code>
+       * <code>optional int32 type = 1;</code>
        * @return Whether the type field is set.
        */
       @java.lang.Override
@@ -6251,7 +6093,7 @@ public final class RealDataNew {
         return ((bitField0_ & 0x00000001) != 0);
       }
       /**
-       * <code>required int32 type = 1;</code>
+       * <code>optional int32 type = 1;</code>
        * @return The type.
        */
       @java.lang.Override
@@ -6259,7 +6101,7 @@ public final class RealDataNew {
         return type_;
       }
       /**
-       * <code>required int32 type = 1;</code>
+       * <code>optional int32 type = 1;</code>
        * @param value The type to set.
        * @return This builder for chaining.
        */
@@ -6270,7 +6112,7 @@ public final class RealDataNew {
         return this;
       }
       /**
-       * <code>required int32 type = 1;</code>
+       * <code>optional int32 type = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearType() {
@@ -6282,7 +6124,7 @@ public final class RealDataNew {
 
       private long sn_ ;
       /**
-       * <code>required int64 sn = 2;</code>
+       * <code>optional int64 sn = 2;</code>
        * @return Whether the sn field is set.
        */
       @java.lang.Override
@@ -6290,7 +6132,7 @@ public final class RealDataNew {
         return ((bitField0_ & 0x00000002) != 0);
       }
       /**
-       * <code>required int64 sn = 2;</code>
+       * <code>optional int64 sn = 2;</code>
        * @return The sn.
        */
       @java.lang.Override
@@ -6298,7 +6140,7 @@ public final class RealDataNew {
         return sn_;
       }
       /**
-       * <code>required int64 sn = 2;</code>
+       * <code>optional int64 sn = 2;</code>
        * @param value The sn to set.
        * @return This builder for chaining.
        */
@@ -6309,7 +6151,7 @@ public final class RealDataNew {
         return this;
       }
       /**
-       * <code>required int64 sn = 2;</code>
+       * <code>optional int64 sn = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearSn() {
@@ -6321,7 +6163,7 @@ public final class RealDataNew {
 
       private int pTt_ ;
       /**
-       * <code>required int32 pTt = 3;</code>
+       * <code>optional int32 pTt = 3;</code>
        * @return Whether the pTt field is set.
        */
       @java.lang.Override
@@ -6329,7 +6171,7 @@ public final class RealDataNew {
         return ((bitField0_ & 0x00000004) != 0);
       }
       /**
-       * <code>required int32 pTt = 3;</code>
+       * <code>optional int32 pTt = 3;</code>
        * @return The pTt.
        */
       @java.lang.Override
@@ -6337,7 +6179,7 @@ public final class RealDataNew {
         return pTt_;
       }
       /**
-       * <code>required int32 pTt = 3;</code>
+       * <code>optional int32 pTt = 3;</code>
        * @param value The pTt to set.
        * @return This builder for chaining.
        */
@@ -6348,7 +6190,7 @@ public final class RealDataNew {
         return this;
       }
       /**
-       * <code>required int32 pTt = 3;</code>
+       * <code>optional int32 pTt = 3;</code>
        * @return This builder for chaining.
        */
       public Builder clearPTt() {
@@ -6360,7 +6202,7 @@ public final class RealDataNew {
 
       private int pTta_ ;
       /**
-       * <code>required int32 pTta = 4;</code>
+       * <code>optional int32 pTta = 4;</code>
        * @return Whether the pTta field is set.
        */
       @java.lang.Override
@@ -6368,7 +6210,7 @@ public final class RealDataNew {
         return ((bitField0_ & 0x00000008) != 0);
       }
       /**
-       * <code>required int32 pTta = 4;</code>
+       * <code>optional int32 pTta = 4;</code>
        * @return The pTta.
        */
       @java.lang.Override
@@ -6376,7 +6218,7 @@ public final class RealDataNew {
         return pTta_;
       }
       /**
-       * <code>required int32 pTta = 4;</code>
+       * <code>optional int32 pTta = 4;</code>
        * @param value The pTta to set.
        * @return This builder for chaining.
        */
@@ -6387,7 +6229,7 @@ public final class RealDataNew {
         return this;
       }
       /**
-       * <code>required int32 pTta = 4;</code>
+       * <code>optional int32 pTta = 4;</code>
        * @return This builder for chaining.
        */
       public Builder clearPTta() {
@@ -6399,7 +6241,7 @@ public final class RealDataNew {
 
       private int pTtb_ ;
       /**
-       * <code>required int32 pTtb = 5;</code>
+       * <code>optional int32 pTtb = 5;</code>
        * @return Whether the pTtb field is set.
        */
       @java.lang.Override
@@ -6407,7 +6249,7 @@ public final class RealDataNew {
         return ((bitField0_ & 0x00000010) != 0);
       }
       /**
-       * <code>required int32 pTtb = 5;</code>
+       * <code>optional int32 pTtb = 5;</code>
        * @return The pTtb.
        */
       @java.lang.Override
@@ -6415,7 +6257,7 @@ public final class RealDataNew {
         return pTtb_;
       }
       /**
-       * <code>required int32 pTtb = 5;</code>
+       * <code>optional int32 pTtb = 5;</code>
        * @param value The pTtb to set.
        * @return This builder for chaining.
        */
@@ -6426,7 +6268,7 @@ public final class RealDataNew {
         return this;
       }
       /**
-       * <code>required int32 pTtb = 5;</code>
+       * <code>optional int32 pTtb = 5;</code>
        * @return This builder for chaining.
        */
       public Builder clearPTtb() {
@@ -6438,7 +6280,7 @@ public final class RealDataNew {
 
       private int pTtc_ ;
       /**
-       * <code>required int32 pTtc = 6;</code>
+       * <code>optional int32 pTtc = 6;</code>
        * @return Whether the pTtc field is set.
        */
       @java.lang.Override
@@ -6446,7 +6288,7 @@ public final class RealDataNew {
         return ((bitField0_ & 0x00000020) != 0);
       }
       /**
-       * <code>required int32 pTtc = 6;</code>
+       * <code>optional int32 pTtc = 6;</code>
        * @return The pTtc.
        */
       @java.lang.Override
@@ -6454,7 +6296,7 @@ public final class RealDataNew {
         return pTtc_;
       }
       /**
-       * <code>required int32 pTtc = 6;</code>
+       * <code>optional int32 pTtc = 6;</code>
        * @param value The pTtc to set.
        * @return This builder for chaining.
        */
@@ -6465,7 +6307,7 @@ public final class RealDataNew {
         return this;
       }
       /**
-       * <code>required int32 pTtc = 6;</code>
+       * <code>optional int32 pTtc = 6;</code>
        * @return This builder for chaining.
        */
       public Builder clearPTtc() {
@@ -6477,7 +6319,7 @@ public final class RealDataNew {
 
       private int pfTt_ ;
       /**
-       * <code>required int32 pfTt = 7;</code>
+       * <code>optional int32 pfTt = 7;</code>
        * @return Whether the pfTt field is set.
        */
       @java.lang.Override
@@ -6485,7 +6327,7 @@ public final class RealDataNew {
         return ((bitField0_ & 0x00000040) != 0);
       }
       /**
-       * <code>required int32 pfTt = 7;</code>
+       * <code>optional int32 pfTt = 7;</code>
        * @return The pfTt.
        */
       @java.lang.Override
@@ -6493,7 +6335,7 @@ public final class RealDataNew {
         return pfTt_;
       }
       /**
-       * <code>required int32 pfTt = 7;</code>
+       * <code>optional int32 pfTt = 7;</code>
        * @param value The pfTt to set.
        * @return This builder for chaining.
        */
@@ -6504,7 +6346,7 @@ public final class RealDataNew {
         return this;
       }
       /**
-       * <code>required int32 pfTt = 7;</code>
+       * <code>optional int32 pfTt = 7;</code>
        * @return This builder for chaining.
        */
       public Builder clearPfTt() {
@@ -6516,7 +6358,7 @@ public final class RealDataNew {
 
       private int epTt_ ;
       /**
-       * <code>required int32 epTt = 8;</code>
+       * <code>optional int32 epTt = 8;</code>
        * @return Whether the epTt field is set.
        */
       @java.lang.Override
@@ -6524,7 +6366,7 @@ public final class RealDataNew {
         return ((bitField0_ & 0x00000080) != 0);
       }
       /**
-       * <code>required int32 epTt = 8;</code>
+       * <code>optional int32 epTt = 8;</code>
        * @return The epTt.
        */
       @java.lang.Override
@@ -6532,7 +6374,7 @@ public final class RealDataNew {
         return epTt_;
       }
       /**
-       * <code>required int32 epTt = 8;</code>
+       * <code>optional int32 epTt = 8;</code>
        * @param value The epTt to set.
        * @return This builder for chaining.
        */
@@ -6543,7 +6385,7 @@ public final class RealDataNew {
         return this;
       }
       /**
-       * <code>required int32 epTt = 8;</code>
+       * <code>optional int32 epTt = 8;</code>
        * @return This builder for chaining.
        */
       public Builder clearEpTt() {
@@ -6555,7 +6397,7 @@ public final class RealDataNew {
 
       private int epTta_ ;
       /**
-       * <code>required int32 epTta = 9;</code>
+       * <code>optional int32 epTta = 9;</code>
        * @return Whether the epTta field is set.
        */
       @java.lang.Override
@@ -6563,7 +6405,7 @@ public final class RealDataNew {
         return ((bitField0_ & 0x00000100) != 0);
       }
       /**
-       * <code>required int32 epTta = 9;</code>
+       * <code>optional int32 epTta = 9;</code>
        * @return The epTta.
        */
       @java.lang.Override
@@ -6571,7 +6413,7 @@ public final class RealDataNew {
         return epTta_;
       }
       /**
-       * <code>required int32 epTta = 9;</code>
+       * <code>optional int32 epTta = 9;</code>
        * @param value The epTta to set.
        * @return This builder for chaining.
        */
@@ -6582,7 +6424,7 @@ public final class RealDataNew {
         return this;
       }
       /**
-       * <code>required int32 epTta = 9;</code>
+       * <code>optional int32 epTta = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearEpTta() {
@@ -6672,7 +6514,7 @@ public final class RealDataNew {
 
       private int enTt_ ;
       /**
-       * <code>required int32 enTt = 12;</code>
+       * <code>optional int32 enTt = 12;</code>
        * @return Whether the enTt field is set.
        */
       @java.lang.Override
@@ -6680,7 +6522,7 @@ public final class RealDataNew {
         return ((bitField0_ & 0x00000800) != 0);
       }
       /**
-       * <code>required int32 enTt = 12;</code>
+       * <code>optional int32 enTt = 12;</code>
        * @return The enTt.
        */
       @java.lang.Override
@@ -6688,7 +6530,7 @@ public final class RealDataNew {
         return enTt_;
       }
       /**
-       * <code>required int32 enTt = 12;</code>
+       * <code>optional int32 enTt = 12;</code>
        * @param value The enTt to set.
        * @return This builder for chaining.
        */
@@ -6699,7 +6541,7 @@ public final class RealDataNew {
         return this;
       }
       /**
-       * <code>required int32 enTt = 12;</code>
+       * <code>optional int32 enTt = 12;</code>
        * @return This builder for chaining.
        */
       public Builder clearEnTt() {
@@ -6711,7 +6553,7 @@ public final class RealDataNew {
 
       private int enTta_ ;
       /**
-       * <code>required int32 enTta = 13;</code>
+       * <code>optional int32 enTta = 13;</code>
        * @return Whether the enTta field is set.
        */
       @java.lang.Override
@@ -6719,7 +6561,7 @@ public final class RealDataNew {
         return ((bitField0_ & 0x00001000) != 0);
       }
       /**
-       * <code>required int32 enTta = 13;</code>
+       * <code>optional int32 enTta = 13;</code>
        * @return The enTta.
        */
       @java.lang.Override
@@ -6727,7 +6569,7 @@ public final class RealDataNew {
         return enTta_;
       }
       /**
-       * <code>required int32 enTta = 13;</code>
+       * <code>optional int32 enTta = 13;</code>
        * @param value The enTta to set.
        * @return This builder for chaining.
        */
@@ -6738,7 +6580,7 @@ public final class RealDataNew {
         return this;
       }
       /**
-       * <code>required int32 enTta = 13;</code>
+       * <code>optional int32 enTta = 13;</code>
        * @return This builder for chaining.
        */
       public Builder clearEnTta() {
@@ -6828,7 +6670,7 @@ public final class RealDataNew {
 
       private int fault_ ;
       /**
-       * <code>required int32 fault = 16;</code>
+       * <code>optional int32 fault = 16;</code>
        * @return Whether the fault field is set.
        */
       @java.lang.Override
@@ -6836,7 +6678,7 @@ public final class RealDataNew {
         return ((bitField0_ & 0x00008000) != 0);
       }
       /**
-       * <code>required int32 fault = 16;</code>
+       * <code>optional int32 fault = 16;</code>
        * @return The fault.
        */
       @java.lang.Override
@@ -6844,7 +6686,7 @@ public final class RealDataNew {
         return fault_;
       }
       /**
-       * <code>required int32 fault = 16;</code>
+       * <code>optional int32 fault = 16;</code>
        * @param value The fault to set.
        * @return This builder for chaining.
        */
@@ -6855,7 +6697,7 @@ public final class RealDataNew {
         return this;
       }
       /**
-       * <code>required int32 fault = 16;</code>
+       * <code>optional int32 fault = 16;</code>
        * @return This builder for chaining.
        */
       public Builder clearFault() {
@@ -6867,7 +6709,7 @@ public final class RealDataNew {
 
       private int uA_ ;
       /**
-       * <code>required int32 uA = 17;</code>
+       * <code>optional int32 uA = 17;</code>
        * @return Whether the uA field is set.
        */
       @java.lang.Override
@@ -6875,7 +6717,7 @@ public final class RealDataNew {
         return ((bitField0_ & 0x00010000) != 0);
       }
       /**
-       * <code>required int32 uA = 17;</code>
+       * <code>optional int32 uA = 17;</code>
        * @return The uA.
        */
       @java.lang.Override
@@ -6883,7 +6725,7 @@ public final class RealDataNew {
         return uA_;
       }
       /**
-       * <code>required int32 uA = 17;</code>
+       * <code>optional int32 uA = 17;</code>
        * @param value The uA to set.
        * @return This builder for chaining.
        */
@@ -6894,7 +6736,7 @@ public final class RealDataNew {
         return this;
       }
       /**
-       * <code>required int32 uA = 17;</code>
+       * <code>optional int32 uA = 17;</code>
        * @return This builder for chaining.
        */
       public Builder clearUA() {
@@ -6906,7 +6748,7 @@ public final class RealDataNew {
 
       private int uB_ ;
       /**
-       * <code>required int32 uB = 18;</code>
+       * <code>optional int32 uB = 18;</code>
        * @return Whether the uB field is set.
        */
       @java.lang.Override
@@ -6914,7 +6756,7 @@ public final class RealDataNew {
         return ((bitField0_ & 0x00020000) != 0);
       }
       /**
-       * <code>required int32 uB = 18;</code>
+       * <code>optional int32 uB = 18;</code>
        * @return The uB.
        */
       @java.lang.Override
@@ -6922,7 +6764,7 @@ public final class RealDataNew {
         return uB_;
       }
       /**
-       * <code>required int32 uB = 18;</code>
+       * <code>optional int32 uB = 18;</code>
        * @param value The uB to set.
        * @return This builder for chaining.
        */
@@ -6933,7 +6775,7 @@ public final class RealDataNew {
         return this;
       }
       /**
-       * <code>required int32 uB = 18;</code>
+       * <code>optional int32 uB = 18;</code>
        * @return This builder for chaining.
        */
       public Builder clearUB() {
@@ -6945,7 +6787,7 @@ public final class RealDataNew {
 
       private int uC_ ;
       /**
-       * <code>required int32 uC = 19;</code>
+       * <code>optional int32 uC = 19;</code>
        * @return Whether the uC field is set.
        */
       @java.lang.Override
@@ -6953,7 +6795,7 @@ public final class RealDataNew {
         return ((bitField0_ & 0x00040000) != 0);
       }
       /**
-       * <code>required int32 uC = 19;</code>
+       * <code>optional int32 uC = 19;</code>
        * @return The uC.
        */
       @java.lang.Override
@@ -6961,7 +6803,7 @@ public final class RealDataNew {
         return uC_;
       }
       /**
-       * <code>required int32 uC = 19;</code>
+       * <code>optional int32 uC = 19;</code>
        * @param value The uC to set.
        * @return This builder for chaining.
        */
@@ -6972,7 +6814,7 @@ public final class RealDataNew {
         return this;
       }
       /**
-       * <code>required int32 uC = 19;</code>
+       * <code>optional int32 uC = 19;</code>
        * @return This builder for chaining.
        */
       public Builder clearUC() {
@@ -6984,7 +6826,7 @@ public final class RealDataNew {
 
       private int iA_ ;
       /**
-       * <code>required int32 iA = 20;</code>
+       * <code>optional int32 iA = 20;</code>
        * @return Whether the iA field is set.
        */
       @java.lang.Override
@@ -6992,7 +6834,7 @@ public final class RealDataNew {
         return ((bitField0_ & 0x00080000) != 0);
       }
       /**
-       * <code>required int32 iA = 20;</code>
+       * <code>optional int32 iA = 20;</code>
        * @return The iA.
        */
       @java.lang.Override
@@ -7000,7 +6842,7 @@ public final class RealDataNew {
         return iA_;
       }
       /**
-       * <code>required int32 iA = 20;</code>
+       * <code>optional int32 iA = 20;</code>
        * @param value The iA to set.
        * @return This builder for chaining.
        */
@@ -7011,7 +6853,7 @@ public final class RealDataNew {
         return this;
       }
       /**
-       * <code>required int32 iA = 20;</code>
+       * <code>optional int32 iA = 20;</code>
        * @return This builder for chaining.
        */
       public Builder clearIA() {
@@ -7023,7 +6865,7 @@ public final class RealDataNew {
 
       private int iB_ ;
       /**
-       * <code>required int32 iB = 21;</code>
+       * <code>optional int32 iB = 21;</code>
        * @return Whether the iB field is set.
        */
       @java.lang.Override
@@ -7031,7 +6873,7 @@ public final class RealDataNew {
         return ((bitField0_ & 0x00100000) != 0);
       }
       /**
-       * <code>required int32 iB = 21;</code>
+       * <code>optional int32 iB = 21;</code>
        * @return The iB.
        */
       @java.lang.Override
@@ -7039,7 +6881,7 @@ public final class RealDataNew {
         return iB_;
       }
       /**
-       * <code>required int32 iB = 21;</code>
+       * <code>optional int32 iB = 21;</code>
        * @param value The iB to set.
        * @return This builder for chaining.
        */
@@ -7050,7 +6892,7 @@ public final class RealDataNew {
         return this;
       }
       /**
-       * <code>required int32 iB = 21;</code>
+       * <code>optional int32 iB = 21;</code>
        * @return This builder for chaining.
        */
       public Builder clearIB() {
@@ -7062,7 +6904,7 @@ public final class RealDataNew {
 
       private int iC_ ;
       /**
-       * <code>required int32 iC = 22;</code>
+       * <code>optional int32 iC = 22;</code>
        * @return Whether the iC field is set.
        */
       @java.lang.Override
@@ -7070,7 +6912,7 @@ public final class RealDataNew {
         return ((bitField0_ & 0x00200000) != 0);
       }
       /**
-       * <code>required int32 iC = 22;</code>
+       * <code>optional int32 iC = 22;</code>
        * @return The iC.
        */
       @java.lang.Override
@@ -7078,7 +6920,7 @@ public final class RealDataNew {
         return iC_;
       }
       /**
-       * <code>required int32 iC = 22;</code>
+       * <code>optional int32 iC = 22;</code>
        * @param value The iC to set.
        * @return This builder for chaining.
        */
@@ -7089,7 +6931,7 @@ public final class RealDataNew {
         return this;
       }
       /**
-       * <code>required int32 iC = 22;</code>
+       * <code>optional int32 iC = 22;</code>
        * @return This builder for chaining.
        */
       public Builder clearIC() {
@@ -7101,7 +6943,7 @@ public final class RealDataNew {
 
       private int pfA_ ;
       /**
-       * <code>required int32 pfA = 23;</code>
+       * <code>optional int32 pfA = 23;</code>
        * @return Whether the pfA field is set.
        */
       @java.lang.Override
@@ -7109,7 +6951,7 @@ public final class RealDataNew {
         return ((bitField0_ & 0x00400000) != 0);
       }
       /**
-       * <code>required int32 pfA = 23;</code>
+       * <code>optional int32 pfA = 23;</code>
        * @return The pfA.
        */
       @java.lang.Override
@@ -7117,7 +6959,7 @@ public final class RealDataNew {
         return pfA_;
       }
       /**
-       * <code>required int32 pfA = 23;</code>
+       * <code>optional int32 pfA = 23;</code>
        * @param value The pfA to set.
        * @return This builder for chaining.
        */
@@ -7128,7 +6970,7 @@ public final class RealDataNew {
         return this;
       }
       /**
-       * <code>required int32 pfA = 23;</code>
+       * <code>optional int32 pfA = 23;</code>
        * @return This builder for chaining.
        */
       public Builder clearPfA() {
@@ -7140,7 +6982,7 @@ public final class RealDataNew {
 
       private int pfB_ ;
       /**
-       * <code>required int32 pfB = 24;</code>
+       * <code>optional int32 pfB = 24;</code>
        * @return Whether the pfB field is set.
        */
       @java.lang.Override
@@ -7148,7 +6990,7 @@ public final class RealDataNew {
         return ((bitField0_ & 0x00800000) != 0);
       }
       /**
-       * <code>required int32 pfB = 24;</code>
+       * <code>optional int32 pfB = 24;</code>
        * @return The pfB.
        */
       @java.lang.Override
@@ -7156,7 +6998,7 @@ public final class RealDataNew {
         return pfB_;
       }
       /**
-       * <code>required int32 pfB = 24;</code>
+       * <code>optional int32 pfB = 24;</code>
        * @param value The pfB to set.
        * @return This builder for chaining.
        */
@@ -7167,7 +7009,7 @@ public final class RealDataNew {
         return this;
       }
       /**
-       * <code>required int32 pfB = 24;</code>
+       * <code>optional int32 pfB = 24;</code>
        * @return This builder for chaining.
        */
       public Builder clearPfB() {
@@ -7179,7 +7021,7 @@ public final class RealDataNew {
 
       private int pfC_ ;
       /**
-       * <code>required int32 pfC = 25;</code>
+       * <code>optional int32 pfC = 25;</code>
        * @return Whether the pfC field is set.
        */
       @java.lang.Override
@@ -7187,7 +7029,7 @@ public final class RealDataNew {
         return ((bitField0_ & 0x01000000) != 0);
       }
       /**
-       * <code>required int32 pfC = 25;</code>
+       * <code>optional int32 pfC = 25;</code>
        * @return The pfC.
        */
       @java.lang.Override
@@ -7195,7 +7037,7 @@ public final class RealDataNew {
         return pfC_;
       }
       /**
-       * <code>required int32 pfC = 25;</code>
+       * <code>optional int32 pfC = 25;</code>
        * @param value The pfC to set.
        * @return This builder for chaining.
        */
@@ -7206,7 +7048,7 @@ public final class RealDataNew {
         return this;
       }
       /**
-       * <code>required int32 pfC = 25;</code>
+       * <code>optional int32 pfC = 25;</code>
        * @return This builder for chaining.
        */
       public Builder clearPfC() {
@@ -16617,12 +16459,6 @@ public final class RealDataNew {
         memoizedIsInitialized = 0;
         return false;
       }
-      for (int i = 0; i < getMeterDatasCount(); i++) {
-        if (!getMeterDatas(i).isInitialized()) {
-          memoizedIsInitialized = 0;
-          return false;
-        }
-      }
       for (int i = 0; i < getRpDatasCount(); i++) {
         if (!getRpDatas(i).isInitialized()) {
           memoizedIsInitialized = 0;
@@ -17553,11 +17389,6 @@ public final class RealDataNew {
         }
         if (!hasVer()) {
           return false;
-        }
-        for (int i = 0; i < getMeterDatasCount(); i++) {
-          if (!getMeterDatas(i).isInitialized()) {
-            return false;
-          }
         }
         for (int i = 0; i < getRpDatasCount(); i++) {
           if (!getRpDatas(i).isInitialized()) {
@@ -21434,15 +21265,15 @@ public final class RealDataNew {
       "atas\030\010 \003(\0132\017.hoymiles.RSDMO\022!\n\010sgsDatas\030" +
       "\t \003(\0132\017.hoymiles.SGSMO\022!\n\010tgsDatas\030\n \003(\013" +
       "2\017.hoymiles.TGSMO\022\037\n\007pvDatas\030\013 \003(\0132\016.hoy" +
-      "miles.PvMO\"\334\002\n\007MeterMO\022\014\n\004type\030\001 \002(\005\022\n\n\002" +
-      "sn\030\002 \002(\003\022\013\n\003pTt\030\003 \002(\005\022\014\n\004pTta\030\004 \002(\005\022\014\n\004p" +
-      "Ttb\030\005 \002(\005\022\014\n\004pTtc\030\006 \002(\005\022\014\n\004pfTt\030\007 \002(\005\022\014\n" +
-      "\004epTt\030\010 \002(\005\022\r\n\005epTta\030\t \002(\005\022\r\n\005epTtb\030\n \001(" +
-      "\005\022\r\n\005epTtc\030\013 \001(\005\022\014\n\004enTt\030\014 \002(\005\022\r\n\005enTta\030" +
-      "\r \002(\005\022\r\n\005enTtb\030\016 \001(\005\022\r\n\005enTtc\030\017 \001(\005\022\r\n\005f" +
-      "ault\030\020 \002(\005\022\n\n\002uA\030\021 \002(\005\022\n\n\002uB\030\022 \002(\005\022\n\n\002uC" +
-      "\030\023 \002(\005\022\n\n\002iA\030\024 \002(\005\022\n\n\002iB\030\025 \002(\005\022\n\n\002iC\030\026 \002" +
-      "(\005\022\013\n\003pfA\030\027 \002(\005\022\013\n\003pfB\030\030 \002(\005\022\013\n\003pfC\030\031 \002(" +
+      "miles.PvMO\"\334\002\n\007MeterMO\022\014\n\004type\030\001 \001(\005\022\n\n\002" +
+      "sn\030\002 \001(\003\022\013\n\003pTt\030\003 \001(\005\022\014\n\004pTta\030\004 \001(\005\022\014\n\004p" +
+      "Ttb\030\005 \001(\005\022\014\n\004pTtc\030\006 \001(\005\022\014\n\004pfTt\030\007 \001(\005\022\014\n" +
+      "\004epTt\030\010 \001(\005\022\r\n\005epTta\030\t \001(\005\022\r\n\005epTtb\030\n \001(" +
+      "\005\022\r\n\005epTtc\030\013 \001(\005\022\014\n\004enTt\030\014 \001(\005\022\r\n\005enTta\030" +
+      "\r \001(\005\022\r\n\005enTtb\030\016 \001(\005\022\r\n\005enTtc\030\017 \001(\005\022\r\n\005f" +
+      "ault\030\020 \001(\005\022\n\n\002uA\030\021 \001(\005\022\n\n\002uB\030\022 \001(\005\022\n\n\002uC" +
+      "\030\023 \001(\005\022\n\n\002iA\030\024 \001(\005\022\n\n\002iB\030\025 \001(\005\022\n\n\002iC\030\026 \001" +
+      "(\005\022\013\n\003pfA\030\027 \001(\005\022\013\n\003pfB\030\030 \001(\005\022\013\n\003pfC\030\031 \001(" +
       "\005\"K\n\004RpMO\022\014\n\004sign\030\002 \002(\005\022\n\n\002sn\030\001 \002(\003\022\014\n\004c" +
       "han\030\003 \002(\005\022\r\n\005pvNub\030\004 \002(\005\022\014\n\004link\030\005 \002(\005\"m" +
       "\n\005RSDMO\022\n\n\002sn\030\001 \002(\003\022\013\n\003ver\030\002 \002(\005\022\t\n\001v\030\003 " +

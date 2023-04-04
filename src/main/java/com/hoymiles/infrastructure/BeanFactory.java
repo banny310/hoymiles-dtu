@@ -13,6 +13,7 @@ import com.hoymiles.infrastructure.protos.RealDataNew;
 import com.hoymiles.infrastructure.repository.SpreadsheetWriter;
 import com.hoymiles.infrastructure.repository.dto.DtuRealDataDTO;
 import com.hoymiles.infrastructure.repository.dto.InvRealDataDTO;
+import com.hoymiles.infrastructure.repository.dto.MetRealDataDTO;
 import com.hoymiles.infrastructure.repository.dto.PvRealDataDTO;
 import com.hoymiles.infrastructure.repository.mapper.NumberFormatter;
 import com.hoymiles.infrastructure.repository.mapper.RealDataNewToRealDataMapper;
@@ -123,6 +124,24 @@ public class BeanFactory {
         modelMapper.typeMap(RealData.PvMO.class, PvRealDataDTO.class)
                 .addMappings(mapper -> {
                     mapper.using(timestamp2Date).map(RealData.PvMO::getTime, PvRealDataDTO::setLastSeen);
+                });
+
+                modelMapper.typeMap(RealData.MeterMO.class, MetRealDataDTO.class)
+                .addMappings(mapper -> {
+                    mapper.using(timestamp2Date).map(RealData.MeterMO::getTime, MetRealDataDTO::setLastSeen);
+                    mapper.using(divide1000f).map(RealData.MeterMO::getPowerA, MetRealDataDTO::setPowerAKWh);
+                    mapper.using(divide1000f).map(RealData.MeterMO::getPowerB, MetRealDataDTO::setPowerBKWh);
+                    mapper.using(divide1000f).map(RealData.MeterMO::getPowerC, MetRealDataDTO::setPowerCKWh);
+                    mapper.using(divide1000f).map(RealData.MeterMO::getPowerTotal, MetRealDataDTO::setPowerTotalKWh);
+                    mapper.using(divide1000f).map(RealData.MeterMO::getEnergyImportedA, MetRealDataDTO::setEnergyImportedAKWh);
+                    mapper.using(divide1000f).map(RealData.MeterMO::getEnergyImportedB, MetRealDataDTO::setEnergyImportedBKWh);
+                    mapper.using(divide1000f).map(RealData.MeterMO::getEnergyImportedC, MetRealDataDTO::setEnergyImportedCKWh);
+                    mapper.using(divide1000f).map(RealData.MeterMO::getEnergyImportedTotal, MetRealDataDTO::setEnergyImportedTotalKWh);
+                    mapper.using(divide1000f).map(RealData.MeterMO::getEnergyExportedA, MetRealDataDTO::setEnergyExportedAKWh);
+                    mapper.using(divide1000f).map(RealData.MeterMO::getEnergyExportedB, MetRealDataDTO::setEnergyExportedBKWh);
+                    mapper.using(divide1000f).map(RealData.MeterMO::getEnergyExportedC, MetRealDataDTO::setEnergyExportedCKWh);
+                    mapper.using(divide1000f).map(RealData.MeterMO::getEnergyExportedTotal, MetRealDataDTO::setEnergyExportedTotalKWh);
+
                 });
 
         modelMapper.validate();
