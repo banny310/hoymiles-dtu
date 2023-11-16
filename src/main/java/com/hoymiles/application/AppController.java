@@ -50,6 +50,7 @@ public class AppController {
     private AppInfo appInfo;
     private boolean pvAutodiscoverySent = false;
     private Disposable poolDisposable;
+    private int acceptedDataUpToMin = 5;
 
     @Handler
     public Void handleMqttConnected(@Observes @Priority(1) @NotNull MqttConnectedEvent event) {
@@ -72,7 +73,7 @@ public class AppController {
         RealData data = command.getRealData();
         log.info("Incoming new metrics: time={}", data.getTime());
         // make sure metrics are not older than 5 minutes
-        if (!LocalDateTime.now().minusMinutes(5).isBefore(data.getTime())) {
+        if (!LocalDateTime.now().minusMinutes(acceptedDataUpToMin).isBefore(data.getTime())) {
             long minutes = ChronoUnit.MINUTES.between(data.getTime(), LocalDateTime.now());
             log.warn("Metrics are {} minutes old. Discarding.", minutes);
             return null;
@@ -100,7 +101,8 @@ public class AppController {
 
         log.info("Sending autodiscovery...");
         autodiscoveryService.registerHomeAssistantAutodiscovery(appInfo);
-        
+        acceptedDataUpToMin = config.getInt("accepted_data_up_to_min");
+
         AppMode mode = AppMode.valueOf(config.getString("app.mode").toUpperCase());
         switch (mode) {
             case ACTIVE:
