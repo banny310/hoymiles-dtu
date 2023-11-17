@@ -101,7 +101,10 @@ public class AppController {
 
         log.info("Sending autodiscovery...");
         autodiscoveryService.registerHomeAssistantAutodiscovery(appInfo);
-        acceptedDataUpToMin = config.getInt("accepted_data_up_to_min");
+        if( !config.getIsNull("dtu.accepted_data_up_to_min"))
+        {
+            acceptedDataUpToMin = config.getInt("dtu.accepted_data_up_to_min");
+        }
 
         AppMode mode = AppMode.valueOf(config.getString("app.mode").toUpperCase());
         switch (mode) {
