@@ -32,7 +32,7 @@ public class RealDataNewToRealDataMapper implements GenericMapper<RealDataNew.Re
                                 .gridReactivePower((float) src1.getQ() / 10f)
                                 .gridCurrent((float) src1.getI() / 100f)
                                 .powerFactor((float) src1.getPf() / 1000f)
-                                .temp((float) src1.getTemp() / 10f)
+                                .temp((float) (short)src1.getTemp() / 10f)
                                 .link(src1.getLink())
                                 .build()
                 ).collect(Collectors.toList()))
