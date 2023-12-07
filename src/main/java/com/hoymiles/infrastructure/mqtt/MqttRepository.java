@@ -5,6 +5,7 @@ import com.hoymiles.domain.IMqttRepository;
 import com.hoymiles.domain.model.RealData;
 import com.hoymiles.infrastructure.repository.dto.DtuRealDataDTO;
 import com.hoymiles.infrastructure.repository.dto.InvRealDataDTO;
+import com.hoymiles.infrastructure.repository.dto.MetRealDataDTO;
 import com.hoymiles.infrastructure.repository.dto.PvRealDataDTO;
 import jakarta.enterprise.context.Dependent;
 import jakarta.inject.Inject;
@@ -59,6 +60,12 @@ public class MqttRepository implements IMqttRepository {
                 String pvId = String.format("pv_%s_%d", pvmo.getSn(), pvmo.getPort());
                 PvRealDataDTO pvDto = modelMapper.map(pvmo, PvRealDataDTO.class);
                 mqttClient.publish("hoymiles-dtu/" + pvId, gson.toJson(pvDto).getBytes(), 1, false);
+            }
+
+            for (RealData.MeterMO pvmo : realData.getMeters()) {
+                String metId = String.format("met_%s", pvmo.getSn());
+                MetRealDataDTO pvDto = modelMapper.map(pvmo, MetRealDataDTO.class);
+                mqttClient.publish("hoymiles-dtu/" + metId, gson.toJson(pvDto).getBytes(), 1, false);
             }
 
         } catch (MqttException e) {

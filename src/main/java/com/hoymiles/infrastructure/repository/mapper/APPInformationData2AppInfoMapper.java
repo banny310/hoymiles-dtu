@@ -31,6 +31,18 @@ public class APPInformationData2AppInfoMapper implements GenericMapper<APPInform
                                         .invHw(src1.getPvHw())
                                         .build()
                         ).collect(Collectors.toList()))
+                .meterInfo(
+                        src.getMAPPMeterInfoList().stream().map(src1 ->
+                                AppInfo.MeterInfo.builder()
+                                        .meterSn(String.valueOf(src1.getMeterSn()).length() != 12 ? DeviceUtils.decToHex(String.valueOf(src1.getMeterSn())) : String.valueOf(src1.getMeterSn()).toUpperCase())
+                                        .deviceKind(src1.getDeviceKind())
+                                        .meterModel(src1.getMeterModel())
+                                        .meterCt(src1.getMeterCt())
+                                        .comWay(src1.getComWay())
+                                        .accessMode(src1.getAccessMode())
+                                        .swVsn(src1.getSwVsn())
+                                        .build()
+                        ).collect(Collectors.toList()))
                 .build();
     }
 }

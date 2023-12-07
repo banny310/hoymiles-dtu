@@ -29,31 +29,31 @@ message RealReqDTO {
 }
 
 message MeterMO {
-  required int32 type = 1;
-  required int64 sn = 2;
-  required int32 pTt = 3;
-  required int32 pTta = 4;
-  required int32 pTtb = 5;
-  required int32 pTtc = 6;
-  required int32 pfTt = 7;
-  required int32 epTt = 8;
-  required int32 epTta = 9;
+  optional int32 type = 1;
+  optional int64 sn = 2;
+  optional int32 pTt = 3;
+  optional int32 pTta = 4;
+  optional int32 pTtb = 5;
+  optional int32 pTtc = 6;
+  optional int32 pfTt = 7;
+  optional int32 epTt = 8;
+  optional int32 epTta = 9;
   optional int32 epTtb = 10;
   optional int32 epTtc = 11;
-  required int32 enTt = 12;
-  required int32 enTta = 13;
+  optional int32 enTt = 12;
+  optional int32 enTta = 13;
   optional int32 enTtb = 14;
   optional int32 enTtc = 15;
-  required int32 fault = 16;
-  required int32 uA = 17;
-  required int32 uB = 18;
-  required int32 uC = 19;
-  required int32 iA = 20;
-  required int32 iB = 21;
-  required int32 iC = 22;
-  required int32 pfA = 23;
-  required int32 pfB = 24;
-  required int32 pfC = 25;
+  optional int32 fault = 16;
+  optional int32 uA = 17;
+  optional int32 uB = 18;
+  optional int32 uC = 19;
+  optional int32 iA = 20;
+  optional int32 iB = 21;
+  optional int32 iC = 22;
+  optional int32 pfA = 23;
+  optional int32 pfB = 24;
+  optional int32 pfC = 25;
 }
 
 message RpMO {

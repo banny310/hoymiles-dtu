@@ -21,6 +21,11 @@ public class AutodiscoveryService {
     public void registerHomeAssistantAutodiscovery(@NotNull AppInfo info) {
         registerDtuAutodiscovery(info);
         registerInvAutodiscovery(info.getSgsInfo());
+        if(info.getMeterInfo() != null && !info.getMeterInfo().isEmpty())
+        {
+                registerMetAutodiscovery(info.getMeterInfo());
+        }
+
     }
 
     public void registerPvAutodiscovery(@NotNull List<RealData.PvMO> pvInfos) {
@@ -80,6 +85,394 @@ public class AutodiscoveryService {
         });
     }
 
+    public void registerMetAutodiscovery(@NotNull List<AppInfo.MeterInfo> metInfos) {
+        metInfos.forEach(met -> {
+            String metId = String.format("met_%s", met.getMeterSn());
+
+                Sensor powerAW = newMetModelBuilder("Power A (W)", met)
+                        .uniqueId(key(metId, "meter_power_a_w"))
+                        .objectId(key(metId, "meter_power_a_w"))
+                        .icon("mdi:lightning-bolt")
+                        .stateClass("measurement")
+                        .deviceClass("power")
+                        .unitOfMeasurement("W")
+                        .valueTemplate("{{ value_json.meter_power_a_w }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig(key(metId, "meter_power_a_w"), gson.toJson(powerAW).getBytes());
+
+                Sensor powerAkW = newMetModelBuilder("Power A (kW)", met)
+                        .uniqueId(key(metId, "meter_power_a_kw"))
+                        .objectId(key(metId, "meter_power_a_kw"))
+                        .icon("mdi:lightning-bolt")
+                        .stateClass("measurement")
+                        .deviceClass("power")
+                        .unitOfMeasurement("kW")
+                        .valueTemplate("{{ value_json.meter_power_a_kw }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig(key(metId, "meter_power_a_kw"), gson.toJson(powerAkW).getBytes());
+
+                Sensor powerBW = newMetModelBuilder("Power B (W)", met)
+                        .uniqueId(key(metId, "meter_power_b_w"))
+                        .objectId(key(metId, "meter_power_b_w"))
+                        .icon("mdi:lightning-bolt")
+                        .stateClass("measurement")
+                        .deviceClass("power")
+                        .unitOfMeasurement("W")
+                        .valueTemplate("{{ value_json.meter_power_b_w }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig(key(metId, "meter_power_b_w"), gson.toJson(powerBW).getBytes());
+
+                Sensor powerBkW = newMetModelBuilder("Power B (kW)", met)
+                        .uniqueId(key(metId, "meter_power_b_kw"))
+                        .objectId(key(metId, "meter_power_b_kw"))
+                        .icon("mdi:lightning-bolt")
+                        .stateClass("measurement")
+                        .deviceClass("power")
+                        .unitOfMeasurement("kW")
+                        .valueTemplate("{{ value_json.meter_power_b_kw }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig(key(metId, "meter_power_b_kw"), gson.toJson(powerBkW).getBytes());
+
+                Sensor powerCW = newMetModelBuilder("Power C (W)", met)
+                        .uniqueId(key(metId, "meter_power_c_w"))
+                        .objectId(key(metId, "meter_power_c_w"))
+                        .icon("mdi:lightning-bolt")
+                        .stateClass("measurement")
+                        .deviceClass("power")
+                        .unitOfMeasurement("W")
+                        .valueTemplate("{{ value_json.meter_power_c_w }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig(key(metId, "meter_power_c_w"), gson.toJson(powerCW).getBytes());
+
+                Sensor powerCkW = newMetModelBuilder("Power C (kW)", met)
+                        .uniqueId(key(metId, "meter_power_c_kw"))
+                        .objectId(key(metId, "meter_power_c_kw"))
+                        .icon("mdi:lightning-bolt")
+                        .stateClass("measurement")
+                        .deviceClass("power")
+                        .unitOfMeasurement("kW")
+                        .valueTemplate("{{ value_json.meter_power_c_kw }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig(key(metId, "meter_power_c_kw"), gson.toJson(powerCkW).getBytes());
+
+                Sensor powerTotalW = newMetModelBuilder("Power Total (W)", met)
+                        .uniqueId(key(metId, "meter_power_total_w"))
+                        .objectId(key(metId, "meter_power_total_w"))
+                        .icon("mdi:lightning-bolt")
+                        .stateClass("measurement")
+                        .deviceClass("power")
+                        .unitOfMeasurement("W")
+                        .valueTemplate("{{ value_json.meter_power_total_w }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig(key(metId, "meter_power_total_w"), gson.toJson(powerTotalW).getBytes());
+
+                Sensor powerTotalKW = newMetModelBuilder("Power Total (kW)", met)
+                        .uniqueId(key(metId, "meter_power_total_kw"))
+                        .objectId(key(metId, "meter_power_total_kw"))
+                        .icon("mdi:lightning-bolt")
+                        .stateClass("measurement")
+                        .deviceClass("power")
+                        .unitOfMeasurement("kW")
+                        .valueTemplate("{{ value_json.meter_power_total_kw }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig(key(metId, "meter_power_total_kw"), gson.toJson(powerTotalKW).getBytes());
+
+                Sensor powerFactorA = newMetModelBuilder("Power Factor A", met)
+                        .uniqueId(key(metId, "meter_power_factor_a"))
+                        .objectId(key(metId, "meter_power_factor_a"))
+                        .icon("mdi:cosine-wave")
+                        .stateClass("measurement")
+                        .deviceClass("power_factor")
+                        .unitOfMeasurement("PF")
+                        .valueTemplate("{{ value_json.meter_power_factor_a }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig(key(metId, "meter_power_factor_a"), gson.toJson(powerFactorA).getBytes());
+
+                Sensor powerFactorB = newMetModelBuilder("Power Factor B", met)
+                        .uniqueId(key(metId, "meter_power_factor_b"))
+                        .objectId(key(metId, "meter_power_factor_b"))
+                        .icon("mdi:cosine-wave")
+                        .stateClass("measurement")
+                        .deviceClass("power_factor")
+                        .unitOfMeasurement("PF")
+                        .valueTemplate("{{ value_json.meter_power_factor_b }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig(key(metId, "meter_power_factor_b"), gson.toJson(powerFactorB).getBytes());
+
+                Sensor powerFactorC = newMetModelBuilder("Power Factor C", met)
+                        .uniqueId(key(metId, "meter_power_factor_c"))
+                        .objectId(key(metId, "meter_power_factor_c"))
+                        .icon("mdi:cosine-wave")
+                        .stateClass("measurement")
+                        .deviceClass("power_factor")
+                        .unitOfMeasurement("PF")
+                        .valueTemplate("{{ value_json.meter_power_factor_c }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig(key(metId, "meter_power_factor_c"), gson.toJson(powerFactorC).getBytes());
+
+                Sensor powerFactorTotal = newMetModelBuilder("Power Factor Total", met)
+                        .uniqueId(key(metId, "meter_power_factor_total"))
+                        .objectId(key(metId, "meter_power_factor_total"))
+                        .icon("mdi:cosine-wave")
+                        .stateClass("measurement")
+                        .deviceClass("power_factor")
+                        .unitOfMeasurement("PF")
+                        .valueTemplate("{{ value_json.meter_power_factor_total }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig(key(metId, "meter_power_factor_total"), gson.toJson(powerFactorTotal).getBytes());
+
+                Sensor voltageA = newMetModelBuilder("Voltage A", met)
+                        .uniqueId(key(metId, "meter_u_a"))
+                        .objectId(key(metId, "meter_u_a"))
+                        .icon("mdi:sine-wave")
+                        .stateClass("measurement")
+                        .deviceClass("voltage")
+                        .unitOfMeasurement("V")
+                        .valueTemplate("{{ value_json.meter_u_a }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig(key(metId, "meter_u_a"), gson.toJson(voltageA).getBytes());
+
+                Sensor voltageB = newMetModelBuilder("Voltage B", met)
+                        .uniqueId(key(metId, "meter_u_b"))
+                        .objectId(key(metId, "meter_u_b"))
+                        .icon("mdi:sine-wave")
+                        .stateClass("measurement")
+                        .deviceClass("voltage")
+                        .unitOfMeasurement("V")
+                        .valueTemplate("{{ value_json.meter_u_b }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig(key(metId, "meter_u_b"), gson.toJson(voltageB).getBytes());
+
+                Sensor voltageC = newMetModelBuilder("Voltage C", met)
+                        .uniqueId(key(metId, "meter_u_c"))
+                        .objectId(key(metId, "meter_u_c"))
+                        .icon("mdi:sine-wave")
+                        .stateClass("measurement")
+                        .deviceClass("voltage")
+                        .unitOfMeasurement("V")
+                        .valueTemplate("{{ value_json.meter_u_c }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig(key(metId, "meter_u_c"), gson.toJson(voltageC).getBytes());
+
+                Sensor currentA = newMetModelBuilder("Current A", met)
+                        .uniqueId(key(metId, "meter_i_a"))
+                        .objectId(key(metId, "meter_i_a"))
+                        .icon("mdi:current-ac")
+                        .stateClass("measurement")
+                        .deviceClass("current")
+                        .unitOfMeasurement("A")
+                        .valueTemplate("{{ value_json.meter_i_a }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig(key(metId, "meter_i_a"), gson.toJson(currentA).getBytes());
+
+                Sensor currentB = newMetModelBuilder("Current B", met)
+                        .uniqueId(key(metId, "meter_i_b"))
+                        .objectId(key(metId, "meter_i_b"))
+                        .icon("mdi:current-ac")
+                        .stateClass("measurement")
+                        .deviceClass("current")
+                        .unitOfMeasurement("A")
+                        .valueTemplate("{{ value_json.meter_i_b }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig(key(metId, "meter_i_b"), gson.toJson(currentB).getBytes());
+
+                Sensor currentC = newMetModelBuilder("Current C", met)
+                        .uniqueId(key(metId, "meter_i_c"))
+                        .objectId(key(metId, "meter_i_c"))
+                        .icon("mdi:current-ac")
+                        .stateClass("measurement")
+                        .deviceClass("current")
+                        .unitOfMeasurement("A")
+                        .valueTemplate("{{ value_json.meter_i_c }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig(key(metId, "meter_i_c"), gson.toJson(currentC).getBytes());
+
+
+
+                Sensor energyImportAWh = newMetModelBuilder("Energy import A (Wh)", met)
+                        .uniqueId(key(metId, "meter_energy_import_a_wh"))
+                        .objectId(key(metId, "meter_energy_import_a_wh"))
+                        .icon("mdi:transmission-tower-import")
+                        .stateClass("total")
+                        .deviceClass("energy")
+                        .unitOfMeasurement("Wh")
+                        .valueTemplate("{{ value_json.meter_energy_import_a_wh }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig((key(metId, "meter_energy_import_a_wh")), gson.toJson(energyImportAWh).getBytes());
+
+
+                Sensor energyImportAkWh = newMetModelBuilder("Energy import A (kWh)", met)
+                        .uniqueId(key(metId, "meter_energy_import_a_wh"))
+                        .objectId(key(metId, "meter_energy_import_a_wh"))
+                        .icon("mdi:transmission-tower-import")
+                        .stateClass("total")
+                        .deviceClass("energy")
+                        .unitOfMeasurement("Wh")
+                        .valueTemplate("{{ value_json.meter_energy_import_a_wh }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig((key(metId, "meter_energy_import_a_wh")), gson.toJson(energyImportAkWh).getBytes());
+
+                Sensor energyImportBWh = newMetModelBuilder("Energy import B (Wh)", met)
+                        .uniqueId(key(metId, "meter_energy_import_b_wh"))
+                        .objectId(key(metId, "meter_energy_import_b_wh"))
+                        .icon("mdi:transmission-tower-import")
+                        .stateClass("total")
+                        .deviceClass("energy")
+                        .unitOfMeasurement("Wh")
+                        .valueTemplate("{{ value_json.meter_energy_import_b_wh }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig((key(metId, "meter_energy_import_b_wh")), gson.toJson(energyImportBWh).getBytes());
+
+                Sensor energyImportBkWh = newMetModelBuilder("Energy import B (kWh)", met)
+                        .uniqueId(key(metId, "meter_energy_import_b_kwh"))
+                        .objectId(key(metId, "meter_energy_import_b_kwh"))
+                        .icon("mdi:transmission-tower-import")
+                        .stateClass("total")
+                        .deviceClass("energy")
+                        .unitOfMeasurement("kWh")
+                        .valueTemplate("{{ value_json.meter_energy_import_b_kwh }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig((key(metId, "meter_energy_import_b_kwh")), gson.toJson(energyImportBkWh).getBytes());
+
+                Sensor energyImportCWh = newMetModelBuilder("Energy import C (Wh)", met)
+                        .uniqueId(key(metId, "meter_energy_import_c_wh"))
+                        .objectId(key(metId, "meter_energy_import_c_wh"))
+                        .icon("mdi:transmission-tower-import")
+                        .stateClass("total")
+                        .deviceClass("energy")
+                        .unitOfMeasurement("Wh")
+                        .valueTemplate("{{ value_json.meter_energy_import_c_wh }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig((key(metId, "meter_energy_import_c_wh")), gson.toJson(energyImportCWh).getBytes());
+
+                Sensor energyImportCkWh = newMetModelBuilder("Energy import C (kWh)", met)
+                        .uniqueId(key(metId, "meter_energy_import_c_kwh"))
+                        .objectId(key(metId, "meter_energy_import_c_kwh"))
+                        .icon("mdi:transmission-tower-import")
+                        .stateClass("total")
+                        .deviceClass("energy")
+                        .unitOfMeasurement("kWh")
+                        .valueTemplate("{{ value_json.meter_energy_import_c_kwh }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig((key(metId, "meter_energy_import_c_kwh")), gson.toJson(energyImportCkWh).getBytes());
+
+                Sensor energyExportAWh = newMetModelBuilder("Energy export A (Wh)", met)
+                        .uniqueId(key(metId, "meter_energy_export_a_wh"))
+                        .objectId(key(metId, "meter_energy_export_a_wh"))
+                        .icon("mdi:transmission-tower-export")
+                        .stateClass("total")
+                        .deviceClass("energy")
+                        .unitOfMeasurement("Wh")
+                        .valueTemplate("{{ value_json.meter_energy_export_a_wh }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig((key(metId, "meter_energy_export_a_wh")), gson.toJson(energyExportAWh).getBytes());
+
+                Sensor energyExportAkWh = newMetModelBuilder("Energy export A (kWh)", met)
+                        .uniqueId(key(metId, "meter_energy_export_a_kwh"))
+                        .objectId(key(metId, "meter_energy_export_a_kwh"))
+                        .icon("mdi:transmission-tower-export")
+                        .stateClass("total")
+                        .deviceClass("energy")
+                        .unitOfMeasurement("kWh")
+                        .valueTemplate("{{ value_json.meter_energy_export_a_kwh }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig((key(metId, "meter_energy_export_a_kwh")), gson.toJson(energyExportAkWh).getBytes());
+
+                Sensor energyExportBWh = newMetModelBuilder("Energy export B (Wh)", met)
+                        .uniqueId(key(metId, "meter_energy_export_b_wh"))
+                        .objectId(key(metId, "meter_energy_export_b_wh"))
+                        .icon("mdi:transmission-tower-export")
+                        .stateClass("total")
+                        .deviceClass("energy")
+                        .unitOfMeasurement("Wh")
+                        .valueTemplate("{{ value_json.meter_energy_export_b_wh }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig((key(metId, "meter_energy_export_b_wh")), gson.toJson(energyExportBWh).getBytes());
+
+                Sensor energyExportBkWh = newMetModelBuilder("Energy export B (kWh)", met)
+                        .uniqueId(key(metId, "meter_energy_export_b_kwh"))
+                        .objectId(key(metId, "meter_energy_export_b_kwh"))
+                        .icon("mdi:transmission-tower-export")
+                        .stateClass("total")
+                        .deviceClass("energy")
+                        .unitOfMeasurement("kWh")
+                        .valueTemplate("{{ value_json.meter_energy_export_b_kwh }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig((key(metId, "meter_energy_export_b_kwh")), gson.toJson(energyExportBkWh).getBytes());
+
+                Sensor energyExportCWh = newMetModelBuilder("Energy export C (Wh)", met)
+                        .uniqueId(key(metId, "meter_energy_export_c_wh"))
+                        .objectId(key(metId, "meter_energy_export_c_wh"))
+                        .icon("mdi:transmission-tower-export")
+                        .stateClass("total")
+                        .deviceClass("energy")
+                        .unitOfMeasurement("Wh")
+                        .valueTemplate("{{ value_json.meter_energy_export_c_wh }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig((key(metId, "meter_energy_export_c_wh")), gson.toJson(energyExportCWh).getBytes());
+
+                Sensor energyExportCkWh = newMetModelBuilder("Energy export C (kWh)", met)
+                        .uniqueId(key(metId, "meter_energy_export_c_kwh"))
+                        .objectId(key(metId, "meter_energy_export_c_kwh"))
+                        .icon("mdi:transmission-tower-export")
+                        .stateClass("total")
+                        .deviceClass("energy")
+                        .unitOfMeasurement("kWh")
+                        .valueTemplate("{{ value_json.meter_energy_export_c_kwh }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig((key(metId, "meter_energy_export_c_kwh")), gson.toJson(energyExportCkWh).getBytes());
+
+                Sensor energyImportTotalWh = newMetModelBuilder("Energy import Total (Wh)", met)
+                        .uniqueId(key(metId, "meter_energy_import_total_wh"))
+                        .objectId(key(metId, "meter_energy_import_total_wh"))
+                        .icon("mdi:transmission-tower-import")
+                        .stateClass("total")
+                        .deviceClass("energy")
+                        .unitOfMeasurement("Wh")
+                        .valueTemplate("{{ value_json.meter_energy_import_total_wh }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig((key(metId, "meter_energy_import_total_wh")), gson.toJson(energyImportTotalWh).getBytes());
+
+                Sensor energyImportTotalkWh = newMetModelBuilder("Energy import Total (kWh)", met)
+                        .uniqueId(key(metId, "meter_energy_import_total_kwh"))
+                        .objectId(key(metId, "meter_energy_import_total_kwh"))
+                        .icon("mdi:transmission-tower-import")
+                        .stateClass("total")
+                        .deviceClass("energy")
+                        .unitOfMeasurement("kWh")
+                        .valueTemplate("{{ value_json.meter_energy_import_total_kwh }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig((key(metId, "meter_energy_import_total_kwh")), gson.toJson(energyImportTotalkWh).getBytes());
+
+                Sensor energyExportTotalWh = newMetModelBuilder("Energy export Total (Wh)", met)
+                        .uniqueId(key(metId, "meter_energy_export_total_wh"))
+                        .objectId(key(metId, "meter_energy_export_total_wh"))
+                        .icon("mdi:transmission-tower-export")
+                        .stateClass("total")
+                        .deviceClass("energy")
+                        .unitOfMeasurement("Wh")
+                        .valueTemplate("{{ value_json.meter_energy_export_total_wh }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig((key(metId, "meter_energy_export_total_wh")), gson.toJson(energyExportTotalWh).getBytes());
+
+                Sensor energyExportTotalkWh = newMetModelBuilder("Energy export Total (kWh)", met)
+                        .uniqueId(key(metId, "meter_energy_export_total_kwh"))
+                        .objectId(key(metId, "meter_energy_export_total_kwh"))
+                        .icon("mdi:transmission-tower-export")
+                        .stateClass("total")
+                        .deviceClass("energy")
+                        .unitOfMeasurement("kWh")
+                        .valueTemplate("{{ value_json.meter_energy_export_total_kwh }}")
+                        .build();
+                mqttService.sendHomeAssistantConfig((key(metId, "meter_energy_export_total_kwh")), gson.toJson(energyExportTotalkWh).getBytes());
+
+
+                
+                
+                
+        });
+    }
+
     /**
      * DTU Autodiscovery
      *
@@ -135,7 +528,7 @@ public class AutodiscoveryService {
         Sensor modelEnergyTotalWh = newDtuModelBuilder(key(dtuId, "energy_total_wh"), info)
                 .uniqueId(key(dtuId, "energy_total_wh"))
                 .objectId(key(dtuId, "energy_total_wh"))
-                .stateClass("total_increasing")
+                .stateClass("total")
                 .deviceClass("energy")
                 .unitOfMeasurement("Wh")
                 .valueTemplate("{{ value_json.energy_total_wh }}")
@@ -145,7 +538,7 @@ public class AutodiscoveryService {
         Sensor modelEnergyTotalKWh = newDtuModelBuilder(key(dtuId, "energy_total_kwh"), info)
                 .uniqueId(key(dtuId, "energy_total_kwh"))
                 .objectId(key(dtuId, "energy_total_kwh"))
-                .stateClass("total_increasing")
+                .stateClass("total")
                 .deviceClass("energy")
                 .unitOfMeasurement("kWh")
                 .valueTemplate("{{ value_json.energy_total_kwh }}")
@@ -252,6 +645,22 @@ public class AutodiscoveryService {
                 .name(name)
                 .jsonAttributesTopic("hoymiles-dtu/" + pvId)
                 .stateTopic("hoymiles-dtu/" + pvId);
+    }
+
+    private Sensor.SensorBuilder newMetModelBuilder(String name, @NotNull AppInfo.MeterInfo met) {
+        String metId = String.format("met_%s", met.getMeterSn());
+        return newSensorBuilder()
+                .device(
+                        Sensor.Device.builder()
+                                .identifiers(List.of(metId))
+                                .manufacturer("Unknown")
+                                .name(String.format("Energy Meter (sn: %s)", met.getMeterSn()))
+                                .model(String.format("%d - %d",met.getMeterModel(), met.getMeterCt()))
+                                .viaDevice(String.format("Meter (sn: %s)", met.getMeterSn()))
+                                .build())
+                .name(name)
+                .jsonAttributesTopic("hoymiles-dtu/" + metId)
+                .stateTopic("hoymiles-dtu/" + metId);
     }
 
     private Sensor.SensorBuilder newInvModelBuilder(String name, @NotNull AppInfo.SgsInfo info) {
